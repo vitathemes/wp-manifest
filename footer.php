@@ -9,13 +9,6 @@
  */
 ?>
 <footer class="c-footer">
-
-	<?php
-	if ( get_theme_mod( 'copyright_text' ) ) {
-		echo get_theme_mod( 'copyright_text' );
-	}
-	?>
-
     <div class="o-container">
         <div class="c-footer__main o-flex">
             <div class="c-footer__col o-flex__item-1/2">
