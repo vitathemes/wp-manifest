@@ -1,0 +1,29 @@
+ul {
+  margin: 0 0 10px 0;
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: $color-primary;
+    vertical-align: middle;
+    margin-right: 10px;
+    min-height: 6px;
+    max-height: 6px;
+    max-width: 6px;
+    min-width: 6px;
+    margin-top: 13px;
+  }
+}
+
+header , footer , form {
+  li::before {
+    content: unset;
+  }
+}
