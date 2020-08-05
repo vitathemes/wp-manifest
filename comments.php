@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 	return;
 }
 
-$discussion = indigo_get_discussion_data();
+$discussion = wpmanifest_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
@@ -30,14 +30,14 @@ $discussion = indigo_get_discussion_data();
 			<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
-					_e( 'Join the Conversation', 'wp-indigo' );
+					_e( 'Join the Conversation', 'wp-manifest' );
 				} else {
-					_e( 'Leave a comment', 'wp-indigo' );
+					_e( 'Leave a comment', 'wp-manifest' );
 				}
 			} else {
 				if ( '1' == $discussion->responses ) {
 					/* translators: %s: post title */
-					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-indigo' ), get_the_title() );
+					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-manifest' ), get_the_title() );
 				} else {
 					printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -46,7 +46,7 @@ $discussion = indigo_get_discussion_data();
 							'%1$s replies on &ldquo;%2$s&rdquo;',
 							$discussion->responses,
 							'comments title',
-							'wp-indigo'
+							'wp-manifest'
 						),
 						number_format_i18n( $discussion->responses ),
 						get_the_title()
@@ -73,7 +73,7 @@ $discussion = indigo_get_discussion_data();
 		if ( comments_open() ) {
 			indigo_comment_form( 'desc' );
 
-			echo "<h3>" . __( 'Comments', 'wp-indigo' ) . "</h3>";
+			echo "<h3>" . __( 'Comments', 'wp-manifest' ) . "</h3>";
 		}
 
 		?>
@@ -93,11 +93,11 @@ $discussion = indigo_get_discussion_data();
 
 		// Show comment navigation
 		if ( have_comments() ) :
-			$comments_text = __( 'Comments', 'wp-indigo' );
+			$comments_text = __( 'Comments', 'wp-manifest' );
 			the_comments_navigation(
 				array(
-					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', __( 'Previous', 'wp-indigo' )),
-					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', __( 'Next', 'wp-indigo' )),
+					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', __( 'Previous', 'wp-manifest' )),
+					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', __( 'Next', 'wp-manifest' )),
 				)
 			);
 		endif;
@@ -105,7 +105,7 @@ $discussion = indigo_get_discussion_data();
 		if ( ! comments_open() ) :
 			?>
             <h3 class="no-comments">
-				<?php _e( 'Comments are disabled.', 'wp-indigo' ); ?>
+				<?php _e( 'Comments are disabled.', 'wp-manifest' ); ?>
             </h3>
 		<?php
 		endif;

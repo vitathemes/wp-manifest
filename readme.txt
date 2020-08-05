@@ -1,49 +1,39 @@
-=== Theme Name ===
-Contributors: kashani, mrmolaei, mostafas1990, ghasemi71ir
-Requires at least: 5.0
-Tested up to: 5.2.2
-Requires PHP: 5.6
-License: MIT
-License URI: https://opensource.org/licenses/MIT
+=== WP Manifest ===
 
-WP-Indigo is a WordPress minimal & Fast-loading theme for people who want to have a simple blog & introduce themselves.
+Contributors: automattic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+Requires at least: 4.5
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+
+A starter theme called WP Manifest.
 
 == Description ==
 
-WP-Indigo is a WordPress minimal & Fast-loading theme for people who want to have a simple blog & introduce themselves.
-
-It's based on the [indigo](https://github.com/sergiokopplin/indigo), that originally builds for Jekyll.
-
-= Features =
-* No additional JS
-* Sass for stylesheets
-* Compatible with [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
-* Fast & lightweight (Google Speed: 99/100)
-* Theme options built directly into WordPress native live theme customizer
-* Responsive design
-* Cross-browser compatibility
-* Custom Google WebFonts
-* Child themes support
-* Developer friendly extendable code
-* Translation ready (with .POT files included)
-* Right-to-left (RTL) languages support
-* SEO optimized
-* MIT licensed
-* …and much more
-
-See a working example at [demo.vitathemes.com/indigo](https://demo.vitathemes.com/indigo/).
-
-== Changelog ==
-
-= 1.0.0 =
-* Initial version
+Just another Minimal WordPress theme
 
 == Installation ==
 
-1. Simply install as a normal WordPress theme and activate.
-2. Make a page called Home and set the Page template to Home.
-3. Make another page called Blog and set the Page template to Blog.
-4. In your admin panel, navigate to `Settings > Reading`.
-5. Select `A static page (select below)` and select the pages created.
-6. In your admin panel, navigate to `Appearance > Customize`.
-7. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+WP Manifest includes support for WooCommerce and for Infinite Scroll in Jetpack.
+
+== Changelog ==
+
+= 1.0 - May 12 2015 =
+* Initial release
+
+== Credits ==
+
+* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)

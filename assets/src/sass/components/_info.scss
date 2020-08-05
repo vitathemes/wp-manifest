@@ -1,0 +1,23 @@
+.c-info {
+  margin: 160px 0;
+}
+
+.c-info__main {
+  display: flex;
+}
+
+.c-info__col {
+  width: 50%;
+
+  &:first-child {
+    padding-right: 15px;
+  }
+
+  &:last-child {
+    padding-left: 15px;
+  }
+
+  @media #{$tablet} {
+    width: 100%;
+  }
+}

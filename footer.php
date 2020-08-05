@@ -25,19 +25,19 @@
                 </p>
             </div>
             <div class="c-footer__col o-flex__item-1/4">
-                <?php
-                $menu_args = array(
-	                'theme_location' => 'footer-menu',
-	                'menu_class' => 'c-footer__menu-items s-footer-menu',
-	                'container' => 'nav',
-	                'container_class' => 'c-footer__menu',
-                );
-                wp_nav_menu($menu_args);
-                ?>
+				<?php
+				$menu_args = array(
+					'theme_location' => 'footer-menu',
+					'menu_class' => 'c-footer__menu-items s-footer-menu',
+					'container' => 'nav',
+					'container_class' => 'c-footer__menu',
+				);
+				wp_nav_menu($menu_args);
+				?>
             </div>
             <div class="c-footer__col o-flex__item-1/4 o-flex">
                 <p class="c-footer__copyright">
-	                <?php echo get_theme_mod( 'copyright_text', '© Copyright Manifest Theme. Allrights reserved' ); ?>
+					<?php echo get_theme_mod( 'copyright_text', '© Copyright Manifest Theme. Allrights reserved' ); ?>
                 </p>
             </div>
         </div>

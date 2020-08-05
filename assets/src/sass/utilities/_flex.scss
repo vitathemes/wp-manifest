@@ -1,0 +1,30 @@
+.u-flex {
+  display: flex;
+}
+
+.u-dir-column {
+  flex-direction: column;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.u-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+
+@media #{$mobile} {
+  .u-flex-wrap-m {
+    flex-wrap: wrap;
+  }
+}

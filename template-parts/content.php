@@ -29,7 +29,7 @@ if ( get_theme_mod( 'show_share_icons' , true ) ):
     ?>
     <div class="social-share">
         <div class="social-share-title">
-            <span><?php _e( 'Share on facebook:', 'wp-indigo' ); ?></span>
+            <span><?php _e( 'Share on facebook:', 'wp-manifest' ); ?></span>
         </div>
         <div class="social-share-links">
 			<?php
@@ -58,14 +58,14 @@ endif;
 <div class="">
     <?php
     $defaults = array(
-	    'before'           => '<p>' . __( 'Pages:', 'wp-indigo' ),
+	    'before'           => '<p>' . __( 'Pages:', 'wp-manifest' ),
 	    'after'            => '</p>',
 	    'link_before'      => '',
 	    'link_after'       => '',
 	    'next_or_number'   => 'number',
 	    'separator'        => ' ',
-	    'nextpagelink'     => __( 'Next page', 'wp-indigo'),
-	    'previouspagelink' => __( 'Previous page', 'wp-indigo' ),
+	    'nextpagelink'     => __( 'Next page', 'wp-manifest'),
+	    'previouspagelink' => __( 'Previous page', 'wp-manifest' ),
 	    'pagelink'         => '%',
 	    'echo'             => 1
     );

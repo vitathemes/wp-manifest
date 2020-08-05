@@ -1,20 +1,60 @@
 {
-  "name": "sector",
-  "version": "1.1.0",
-  "description": "A WordPress Starter Theme",
-  "main": "",
-  "scripts": {},
-  "author": "Mohammadreza Molaei",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.11.0",
-    "sass-mq": "^5.0.0"
+  "name": "wp-anifest",
+  "version": "1.0.0",
+  "description": "Just another Minimal WordPress theme",
+  "author": "VitaThemes",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://github.com/vitathemes/wp-manifest#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitathemes/wp-manifest.git"
   },
-  "dependencies": {}
+  "bugs": {
+    "url": "https://github.com/vitathemes/wp-manifest/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@wordpress/scripts": "^12.1.1",
+    "browser-sync": "^2.26.10",
+    "dir-archiver": "^1.1.1",
+    "eslint": "^7.6.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "rtlcss": "^2.5.0",
+    "sass-mq": "^5.0.1",
+    "smooth-scroll": "^16.1.3"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "start": "gulp development",
+    "build": "gulp production",
+    "optimize": "gulp optimize"
+  },
+  "dependencies": {
+    "flickity": "^2.2.1",
+    "normalize-scss": "^7.0.1"
+  }
 }

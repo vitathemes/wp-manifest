@@ -7,11 +7,16 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-get_header(); ?>
 
-<?php
-indigo_show_profile();
-manifest_primary_menu();
+get_header();
 ?>
 
-<?php get_footer(); ?>
+<div class="o-page o-page--home">
+    <?php get_template_part('template-parts/components/page-header'); ?>
+    <?php get_template_part('template-parts/components/slider'); ?>
+    <?php get_template_part('template-parts/components/info'); ?>
+    <?php get_template_part('template-parts/components/latest-posts'); ?>
+</div>
+
+<?php
+get_footer();

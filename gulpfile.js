@@ -1,64 +1,88 @@
-'use strict';
-const gulp = require('gulp');
+const {series, src, dest, parallel} = require('gulp');
+const browserSync = require('browser-sync').create();
+const {watch} = require('gulp');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const concat = require('gulp-concat');
-const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
+const babel = require('gulp-babel');
+const plumber = require('gulp-plumber');
 
-// CSS Concat
-gulp.task('concat-css', function (cb) {
-    return gulp.src(['./assets/src/css/*.css'])
-        .pipe(concat('style.css'))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('./assets/css'))
-        .pipe(browserSync.stream());
-    cb();
-});
-// CSS Concat
-
-// Sass Compile
-gulp.task('sass-compile', function (cb) {
-    return gulp.src('./assets/src/sass/main.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            Browserslist: ['last 2 versions'],
-            cascade: false
+function transpileJs(cb) {
+    src('./assets/src/js/main.js')
+    // Stop the process if an error is thrown.
+        .pipe(plumber())
+        // Transpile the JS code using Babel's preset-env.
+        .pipe(babel({
+            presets: [
+                ['@babel/env', {
+                    modules: false
+                }]
+            ]
         }))
-        .pipe(gulp.dest('./assets/src/css'));
+        // Save each component as a separate file in dist.
+        .pipe(dest('./assets/js'));
+
     cb();
-});
-// Sass Compile
+}
 
-// Sass
-gulp.task('sass', gulp.series('sass-compile' , 'concat-css'));
-// Sass
+function liveServer(cb) {
+    browserSync.init({
+        proxy: 'manifest.local/'
+    });
+    watch(['./assets/src/sass/**/*.scss']).on('change', series(sassCompile, cssConcat));
+    watch(['./**/*.php']).on('change', function (path, stats) {
+        browserSync.reload();
+    });
+    watch(['./assets/src/js/main.js']).on('change', function (path, stats) {
+        transpileJs();
+    });
+    cb();
+}
 
-
-// JS Concat - Minify
-gulp.task('build-js', function (cb) {
-    return gulp.src(['./assets/src/js/flickity-lib.js', './assets/src/js/*.js'])
-        .pipe(concat("scripts.js"))
-        .pipe(gulp.dest('./assets/js'))
+function sassCompile(cb) {
+    src('./assets/src/sass/main.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(dest('./assets/src/css'))
         .pipe(browserSync.stream());
     cb();
-});
-// JS Concat - Minify
+}
 
-
-// BrowserSync
-gulp.task('browser-sync', function (cb) {
-    browserSync.init({
-        proxy: "free-themes.local"
-    });
-    gulp.watch('./assets/src/sass/**/*.scss', gulp.series('sass'));
-    gulp.watch('./assets/src/js/*.js', gulp.series('build-js'));
-    gulp.watch("./**/*.php").on('change', browserSync.reload);
+function bundleJs(cb) {
+    src(['./node_modules/flickity/dist/flickity.pkgd.js'])
+        .pipe(concat('vendor.min.js'))
+        .pipe(dest('./assets/js'))
+        .pipe(browserSync.stream());
     cb();
-});
-// BrowserSync
+}
 
-// Default
-gulp.task('default', gulp.parallel('sass', 'build-js', 'browser-sync'));
-// Default
+function cssConcat(cb) {
+    src(['./node_modules/flickity/dist/flickity.css', './assets/src/css/main.css'])
+        .pipe(concat('main.min.css'))
+        .pipe(dest('./assets/css'))
+        .pipe(browserSync.stream());
+    cb();
+}
+
+function minifyJs(cb) {
+    src(['./assets/js/main.min.js'])
+        .pipe(uglify())
+        .pipe(dest('./assets/js'));
+    cb();
+}
+
+function minifyCss(cb) {
+    src(['./assets/css/main.min.css'])
+        .pipe(cleanCSS())
+        .pipe(dest('./assets/css'));
+
+    src(['./assets/css/main-mobile.css'])
+        .pipe(cleanCSS())
+        .pipe(dest('./assets/css'));
+    cb();
+}
+
+exports.default = parallel(series(sassCompile, cssConcat, liveServer), bundleJs, transpileJs);
+exports.production = parallel(minifyJs, minifyCss);
+exports.sass = sassCompile;

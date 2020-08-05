@@ -1,0 +1,28 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+$wp-manifest_base-font-size: var(--text-typography-font-size);
+$wp-manifest_heading-font-size: var(--heading-typography-font-size);
+
+$wp-manifest_global-transition: 0.25s;
+
+$wp-manifest__primary-color: var(--primary-color);
+$wp-manifest__dark-gray-color: #999999;
+$wp-manifest__gray-color: #CCCCCC;
+
+
+
+$wp-manifest__primary-font: var(--text-typography-font-family);
+$wp-manifest__secondary-font: var(--heading-typography-font-family);
+
+
+
+// Media queries
+$mobile: "only screen and (max-width: 400px)";
+$tablet: "only screen and (min-width: 400px) and (max-width: 1050px)";
+$above: "only screen and (min-width: 780px)";
+$below: "only screen and (max-width: 780px)";
