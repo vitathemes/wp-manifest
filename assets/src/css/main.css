@@ -344,15 +344,16 @@ pre {
   padding: 0 16px; }
 
 .o-col--1\/1 {
-  width: 100%; }
+  width: 100%;
+  max-width: 100%; }
 
 .o-col--1\/2 {
   width: 50%;
-  max-width: 50%; }
+  max-width: calc(50% - 32px); }
 
 .o-col--1\/3 {
   max-width: 33.333333%;
-  width: 33.333333%; }
+  width: calc(33.333333%  - 32px); }
 
 @media only screen and (max-width: 560px) {
   .o-col--1\/3, .o-col--1\/2 {
@@ -602,6 +603,24 @@ pre {
   .c-blog-carousel__nav__link.is-active {
     color: #999999; }
 
+.c-btn {
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 166.3%;
+  font-family: var(--heading-typography-font-family);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-block; }
+
+.c-btn--primary {
+  color: #FFFFFF;
+  background-color: #565656;
+  transition: 0.25s; }
+  .c-btn--primary:hover {
+    color: #FFFFFF;
+    background-color: #323232; }
+
 .c-footer {
   background-color: #FAFAFA;
   padding: 128px 0; }
@@ -685,11 +704,26 @@ pre {
 .u-margin-bottom-larger {
   margin-bottom: 48px; }
 
+.u-margin-bottom-xlarge {
+  margin-bottom: 64px; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 96px; }
+
+.u-margin-bottom-massive {
+  margin-bottom: 128px; }
+
 @media only screen and (max-width: 560px) {
   .u-margin-none-m {
     margin: 0; }
   .u-margin-bottom-small-m {
-    margin-bottom: 16px; } }
+    margin-bottom: 16px; }
+  .u-margin-bottom-larger-m {
+    margin-bottom: 48px; }
+  .u-margin-bottom-xlarge-m {
+    margin-bottom: 64px; }
+  .u-margin-bottom-massive-m {
+    margin-bottom: 128px; } }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
   .u-margin-none-t {
@@ -700,3 +734,28 @@ pre {
 
 .u-color-dark-gray {
   color: #999999; }
+
+.u-text-center {
+  text-align: center; }
+
+.u-text-left {
+  text-align: left; }
+
+.u-text-right {
+  text-align: right; }
+
+@media only screen and (max-width: 560px) {
+  .u-text-center-m {
+    text-align: center; }
+  .u-text-left-m {
+    text-align: left; }
+  .u-text-right-m {
+    text-align: right; } }
+
+@media only screen and (min-width: 561px) and (max-width: 980px) {
+  .u-text-center-t {
+    text-align: center; }
+  .u-text-left-t {
+    text-align: left; }
+  .u-text-right-t {
+    text-align: right; } }

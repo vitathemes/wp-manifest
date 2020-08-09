@@ -1,0 +1,21 @@
+.c-btn {
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 166.3%;
+  font-family: $wp-manifest__secondary-font;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.c-btn--primary {
+  color: #FFFFFF;
+  background-color: $wp-manifest__primary-light-color;
+  transition: $wp-manifest_global-transition;
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: $wp-manifest__primary-dark-color;
+  }
+}

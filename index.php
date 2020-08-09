@@ -17,10 +17,10 @@ $carousel_posts = new WP_Query( array(
 get_header(); ?>
 <section class="o-page">
     <div class="o-container">
-        <div class="o-page__header">
+        <div class="o-page__header o-col">
             <h1 class="u-margin-none">Blog</h1>
         </div>
-        <div class="c-blog-carousel">
+        <div class="c-blog-carousel o-col">
             <div class="c-blog-carousel__image js-blog-image-carousel">
 				<?php
 				$postsCount = 1;
@@ -70,32 +70,37 @@ get_header(); ?>
             </div>
         </div>
 		<?php if ( have_posts() ) : ?>
-            <div class="u-flex u-flex-wrap">
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
+            <div class="u-margin-bottom-huge u-margin-bottom-larger-m">
+                <div class="u-flex u-flex-wrap u-dir-column-m">
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-					/*
-					 * Include the Post-Type-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-					 */
-					?>
-                    <div class="o-col--1/2">
-						<?php
-						get_template_part( 'template-parts/content', get_post_type() );
+						/*
+						 * Include the Post-Type-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						 */
 						?>
-                    </div>
-				<?php
-				endwhile;
+                        <div class="o-col o-col--1/2 u-margin-bottom-xlarge u-margin-bottom-small-m">
+							<?php
+							get_template_part( 'template-parts/content', get_post_type() );
+							?>
+                        </div>
+					<?php
+					endwhile;
 
-				the_posts_pagination( array(
-					'screen_reader_text' => ' ',
-					'mid_size'           => 2,
-					'prev_text'          => __( 'Previous', 'wp-manifest' ),
-					'next_text'          => __( 'Next', 'wp-manifest' ),
-				) ); ?>
+					the_posts_pagination( array(
+						'screen_reader_text' => ' ',
+						'mid_size'           => 2,
+						'prev_text'          => __( 'Previous', 'wp-manifest' ),
+						'next_text'          => __( 'Next', 'wp-manifest' ),
+					) ); ?>
+                </div>
+                <div class="o-col u-text-center">
+                    <a class="c-btn c-btn--primary">Load More</a>
+                </div>
             </div>
 		<?php
 		else :
