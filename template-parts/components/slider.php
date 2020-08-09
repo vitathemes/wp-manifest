@@ -30,7 +30,7 @@ if ( $portfolios->have_posts() ) :
                 <div class="c-slider__slide js-slider-slide">
                     <div class="c-slider__slide-main">
                         <a href="<?php the_permalink(); ?>" class="c-slider__slide-link">
-							<?php the_post_thumbnail( 'manifest_medium_square', array( 'class' => 'c-slider__image' ) ); ?>
+							<?php the_post_thumbnail( 'wpmanifest_medium_square', array( 'class' => 'c-slider__image' ) ); ?>
 							<?php the_title( '<h3 class="c-slider__title">', '</h3>' ) ?>
                         </a>
                     </div>

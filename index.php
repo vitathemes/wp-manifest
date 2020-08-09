@@ -11,10 +11,13 @@
  *
  */
 get_header(); ?>
-    <section class="o-page">
-        <div class="o-container">
-			<?php if ( have_posts() ) : ?>
-                <div class="o-flex o-flex--wrap">
+<section class="o-page">
+    <div class="o-container">
+        <div class="o-page__header">
+            <h1 class="u-margin-none">Blog</h1>
+        </div>
+		<?php if ( have_posts() ) : ?>
+            <div class="c-blog-carousel">
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -26,7 +29,7 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
 					?>
-                    <div class="o-flex__item o-flex__item-1/2">
+                    <div class="c-blog-carousel__cell">
 						<?php
 						get_template_part( 'template-parts/content', get_post_type() );
 						?>
@@ -39,16 +42,15 @@ get_header(); ?>
 					'mid_size'           => 2,
 					'prev_text'          => __( 'Previous', 'wp-manifest' ),
 					'next_text'          => __( 'Next', 'wp-manifest' ),
-				) );
-
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-				?>
-                </div>
-			<?php
-			endif;
+				) ); ?>
+            </div>
+		<?php
+		else :
+			get_template_part( 'template-parts/content', 'none' );
 			?>
-        </div>
-    </section>
+		<?php
+		endif;
+		?>
+    </div>
+</section>
 <?php get_footer(); ?>

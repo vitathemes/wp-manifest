@@ -61,19 +61,21 @@ function wp_manifest_setup() {
 		'flex-height' => true,
 	) );
 }
+
 add_action( 'after_setup_theme', 'wp_manifest_setup' );
 /**
  * Enqueue scripts and styles.
  */
 // External Assets
 function wp_manifest_scripts() {
-	wp_enqueue_style( 'wp-manifest-style', get_template_directory_uri() . '/assets/css/style.css' );
-	wp_enqueue_script( 'wp-manifest-vendor-script', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), false, true);
-	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/assets/js/main.js', array('wp-manifest-vendor-script'), false, true);
+	wp_enqueue_style( 'wp-manifest-style', get_template_directory_uri() . '/assets/css/main.min.css' );
+	wp_enqueue_script( 'wp-manifest-vendor-script', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), false, true );
+	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/assets/js/main.js', array( 'wp-manifest-vendor-script' ), false, true );
 	if ( is_singular() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'wp_manifest_scripts' );
 
 
@@ -115,7 +117,7 @@ if ( ! function_exists( 'register_portfolio' ) ) {
 			'label'               => __( 'Portfolio', 'wp-manifest' ),
 			'description'         => __( 'Portfolio', 'wp-manifest' ),
 			'labels'              => $labels,
-			'supports'            => array( 'title', 'editor', 'thumbnail'),
+			'supports'            => array( 'title', 'editor', 'thumbnail' ),
 			'hierarchical'        => false,
 			'taxonomies'          => array( 'portfolio-category' ),
 			'public'              => true,
@@ -174,22 +176,25 @@ function register_portfolio_category() {
 	);
 	register_taxonomy( 'portfolio_category', array( 'portfolio' ), $args );
 }
+
 add_action( 'init', __NAMESPACE__ . '\register_portfolio_category', 0 );
 
 
-function remove_unused_sections($wp_customize) {
+function remove_unused_sections( $wp_customize ) {
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'colors' );
 }
 
 add_action( 'customize_register', 'remove_unused_sections', 11 );
 
-add_image_size( 'manifest_medium', 544, 0, true );
-add_image_size( 'manifest_medium_square', 544, 544, true );
+add_image_size( 'wpmanifest_article_thumbnail', 352, 258, true );
+add_image_size( 'wpmanifest_article_thumbnailx2', 702, 516, true );
+add_image_size( 'wpmanifest_medium', 544, 0, true );
+add_image_size( 'wpmanifest_medium_square', 544, 544, true );
 
 
 //
-function wpindigo_is_comment_by_post_author( $comment = null ) {
+function wpmanifest_is_comment_by_post_author( $comment = null ) {
 	if ( is_object( $comment ) && $comment->user_id > 0 ) {
 		$user = get_userdata( $comment->user_id );
 		$post = get_post( $comment->comment_post_ID );
@@ -197,8 +202,10 @@ function wpindigo_is_comment_by_post_author( $comment = null ) {
 			return $comment->user_id === $post->post_author;
 		}
 	}
+
 	return false;
 }
+
 // Remove unnecessary fields from comment form
 add_filter( 'comment_form_default_fields', 'website_field_remove' );
 function website_field_remove( $fields ) {
@@ -206,6 +213,7 @@ function website_field_remove( $fields ) {
 		//unset( $fields['url'] );
 		//unset( $fields['cookies'] );
 	}
+
 	return $fields;
 }
 

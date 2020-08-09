@@ -17,6 +17,7 @@
 .c-slider__image {
   max-height: 544px;
   max-width: 544px;
+  text-decoration: none;
 }
 
 .c-slider__title {
@@ -25,4 +26,10 @@
   line-height: 166.3%;
   letter-spacing: 0.1em;
   margin: 15px 0 0 0;
+}
+
+.c-slider__slide-link {
+  letter-spacing: 0.1em;
+  color: #000;
+  text-decoration: none;
 }

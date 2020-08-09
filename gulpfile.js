@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css');
 const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
+const livereload = require('gulp-livereload');
 
 function transpileJs(cb) {
     src('./assets/src/js/main.js')
@@ -29,7 +30,8 @@ function transpileJs(cb) {
 
 function liveServer(cb) {
     browserSync.init({
-        proxy: 'manifest.local/'
+        proxy: 'manifest.dev',
+        injectChanges: true
     });
     watch(['./assets/src/sass/**/*.scss']).on('change', series(sassCompile, cssConcat));
     watch(['./**/*.php']).on('change', function (path, stats) {
@@ -44,16 +46,14 @@ function liveServer(cb) {
 function sassCompile(cb) {
     src('./assets/src/sass/main.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./assets/src/css'))
-        .pipe(browserSync.stream());
+        .pipe(dest('./assets/src/css'));
     cb();
 }
 
 function bundleJs(cb) {
     src(['./node_modules/flickity/dist/flickity.pkgd.js'])
         .pipe(concat('vendor.min.js'))
-        .pipe(dest('./assets/js'))
-        .pipe(browserSync.stream());
+        .pipe(dest('./assets/js'));
     cb();
 }
 
@@ -85,4 +85,3 @@ function minifyCss(cb) {
 
 exports.default = parallel(series(sassCompile, cssConcat, liveServer), bundleJs, transpileJs);
 exports.production = parallel(minifyJs, minifyCss);
-exports.sass = sassCompile;

@@ -1,0 +1,35 @@
+.u-margin-none {
+  margin: 0;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 16px;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 24px;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 32px;
+}
+
+.u-margin-bottom-larger {
+  margin-bottom: 48px;
+}
+
+@media #{$mobile} {
+  .u-margin-none-m {
+    margin: 0;
+  }
+
+  .u-margin-bottom-small-m {
+    margin-bottom: 16px;
+  }
+}
+
+@media #{$tablet} {
+  .u-margin-none-t {
+    margin: 0;
+  }
+}

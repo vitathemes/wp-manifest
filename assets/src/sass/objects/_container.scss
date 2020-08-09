@@ -1,0 +1,32 @@
+.o-container {
+  width: 100%;
+  padding: 0 0.9375rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media #{$mobile} {
+  .o-container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media #{$tablet} {
+  .o-container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media #{$desktop} {
+  .o-container {
+    max-width: 920px;
+  }
+}
+
+@media #{$wide} {
+  .o-container {
+    max-width: 1140px;
+  }
+}

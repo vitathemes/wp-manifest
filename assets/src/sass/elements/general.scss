@@ -2,6 +2,11 @@ html {
   position: relative;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1, h2, h3, h4 {
   color: var(--secondary-color);
   -webkit-font-smoothing: antialiased;
@@ -15,11 +20,16 @@ h1 {
   color: var(--secondary-color);
   line-height: 1.175;
   font-weight: var(--heading-typography-variant);
+
+  @media #{$mobile} {
+    font-size: calc(var(--heading-typography-font-size) - 15px);
+    line-height: 1.3333333333333333em
+  }
 }
 
 h2 {
   font-family: var(--heading-typography-font-family);
-  font-size: calc(var(--heading-typography-font-size) - 4px);
+  font-size: calc(var(--heading-typography-font-size) - 15px);
   color: var(--secondary-color);
   line-height: 1.167;
   font-weight: var(--heading-typography-variant);
@@ -27,7 +37,7 @@ h2 {
 
 h3 {
   font-family: var(--heading-typography-font-family);
-  font-size: calc(var(--heading-typography-font-size) - 6px);
+  font-size: calc(var(--heading-typography-font-size) - 25px);
   color: var(--secondary-color);
   line-height: 1.154;
   font-weight: var(--heading-typography-variant);
@@ -35,7 +45,7 @@ h3 {
 
 h4 {
   font-family: var(--heading-typography-font-family);
-  font-size: calc(var(--heading-typography-font-size) - 9px);
+  font-size: calc(var(--heading-typography-font-size) - 29px);
   color: var(--secondary-color);
   line-height: 1.15;
   font-weight: var(--heading-typography-variant);
@@ -43,7 +53,7 @@ h4 {
 
 h5 {
   font-family: var(--heading-typography-font-family);
-  font-size: calc(var(--heading-typography-font-size) - 10px);
+  font-size: calc(var(--heading-typography-font-size) - 32px);
   color: var(--secondary-color);
   line-height: 1.205;
   font-weight: var(--heading-typography-variant);
@@ -51,25 +61,28 @@ h5 {
 
 h6 {
   font-family: var(--heading-typography-font-family);
-  font-size: calc(var(--heading-typography-font-size) - 11px);
+  font-size: calc(var(--heading-typography-font-size) - 36px);
   color: var(--secondary-color);
   line-height: 1.194;
   font-weight: var(--heading-typography-variant);
 }
 
 a {
-  color: var(--secondary-color);
+  color: $wp-manifest__secondary-color;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
+  transition: $wp-manifest_global-transition;
 
-  &: hover {
-    border-color: var(--primary-color);
+  &:hover {
     color: var(--primary-color);
+
+    svg {
+      fill: var(--primary-color);
+    }
   }
 
-  &: visited {
-    color: var(--primary-color);
+  svg {
+    margin-left: 8px;
+    transition: $wp-manifest_global-transition;
   }
 }
 
@@ -82,8 +95,7 @@ p {
   margin-bottom: 20px;
   letter-spacing: 0.4px;
 
-  @media #{$mobile}
-  {
+  @media #{$mobile}{
     letter-spacing: 0.2px;
   }
 }
@@ -113,7 +125,7 @@ iframe {
 
 img,
 pre {
-  border-radius: 4px;
+
 }
 
 figcaption {
@@ -172,35 +184,9 @@ pre {
   line-height: 2rem;
   overflow: auto;
   background: #fff;
-  border: 1px solid $wp-manifest__grey-color;
+  border: 1px solid $wp-manifest__gray-color;
   border-radius: 2px;
 }
-
-.wrapper-normal,
-.wrapper-large {
-  height: 100%;
-  width: 96%;
-  margin: 0 auto;
-
-  @media #{$mobile}
-  {
-    width: 88%;
-  }
-
-  @media #{$tablet}
-  {
-    width: 88%;
-  }
-}
-
-.wrapper-normal {
-  max-width: 560px;
-}
-
-.wrapper-large {
-  max-width: 810px;
-}
-
 
 // Default WP Styles
 

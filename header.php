@@ -28,7 +28,7 @@
 
 <header class="c-header">
     <div class="o-container">
-        <div class="c-header__main">
+        <div class="c-header__main o-col">
             <div class="c-header__logo">
 				<?php
 				if ( has_custom_logo() ) {
@@ -42,5 +42,3 @@
         </div>
     </div>
 </header>
-
-<div class="wrapper-normal">

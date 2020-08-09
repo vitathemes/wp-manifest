@@ -16,7 +16,15 @@
 // Main Container of HEADER Section
 .c-header__main {
   display: flex;
-  padding: 96px 0;
+  padding: 96px 16px;
+
+  @media #{$mobile} {
+    padding: 24px 16px;
+  }
+
+  @media #{$tablet} {
+    padding: 24px 16px;
+  }
 }
 
 .c-header__menu {
@@ -34,6 +42,11 @@
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-family: var(--heading-typography-font-family);
+  color: $wp-manifest__secondary-color;
+
+  &:visited {
+    color: $wp-manifest__secondary-color;
+  }
 }
 
 .c-header__menu-items {
