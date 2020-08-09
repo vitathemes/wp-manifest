@@ -188,6 +188,14 @@ function wpmanifest_show_post_data( $post_id ) {
 	echo $category . $date;
 }
 
+function wpmanifest_get_post_category( $post_id ) {
+	$category      = wpmanifest_get_post_primary_category( $post_id );
+	$category_name = $category['primary_category']->name;
+	$category_link = get_category_link( $category['primary_category']->term_id );
+
+	return array('name' => $category_name,'url' => $category_link);
+}
+
 function wpmanifest_generate_srcset($post_id) {
 	$x1 = get_the_post_thumbnail_url($post_id, '');
 	$x2 = get_the_post_thumbnail_url($post_id, '');

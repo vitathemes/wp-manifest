@@ -10,14 +10,67 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
+$carousel_posts = new WP_Query( array(
+	'posts_per_page' => 3,
+	'status'         => 'publish'
+) );
 get_header(); ?>
 <section class="o-page">
     <div class="o-container">
         <div class="o-page__header">
             <h1 class="u-margin-none">Blog</h1>
         </div>
+        <div class="c-blog-carousel">
+            <div class="c-blog-carousel__image js-blog-image-carousel">
+				<?php
+				$postsCount = 1;
+				while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post(); ?>
+                    <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__image__cell">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__image-link "><?php the_post_thumbnail( 'manifest_medium_square', array( 'class' => 'c-article__image' ) ); ?></a>
+                    </div>
+					<?php
+					$postsCount ++;
+					wp_reset_postdata();
+				endwhile;
+				?>
+            </div>
+            <div class="c-blog-carousel__content">
+                <div class="js-blog-content-carousel">
+					<?php
+					$postsCount = 1;
+					while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post();
+						$category = wpmanifest_get_post_category( get_the_ID() ); ?>
+                        <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__content__cell">
+                            <a class="" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
+							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title">', '</h2></a>' ); ?>
+                            <span class="u-color-dark-gray"><?php echo get_the_time( 'd M, Y' ); ?></span>
+                            <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
+                                <p class="u-margin-none">
+									<?php echo strip_tags( get_the_excerpt() ); ?>
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link">
+                                        <svg width="24" height="12" fill="#565656" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23.53 6.53a.75.75 0 000-1.06L18.757.697a.75.75 0 00-1.06 1.06L21.939 6l-4.242 4.243a.75.75 0 001.06 1.06L23.53 6.53zM0 6.75h23v-1.5H0v1.5z"/>
+                                        </svg>
+                                    </a>
+                                </p>
+
+                            </div>
+                        </div>
+						<?php
+						$postsCount ++;
+						wp_reset_postdata();
+					endwhile;
+					?>
+                </div>
+                <nav class="c-blog-carousel__nav">
+					<?php for ( $i = 1; $i < $postsCount; $i ++ ): ?>
+                        <a href="#slide<?php echo $i; ?>" class="js-blog-carousel-nav-item c-blog-carousel__nav__link <?php echo $i == 1 ? "is-active" : ""; ?>"><?php echo $i; ?></a>
+					<?php endfor; ?>
+                </nav>
+            </div>
+        </div>
 		<?php if ( have_posts() ) : ?>
-            <div class="c-blog-carousel">
+            <div class="u-flex u-flex-wrap">
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -29,7 +82,7 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
 					?>
-                    <div class="c-blog-carousel__cell">
+                    <div class="o-col--1/2">
 						<?php
 						get_template_part( 'template-parts/content', get_post_type() );
 						?>

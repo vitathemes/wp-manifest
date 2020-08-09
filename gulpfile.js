@@ -30,7 +30,7 @@ function transpileJs(cb) {
 
 function liveServer(cb) {
     browserSync.init({
-        proxy: 'manifest.dev',
+        proxy: 'manifest.local',
         injectChanges: true
     });
     watch(['./assets/src/sass/**/*.scss']).on('change', series(sassCompile, cssConcat));
@@ -38,7 +38,7 @@ function liveServer(cb) {
         browserSync.reload();
     });
     watch(['./assets/src/js/main.js']).on('change', function (path, stats) {
-        transpileJs();
+        transpileJs(cb);
     });
     cb();
 }
@@ -51,7 +51,7 @@ function sassCompile(cb) {
 }
 
 function bundleJs(cb) {
-    src(['./node_modules/flickity/dist/flickity.pkgd.js'])
+    src(['./node_modules/flickity/dist/flickity.pkgd.js' , './node_modules/flickity-hash/hash.js'])
         .pipe(concat('vendor.min.js'))
         .pipe(dest('./assets/js'));
     cb();

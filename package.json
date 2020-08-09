@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "flickity": "^2.2.1",
+    "flickity-hash": "^1.0.3",
     "normalize-scss": "^7.0.1"
   }
 }
