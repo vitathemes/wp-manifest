@@ -174,10 +174,7 @@ p {
   font-weight: var(--text-typography-variant);
   color: var(--third-color);
   margin-bottom: 20px;
-  letter-spacing: 0.4px; }
-  @media only screen and (max-width: 560px) {
-    p {
-      letter-spacing: 0.2px; } }
+  letter-spacing: 0.05em; }
 
 strong {
   font-weight: 400;
@@ -201,10 +198,11 @@ iframe {
 
 figcaption {
   position: relative;
-  top: -20px;
+  top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
+  display: block;
   width: 100%;
   text-align: center;
   font-size: calc(var(--text-typography-font-size) + 30%);
@@ -215,8 +213,15 @@ figcaption {
       font-size: calc(var(--text-typography-font-size) + 20%); } }
 
 blockquote {
-  padding-left: 15px;
-  border-left: 3px solid #eee; }
+  padding-left: 64px;
+  border-left: 2px solid #999999;
+  margin: 32px 0;
+  letter-spacing: 0.1em; }
+  blockquote p {
+    font-weight: bold; }
+  blockquote cite {
+    color: #999999;
+    letter-spacing: 0.1em; }
 
 hr {
   border: none;
@@ -322,6 +327,15 @@ pre {
 
 .o-page__header {
   margin: 32px 0 96px; }
+
+.o-page--default {
+  padding: 0 15px; }
+  @media only screen and (min-width: 561px) and (max-width: 980px) {
+    .o-page--default {
+      padding: 0 15px; } }
+  @media only screen and (max-width: 560px) {
+    .o-page--default {
+      padding: 0 15px; } }
 
 .o-page--home .o-page__header {
   margin: 32px 0 128px; }
@@ -617,9 +631,126 @@ pre {
   color: #FFFFFF;
   background-color: #565656;
   transition: 0.25s; }
+  .c-btn--primary svg {
+    fill: #fff; }
   .c-btn--primary:hover {
     color: #FFFFFF;
     background-color: #323232; }
+    .c-btn--primary:hover svg {
+      fill: #FFFFFF; }
+
+.wp-block-button.c-btn {
+  background-color: transparent;
+  padding: 0;
+  margin: 0; }
+  .wp-block-button.c-btn a {
+    padding: 8px 32px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 166.3%;
+    font-family: var(--heading-typography-font-family);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: inline-block; }
+  .wp-block-button.c-btn.c-btn--primary a {
+    color: #FFFFFF;
+    background-color: #565656;
+    transition: 0.25s; }
+    .wp-block-button.c-btn.c-btn--primary a:hover {
+      color: #FFFFFF;
+      background-color: #323232; }
+
+/*-----------------------
+# Article--single
+-------------------------*/
+.c-article--single .c-article__title {
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: 0.05em;
+  margin: 48px 0 64px; }
+
+.c-article--single .c-article__main {
+  width: 70%;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media only screen and (min-width: 561px) and (max-width: 980px) {
+    .c-article--single .c-article__main {
+      width: 90%; } }
+  @media only screen and (max-width: 560px) {
+    .c-article--single .c-article__main {
+      width: 100%; } }
+
+.c-article__header__meta {
+  margin: 0 0 64px; }
+
+.c-article__header__meta__item {
+  color: #999999;
+  font-size: 16px;
+  line-height: 166.3%;
+  letter-spacing: 0.1em; }
+  .c-article__header__meta__item:not(:last-child) {
+    margin-right: 40px; }
+
+.c-article__header__meta__item__icon {
+  margin: 0 8px 0 0;
+  vertical-align: middle; }
+
+.c-article__header__categories {
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
+  display: flex; }
+
+.c-article__header__categories__item {
+  margin-right: 6px; }
+  .c-article__header__categories__item:last-child {
+    margin-right: 0; }
+  .c-article__header__categories__item:not(:last-child)::after {
+    content: ","; }
+
+.c-article__header__categories__item__link {
+  font-size: 16px;
+  line-height: 166.3%;
+  letter-spacing: 0.1em; }
+
+.c-article__main__author {
+  margin: 39px 0;
+  display: flex;
+  align-items: center; }
+
+.c-article__main__author__avatar {
+  width: 70px;
+  height: 70px;
+  margin-right: 8px; }
+
+.c-article__main__author__name {
+  font-size: 16px;
+  line-height: 166.3%;
+  letter-spacing: 0.1em;
+  color: #000000; }
+
+.c-article__main__author__bio {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 21px; }
+
+.c-article__main__tags {
+  display: flex; }
+
+/*------------------------
+# Scope
+--------------------------*/
+.s-article-content ul {
+  margin: 32px 0;
+  padding: 0 0 0 16px; }
+  .s-article-content ul li {
+    margin-bottom: 16px; }
+    .s-article-content ul li::marker {
+      font-size: 14px; }
+    .s-article-content ul li:last-child {
+      margin-bottom: 0; }
 
 .c-footer {
   background-color: #FAFAFA;

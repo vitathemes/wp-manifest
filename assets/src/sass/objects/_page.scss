@@ -6,6 +6,18 @@
   margin: 32px 0 96px;
 }
 
+.o-page--default {
+  padding: 0 15px;
+
+  @media #{$tablet} {
+    padding: 0 15px;
+  }
+
+  @media #{$mobile} {
+    padding: 0 15px;
+  }
+}
+
 
 .o-page--home {
 

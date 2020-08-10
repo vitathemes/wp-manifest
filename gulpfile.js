@@ -30,7 +30,7 @@ function transpileJs(cb) {
 
 function liveServer(cb) {
     browserSync.init({
-        proxy: 'manifest.local',
+        proxy: 'manifest.develop',
         injectChanges: true
     });
     watch(['./assets/src/sass/**/*.scss']).on('change', series(sassCompile, cssConcat));

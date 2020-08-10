@@ -93,11 +93,7 @@ p {
   font-weight: var(--text-typography-variant);
   color: var(--third-color);
   margin-bottom: 20px;
-  letter-spacing: 0.4px;
-
-  @media #{$mobile}{
-    letter-spacing: 0.2px;
-  }
+  letter-spacing: 0.05em;
 }
 
 strong {
@@ -130,10 +126,11 @@ pre {
 
 figcaption {
   position: relative;
-  top: -20px;
+  top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
+  display: block;
   width: 100%;
   text-align: center;
   font-size: calc(var(--text-typography-font-size) + 30%);
@@ -147,8 +144,19 @@ figcaption {
 }
 
 blockquote {
-  padding-left: 15px;
-  border-left: 3px solid #eee;
+  padding-left: 64px;
+  border-left: 2px solid $wp-manifest__dark-gray-color;
+  margin: 32px 0;
+  letter-spacing: 0.1em;
+
+  p {
+    font-weight: bold;
+  }
+
+  cite {
+    color: $wp-manifest__dark-gray-color;
+    letter-spacing: 0.1em;
+  }
 }
 
 hr {
