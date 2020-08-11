@@ -1,0 +1,23 @@
+a {
+	color: $wp-manifest__main-primary-color;
+	text-decoration: none;
+
+	&:visited {
+		//color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $wp-manifest__primary-color;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

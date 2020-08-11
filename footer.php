@@ -8,8 +8,9 @@
  *
  */
 ?>
+</div>
 <footer class="c-footer">
-    <div class="o-container">
+    <div class="o-wrapper">
         <div class="c-footer__main o-flex">
             <div class="c-footer__col o-flex__item-1/2">
                 <h2 class="c-footer__title"><?php echo get_theme_mod( 'footer_title', 'Need a project?' ); ?></h2>

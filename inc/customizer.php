@@ -52,6 +52,19 @@ add_action( 'init', function () {
 
 // Add Branding fields
 
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'color-palette',
+		'settings'    => 'color_palette_setting_0',
+		'label'       => esc_html__( 'Color-Palette', 'kirki' ),
+		'description' => esc_html__( 'This is a color-palette control', 'kirki' ),
+		'section'     => 'branding',
+		'default'     => '#888888',
+		'choices'     => [
+			'colors' => [ '#000000', '#222222', '#444444', '#666666', '#888888', '#aaaaaa', '#cccccc', '#eeeeee', '#ffffff' ],
+			'style'  => 'round',
+		],
+	] );
+
 // -- Branding Fields --
 // <editor-fold desc="branding">
 	Kirki::add_field( 'wp-manifest', [

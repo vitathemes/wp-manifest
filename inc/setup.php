@@ -68,9 +68,12 @@ add_action( 'after_setup_theme', 'wp_manifest_setup' );
  */
 // External Assets
 function wp_manifest_scripts() {
-	wp_enqueue_style( 'wp-manifest-style', get_template_directory_uri() . '/assets/css/main.min.css' );
-	wp_enqueue_script( 'wp-manifest-vendor-script', get_template_directory_uri() . '/assets/js/vendor.min.js', array(), false, true );
-	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/assets/js/main.js', array( 'wp-manifest-vendor-script' ), false, true );
+	wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri());
+	wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
+	wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
+	wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
+	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array('flickity', 'flickity-hash'), false, true );
+
 	if ( is_singular() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

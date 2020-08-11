@@ -1,17 +1,53 @@
 <?php
+/**
+ * Functions which enhance the theme by hooking into WordPress
+ *
+ * @package WP_Manifest
+ */
+
 // Register Menu
 function wpmanifest_register_primary_menu() {
 	register_nav_menu( 'primary-menu', __( 'Primary Menu', 'wp-manifest' ) );
 }
 
-add_action( 'after_setup_theme', 'wpmanifest_register_primary_menu' );
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function wp_manifest_body_classes( $classes ) {
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
+	// Adds a class of no-sidebar when there is no sidebar present.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'wp_manifest_body_classes' );
+
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function wp_manifest_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
+}
+add_action( 'wp_head', 'wp_manifest_pingback_header' );
 
 // Menu Generator
 function wpmanifest_show_menu() {
 	if ( has_nav_menu( 'primary-menu' ) ) {
 		$wpmanifest_menu_args = array(
 			'theme_location' => 'primary-menu',
-			'menu_class'     => 'list navigation',
+			'menu_class'     => 's-header-menu c-header__menu-items',
 			'menu_id'        => 'navigation',
 			'container'      => '',
 			'depth'          => 2,
@@ -81,65 +117,6 @@ function wpmanifest_typography() {
 	echo esc_html( $html );
 }
 
-//
-function wpmanifest_get_discussion_data() {
-	static $discussion, $post_id;
-	$wpmanifest_current_post_id = get_the_ID();
-	if ( $wpmanifest_current_post_id === $post_id ) {
-		return $discussion; /* If we have discussion information for post ID, return cached object */
-	} else {
-		$post_id = $wpmanifest_current_post_id;
-	}
-	$wpmanifest_comments = get_comments(
-		array(
-			'post_id' => $wpmanifest_current_post_id,
-			'orderby' => 'comment_date_gmt',
-			'order'   => get_option( 'comment_order', 'asc' ), /* Respect comment order from Settings » Discussion. */
-			'status'  => 'approve',
-			'number'  => 20, /* Only retrieve the last 20 comments, as the end goal is just 6 unique authors */
-		)
-	);
-	$wpmanifest_authors  = array();
-	foreach ( $wpmanifest_comments as $wpmanifest_comment ) {
-		$wpmanifest_authors[] = ( (int) $wpmanifest_comment->user_id > 0 ) ? (int) $wpmanifest_comment->user_id : $wpmanifest_comment->comment_author_email;
-	}
-	$wpmanifest_authors = array_unique( $wpmanifest_authors );
-	$discussion         = (object) array(
-		'authors'   => array_slice( $wpmanifest_authors, 0, 6 ),
-		/* Six unique authors commenting on the post. */
-		'responses' => get_comments_number( $wpmanifest_current_post_id ),
-		/* Number of responses. */
-	);
-
-	return $discussion;
-}
-
-//
-function wpmanifest_comment_form( $wpmanifest_order ) {
-	if ( true === $wpmanifest_order || strtolower( $wpmanifest_order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-		$wpmanifest_fields = array(
-			'author'  =>
-				'<p class="comment-form-author">' .
-				'<input placeholder="' . esc_html( 'Your Name', 'wp-manifest' ) . '" id="author" name="author" type="text" size="30" /></p>',
-			'email'   =>
-				'<p class="comment-form-email">' .
-				'<input placeholder="' . esc_html( 'Comments are disabled.', 'wp-manifest' ) . '" id="email" name="email" type="email" value="" size="30" /></p>',
-			'url'     => '',
-			'cookies' => ''
-		);
-		comment_form(
-			array(
-				'logged_in_as'         => null,
-				'title_reply'          => null,
-				'comment_notes_before' => false,
-				'label_submit'         => 'Submit',
-				'fields'               => $wpmanifest_fields,
-				'comment_field'        => '<p class="comment-form-comment"><textarea placeholder="' . esc_html( 'Write Your Comment', 'wp-manifest' ) . '" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
-			)
-		);
-	}
-}
-
 function wpmanifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
 	$return = array();
 
@@ -172,6 +149,7 @@ function wpmanifest_get_post_primary_category( $post_id, $term = 'category', $re
 
 	return $return;
 }
+
 
 function wpmanifest_generate_post_category( $post_id ) {
 	$category      = wpmanifest_get_post_primary_category( $post_id );

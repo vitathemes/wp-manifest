@@ -10,35 +10,43 @@
  */
 
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php
-	wp_head();
-	?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<?php wp_head(); ?>
     <style>
-    <?php wpmanifest_typography(); ?>
+        <?php wpmanifest_typography(); ?>
     </style>
 </head>
-<body <?php body_class(); ?>>
 
-<header class="c-header">
-    <div class="o-container">
-        <div class="c-header__main o-col">
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="o-wrapper">
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
+
+	<header id="masthead" class="c-header">
+        <div class="c-header__main">
             <div class="c-header__logo">
-				<?php
-				if ( has_custom_logo() ) {
-					the_custom_logo();
-				} else {
-					echo '<a class="c-header__site-title" aria-label="' . get_bloginfo( 'name' ) . '" title="' . get_bloginfo( 'name' ) . '" href="' . site_url() . '">'. get_bloginfo('name') .'</a>';
-				}
-				?>
-            </div>
-			<?php wpmanifest_show_menu(); ?>
+		        <?php
+		        the_custom_logo();
+		        if ( is_front_page() && is_home() ) :
+			        ?>
+                    <h1 class="c-header__site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		        <?php
+		        else :
+			        ?>
+                    <p class="c-header__site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		        <?php
+		        endif; ?>
+            </div><!-- .site-branding -->
+
+            <nav id="site-navigation" class="main-navigation c-header__menu">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wp-manifest' ); ?></button>
+	            <?php wpmanifest_show_menu(); ?>
+            </nav><!-- #site-navigation -->
         </div>
-    </div>
-</header>
+	</header><!-- #masthead -->
