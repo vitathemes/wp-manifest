@@ -5,7 +5,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.js-slider') !== null) {
       var $slides = document.querySelectorAll('.js-slider-slide').length;
-      var sliderOptions = {
+			var sliderOptions = {
         prevNextButtons: false,
         pageDots: false,
         wrapAround: true,

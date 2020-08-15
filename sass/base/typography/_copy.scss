@@ -1,3 +1,7 @@
+* {
+	letter-spacing: 0.1em;
+}
+
 p {
 	margin-bottom: 1.5em;
 }
@@ -10,7 +14,26 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0;
+	border-left: 2px solid $wp-manifest__neutral-dark-gray-color;
+	padding-left: 64px;
+	color: $wp-manifest__main-primary-color;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 32px;
+	letter-spacing: 0.1em;
+
+	@media #{$mobile} {
+		padding-left: 24px;
+	}
+
+	cite {
+		color: $wp-manifest__main-primary-light-color;
+		font-weight: 400;
+		font-size: 19px;
+		line-height: 32px;
+		letter-spacing: 0.1em;
+	}
 }
 
 address {

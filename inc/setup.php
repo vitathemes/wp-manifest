@@ -190,14 +190,14 @@ function remove_unused_sections( $wp_customize ) {
 
 add_action( 'customize_register', 'remove_unused_sections', 11 );
 
-add_image_size( 'wpmanifest_article_thumbnail', 352, 258, true );
-add_image_size( 'wpmanifest_article_thumbnailx2', 702, 516, true );
-add_image_size( 'wpmanifest_medium', 544, 0, true );
-add_image_size( 'wpmanifest_medium_square', 544, 544, true );
+add_image_size( 'wp_manifest_article_thumbnail', 352, 258, true );
+add_image_size( 'wp_manifest_article_thumbnailx2', 702, 516, true );
+add_image_size( 'wp_manifest_medium', 544, 0, true );
+add_image_size( 'wp_manifest_medium_square', 544, 544, true );
 
 
 //
-function wpmanifest_is_comment_by_post_author( $comment = null ) {
+function wp_manifest_is_comment_by_post_author( $comment = null ) {
 	if ( is_object( $comment ) && $comment->user_id > 0 ) {
 		$user = get_userdata( $comment->user_id );
 		$post = get_post( $comment->comment_post_ID );

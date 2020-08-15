@@ -39,7 +39,7 @@ get_header(); ?>
 					<?php
 					$postsCount = 1;
 					while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post();
-						$category = wpmanifest_get_post_category( get_the_ID() ); ?>
+						$category = wp_manifest_get_post_category( get_the_ID() ); ?>
                         <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__content__cell">
                             <a class="" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
 							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title">', '</h2></a>' ); ?>

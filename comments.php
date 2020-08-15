@@ -21,44 +21,40 @@ if ( post_password_required() ) {
 	return;
 }
 
-$discussion = wpmanifest_get_discussion_data();
+$wp_indigo_discussion = wp_manifest_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
-    <div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+    <div class="<?php echo $wp_indigo_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
         <h2 class="comments-title">
 			<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
-					_e( 'Join the Conversation', 'wp-manifest' );
+					esc_html_e( 'Join the Conversation', 'wp-indigo' );
 				} else {
-					_e( 'Leave a comment', 'wp-manifest' );
+					esc_html_e( 'Leave a comment', 'wp-indigo' );
 				}
 			} else {
-				if ( '1' == $discussion->responses ) {
+				if ( '1' == $wp_indigo_discussion->responses ) {
 					/* translators: %s: post title */
-					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-manifest' ), get_the_title() );
+					printf( esc_html( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-indigo' ), esc_html( get_the_title() ) ) );
 				} else {
 					printf(
 					/* translators: 1: number of comments, 2: post title */
-						_nx(
+						esc_html( _nx(
 							'%1$s reply on &ldquo;%2$s&rdquo;',
 							'%1$s replies on &ldquo;%2$s&rdquo;',
-							$discussion->responses,
+							$wp_indigo_discussion->responses,
 							'comments title',
-							'wp-manifest'
-						),
-						number_format_i18n( $discussion->responses ),
-						get_the_title()
+							'wp-indigo'
+						) ),
+						esc_html( number_format_i18n( $wp_indigo_discussion->responses ) ),
+						esc_html( get_the_title() )
 					);
 				}
 			}
 			?>
         </h2><!-- .comments-title -->
-        <?php
-        // Show comment form.
-        indigo_comment_form( 'asc' );
-        ?>
 		<?php
 		// Only show discussion meta information when comments are open and available.
 		if ( have_comments() && comments_open() ) {
@@ -71,9 +67,9 @@ $discussion = wpmanifest_get_discussion_data();
 
 		// Show comment form at top if showing newest comments at the top.
 		if ( comments_open() ) {
-			indigo_comment_form( 'desc' );
+			wp_manifest_comment_form( );
 
-			echo "<h3>" . __( 'Comments', 'wp-manifest' ) . "</h3>";
+			echo "<h3>" . esc_html_e( 'Comments', 'wp-indigo' ) . "</h3>";
 		}
 
 		?>
@@ -81,8 +77,8 @@ $discussion = wpmanifest_get_discussion_data();
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new Indigo_Walker_Comment(),
-					'avatar_size' => 60,
+					'walker'      => new Wp_manifest_walker_comment(),
+					'avatar_size' => 70,
 					'short_ping'  => true,
 					'style'       => 'ol',
 				)
@@ -92,12 +88,12 @@ $discussion = wpmanifest_get_discussion_data();
 		<?php
 
 		// Show comment navigation
-		if ( have_comments() ) :
-			$comments_text = __( 'Comments', 'wp-manifest' );
+		if ( get_comment_pages_count() > 1 ) :
+			$wp_indigo_comments_text = __( 'Comments', 'wp-indigo' );
 			the_comments_navigation(
 				array(
-					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', __( 'Previous', 'wp-manifest' )),
-					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', __( 'Next', 'wp-manifest' )),
+					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', esc_html_e( 'Previous', 'wp-indigo' ) ),
+					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', esc_html_e( 'Next', 'wp-indigo' ) ),
 				)
 			);
 		endif;
@@ -105,13 +101,10 @@ $discussion = wpmanifest_get_discussion_data();
 		if ( ! comments_open() ) :
 			?>
             <h3 class="no-comments">
-				<?php _e( 'Comments are disabled.', 'wp-manifest' ); ?>
+				<?php esc_html_e( 'Comments are disabled.', 'wp-indigo' ); ?>
             </h3>
 		<?php
 		endif;
-
-	else :
-
 	endif; // if have_comments();
 	?>
 </div><!-- #comments -->

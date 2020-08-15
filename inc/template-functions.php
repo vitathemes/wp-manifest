@@ -5,8 +5,10 @@
  * @package WP_Manifest
  */
 
+require "classes/wp_manifest_walker_comment.php";
+
 // Register Menu
-function wpmanifest_register_primary_menu() {
+function wp_manifest_register_primary_menu() {
 	register_nav_menu( 'primary-menu', __( 'Primary Menu', 'wp-manifest' ) );
 }
 
@@ -43,38 +45,24 @@ function wp_manifest_pingback_header() {
 add_action( 'wp_head', 'wp_manifest_pingback_header' );
 
 // Menu Generator
-function wpmanifest_show_menu() {
+function wp_manifest_show_menu() {
 	if ( has_nav_menu( 'primary-menu' ) ) {
-		$wpmanifest_menu_args = array(
+		$wp_manifest_menu_args = array(
 			'theme_location' => 'primary-menu',
 			'menu_class'     => 's-header-menu c-header__menu-items',
 			'menu_id'        => 'navigation',
 			'container'      => '',
 			'depth'          => 2,
 		);
-		wp_nav_menu( $wpmanifest_menu_args );
-	}
-}
-
-// Show Post Tags
-function wpmanifest_show_tags() {
-	the_tags( '', ' ', '' );
-}
-
-// Show Name Field
-function wpmanifest_show_logo() {
-	if ( has_custom_logo() ) {
-		the_custom_logo();
-
-		return;
+		wp_nav_menu( $wp_manifest_menu_args );
 	}
 }
 
 // Load theme typography
-function wpmanifest_typography() {
-	$wpmanifest_text_typography            = get_theme_mod( 'text_typography' );
-	$wpmanifest_heading_typography         = get_theme_mod( 'headings_typography' );
-	$wpmanifest_default_heading_typography = array(
+function wp_manifest_typography() {
+	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
+	$wp_manifest_default_heading_typography = array(
 		'font-family' => "Red Hat Display",
 		'font-size'   => "48px",
 		'variant'     => 'regular',
@@ -89,35 +77,35 @@ function wpmanifest_typography() {
 		'color'       => '#666666'
 	);
 
-	if ( empty( $wpmanifest_heading_typography) || $wpmanifest_heading_typography['font-family'] == "" ) {
-		$wpmanifest_heading_typography = $wpmanifest_default_heading_typography;
+	if ( empty( $wp_manifest_heading_typography) || $wp_manifest_heading_typography['font-family'] == "" ) {
+		$wp_manifest_heading_typography = $wp_manifest_default_heading_typography;
 	} else {
-		$wpmanifest_heading_typography = array_merge( $wpmanifest_default_heading_typography, $wpmanifest_heading_typography );
+		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
 	}
-	if ( empty( $wpmanifest_text_typography ) ) {
-		$wpmanifest_text_typography = $default_text_typography;
+	if ( empty( $wp_manifest_text_typography ) ) {
+		$wp_manifest_text_typography = $default_text_typography;
 	} else {
-		$wpmanifest_text_typography = array_merge( $default_text_typography, $wpmanifest_text_typography );
+		$wp_manifest_text_typography = array_merge( $default_text_typography, $wp_manifest_text_typography );
 	}
 
 	$html = ':root {
-				--heading-typography-font-size: ' . $wpmanifest_heading_typography["font-size"] . ';
-	            --heading-typography-font-family: ' . $wpmanifest_heading_typography["font-family"] . ';
-	            --heading-typography-line-height: ' . $wpmanifest_heading_typography["line-height"] . ';
-	            --heading-typography-variant: ' . $wpmanifest_heading_typography["variant"] . ';
-	            --text-typography-font-size: ' . $wpmanifest_text_typography["font-size"] . ';
-	            --text-typography-font-family: ' . $wpmanifest_text_typography["font-family"] . ';
-	            --text-typography-line-height: ' . $wpmanifest_text_typography["line-height"] . ';
-	            --text-typography-variant: ' . $wpmanifest_text_typography["variant"] . ';
+				--heading-typography-font-size: ' . $wp_manifest_heading_typography["font-size"] . ';
+	            --heading-typography-font-family: ' . $wp_manifest_heading_typography["font-family"] . ';
+	            --heading-typography-line-height: ' . $wp_manifest_heading_typography["line-height"] . ';
+	            --heading-typography-variant: ' . $wp_manifest_heading_typography["variant"] . ';
+	            --text-typography-font-size: ' . $wp_manifest_text_typography["font-size"] . ';
+	            --text-typography-font-family: ' . $wp_manifest_text_typography["font-family"] . ';
+	            --text-typography-line-height: ' . $wp_manifest_text_typography["line-height"] . ';
+	            --text-typography-variant: ' . $wp_manifest_text_typography["variant"] . ';
 	
 	            --primary-color: ' . get_theme_mod( "branding_primary_color", "#3F51B5" ) . ';
-	            --secondary-color: ' . $wpmanifest_text_typography['color'] . ';
-	            --tertiary-color: ' . $wpmanifest_heading_typography["color"] . ';
+	            --secondary-color: ' . $wp_manifest_text_typography['color'] . ';
+	            --tertiary-color: ' . $wp_manifest_heading_typography["color"] . ';
 			}';
 	echo esc_html( $html );
 }
 
-function wpmanifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
+function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
 	$return = array();
 
 	if ( class_exists( 'WPSEO_Primary_Term' ) ) {
@@ -150,9 +138,69 @@ function wpmanifest_get_post_primary_category( $post_id, $term = 'category', $re
 	return $return;
 }
 
+function wp_manifest_get_discussion_data() {
+	static $discussion, $post_id;
+	$wp_indigo_current_post_id = get_the_ID();
+	if ( $wp_indigo_current_post_id === $post_id ) {
+		return $discussion; /* If we have discussion information for post ID, return cached object */
+	} else {
+		$post_id = $wp_indigo_current_post_id;
+	}
+	$wp_indigo_comments = get_comments(
+		array(
+			'post_id' => $wp_indigo_current_post_id,
+			'orderby' => 'comment_date_gmt',
+			'order'   => get_option( 'comment_order', 'asc' ), /* Respect comment order from Settings » Discussion. */
+			'status'  => 'approve',
+			'number'  => 20, /* Only retrieve the last 20 comments, as the end goal is just 6 unique authors */
+		)
+	);
+	$wp_indigo_authors  = array();
+	foreach ( $wp_indigo_comments as $wp_indigo_comment ) {
+		$wp_indigo_authors[] = ( (int) $wp_indigo_comment->user_id > 0 ) ? (int) $wp_indigo_comment->user_id : $wp_indigo_comment->comment_author_email;
+	}
+	$wp_indigo_authors = array_unique( $wp_indigo_authors );
+	$discussion        = (object) array(
+		'authors'   => array_slice( $wp_indigo_authors, 0, 6 ),
+		/* Six unique authors commenting on the post. */
+		'responses' => get_comments_number( $wp_indigo_current_post_id ),
+		/* Number of responses. */
+	);
 
-function wpmanifest_generate_post_category( $post_id ) {
-	$category      = wpmanifest_get_post_primary_category( $post_id );
+	return $discussion;
+}
+
+function wp_manifest_comment_form() {
+	$wp_indigo_commenter     = wp_get_current_commenter();
+
+	$wpindigo_fields = array(
+		'author'  =>
+			'<p class="comment-form-author">' .
+			'<input placeholder="' . esc_attr__( 'Your Name', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author'] ) . '" id="author" name="author" type="text" size="30" /></p>',
+		'email'   =>
+			'<p class="comment-form-email">' .
+			'<input placeholder="' . esc_attr__( 'Your Email', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author_email'] ) . '" id="email" name="email" type="email" value="" size="30" /></p>',
+		'url'     =>
+			'<p class="comment-form-email">' .
+			'<input placeholder="' . esc_attr__( 'Your Website', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author_url'] ) . '"  id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>',
+		'cookies' => '<p class="comment-form-cookies-consent comment-form-cookies"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label class="cookie-label" for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>'
+	);
+
+
+	comment_form(
+		array(
+			'logged_in_as'         => null,
+			'title_reply'          => null,
+			'comment_notes_before' => false,
+			'label_submit'         => 'Submit',
+			'fields'               => $wpindigo_fields,
+			'comment_field'        => '<p class="comment-form-comment"><textarea placeholder="' . esc_html( 'Write Your Comment', 'wp-indigo' ) . '" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
+		)
+	);
+}
+
+function wp_manifest_generate_post_category( $post_id ) {
+	$category      = wp_manifest_get_post_primary_category( $post_id );
 	$category_name = $category['primary_category']->name;
 	$category_link = get_category_link( $category['primary_category']->term_id );
 
@@ -160,21 +208,21 @@ function wpmanifest_generate_post_category( $post_id ) {
 }
 
 
-function wpmanifest_show_post_data( $post_id ) {
-	$category = wpmanifest_generate_post_category( $post_id );
+function wp_manifest_show_post_data( $post_id ) {
+	$category = wp_manifest_generate_post_category( $post_id );
 	$date     = sprintf( '<span class="c-post__header__date">%s</span>', get_the_time( 'd M, Y' ) );
 	echo $category . $date;
 }
 
-function wpmanifest_get_post_category( $post_id ) {
-	$category      = wpmanifest_get_post_primary_category( $post_id );
+function wp_manifest_get_post_category( $post_id ) {
+	$category      = wp_manifest_get_post_primary_category( $post_id );
 	$category_name = $category['primary_category']->name;
 	$category_link = get_category_link( $category['primary_category']->term_id );
 
 	return array('name' => $category_name,'url' => $category_link);
 }
 
-function wpmanifest_generate_srcset($post_id) {
+function wp_manifest_generate_srcset($post_id) {
 	$x1 = get_the_post_thumbnail_url($post_id, '');
 	$x2 = get_the_post_thumbnail_url($post_id, '');
 

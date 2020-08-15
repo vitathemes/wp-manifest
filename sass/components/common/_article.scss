@@ -103,10 +103,12 @@
 
 .c-article__main__tags {
   display: flex;
+  border-bottom:  1px solid $wp-manifest__neutral-gray-color;
+  padding-bottom: 16px;
 }
 
 .c-article__main__tags__title {
-
+  color: $wp-manifest__neutral-dark-gray-color;
 }
 
 /*------------------------

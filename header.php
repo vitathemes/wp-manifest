@@ -19,7 +19,7 @@
 
 	<?php wp_head(); ?>
     <style>
-        <?php wpmanifest_typography(); ?>
+        <?php wp_manifest_typography(); ?>
     </style>
 </head>
 
@@ -46,7 +46,7 @@
 
             <nav id="site-navigation" class="main-navigation c-header__menu">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wp-manifest' ); ?></button>
-	            <?php wpmanifest_show_menu(); ?>
+	            <?php wp_manifest_show_menu(); ?>
             </nav><!-- #site-navigation -->
         </div>
 	</header><!-- #masthead -->

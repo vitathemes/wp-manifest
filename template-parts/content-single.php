@@ -31,18 +31,14 @@
         <div class="c-article__content s-article-content u-margin-bottom-huge">
 			<?php the_content(); ?>
         </div>
-        <div class="c-article__main__author u-flex-wrap">
-            <img class="c-article__main__author__avatar" src="<?php echo esc_url( get_avatar_url( $post->post_author ) ); ?>" alt="<?php echo get_user_by( 'ID', $post->post_author )->display_name; ?>"/>
-            <span class="c-article__main__author__name"><?php echo get_the_author_meta('display_name'); ?></span>
-            <div class="c-article__main__author__bio u-color-dark-gray">
-	            <?php echo get_the_author_meta('description'); ?>
-            </div>
-        </div>
         <div class="c-article__main__tags">
-            <span class="c-article__main__tags__title">Tags:</span>
+            <span class="c-article__main__tags__title">Tags:&ensp;</span>
             <div class="c-article__main__tags__list">
                 <?php the_tags('', ', ', ''); ?>
             </div>
         </div>
     </main>
 </article>
+<div class="c-comments">
+	<?php comments_template(); ?>
+</div>

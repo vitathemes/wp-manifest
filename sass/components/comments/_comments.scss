@@ -1,7 +1,120 @@
+.c-comments {
+  width: 70%;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media #{$tablet} {
+    width: 90%;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
+  color: $wp-manifest__main-primary-color;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
+}
+
+.comments {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+
+  .comment-header {
+    display: flex;
+  }
+
+  .comment-avatar {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    margin-right: 24px;
+
+    @media #{$mobile} {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .comment-info {
+    display: inline-block;
+    width: 70%;
+    vertical-align: middle;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .comment {
+    border-top: 1px solid #d4d4d4;
+    padding: 20px 10px;
+    margin: 5px 0;
+
+  }
+
+  .comment-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .comment-metadata a * {
+    font-size: 0.813em;
+    text-decoration: none;
+    color: #888888;
+    font-weight: 400;
+  }
+
+
+  &:last-child {
+    margin-bottom: 10px;
+  }
+
+
+  .comment-author {
+    font-size: 1em;
+    margin-top: 0;
+    margin-right: 24px;
+  }
+}
+
+
+ol.children {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 30px;
+}
+
+.comment-navigation {
+  margin-bottom: 40px;
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.comments > .comment:first-child {
+  border-top: 0;
+}
+
+.comment-content p, .screen-reader-text.says {
+  font-weight: 400;
 }
