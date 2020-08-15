@@ -55,12 +55,7 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
 			}
 			?>
         </h2><!-- .comments-title -->
-		<?php
-		// Only show discussion meta information when comments are open and available.
-		if ( have_comments() && comments_open() ) {
-			get_template_part( 'template-parts/post/discussion', 'meta' );
-		}
-		?>
+
     </div><!-- .comments-title-flex -->
 	<?php
 	if ( have_comments() ) :

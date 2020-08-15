@@ -118,3 +118,71 @@ ol.children {
 .comment-content p, .screen-reader-text.says {
   font-weight: 400;
 }
+
+.comment-content p {
+  margin-bottom: 16px;
+  color: $wp-manifest__main-primary-light-color;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+}
+
+.comment-reply {
+
+  .comment-reply-link {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: $wp-manifest__neutral-dark-gray-color;
+    transition: 0.25s;
+
+    &:hover {
+      color: $wp-manifest__primary-color;
+    }
+  }
+}
+
+.comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comment-field {
+  width: 30%;
+
+  label {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: $wp-manifest__main-primary-light-color;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+.comment-form-cookies {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+
+
+  input {
+    margin: 5px 10px 0 0;
+  }
+}
+
+.comment-form-comment {
+  width: 100%;
+}

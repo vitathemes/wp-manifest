@@ -14,10 +14,24 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+	color: $wp-manifest__main-primary-color;
+	border: none;
+	border-bottom: 1px solid $wp-manifest__main-primary-color;
+	border-radius: 0;
+	padding: 16px 0;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 166.3%;
+	letter-spacing: 0.1em;
+
+	&::placeholder {
+		font-size: 12px;
+		line-height: 28px;
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.1em;
+		color: #CCCCCC;
+	}
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -25,9 +39,45 @@ textarea {
 }
 
 select {
-	border: 1px solid $color__border-input;
+	color: $wp-manifest__main-primary-color;
+	border: none;
+	border-bottom: 1px solid $wp-manifest__main-primary-color;
+	border-radius: 0;
+	padding: 16px 0;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 166.3%;
+	letter-spacing: 0.1em;
 }
 
 textarea {
 	width: 100%;
+}
+
+
+input[type="submit"], form button {
+	padding: 8px 32px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 166.3%;
+	font-family: $wp-manifest__secondary-font;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	display: inline-block;
+	color: #FFFFFF;
+	background-color: $wp-manifest__main-primary-light-color;
+	transition: $wp-manifest_global-transition;
+
+	svg {
+		fill: #fff;
+	}
+
+	&:hover {
+		color: #FFFFFF;
+		background-color: $wp-manifest__neutral-dark-gray-color;
+
+		svg {
+			fill: #FFFFFF;
+		}
+	}
 }

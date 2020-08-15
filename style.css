@@ -593,30 +593,40 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	border: none;
+	padding: 8px 32px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 166.3%;
+	font-family: var(--heading-typography-font-family);
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	display: inline-block;
+	color: #FFFFFF;
+	background-color: #565656;
+	transition: 0.25s;
+}
+
+button svg,
+input[type="button"] svg,
+input[type="reset"] svg,
+input[type="submit"] svg {
+	fill: #fff;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	color: #FFFFFF;
+	background-color: #999999;
 }
 
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+button:hover svg,
+input[type="button"]:hover svg,
+input[type="reset"]:hover svg,
+input[type="submit"]:hover svg {
+	fill: #FFFFFF;
 }
 
 input[type="text"],
@@ -635,10 +645,39 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #000000;
+	border-radius: 0;
+	padding: 16px 0;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 166.3%;
+	letter-spacing: 0.1em;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="url"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="number"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="range"]::placeholder,
+input[type="date"]::placeholder,
+input[type="month"]::placeholder,
+input[type="week"]::placeholder,
+input[type="time"]::placeholder,
+input[type="datetime"]::placeholder,
+input[type="datetime-local"]::placeholder,
+input[type="color"]::placeholder,
+textarea::placeholder {
+	font-size: 12px;
+	line-height: 28px;
+	display: flex;
+	align-items: center;
+	letter-spacing: 0.1em;
+	color: #CCCCCC;
 }
 
 input[type="text"]:focus,
@@ -661,11 +700,46 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #ccc;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #000000;
+	border-radius: 0;
+	padding: 16px 0;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 166.3%;
+	letter-spacing: 0.1em;
 }
 
 textarea {
 	width: 100%;
+}
+
+input[type="submit"], form button {
+	padding: 8px 32px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 166.3%;
+	font-family: var(--heading-typography-font-family);
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	display: inline-block;
+	color: #FFFFFF;
+	background-color: #565656;
+	transition: 0.25s;
+}
+
+input[type="submit"] svg, form button svg {
+	fill: #fff;
+}
+
+input[type="submit"]:hover, form button:hover {
+	color: #FFFFFF;
+	background-color: #999999;
+}
+
+input[type="submit"]:hover svg, form button:hover svg {
+	fill: #FFFFFF;
 }
 
 /*--------------------------------------------------------------
@@ -913,6 +987,72 @@ ol.children {
 
 .comment-content p, .screen-reader-text.says {
 	font-weight: 400;
+}
+
+.comment-content p {
+	margin-bottom: 16px;
+	color: #565656;
+	font-size: 19px;
+	line-height: 23px;
+	letter-spacing: 0.05em;
+}
+
+.comment-reply .comment-reply-link {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 27px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	color: #999999;
+	transition: 0.25s;
+}
+
+.comment-reply .comment-reply-link:hover {
+	color: var(--primary-color);
+}
+
+.comment-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.comment-field {
+	width: 30%;
+}
+
+.comment-field label {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	letter-spacing: 0.1em;
+	color: #565656;
+}
+
+.comment-field input {
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 560px) {
+	.comment-field {
+		width: 100%;
+	}
+}
+
+.comment-form-cookies {
+	display: flex;
+	align-items: flex-start;
+	font-size: 14px;
+}
+
+.comment-form-cookies input {
+	margin: 5px 10px 0 0;
+}
+
+.comment-form-comment {
+	width: 100%;
 }
 
 /* Widgets

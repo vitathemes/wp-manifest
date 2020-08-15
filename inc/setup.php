@@ -223,3 +223,12 @@ function website_field_remove( $fields ) {
 if ( ! isset( $content_width ) ) {
 	$content_width = 560;
 }
+
+function wp_manifest_rearrange_form_fields( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+
+add_filter( 'comment_form_fields', 'wp_manifest_rearrange_form_fields' );

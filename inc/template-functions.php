@@ -140,30 +140,30 @@ function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $r
 
 function wp_manifest_get_discussion_data() {
 	static $discussion, $post_id;
-	$wp_indigo_current_post_id = get_the_ID();
-	if ( $wp_indigo_current_post_id === $post_id ) {
+	$wp_manifest_current_post_id = get_the_ID();
+	if ( $wp_manifest_current_post_id === $post_id ) {
 		return $discussion; /* If we have discussion information for post ID, return cached object */
 	} else {
-		$post_id = $wp_indigo_current_post_id;
+		$post_id = $wp_manifest_current_post_id;
 	}
-	$wp_indigo_comments = get_comments(
+	$wp_manifest_comments = get_comments(
 		array(
-			'post_id' => $wp_indigo_current_post_id,
+			'post_id' => $wp_manifest_current_post_id,
 			'orderby' => 'comment_date_gmt',
 			'order'   => get_option( 'comment_order', 'asc' ), /* Respect comment order from Settings » Discussion. */
 			'status'  => 'approve',
 			'number'  => 20, /* Only retrieve the last 20 comments, as the end goal is just 6 unique authors */
 		)
 	);
-	$wp_indigo_authors  = array();
-	foreach ( $wp_indigo_comments as $wp_indigo_comment ) {
-		$wp_indigo_authors[] = ( (int) $wp_indigo_comment->user_id > 0 ) ? (int) $wp_indigo_comment->user_id : $wp_indigo_comment->comment_author_email;
+	$wp_manifest_authors  = array();
+	foreach ( $wp_manifest_comments as $wp_manifest_comment ) {
+		$wp_manifest_authors[] = ( (int) $wp_manifest_comment->user_id > 0 ) ? (int) $wp_manifest_comment->user_id : $wp_manifest_comment->comment_author_email;
 	}
-	$wp_indigo_authors = array_unique( $wp_indigo_authors );
+	$wp_manifest_authors = array_unique( $wp_manifest_authors );
 	$discussion        = (object) array(
-		'authors'   => array_slice( $wp_indigo_authors, 0, 6 ),
+		'authors'   => array_slice( $wp_manifest_authors, 0, 6 ),
 		/* Six unique authors commenting on the post. */
-		'responses' => get_comments_number( $wp_indigo_current_post_id ),
+		'responses' => get_comments_number( $wp_manifest_current_post_id ),
 		/* Number of responses. */
 	);
 
@@ -171,18 +171,17 @@ function wp_manifest_get_discussion_data() {
 }
 
 function wp_manifest_comment_form() {
-	$wp_indigo_commenter     = wp_get_current_commenter();
-
-	$wpindigo_fields = array(
+	$wp_manifest_commenter     = wp_get_current_commenter();
+	$wp_manifest_fields = array(
 		'author'  =>
-			'<p class="comment-form-author">' .
-			'<input placeholder="' . esc_attr__( 'Your Name', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author'] ) . '" id="author" name="author" type="text" size="30" /></p>',
+			'<p class="comment-field comment-form-author"><label>Name *</label>' .
+			'<input required="required" placeholder="' . esc_attr__( 'Enter Your Name', 'wp-indigo' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author'] ) . '" id="author" name="author" type="text" size="30" /></p>',
 		'email'   =>
-			'<p class="comment-form-email">' .
-			'<input placeholder="' . esc_attr__( 'Your Email', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author_email'] ) . '" id="email" name="email" type="email" value="" size="30" /></p>',
+			'<p class="comment-field comment-form-email"><label>Email *</label>' .
+			'<input required="required" placeholder="' . esc_attr__( 'Enter Your Email', 'wp-indigo' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author_email'] ) . '" id="email" name="email" type="email" value="" size="30" /></p>',
 		'url'     =>
-			'<p class="comment-form-email">' .
-			'<input placeholder="' . esc_attr__( 'Your Website', 'wp-indigo' ) . '" value="' . esc_attr( $wp_indigo_commenter['comment_author_url'] ) . '"  id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>',
+			'<p class="comment-field comment-form-email"><label>Website</label>' .
+			'<input placeholder="' . esc_attr__( 'Enter Your Website', 'wp-indigo' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author_url'] ) . '"  id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>',
 		'cookies' => '<p class="comment-form-cookies-consent comment-form-cookies"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label class="cookie-label" for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>'
 	);
 
@@ -193,8 +192,8 @@ function wp_manifest_comment_form() {
 			'title_reply'          => null,
 			'comment_notes_before' => false,
 			'label_submit'         => 'Submit',
-			'fields'               => $wpindigo_fields,
-			'comment_field'        => '<p class="comment-form-comment"><textarea placeholder="' . esc_html( 'Write Your Comment', 'wp-indigo' ) . '" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
+			'fields'               => $wp_manifest_fields,
+			'comment_field'        => '<p class="comment-form-comment"><label>Comment *</label><textarea required="required" placeholder="' . esc_html( 'Write Your Comment', 'wp-indigo' ) . '" id="comment" name="comment" cols="45" rows="1" aria-required="true"></textarea></p>'
 		)
 	);
 }
