@@ -30,6 +30,26 @@
             <img class="c-article__main__author__avatar" src="<?php echo esc_url( get_avatar_url( $post->post_author ) ); ?>" alt="<?php echo get_user_by( 'ID', $post->post_author )->display_name; ?>"/>
             <span class="c-article__main__author__name"><?php echo get_the_author_meta('display_name'); ?></span>
         </div>
+        <div class="c-social-share">
+		    <?php
+		    $linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" . get_permalink() . "&title=" . get_the_title();
+		    $twitter_url  = "https://twitter.com/intent/tweet?url=" . get_permalink() . "&title=" . get_the_title();
+		    $facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
+		    ?>
+
+            <a class="c-social-share__link" target="_blank" href="<?php echo esc_url( $facebook_url ); ?>">
+                <span class="dashicons dashicons-facebook-alt c-social-share__link__icon"></span>
+            </a>
+
+            <a class="c-social-share__link" target="_blank" href="<?php echo esc_url( $twitter_url ); ?>">
+                <span class="dashicons dashicons-twitter c-social-share__link__icon"></span>
+            </a>
+
+            <a class="c-social-share__link" target="_blank" href="<?php echo esc_url( $linkedin_url ); ?>">
+                <span class="dashicons dashicons-linkedin c-social-share__link__icon"></span>
+            </a>
+
+        </div>
         <div class="c-article__content s-article-content u-margin-bottom-huge">
 			<?php the_content(); ?>
         </div>

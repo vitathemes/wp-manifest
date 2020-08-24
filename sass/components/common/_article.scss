@@ -17,6 +17,7 @@
   .c-article__main {
     width: 70%;
     margin: auto;
+    position: relative;
 
     @media #{$tablet} {
       width: 90%;

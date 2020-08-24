@@ -639,7 +639,7 @@ i {
 
 blockquote {
 	margin: 0;
-	border-left: 2px solid #999999;
+	border-left: 2px solid #7B7B7B;
 	padding-left: 64px;
 	color: #000000;
 	font-weight: bold;
@@ -826,7 +826,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	color: #FFFFFF;
-	background-color: #999999;
+	background-color: #7B7B7B;
 }
 
 button:hover svg,
@@ -947,7 +947,7 @@ input[type="submit"] svg, form button svg {
 
 input[type="submit"]:hover, form button:hover {
 	color: #FFFFFF;
-	background-color: #999999;
+	background-color: #7B7B7B;
 }
 
 input[type="submit"]:hover svg, form button:hover svg {
@@ -1039,7 +1039,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 		justify-content: center;
 		padding: 32px 0 0;
 		left: 0;
-		border-bottom: 2px solid #999999;
+		border-bottom: 2px solid #7B7B7B;
 	}
 	.main-navigation ul li {
 		margin: 0 0 32px;
@@ -1061,7 +1061,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 		align-items: center;
 		justify-content: center;
 		padding: 32px 0 8px;
-		border-bottom: 2px solid #999999;
+		border-bottom: 2px solid #7B7B7B;
 	}
 	.main-navigation ul li {
 		margin: 0 0 32px;
@@ -1317,7 +1317,7 @@ ol.children:last-child {
 	line-height: 27px;
 	text-align: center;
 	letter-spacing: 0.1em;
-	color: #999999;
+	color: #7B7B7B;
 	transition: 0.25s;
 }
 
@@ -1458,7 +1458,7 @@ ol.children:last-child {
 	border: 1px solid #CCCCCC;
 	text-align: center;
 	vertical-align: middle;
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /* Media
@@ -1563,6 +1563,7 @@ ol.children:last-child {
 .c-article--single .c-article__main {
 	width: 70%;
 	margin: auto;
+	position: relative;
 }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
@@ -1584,7 +1585,7 @@ ol.children:last-child {
 }
 
 .c-article__header__meta__item {
-	color: #999999;
+	color: #7B7B7B;
 	font-size: 16px;
 	line-height: 166.3%;
 	letter-spacing: 0.1em;
@@ -1666,7 +1667,7 @@ ol.children:last-child {
 }
 
 .c-article__main__tags__title {
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /*------------------------
@@ -1704,6 +1705,7 @@ ol.children:last-child {
 .c-article--single .c-article__main {
 	width: 70%;
 	margin: auto;
+	position: relative;
 }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
@@ -1725,7 +1727,7 @@ ol.children:last-child {
 }
 
 .c-article__header__meta__item {
-	color: #999999;
+	color: #7B7B7B;
 	font-size: 16px;
 	line-height: 166.3%;
 	letter-spacing: 0.1em;
@@ -1807,7 +1809,7 @@ ol.children:last-child {
 }
 
 .c-article__main__tags__title {
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /*------------------------
@@ -1915,7 +1917,7 @@ ol.children:last-child {
 }
 
 .c-blog-carousel__nav__link.is-active {
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /* Button
@@ -1943,7 +1945,7 @@ ol.children:last-child {
 
 .c-btn--primary:hover {
 	color: #FFFFFF;
-	background-color: #999999;
+	background-color: #7B7B7B;
 }
 
 .c-btn--primary:hover svg {
@@ -1979,7 +1981,7 @@ ol.children:last-child {
 
 .wp-block-button.c-btn.c-btn--primary a:hover {
 	color: #FFFFFF;
-	background-color: #999999;
+	background-color: #7B7B7B;
 }
 
 /* Component Base
@@ -2110,7 +2112,7 @@ ol.children:last-child {
 
 .c-header__toggle:hover {
 	background-color: transparent;
-	color: #999999;
+	color: #7B7B7B;
 }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
@@ -2277,7 +2279,7 @@ ol.children:last-child {
 }
 
 .c-post__main__excerpt {
-	color: #999999;
+	color: #7B7B7B;
 	line-height: 166.3%;
 	letter-spacing: 0.05em;
 	font-size: 1rem;
@@ -2302,7 +2304,7 @@ ol.children:last-child {
 	font-size: 0.75rem;
 	line-height: 1.25rem;
 	letter-spacing: 0.1em;
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /* Slider
@@ -2333,6 +2335,46 @@ ol.children:last-child {
 	letter-spacing: 0.1em;
 	color: #000;
 	text-decoration: none;
+}
+
+/* Slider
+--------------------------------------------- */
+.c-social-share {
+	position: absolute;
+	left: -90px;
+	display: flex;
+	flex-direction: column;
+	min-height: 20px;
+}
+
+@media screen and (max-width: 980px) {
+	.c-social-share {
+		flex-direction: row;
+		position: relative;
+		justify-content: flex-start;
+		left: 0;
+		margin-bottom: 24px;
+	}
+}
+
+.c-social-share__link {
+	margin-bottom: 24px;
+	width: 100%;
+	height: 16px;
+}
+
+@media screen and (max-width: 980px) {
+	.c-social-share__link {
+		width: auto;
+		margin-bottom: 0;
+		margin-right: 24px;
+	}
+}
+
+.c-social-share__link__icon {
+	height: 16px;
+	vertical-align: middle;
+	color: #7B7B7B;
 }
 
 /* Portfolio
@@ -2602,7 +2644,7 @@ ol.children:last-child {
 }
 
 .u-color-dark-gray {
-	color: #999999;
+	color: #7B7B7B;
 }
 
 /* Flex
@@ -2784,8 +2826,8 @@ ol.children:last-child {
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
 	color: #FFFFFF;
-	background-color: #999999;
-	border-color: #999999;
+	background-color: #7B7B7B;
+	border-color: #7B7B7B;
 }
 
 .wp-block-button__link:hover svg, .wp-block-file .wp-block-file__button:hover svg {
