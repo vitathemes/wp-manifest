@@ -16,11 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
-    <style>
-        <?php wp_manifest_typography(); ?>
-    </style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,7 +41,7 @@
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation c-header__menu">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wp-manifest' ); ?></button>
+                <button class="menu-toggle c-header__toggle" aria-controls="primary-menu" aria-expanded="false"><span class="dashicons dashicons-menu-alt"></span></button>
 	            <?php wp_manifest_show_menu(); ?>
             </nav><!-- #site-navigation -->
         </div>

@@ -18,10 +18,12 @@
         <div class="c-article__header__meta">
             <span class="c-article__header__meta__item c-article__header__meta__item--date"><?php echo get_the_time( 'd M, Y' ); ?></span>
             <a href="#comments" class="c-article__header__meta__item c-article__header__meta__item--comments">
-                <svg class="c-article__header__meta__item__icon" width="16" height="16" fill="#999" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.2.692h9.6c1.767 0 3.2 1.323 3.2 2.956V9.56c0 1.632-1.433 2.956-3.2 2.956h-8a2.51 2.51 0 00-1.72.628L.68 15.36a.408.408 0 01-.28.11c-.22 0-.4-.165-.4-.369V3.648C0 2.015 1.433.692 3.2.692zm11.2 2.956c0-.816-.716-1.478-1.6-1.478H3.2c-.884 0-1.6.662-1.6 1.478v8.78l.368-.311a4.174 4.174 0 012.832-1.08h8c.884 0 1.6-.661 1.6-1.477V3.648z"/></svg><?php echo get_comments_number(); ?> comments
+                <svg class="c-article__header__meta__item__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><path d="M5 2h9c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2h-2l-5 5v-5H5c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2z" fill="#999999"/></svg><?php echo get_comments_number(); ?> comments
             </a>
         </div>
-	    <?php the_post_thumbnail( 'full', array( 'class' => 'c-article__image' ) ); ?>
+	    <div class="c-article__header__image">
+		    <?php the_post_thumbnail( 'full', array( 'class' => 'c-article__image' ) ); ?>
+        </div>
     </header>
     <main class="c-article__main">
         <div class="c-article__main__author">
@@ -31,12 +33,7 @@
         <div class="c-article__content s-article-content u-margin-bottom-huge">
 			<?php the_content(); ?>
         </div>
-        <div class="c-article__main__tags">
-            <span class="c-article__main__tags__title">Tags:&ensp;</span>
-            <div class="c-article__main__tags__list">
-                <?php the_tags('', ', ', ''); ?>
-            </div>
-        </div>
+                <?php the_tags('<div class="c-article__main__tags"><span class="c-article__main__tags__title">Tags:&ensp;</span><div class="c-article__main__tags__list">', ', ', '</div></div>'); ?>
     </main>
 </article>
 <div class="c-comments">

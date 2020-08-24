@@ -1,6 +1,7 @@
 a {
 	color: $wp-manifest__main-primary-color;
 	text-decoration: none;
+	transition: $wp-manifest_global-transition;
 
 	&:visited {
 		//color: $color__link-visited;

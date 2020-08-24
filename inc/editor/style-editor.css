@@ -1,0 +1,35 @@
+/*
+ * Main column width
+ * This changes it from the default 580px to 720px
+ */
+.wp-block {
+    max-width: 1024px;
+}
+
+/*
+ * Width of "wide" blocks
+ * This changes it from the default 1080px to 1280px
+ */
+.wp-block[data-align="wide"] {
+    max-width: 1280px;
+}
+
+
+/*
+* Default elements in block
+*/
+
+.wp-block a {
+    color: #000;
+    text-decoration: none;
+}
+
+.wp-block a:hover {
+    color: var(--primary-color);
+}
+
+.wp-block ul {
+    margin: 10px 0;
+    padding-left: 12px;
+}
+

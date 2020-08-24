@@ -5,8 +5,8 @@ select,
 optgroup,
 textarea {
 	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
+	font-family: $wp-manifest__primary-font;
+	font-size: $wp-manifest_base-font-size;
 	line-height: $font__line-height-body;
 }
 

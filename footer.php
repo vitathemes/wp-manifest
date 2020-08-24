@@ -9,37 +9,23 @@
  */
 ?>
 </div>
-<footer class="c-footer">
+<footer id="footer" class="c-footer">
     <div class="o-wrapper">
-        <div class="c-footer__main o-flex">
-            <div class="c-footer__col o-flex__item-1/2">
-                <h2 class="c-footer__title"><?php echo get_theme_mod( 'footer_title', 'Need a project?' ); ?></h2>
-                <p>
-                    <a class="c-footer__link" href="<?php echo str_replace( ' ', '', get_theme_mod( 'footer_phone', '(239) 555-0108' ) ); ?>">
-						<?php echo get_theme_mod( 'footer_phone', '(239) 555-0108' ); ?>
-                    </a>
-                </p>
-                <p class="u-margin-none">
-                    <a class="c-footer__link" href="<?php echo str_replace( ' ', '', get_theme_mod( 'footer_email', 'tanya.hill@example.com' ) ); ?>">
-						<?php echo get_theme_mod( 'footer_email', 'tanya.hill@example.com' ); ?>
-                    </a>
-                </p>
+        <div class="c-footer__main u-flex">
+            <div class="c-footer__col o-col--1/2">
+				<?php if ( is_active_sidebar( 'footer-widgets-1' ) ) :
+					dynamic_sidebar( 'footer-widgets-1' );
+				endif; ?>
             </div>
-            <div class="c-footer__col o-flex__item-1/4">
-				<?php
-				$menu_args = array(
-					'theme_location' => 'footer-menu',
-					'menu_class' => 'c-footer__menu-items s-footer-menu',
-					'container' => 'nav',
-					'container_class' => 'c-footer__menu',
-				);
-				wp_nav_menu($menu_args);
-				?>
+            <div class="c-footer__col o-col--1/5">
+	            <?php if ( is_active_sidebar( 'footer-widgets-2' ) ) :
+		            dynamic_sidebar( 'footer-widgets-2' );
+	            endif; ?>
             </div>
-            <div class="c-footer__col o-flex__item-1/4 o-flex">
-                <p class="c-footer__copyright">
-					<?php echo get_theme_mod( 'copyright_text', '© Copyright Manifest Theme. Allrights reserved' ); ?>
-                </p>
+            <div class="c-footer__col o-col--1/5">
+	            <?php if ( is_active_sidebar( 'footer-widgets-3' ) ) :
+		            dynamic_sidebar( 'footer-widgets-3' );
+	            endif; ?>
             </div>
         </div>
     </div>

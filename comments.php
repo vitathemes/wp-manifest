@@ -58,17 +58,14 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
 
     </div><!-- .comments-title-flex -->
 	<?php
-	if ( have_comments() ) :
-
-		// Show comment form at top if showing newest comments at the top.
-		if ( comments_open() ) {
-			wp_manifest_comment_form( );
-
-			echo "<h3>" . esc_html_e( 'Comments', 'wp-indigo' ) . "</h3>";
-		}
-
+	// Show comment form at top if showing newest comments at the top.
+	if ( comments_open() ) {
+		wp_manifest_comment_form();
+	}
+	if ( have_comments() ):
+		echo "<h3>" . esc_html( 'Comments', 'wp-indigo' ) . "</h3>";
 		?>
-        <ol class="comment-list comments">
+        <ol class="commentlist comment-list comments">
 			<?php
 			wp_list_comments(
 				array(
@@ -100,6 +97,6 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
             </h3>
 		<?php
 		endif;
-	endif; // if have_comments();
+	endif;
 	?>
 </div><!-- #comments -->

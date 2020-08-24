@@ -73,6 +73,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Objects
 --------------------------------------------------------------*/
 @import "objects/wrapper";
+@import "objects/column";
+@import "objects/page";
 
 /*--------------------------------------------------------------
 # Base
@@ -121,3 +123,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Margin
 --------------------------------------------- */
 @import "utilities/margin";
+@import "utilities/hide";
+
+
+/*--------------------------------------------------------------
+# Partials
+--------------------------------------------------------------*/
+@import "partials/pagination";

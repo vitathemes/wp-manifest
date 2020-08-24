@@ -50,7 +50,7 @@ function wp_manifest_show_menu() {
 		$wp_manifest_menu_args = array(
 			'theme_location' => 'primary-menu',
 			'menu_class'     => 's-header-menu c-header__menu-items',
-			'menu_id'        => 'navigation',
+			'menu_id'        => 'primary-menu',
 			'container'      => '',
 			'depth'          => 2,
 		);
@@ -66,14 +66,14 @@ function wp_manifest_typography() {
 		'font-family' => "Red Hat Display",
 		'font-size'   => "48px",
 		'variant'     => 'regular',
-		'line-height' => '64px',
-		'color'       => '#1a1a1a'
+		'line-height' => '1.5',
+		'color'       => '#000000'
 	);
 	$default_text_typography               = array(
 		'font-family' => "Lato",
-		'font-size'   => "16px",
+		'font-size'   => "19px",
 		'variant'     => 'regular',
-		'line-height' => '32px',
+		'line-height' => '1.5',
 		'color'       => '#666666'
 	);
 
@@ -102,8 +102,23 @@ function wp_manifest_typography() {
 	            --secondary-color: ' . $wp_manifest_text_typography['color'] . ';
 	            --tertiary-color: ' . $wp_manifest_heading_typography["color"] . ';
 			}';
-	echo esc_html( $html );
+	return $html;
 }
+
+add_action('admin_head', 'wp_manifest_theme_settings');
+add_action('wp_head', 'wp_manifest_theme_settings');
+function wp_manifest_theme_settings(){
+	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
+	$wp_indigo_theme_typography = wp_manifest_typography();
+	?>
+	<style>
+		<?php echo $wp_indigo_theme_typography; ?>
+	</style>
+	<?php
+};
+
+
 
 function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
 	$return = array();
@@ -185,7 +200,6 @@ function wp_manifest_comment_form() {
 		'cookies' => '<p class="comment-form-cookies-consent comment-form-cookies"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label class="cookie-label" for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>'
 	);
 
-
 	comment_form(
 		array(
 			'logged_in_as'         => null,
@@ -227,3 +241,37 @@ function wp_manifest_generate_srcset($post_id) {
 
 	echo $x1 . " x1, " .  $x2 . " x2";
 }
+
+
+/* Block Patterns */
+
+function wp_manifest_register_block_patterns() {
+
+	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
+
+		register_block_pattern(
+			'wp-manifest/content-block-2-columns',
+			array(
+				'title'       => __( 'Content Block (2 Columns)', 'wp-manifest' ),
+				'description' => _x( 'A call to action with a beautiful two-column gallery below.', 'Block pattern description', 'textdomain' ),
+				'content'     => "<!-- wp:columns --> <div class=\"wp-block-columns\"><!-- wp:column --> <div class=\"wp-block-column\"><!-- wp:image {\"id\":27,\"sizeSlug\":\"large\"} --> <figure class=\"wp-block-image size-large\"><img src=\"http://manifest.develop/wp-content/uploads/2020/08/creativity-1024x745.jpg\" alt=\"\" class=\"wp-image-27\"/></figure> <!-- /wp:image --></div> <!-- /wp:column --> <!-- wp:column --> <div class=\"wp-block-column\"><!-- wp:heading --> <h2>Hello World!</h2> <!-- /wp:heading --> <!-- wp:paragraph --> <p>Transformation has to be driven by everybody, not just by climate groups.</p> <!-- /wp:paragraph --></div> <!-- /wp:column --></div> <!-- /wp:columns -->",
+				'categories'  => array( 'manifest' ),
+			)
+		);
+
+	}
+
+}
+add_action( 'init', 'wp_manifest_register_block_patterns' );
+
+function wp_manifest_register_block_categories() {
+	if ( class_exists( 'WP_Block_Patterns_Registry' ) ) {
+
+		register_block_pattern_category(
+			'manifest',
+			array( 'label' => _x( 'Manifest', 'WP-Manifest Block patterns category', 'wp-manifest' ) )
+		);
+
+	}
+}
+add_action( 'init', 'wp_manifest_register_block_categories' );

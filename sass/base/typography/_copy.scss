@@ -3,6 +3,7 @@
 }
 
 p {
+	margin-top: 0;
 	margin-bottom: 1.5em;
 }
 
@@ -42,7 +43,7 @@ address {
 
 pre {
 	background: $color__background-pre;
-	font-family: $font__pre;
+	font-family: $wp-manifest__secondary-font;
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -54,7 +55,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: $font__code;
+	font-family: $wp-manifest__secondary-font;
 }
 
 abbr,

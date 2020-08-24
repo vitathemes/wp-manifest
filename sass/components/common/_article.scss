@@ -17,11 +17,11 @@
   .c-article__main {
     width: 70%;
     margin: auto;
-    padding-left: 15px;
-    padding-right: 15px;
 
     @media #{$tablet} {
       width: 90%;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
     @media #{$mobile} {
@@ -43,6 +43,11 @@
   &:not(:last-child) {
     margin-right: 40px;
   }
+}
+
+.c-article__header__image {
+  width: 100%;
+  text-align: center;
 }
 
 .c-article__header__meta__item__icon {
@@ -105,6 +110,10 @@
   display: flex;
   border-bottom:  1px solid $wp-manifest__neutral-gray-color;
   padding-bottom: 16px;
+}
+
+.c-article__main__tags__list {
+  font-size: 1rem;
 }
 
 .c-article__main__tags__title {

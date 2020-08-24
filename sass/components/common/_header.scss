@@ -17,6 +17,7 @@
 .c-header__main {
   display: flex;
   padding: 96px 16px;
+  align-items: center;
 
   @media #{$mobile} {
     padding: 24px 16px;
@@ -29,6 +30,47 @@
 
 .c-header__menu {
   flex-grow: 1;
+
+  @media #{$tablet} {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media #{$mobile} {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.c-header__toggle {
+  background-color: transparent;
+  border: 0;
+  color: $wp_manifest__main-primary-dark-color;
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  .dashicons {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+  }
+
+  &:hover {
+    background-color: transparent;
+    color: $wp_manifest__neutral-dark-gray-color
+  }
+
+  @media #{$tablet} {
+    display: flex;
+  }
+
+  @media #{$mobile} {
+    display: flex;
+  }
 }
 
 .c-header__logo {
@@ -62,6 +104,7 @@
 
   li {
     margin-right: 53px;
+    margin-bottom: 0;
 
     &:last-child {
       margin-right: 0;

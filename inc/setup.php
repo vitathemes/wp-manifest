@@ -60,6 +60,12 @@ function wp_manifest_setup() {
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
+
+	/**
+	 * Add support Editor Style
+	 *
+	 */
+	add_theme_support( 'editor-styles' );
 }
 
 add_action( 'after_setup_theme', 'wp_manifest_setup' );
@@ -68,11 +74,15 @@ add_action( 'after_setup_theme', 'wp_manifest_setup' );
  */
 // External Assets
 function wp_manifest_scripts() {
-	wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri());
+	wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
 	wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
 	wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
-	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array('flickity', 'flickity-hash'), false, true );
+	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array(
+		'flickity',
+		'flickity-hash'
+	), false, true );
+	wp_enqueue_script( 'wp-manifest-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), false, true );
 
 	if ( is_singular() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -228,7 +238,69 @@ function wp_manifest_rearrange_form_fields( $fields ) {
 	$comment_field = $fields['comment'];
 	unset( $fields['comment'] );
 	$fields['comment'] = $comment_field;
+
 	return $fields;
 }
 
 add_filter( 'comment_form_fields', 'wp_manifest_rearrange_form_fields' );
+
+function wp_manifest_register_sidebars() {
+
+	register_sidebar( array(
+		'name'          => 'Footer widget area 1',
+		'id'            => 'footer-widgets-1',
+		'before_widget' => '<div class="c-widget s-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="c-widget__title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer widget area 2',
+		'id'            => 'footer-widgets-2',
+		'before_widget' => '<div class="c-widget s-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="c-widget__title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Footer widget area 3',
+		'id'            => 'footer-widgets-3',
+		'before_widget' => '<div class="c-widget s-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="c-widget__title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Pages widget area',
+		'id'            => 'page-widget-area',
+		'before_widget' => '<div class="c-widget s-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="c-widget__title">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+
+add_action( 'widgets_init', 'wp_manifest_register_sidebars' );
+
+function wp_manifest_editor_style() {
+	wp_enqueue_style( 'wp-manifest-block-editor-style', get_theme_file_uri( '/inc/editor/style-editor.css' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
+}
+
+add_action( 'admin_init', 'wp_manifest_editor_style' );
+
+define( 'JETPACK_DEV_DEBUG', true );
+add_filter( 'jetpack_development_mode', '__return_true' );
+
+add_theme_support( 'infinite-scroll', array(
+	'type'           => 'click',
+	'footer_widgets' => array( 'footer-widgets-1', 'footer-widgets-2', 'footer-widgets-3' ),
+	'container'      => 'site-content',
+	'footer'         => 'footer',
+	'wrapper'        => true,
+	'render'         => false,
+	'posts_per_page' => false,
+) );

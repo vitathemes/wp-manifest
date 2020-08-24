@@ -5,14 +5,13 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-get_header();
-indigo_show_profile(); ?>
+get_header(); ?>
 
     <section class="blog archive">
 
 
         <?php the_archive_title('<h1>', '</h1>') ?>
-        <div class="list">
+        <div id="content" class="list">
 			<?php if ( have_posts() ) :
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -23,7 +22,7 @@ indigo_show_profile(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/list', 'archive' );
+					get_template_part( 'template-parts/content', 'post' );
 
 				endwhile;
 

@@ -70,7 +70,7 @@ get_header(); ?>
             </div>
         </div>
 		<?php if ( have_posts() ) : ?>
-            <div class="u-margin-bottom-huge u-margin-bottom-larger-m">
+            <div id="site-content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
                 <div class="u-flex u-flex-wrap u-dir-column-m">
 					<?php
 					/* Start the Loop */
@@ -90,16 +90,15 @@ get_header(); ?>
                         </div>
 					<?php
 					endwhile;
-
-					the_posts_pagination( array(
-						'screen_reader_text' => ' ',
-						'mid_size'           => 2,
-						'prev_text'          => __( 'Previous', 'wp-manifest' ),
-						'next_text'          => __( 'Next', 'wp-manifest' ),
-					) ); ?>
-                </div>
-                <div class="o-col u-text-center">
-                    <a class="c-btn c-btn--primary">Load More</a>
+					if ( ! defined( 'JETPACK__VERSION' ) ) :
+						the_posts_pagination( array(
+							'screen_reader_text' => ' ',
+							'mid_size'           => 2,
+							'prev_text'          => __( 'Previous', 'wp-manifest' ),
+							'next_text'          => __( 'Next', 'wp-manifest' ),
+						) );
+					endif;
+					?>
                 </div>
             </div>
 		<?php

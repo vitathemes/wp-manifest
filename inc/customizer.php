@@ -177,8 +177,8 @@ add_action( 'init', function () {
 		'label'    => esc_html__( 'Headlines', 'wp-manifest' ),
 		'section'  => 'typography',
 		'default'  => [
-			'font-family' => 'Roboto Mono',
-			'font-size'   => '26px',
+			'font-family' => 'Red Hat Display',
+			'font-size'   => '48px',
 			'variant'     => 'regular',
 			'color'       => '#000'
 		],
@@ -193,9 +193,9 @@ add_action( 'init', function () {
 		'label'     => esc_html__( 'Texts', 'wp-manifest' ),
 		'section'   => 'typography',
 		'default'   => [
-			'font-family' => 'Roboto',
+			'font-family' => 'Lato',
 			'variant'     => 'regular',
-			'font-size'   => '14px',
+			'font-size'   => '19px',
 			'line-height' => '1.5',
 			'color'       => '#000',
 		],
@@ -280,3 +280,20 @@ function add_edit_icons( $wp_customize ) {
 }
 
 add_action( 'customize_preview_init', 'add_edit_icons' );
+
+function wp_manifest_enqueue_fonts() {
+	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
+
+	if( $wp_manifest_heading_typography['font-family']  ) {
+		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family='. $wp_manifest_heading_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+	} else {
+		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400');
+	}
+	if( $wp_manifest_text_typography['font-family']  ) {
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family='. $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+	} else {
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400');
+	}
+}
+add_action('wp_head', 'wp_manifest_enqueue_fonts');

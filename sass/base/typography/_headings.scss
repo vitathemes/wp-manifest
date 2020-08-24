@@ -5,4 +5,6 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: $wp-manifest__secondary-font;
+	font-weight: var(--heading-typography-variant);
 }
