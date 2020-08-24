@@ -567,8 +567,62 @@ h6 {
 	font-weight: var(--heading-typography-variant);
 }
 
+h1 {
+	font-family: var(--heading-typography-font-family);
+	font-size: var(--heading-typography-font-size);
+	color: var(--secondary-color);
+	line-height: 1.175;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
+h2 {
+	font-family: var(--heading-typography-font-family);
+	font-size: calc(var(--heading-typography-font-size) - 4px);
+	color: var(--secondary-color);
+	line-height: 1.167;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
+h3 {
+	font-family: var(--heading-typography-font-family);
+	font-size: calc(var(--heading-typography-font-size) - 6px);
+	color: var(--secondary-color);
+	line-height: 1.154;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
+h4 {
+	font-family: var(--heading-typography-font-family);
+	font-size: calc(var(--heading-typography-font-size) - 9px);
+	color: var(--secondary-color);
+	line-height: 1.15;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
+h5 {
+	font-family: var(--heading-typography-font-family);
+	font-size: calc(var(--heading-typography-font-size) - 10px);
+	color: var(--secondary-color);
+	line-height: 1.205;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
+h6 {
+	font-family: var(--heading-typography-font-family);
+	font-size: calc(var(--heading-typography-font-size) - 11px);
+	color: var(--secondary-color);
+	line-height: 1.194;
+	font-weight: var(--heading-typography-variant);
+	margin: 1rem 0 1.5rem;
+}
+
 * {
-	letter-spacing: 0.1em;
+	letter-spacing: 0.01em;
 }
 
 p {
@@ -666,6 +720,7 @@ ul,
 ol {
 	margin: 1.5rem 0;
 	padding-left: 1em;
+	font-family: var(--heading-typography-font-family);
 }
 
 ul {
@@ -727,7 +782,7 @@ a {
 	transition: 0.25s;
 }
 
-a:hover, a:focus, a:active {
+a:hover {
 	color: var(--primary-color);
 }
 
@@ -1065,6 +1120,15 @@ input[type="submit"]:hover svg, form button:hover svg {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.s-content p {
+	margin: 0.75em 0 1em;
+	font-weight: var(--text-typography-variant);
+}
+
+.s-content * {
+	font-weight: var(--text-typography-variant);
 }
 
 /* Comments
@@ -1886,6 +1950,10 @@ ol.children:last-child {
 	fill: #FFFFFF;
 }
 
+.c-btn__icon {
+	vertical-align: middle;
+}
+
 .wp-block-button.c-btn {
 	background-color: transparent;
 	padding: 0;
@@ -2267,6 +2335,144 @@ ol.children:last-child {
 	text-decoration: none;
 }
 
+/* Portfolio
+--------------------------------------------- */
+.c-portfolio {
+	display: flex;
+	margin-bottom: 48px;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-portfolio {
+		flex-wrap: wrap;
+		margin-bottom: 64px;
+	}
+}
+
+.c-portfolio__content {
+	width: 50%;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-portfolio__content {
+		width: 100%;
+		order: 2;
+	}
+}
+
+.c-portfolio__content__title {
+	color: #000000;
+	margin: 0 0 24px;
+}
+
+.c-portfolio__content__title::after {
+	margin-top: 0.75em;
+	content: '';
+	width: 4.5em;
+	height: 1px;
+	background-color: #CCCCCC;
+	display: block;
+}
+
+.c-portfolio__content__categories {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 6px;
+	display: flex;
+}
+
+.c-portfolio__content__categories__item {
+	margin: 0 24px 10px 0;
+}
+
+.c-portfolio__content__categories__item:last-child {
+	margin: 0 24px 10px 0;
+}
+
+.c-portfolio__content__read-more {
+	margin-top: 40px;
+}
+
+.c-portfolio__content__categories__item__link {
+	color: #000000;
+}
+
+.c-portfolio__image {
+	width: 50%;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-portfolio__image {
+		width: 100%;
+		margin-bottom: 16px;
+	}
+}
+
+.c-portfolio__image__img {
+	width: 100%;
+}
+
+/*
+* Portfolio
+*/
+.c-portfolio--single {
+	display: block;
+}
+
+.c-portfolio--single .c-portfolio__content__title::after {
+	content: unset;
+}
+
+.c-portfolio--single .c-portfolio__title {
+	margin: 0 0 64px;
+	color: #000000;
+}
+
+.c-portfolio--single .c-portfolio__image {
+	width: 100%;
+	text-align: center;
+}
+
+.c-portfolio--single .c-portfolio__content {
+	width: 100%;
+}
+
+.c-portfolio__tagline {
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0.5em;
+	margin: 0 0 48px;
+	display: block;
+	color: #000000;
+}
+
+.c-archive--portfolio {
+	padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-archive--portfolio {
+		padding-bottom: 16px;
+	}
+}
+
+.c-archive--portfolio .c-archive__title {
+	margin-top: 0;
+	margin-bottom: 128px;
+}
+
+@media only screen and (min-width: 561px) and (max-width: 980px) {
+	.c-archive--portfolio .c-archive__title {
+		margin-bottom: 64px;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.c-archive--portfolio .c-archive__title {
+		margin-bottom: 64px;
+	}
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -2551,6 +2757,54 @@ ol.children:last-child {
 
 .pagination span.page-numbers:hover {
 	background-color: transparent;
+}
+
+/*--------------------------------------------------------------
+# Gutenberg
+--------------------------------------------------------------*/
+.wp-block-button__link, .wp-block-file .wp-block-file__button {
+	padding: 8px 32px;
+	font-weight: bold;
+	font-size: 1rem;
+	line-height: 166.3%;
+	font-family: var(--heading-typography-font-family);
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	display: inline-block;
+	color: #FFFFFF;
+	background-color: #565656;
+	transition: 0.25s;
+	border-radius: 0;
+	border: 1px solid #565656;
+}
+
+.wp-block-button__link svg, .wp-block-file .wp-block-file__button svg {
+	fill: #fff;
+}
+
+.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
+	color: #FFFFFF;
+	background-color: #999999;
+	border-color: #999999;
+}
+
+.wp-block-button__link:hover svg, .wp-block-file .wp-block-file__button:hover svg {
+	fill: #FFFFFF;
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: var(--heading-typography-font-family);
+}
+
+.is-style-outline .wp-block-button__link:hover {
+	color: #FFFFFF;
+	background-color: #565656;
+	border-radius: 0;
+	border-color: #565656;
+}
+
+.wp-block-file {
+	margin: 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

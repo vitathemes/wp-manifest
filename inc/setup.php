@@ -139,6 +139,7 @@ if ( ! function_exists( 'register_portfolio' ) ) {
 			'menu_position'       => 25,
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
+			'show_in_rest'        => true,
 			'can_export'          => true,
 			'has_archive'         => true,
 			'exclude_from_search' => true,
@@ -204,6 +205,7 @@ add_image_size( 'wp_manifest_article_thumbnail', 352, 258, true );
 add_image_size( 'wp_manifest_article_thumbnailx2', 702, 516, true );
 add_image_size( 'wp_manifest_medium', 544, 0, true );
 add_image_size( 'wp_manifest_medium_square', 544, 544, true );
+add_image_size( 'wp_manifest_single_portfolio', 1120, 472, true );
 
 
 //
@@ -217,17 +219,6 @@ function wp_manifest_is_comment_by_post_author( $comment = null ) {
 	}
 
 	return false;
-}
-
-// Remove unnecessary fields from comment form
-add_filter( 'comment_form_default_fields', 'website_field_remove' );
-function website_field_remove( $fields ) {
-	if ( isset( $fields['url'] ) ) {
-		//unset( $fields['url'] );
-		//unset( $fields['cookies'] );
-	}
-
-	return $fields;
 }
 
 if ( ! isset( $content_width ) ) {

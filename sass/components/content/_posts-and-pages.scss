@@ -21,3 +21,15 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+.s-content {
+	p {
+		margin: 0.75em 0 1em;
+		font-weight: var(--text-typography-variant);
+	}
+
+	*:not(h1,h2,h3,h4,h5,h6) {
+		font-weight: var(--text-typography-variant);
+	}
+}

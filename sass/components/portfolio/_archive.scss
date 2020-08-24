@@ -1,0 +1,20 @@
+.c-archive--portfolio {
+  padding-bottom: 80px;
+
+  @media #{$mobile} {
+    padding-bottom: 16px;
+  }
+
+  .c-archive__title {
+    margin-top: 0;
+    margin-bottom: 128px;
+
+    @media #{$tablet} {
+      margin-bottom: 64px;
+    }
+
+    @media #{$mobile} {
+      margin-bottom: 64px;
+    }
+  }
+}

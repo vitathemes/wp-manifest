@@ -22,6 +22,15 @@
 .wp-block a {
     color: #000;
     text-decoration: none;
+    font-family: var(--text-typography-font-family);
+}
+
+.wp-block p, .wp-block tablet, .wp-block cite, .wp-block ul, .wp-block ol {
+    font-family: var(--text-typography-font-family);
+}
+
+.wp-block h1, .wp-block h2, .wp-block h3, .wp-block h4, .wp-block h5, .wp-block h6 {
+    font-family: var(--heading-typography-font-family);
 }
 
 .wp-block a:hover {
@@ -31,5 +40,46 @@
 .wp-block ul {
     margin: 10px 0;
     padding-left: 12px;
+    font-family: var(--text-typography-font-family);
 }
 
+.wp-block-button__link {
+    padding: 8px 32px;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 166.3%;
+    font-family: var(--text-typography-font-family);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: #565656;
+    transition: 0.25s;
+    border-radius: 0;
+    border: 1px solid #565656;
+}
+
+.wp-block-button__link svg {
+    fill: #fff;
+}
+
+.wp-block-button__link:hover {
+    color: #FFFFFF;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.wp-block-button__link:hover svg {
+    fill: #FFFFFF;
+}
+
+.is-style-outline .wp-block-button__link {
+    border-color: var(--heading-typography-font-family);
+}
+
+.is-style-outline .wp-block-button__link:hover {
+    color: #FFFFFF;
+    background-color: #565656;
+    border-radius: 0;
+    border-color: #565656;
+}

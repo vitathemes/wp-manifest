@@ -297,3 +297,4 @@ function wp_manifest_enqueue_fonts() {
 	}
 }
 add_action('wp_head', 'wp_manifest_enqueue_fonts');
+add_action('admin_head', 'wp_manifest_enqueue_fonts');

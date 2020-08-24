@@ -7,9 +7,7 @@ a {
 		//color: $color__link-visited;
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
+	&:hover {
 		color: $wp-manifest__primary-color;
 	}
 
