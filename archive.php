@@ -7,10 +7,10 @@
  */
 get_header(); ?>
 
-    <section class="blog archive">
+<section class="blog archive">
+    <div class="o-wrapper">
 
-
-        <?php the_archive_title('<h1>', '</h1>') ?>
+		<?php the_archive_title( '<h1>', '</h1>' ) ?>
         <div id="content" class="list">
 			<?php if ( have_posts() ) :
 				/* Start the Loop */
@@ -38,5 +38,6 @@ get_header(); ?>
 			endif;
 			?>
         </div>
-    </section>
+    </div>
+</section>
 <?php get_footer(); ?>

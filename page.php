@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-    <div class="o-container">
+    <div class="o-wrapper">
         <div class="o-page o-page--default">
 			<?php
 			while ( have_posts() ): the_post();

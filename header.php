@@ -13,36 +13,43 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="o-wrapper">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
+<div id="page" class="main">
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
 
-	<header id="masthead" class="c-header">
-        <div class="c-header__main">
-            <div class="c-header__logo">
-		        <?php
-		        the_custom_logo();
-		        if ( is_front_page() && is_home() ) :
-			        ?>
-                    <h1 class="c-header__site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		        <?php
-		        else :
-			        ?>
-                    <p class="c-header__site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		        <?php
-		        endif; ?>
-            </div><!-- .site-branding -->
+    <header id="masthead" class="c-header">
+        <div class="o-wrapper">
+            <div class="c-header__main">
+                <div class="c-header__logo">
+					<?php
+					the_custom_logo();
+					if ( is_front_page() && is_home() ) :
+						?>
+                        <h1 class="c-header__site-title">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                        </h1>
+					<?php
+					else :
+						?>
+                        <p class="c-header__site-title">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                        </p>
+					<?php
+					endif; ?>
+                </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation c-header__menu">
-                <button class="menu-toggle c-header__toggle" aria-controls="primary-menu" aria-expanded="false"><span class="dashicons dashicons-menu-alt"></span></button>
-	            <?php wp_manifest_show_menu(); ?>
-            </nav><!-- #site-navigation -->
+                <nav id="site-navigation" class="main-navigation c-header__menu">
+                    <button class="menu-toggle c-header__toggle" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="dashicons dashicons-menu-alt"></span></button>
+					<?php wp_manifest_show_menu(); ?>
+                </nav><!-- #site-navigation -->
+            </div>
         </div>
-	</header><!-- #masthead -->
+    </header><!-- #masthead -->

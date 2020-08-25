@@ -16,7 +16,7 @@ $carousel_posts = new WP_Query( array(
 ) );
 get_header(); ?>
 <section class="o-page">
-    <div class="o-container">
+    <div class="o-wrapper">
         <div class="o-page__header o-col">
             <h1 class="u-margin-none">Blog</h1>
         </div>
