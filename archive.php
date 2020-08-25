@@ -7,11 +7,11 @@
  */
 get_header(); ?>
 
-<section class="blog archive">
+<section class="blog archive c-archive">
     <div class="o-wrapper">
 
-		<?php the_archive_title( '<h1>', '</h1>' ) ?>
-        <div id="content" class="list">
+		<?php the_archive_title( '<h1 class="c-archive__title">', '</h1>' ) ?>
+        <div id="content" class="u-flex u-flex-wrap u-dir-column-m">
 			<?php if ( have_posts() ) :
 				/* Start the Loop */
 				while ( have_posts() ) :
@@ -22,8 +22,13 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content', 'post' );
-
+					?>
+                    <div class="o-col o-col--1/2 u-margin-bottom-xlarge u-margin-bottom-small-m">
+						<?php
+						get_template_part( 'template-parts/content', 'post' );
+						?>
+                    </div>
+				<?php
 				endwhile;
 
 				the_posts_pagination( array(

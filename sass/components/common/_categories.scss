@@ -1,0 +1,27 @@
+.c-categories {
+  margin-bottom: 24px;
+}
+
+.s-categories {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  li {
+    margin-right: 64px;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $wp-manifest__main-primary-light-color;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      color: $wp-manifest__main-primary-color;
+    }
+  }
+}

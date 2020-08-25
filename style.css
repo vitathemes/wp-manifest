@@ -955,7 +955,7 @@ input[type="submit"] svg, form button svg {
 
 input[type="submit"]:hover, form button:hover {
 	color: #FFFFFF;
-	background-color: #7B7B7B;
+	background-color: #323232;
 }
 
 input[type="submit"]:hover svg, form button:hover svg {
@@ -1972,7 +1972,7 @@ ol.children:last-child {
 
 .c-btn--primary:hover {
 	color: #FFFFFF;
-	background-color: #7B7B7B;
+	background-color: #323232;
 }
 
 .c-btn--primary:hover svg {
@@ -2343,6 +2343,34 @@ ol.children:last-child {
 	color: #7B7B7B;
 }
 
+.c-categories {
+	margin-bottom: 24px;
+}
+
+.s-categories {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+.s-categories li {
+	margin-right: 64px;
+	margin-bottom: 24px;
+}
+
+.s-categories li:last-child {
+	margin-right: 0;
+}
+
+.s-categories a {
+	color: #565656;
+	letter-spacing: 0.1em;
+}
+
+.s-categories a:hover {
+	color: #000000;
+}
+
 /* Slider
 --------------------------------------------- */
 .c-slider__slide {
@@ -2534,19 +2562,19 @@ ol.children:last-child {
 	}
 }
 
-.c-archive--portfolio .c-archive__title {
+.c-archive__title {
 	margin-top: 0;
 	margin-bottom: 128px;
 }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
-	.c-archive--portfolio .c-archive__title {
+	.c-archive__title {
 		margin-bottom: 64px;
 	}
 }
 
 @media only screen and (max-width: 560px) {
-	.c-archive--portfolio .c-archive__title {
+	.c-archive__title {
 		margin-bottom: 64px;
 	}
 }
@@ -2874,8 +2902,8 @@ a.u-color-primary-light:hover .dashicons {
 
 .wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover {
 	color: #FFFFFF;
-	background-color: #7B7B7B;
-	border-color: #7B7B7B;
+	background-color: #323232;
+	border-color: #323232;
 }
 
 .wp-block-button__link:hover svg, .wp-block-file .wp-block-file__button:hover svg {
@@ -2888,9 +2916,9 @@ a.u-color-primary-light:hover .dashicons {
 
 .is-style-outline .wp-block-button__link:hover {
 	color: #FFFFFF;
-	background-color: #565656;
+	background-color: #323232;
 	border-radius: 0;
-	border-color: #565656;
+	border-color: #323232;
 }
 
 .wp-block-file {

@@ -17,6 +17,7 @@ function wp_manifest_register_primary_menu() {
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ *
  * @return array
  */
 function wp_manifest_body_classes( $classes ) {
@@ -32,6 +33,7 @@ function wp_manifest_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'wp_manifest_body_classes' );
 
 /**
@@ -42,6 +44,7 @@ function wp_manifest_pingback_header() {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
+
 add_action( 'wp_head', 'wp_manifest_pingback_header' );
 
 // Menu Generator
@@ -69,7 +72,7 @@ function wp_manifest_typography() {
 		'line-height' => '1.5',
 		'color'       => '#000000'
 	);
-	$default_text_typography               = array(
+	$default_text_typography                = array(
 		'font-family' => "Lato",
 		'font-size'   => "19px",
 		'variant'     => 'regular',
@@ -77,7 +80,7 @@ function wp_manifest_typography() {
 		'color'       => '#000000'
 	);
 
-	if ( empty( $wp_manifest_heading_typography) || $wp_manifest_heading_typography['font-family'] == "" ) {
+	if ( empty( $wp_manifest_heading_typography ) || $wp_manifest_heading_typography['font-family'] == "" ) {
 		$wp_manifest_heading_typography = $wp_manifest_default_heading_typography;
 	} else {
 		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
@@ -102,22 +105,24 @@ function wp_manifest_typography() {
 	            --secondary-color: ' . $wp_manifest_text_typography['color'] . ';
 	            --tertiary-color: ' . $wp_manifest_heading_typography["color"] . ';
 			}';
+
 	return $html;
 }
 
-add_action('admin_head', 'wp_manifest_theme_settings');
-add_action('wp_head', 'wp_manifest_theme_settings');
-function wp_manifest_theme_settings(){
-	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
-	$wp_indigo_theme_typography = wp_manifest_typography();
+add_action( 'admin_head', 'wp_manifest_theme_settings' );
+add_action( 'wp_head', 'wp_manifest_theme_settings' );
+function wp_manifest_theme_settings() {
+	$wp_manifest_text_typography    = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography = get_theme_mod( 'headings_typography' );
+	$wp_indigo_theme_typography     = wp_manifest_typography();
 	?>
-	<style>
-		<?php echo $wp_indigo_theme_typography; ?>
-	</style>
+    <style>
+        <?php echo $wp_indigo_theme_typography; ?>
+    </style>
 	<?php
-};
+}
 
+;
 
 
 function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
@@ -175,7 +180,7 @@ function wp_manifest_get_discussion_data() {
 		$wp_manifest_authors[] = ( (int) $wp_manifest_comment->user_id > 0 ) ? (int) $wp_manifest_comment->user_id : $wp_manifest_comment->comment_author_email;
 	}
 	$wp_manifest_authors = array_unique( $wp_manifest_authors );
-	$discussion        = (object) array(
+	$discussion          = (object) array(
 		'authors'   => array_slice( $wp_manifest_authors, 0, 6 ),
 		/* Six unique authors commenting on the post. */
 		'responses' => get_comments_number( $wp_manifest_current_post_id ),
@@ -186,8 +191,8 @@ function wp_manifest_get_discussion_data() {
 }
 
 function wp_manifest_comment_form() {
-	$wp_manifest_commenter     = wp_get_current_commenter();
-	$wp_manifest_fields = array(
+	$wp_manifest_commenter = wp_get_current_commenter();
+	$wp_manifest_fields    = array(
 		'author'  =>
 			'<p class="comment-field comment-form-author"><label>Name *</label>' .
 			'<input required="required" placeholder="' . esc_attr__( 'Enter Your Name', 'wp-indigo' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author'] ) . '" id="author" name="author" type="text" size="30" /></p>',
@@ -232,14 +237,14 @@ function wp_manifest_get_post_category( $post_id ) {
 	$category_name = $category['primary_category']->name;
 	$category_link = get_category_link( $category['primary_category']->term_id );
 
-	return array('name' => $category_name,'url' => $category_link);
+	return array( 'name' => $category_name, 'url' => $category_link );
 }
 
-function wp_manifest_generate_srcset($post_id) {
-	$x1 = get_the_post_thumbnail_url($post_id, '');
-	$x2 = get_the_post_thumbnail_url($post_id, '');
+function wp_manifest_generate_srcset( $post_id ) {
+	$x1 = get_the_post_thumbnail_url( $post_id, '' );
+	$x2 = get_the_post_thumbnail_url( $post_id, '' );
 
-	echo $x1 . " x1, " .  $x2 . " x2";
+	echo $x1 . " x1, " . $x2 . " x2";
 }
 
 
@@ -260,8 +265,9 @@ function wp_manifest_register_block_patterns() {
 		);
 
 	}
-
 }
+
+
 add_action( 'init', 'wp_manifest_register_block_patterns' );
 
 function wp_manifest_register_block_categories() {
@@ -274,4 +280,5 @@ function wp_manifest_register_block_categories() {
 
 	}
 }
+
 add_action( 'init', 'wp_manifest_register_block_categories' );

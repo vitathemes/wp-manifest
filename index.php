@@ -67,7 +67,10 @@ get_header(); ?>
                 </nav>
             </div>
         </div>
-		<?php if ( have_posts() ) : ?>
+        <ul class="c-categories s-categories">
+		    <?php wp_list_categories(array('title_li' => '')); ?>
+        </ul>
+        <?php if ( have_posts() ) : ?>
             <div id="site-content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
                 <div class="u-flex u-flex-wrap u-dir-column-m">
 					<?php

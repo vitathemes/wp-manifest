@@ -19,8 +19,8 @@
 
   &:hover {
     color: #FFFFFF;
-    background-color: $wp-manifest__neutral-dark-gray-color;
-    border-color: $wp-manifest__neutral-dark-gray-color;
+    background-color: $wp-manifest__main-primary-dark-color;
+    border-color: $wp-manifest__main-primary-dark-color;
 
     svg {
       fill: #FFFFFF;
@@ -33,9 +33,9 @@
 
   &:hover {
     color: #FFFFFF;
-    background-color: $wp-manifest__main-primary-light-color;
+    background-color: $wp-manifest__main-primary-dark-color;
     border-radius: 0;
-    border-color: $wp-manifest__main-primary-light-color;
+    border-color: $wp-manifest__main-primary-dark-color;
   }
 }
 
