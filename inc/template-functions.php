@@ -74,7 +74,7 @@ function wp_manifest_typography() {
 		'font-size'   => "19px",
 		'variant'     => 'regular',
 		'line-height' => '1.5',
-		'color'       => '#666666'
+		'color'       => '#000000'
 	);
 
 	if ( empty( $wp_manifest_heading_typography) || $wp_manifest_heading_typography['font-family'] == "" ) {

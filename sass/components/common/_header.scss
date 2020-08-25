@@ -10,7 +10,7 @@
   color: #fff;
   transition: $wp-manifest_global-transition;
   background: #fff;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 // Main Container of HEADER Section
@@ -111,11 +111,24 @@
     }
   }
 
+  li.current-menu-item {
+
+    &::after {
+      content: '';
+      width: 80%;
+      height: 1px;
+      background-color: $wp-manifest__main-primary-color;
+      display: block;
+      margin: 4px auto 0;
+    }
+  }
+
   a {
     font-size: 0.833em ;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     line-height: 16px;
+    font-family: $wp-manifest__primary-font;
 
     &:hover {
       color: $wp-manifest__primary-color;

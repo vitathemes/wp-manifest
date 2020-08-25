@@ -41,16 +41,14 @@ get_header(); ?>
 					while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post();
 						$category = wp_manifest_get_post_category( get_the_ID() ); ?>
                         <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__content__cell">
-                            <a class="" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
+                            <a class="c-blog-carousel__content__cell__category" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
 							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title">', '</h2></a>' ); ?>
-                            <span class="u-color-dark-gray"><?php echo get_the_time( 'd M, Y' ); ?></span>
+                            <span class="c-blog-carousel__content__cell__date u-color-dark-gray"><?php echo get_the_time( 'd M, Y' ); ?></span>
                             <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
                                 <p class="u-margin-none">
 									<?php echo strip_tags( get_the_excerpt() ); ?>
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link">
-                                        <svg width="24" height="12" fill="#565656" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M23.53 6.53a.75.75 0 000-1.06L18.757.697a.75.75 0 00-1.06 1.06L21.939 6l-4.242 4.243a.75.75 0 001.06 1.06L23.53 6.53zM0 6.75h23v-1.5H0v1.5z"/>
-                                        </svg>
+                                        <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                                     </a>
                                 </p>
 
