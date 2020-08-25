@@ -5,3 +5,14 @@
 .u-color-dark-gray {
   color: $wp-manifest__neutral-dark-gray-color;
 }
+
+a.u-color-primary-light {
+
+  &:hover {
+    color: $wp-manifest__main-primary-color;
+    
+    .dashicons {
+      color: $wp-manifest__main-primary-color;
+    }
+  }
+}

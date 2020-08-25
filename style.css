@@ -769,6 +769,14 @@ figure {
 	margin: 1em 0;
 }
 
+.dashicons {
+	color: #7B7B7B;
+}
+
+.dashicons:hover {
+	color: #000000;
+}
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -2677,6 +2685,14 @@ ol.children:last-child {
 
 .u-color-dark-gray {
 	color: #7B7B7B;
+}
+
+a.u-color-primary-light:hover {
+	color: #000000;
+}
+
+a.u-color-primary-light:hover .dashicons {
+	color: #000000;
 }
 
 /* Flex

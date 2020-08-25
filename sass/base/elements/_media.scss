@@ -13,3 +13,11 @@ img {
 figure {
 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 }
+
+.dashicons  {
+	color: $wp-manifest__neutral-dark-gray-color;
+
+	&:hover {
+		color: $wp-manifest__main-primary-color;
+	}
+}

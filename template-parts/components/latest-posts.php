@@ -11,9 +11,7 @@ if ( $latest_posts->have_posts() ):
                 <h2 class="u-margin-none u-margin-bottom-small-m">Latest Posts</h2>
                 <a class="u-color-primary-light" href="<?php echo site_url( 'blog' ); ?>">
                     See All
-                    <svg fill="#565656" width="24" height="12" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.53 6.53a.75.75 0 000-1.06L18.757.697a.75.75 0 00-1.06 1.06L21.939 6l-4.242 4.243a.75.75 0 001.06 1.06L23.53 6.53zM0 6.75h23v-1.5H0v1.5z"/>
-                    </svg>
+                    <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                 </a>
             </div>
             <div class="u-flex u-dir-column-m">
