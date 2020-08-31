@@ -295,3 +295,15 @@ add_theme_support( 'infinite-scroll', array(
 	'render'         => false,
 	'posts_per_page' => false,
 ) );
+
+
+function wp_manifest_enqueue_editor_scripts() {
+	wp_enqueue_script(
+		'wp_manifest_blocks_scripts',
+		get_template_directory_uri() . "/js/blocks.js",
+		array( 'wp-blocks', 'wp-dom' ),
+		false,
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'wp_manifest_enqueue_editor_scripts' );

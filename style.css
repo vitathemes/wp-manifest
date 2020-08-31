@@ -1110,8 +1110,8 @@ input[type="submit"]:hover svg, form button:hover svg {
 	display: block;
 }
 
-.post,
-.page {
+.post:not(body),
+.page:not(body) {
 	margin: 0 0 1.5em;
 }
 
@@ -1135,8 +1135,20 @@ input[type="submit"]:hover svg, form button:hover svg {
 	font-weight: var(--text-typography-variant);
 }
 
+.s-content p a {
+	text-decoration: underline;
+}
+
+.s-content p a:hover {
+	color: var(--primary-color);
+}
+
 .s-content * {
 	font-weight: var(--text-typography-variant);
+}
+
+.s-content h1:first-child, .s-content h2:first-child, .s-content h3:first-child, .s-content h4:first-child, .s-content h5:first-child, .s-content h6:first-child {
+	margin-top: 0;
 }
 
 /* Comments
@@ -2923,6 +2935,14 @@ a.u-color-primary-light:hover .dashicons {
 
 .wp-block-file {
 	margin: 1rem 0;
+}
+
+p.is-style-no-margin {
+	margin: 0 !important;
+}
+
+h1.is-style-no-margin, h2.is-style-no-margin, h3.is-style-no-margin, h4.is-style-no-margin, h5.is-style-no-margin, h6.is-style-no-margin {
+	margin: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

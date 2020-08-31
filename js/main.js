@@ -22,43 +22,45 @@
 
             var slider = new Flickity('.js-slider', sliderOptions);
         }
+
+
         /* Blog Carousel */
+        if (document.querySelector('.js-blog-image-carousel') !== null) {
+            var blogCarouselOptions = {
+                prevNextButtons: false,
+                pageDots: false,
+                draggable: false,
+                autoPlay: false,
+                cellAlign: 'center',
+                hash: true,
+                imagesLoaded: true,
+                initialIndex: 0,
+                groupCells: false,
+                pauseAutoPlayOnHover: false
+            };
 
+            if (window.matchMedia("(max-width: 700px)").matches) {
+                blogCarouselOptions.draggable = true;
+            }
 
-        var blogCarouselOptions = {
-            prevNextButtons: false,
-            pageDots: false,
-            draggable: false,
-            autoPlay: false,
-            cellAlign: 'center',
-            hash: true,
-            imagesLoaded: true,
-            initialIndex: 0,
-            groupCells: false,
-            pauseAutoPlayOnHover: false
-        };
-
-        if (window.matchMedia("(max-width: 700px)").matches) {
-            blogCarouselOptions.draggable = true;
-        }
-
-        var blogImageCarousel = new Flickity('.js-blog-image-carousel', blogCarouselOptions);
-        blogCarouselOptions.fade = true;
-        var blogContentCarousel = new Flickity('.js-blog-content-carousel', blogCarouselOptions);
-        blogImageCarousel.on('change', function (index) {
-            blogContentCarousel.select(index);
-        });
-        document.querySelectorAll('.js-blog-carousel-nav-item').forEach(function (item) {
-            item.addEventListener('click', function (event) {
-                blogCarouselNavigation(item);
+            var blogImageCarousel = new Flickity('.js-blog-image-carousel', blogCarouselOptions);
+            blogCarouselOptions.fade = true;
+            var blogContentCarousel = new Flickity('.js-blog-content-carousel', blogCarouselOptions);
+            blogImageCarousel.on('change', function (index) {
+                blogContentCarousel.select(index);
             });
-        });
-
-        function blogCarouselNavigation(el) {
             document.querySelectorAll('.js-blog-carousel-nav-item').forEach(function (item) {
-                item.classList.remove('is-active');
+                item.addEventListener('click', function (event) {
+                    blogCarouselNavigation(item);
+                });
             });
-            el.classList.add("is-active");
+
+            function blogCarouselNavigation(el) {
+                document.querySelectorAll('.js-blog-carousel-nav-item').forEach(function (item) {
+                    item.classList.remove('is-active');
+                });
+                el.classList.add("is-active");
+            }
         }
     });
 })();
