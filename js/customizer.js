@@ -12,8 +12,15 @@
 			value.bind( function( newval ) {
 
 				if (newval == "dark") {
-					wp.customize('headings_typography_color').set("#fff");
+					wp.customize('headings_typography_color').set("#ffffff");
 					wp.customize('text_typography_color').set("#CCCCCC");
+					wp.customize('background_color').set("#323232");
+				}
+
+				if (newval == "light") {
+					wp.customize('headings_typography_color').set("#000000");
+					wp.customize('text_typography_color').set("#565656");
+					wp.customize('background_color').set("#ffffff");
 				}
 
 			});

@@ -193,14 +193,6 @@ function register_portfolio_category() {
 
 add_action( 'init', __NAMESPACE__ . '\register_portfolio_category', 0 );
 
-
-function remove_unused_sections( $wp_customize ) {
-	$wp_customize->remove_section( 'background_image' );
-	$wp_customize->remove_section( 'colors' );
-}
-
-add_action( 'customize_register', 'remove_unused_sections', 11 );
-
 add_image_size( 'wp_manifest_article_thumbnail', 352, 258, true );
 add_image_size( 'wp_manifest_article_thumbnailx2', 702, 516, true );
 add_image_size( 'wp_manifest_medium', 544, 0, true );

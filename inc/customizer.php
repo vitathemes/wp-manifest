@@ -67,26 +67,6 @@ add_action( 'init', function () {
 
 // -- Branding Fields --
 // <editor-fold desc="branding">
-	Kirki::add_field( 'wp-manifest', [
-		'type'      => 'background',
-		'settings'  => 'branding_background',
-		'label'     => esc_html__( 'Background', 'wp-manifest' ),
-		'section'   => 'branding',
-		'default'   => [
-			'background-color'      => 'fff',
-			'background-image'      => '',
-			'background-repeat'     => 'repeat',
-			'background-position'   => 'center center',
-			'background-size'       => 'cover',
-			'background-attachment' => 'scroll',
-		],
-		'transport' => 'auto',
-		'output'    => [
-			[
-				'element' => 'body',
-			],
-		],
-	] );
 
 	Kirki::add_field( 'wp-manifest', [
 		'type'     => 'color',
@@ -165,6 +145,15 @@ add_action( 'init', function () {
 		'section'  => 'homepage',
 		'default'  => esc_html__( 'We work with clients around the world from our headquarters in Charleston, South Carolina. We focus on naming, branding, brand narratives, website design and development, and brand experiences.', 'wp-manifest' ),
 		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
+		'settings'    => 'show_latest_posts_homepage',
+		'label'       => esc_html__( 'Show latest posts', 'wp-manifest' ),
+		'section'     => 'homepage',
+		'default'     => '1',
+		'priority'    => 10,
 	] );
 
 // </editor-fold>

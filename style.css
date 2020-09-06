@@ -3085,10 +3085,6 @@ h1.is-style-no-margin, h2.is-style-no-margin, h3.is-style-no-margin, h4.is-style
 /*--------------------------------------------------------------
 # Themes
 --------------------------------------------------------------*/
-.is-dark-mode {
-	background-color: #323232;
-}
-
 .is-dark-mode footer.c-footer {
 	background-color: #212121;
 }
