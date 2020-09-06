@@ -23,7 +23,6 @@
 <?php wp_body_open(); ?>
 <div id="page" class="main">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
-
     <header id="masthead" class="c-header">
         <div class="o-wrapper">
             <div class="c-header__main">

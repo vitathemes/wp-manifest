@@ -31,6 +31,10 @@ function wp_manifest_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	if ( get_theme_mod( 'theme_mode' ) == "dark" ) {
+		$classes[] = 'is-dark-mode';
+	}
+
 	return $classes;
 }
 

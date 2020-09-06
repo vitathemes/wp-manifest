@@ -52,16 +52,16 @@ add_action( 'init', function () {
 
 // Add Branding fields
 
-	Kirki::add_field( 'theme_config_id', [
-		'type'        => 'color-palette',
-		'settings'    => 'color_palette_setting_0',
-		'label'       => esc_html__( 'Color-Palette', 'kirki' ),
-		'description' => esc_html__( 'This is a color-palette control', 'kirki' ),
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'theme_mode',
+		'label'       => esc_html__( 'Theme Mode', 'wp-manifest' ),
 		'section'     => 'branding',
-		'default'     => '#888888',
+		'default'     => 'light',
+		'priority'    => 10,
 		'choices'     => [
-			'colors' => [ '#000000', '#222222', '#444444', '#666666', '#888888', '#aaaaaa', '#cccccc', '#eeeeee', '#ffffff' ],
-			'style'  => 'round',
+			'light'   => esc_html__( 'Light', 'wp-manifest' ),
+			'dark' => esc_html__( 'Dark', 'wp-manifest' ),
 		],
 	] );
 
@@ -94,6 +94,19 @@ add_action( 'init', function () {
 		'label'    => __( 'Primary Color', 'wp-manifest' ),
 		'section'  => 'branding',
 		'default'  => '#3F51B5',
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'switch',
+		'settings'    => 'switch_setting',
+		'label'       => esc_html__( 'This is the label', 'wp-manifest' ),
+		'section'     => 'branding',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => [
+			'on'  => esc_html__( 'Enable', 'wp-manifest' ),
+			'off' => esc_html__( 'Disable', 'wp-manifest' ),
+		],
 	] );
 
 // </editor-fold>
@@ -251,9 +264,10 @@ add_action( 'init', function () {
 
 // </editor-fold>
 
+
 } );
 
-function add_edit_icons( $wp_customize ) {
+function wp_manifest_add_edit_icons( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'copyright_text', array(
 		'selector' => '.footer-main',
 	) );
@@ -279,7 +293,7 @@ function add_edit_icons( $wp_customize ) {
 	) );
 }
 
-add_action( 'customize_preview_init', 'add_edit_icons' );
+add_action( 'customize_preview_init', 'wp_manifest_add_edit_icons' );
 
 function wp_manifest_enqueue_fonts() {
 	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
@@ -298,3 +312,8 @@ function wp_manifest_enqueue_fonts() {
 }
 add_action('wp_head', 'wp_manifest_enqueue_fonts');
 add_action('admin_head', 'wp_manifest_enqueue_fonts');
+
+function wp_manifest_customize_preview_js() {
+	wp_enqueue_script( 'wp-manifest-js-customizer', get_template_directory_uri() . '/js/customizer.js', array(), false, true );
+}
+add_action( 'customize_preview_init', 'wp_manifest_customize_preview_js' );

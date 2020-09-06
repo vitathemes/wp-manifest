@@ -8,35 +8,26 @@
  */
 
 ( function( $ ) {
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
-		} );
-	} );
+	$( window ).load( function() {
 
-	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
-		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title, .site-description' ).css( {
-					clip: 'rect(1px, 1px, 1px, 1px)',
-					position: 'absolute',
-				} );
-			} else {
-				$( '.site-title, .site-description' ).css( {
-					clip: 'auto',
-					position: 'relative',
-				} );
-				$( '.site-title a, .site-description' ).css( {
-					color: to,
-				} );
-			}
-		} );
-	} );
-}( jQuery ) );
+		// When 'Use Portal Color Controls' customizer control is toggled
+		wp.customize( 'portal_color_control', function ( value ) {
+			value.bind( function( newval ) {
+
+				// If toggled off, warn user that portal color settings will be deleted
+				if ( 'off' == newval ) {
+					var confirmation = window.confirm( "WARNING: turning this off will delete all the portal color settings. Continue?" );
+
+					if ( true == confirmation ) {
+						// If user confirms, run code here to delete all portal color settings
+					} else {
+						// If user does not confirm, reset the customizer control to 'on'
+						this.set( 'on' );
+					}
+
+				}
+			});
+		});
+
+	});
+})( jQuery );

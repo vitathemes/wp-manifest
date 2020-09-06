@@ -306,4 +306,89 @@ function wp_manifest_enqueue_editor_scripts() {
 		true
 	);
 }
+
 add_action( 'enqueue_block_editor_assets', 'wp_manifest_enqueue_editor_scripts' );
+
+function wp_manifest_enqueue_customizer_style( $hook_suffix ) {
+	// Load your css.
+	//wp_register_style( 'kirki-styles-css', get_template_directory_uri() . '/inc/editor/kirki-controls-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'kirki-styles-css' );
+}
+
+add_action( 'admin_enqueue_scripts', 'wp_manifest_enqueue_customizer_style' );
+
+
+function wp_manifest_color_palette() {
+	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
+	$wp_manifest_default_heading_typography = array(
+		'font-family' => "Red Hat Display",
+		'font-size'   => "48px",
+		'variant'     => 'regular',
+		'line-height' => '1.5',
+		'color'       => '#000000'
+	);
+	$default_text_typography                = array(
+		'font-family' => "Lato",
+		'font-size'   => "19px",
+		'variant'     => 'regular',
+		'line-height' => '1.5',
+		'color'       => '#565656'
+	);
+
+	if ( empty( $wp_manifest_heading_typography ) || $wp_manifest_heading_typography['font-family'] == "" ) {
+		$wp_manifest_heading_typography = $wp_manifest_default_heading_typography;
+	} else {
+		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
+	}
+	if ( empty( $wp_manifest_text_typography ) ) {
+		$wp_manifest_text_typography = $default_text_typography;
+	} else {
+		$wp_manifest_text_typography = array_merge( $default_text_typography, $wp_manifest_text_typography );
+	}
+
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Theme Primary', 'wp-manifest' ),
+			'slug'  => 'theme-primary',
+			'color' => get_theme_mod( "branding_primary_color", "#3F51B5" ),
+		),
+		array(
+			'name'  => __( 'Theme Secondary', 'wp-manifest' ),
+			'slug'  => 'theme-secondary',
+			'color' => $wp_manifest_heading_typography["color"],
+		),
+		array(
+			'name'  => __( 'Theme Tertiary', 'wp-manifest' ),
+			'slug'  => 'theme-tertiary',
+			'color' => $wp_manifest_text_typography['color'],
+		),
+		array(
+			'name'  => __( 'Primary Gray', 'wp-manifest' ),
+			'slug'  => 'primary-gray',
+			'color' => '#323232',
+		),
+		array(
+			'name'  => __( 'Dark Gray', 'wp-manifest' ),
+			'slug'  => 'dark-gray',
+			'color' => '#7B7B7B',
+		),
+		array(
+			'name'  => __( 'Gray', 'wp-manifest' ),
+			'slug'  => 'gray',
+			'color' => '#CCCCCC',
+		),
+		array(
+			'name'  => __( 'Light Gray', 'wp-manifest' ),
+			'slug'  => 'light-gray',
+			'color' => '#F4F4F4',
+		),
+		array(
+			'name'  => __( 'White', 'wp-manifest' ),
+			'slug'  => 'white',
+			'color' => '#FFFFFF',
+		),
+	) );
+}
+
+add_action( 'init', 'wp_manifest_color_palette' );

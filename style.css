@@ -570,7 +570,7 @@ h6 {
 h1, .h1 {
 	font-family: var(--heading-typography-font-family);
 	font-size: var(--heading-typography-font-size);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.175;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -579,7 +579,7 @@ h1, .h1 {
 h2, .h2 {
 	font-family: var(--heading-typography-font-family);
 	font-size: calc(var(--heading-typography-font-size) - 0.5em);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.167;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -588,7 +588,7 @@ h2, .h2 {
 h3, .h3 {
 	font-family: var(--heading-typography-font-family);
 	font-size: calc(var(--heading-typography-font-size) - 0.75em);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.154;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -597,7 +597,7 @@ h3, .h3 {
 h4, .h4 {
 	font-family: var(--heading-typography-font-family);
 	font-size: calc(var(--heading-typography-font-size) - 1em);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.15;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -606,7 +606,7 @@ h4, .h4 {
 h5, .h5 {
 	font-family: var(--heading-typography-font-family);
 	font-size: calc(var(--heading-typography-font-size) - 1.25em);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.205;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -615,7 +615,7 @@ h5, .h5 {
 h6, .h6 {
 	font-family: var(--heading-typography-font-family);
 	font-size: calc(var(--heading-typography-font-size) - 1.5em);
-	color: var(--secondary-color);
+	color: var(--tertiary-color);
 	line-height: 1.194;
 	font-weight: var(--heading-typography-variant);
 	margin: 1rem 0 1.5rem;
@@ -2943,6 +2943,17 @@ p.is-style-no-margin {
 
 h1.is-style-no-margin, h2.is-style-no-margin, h3.is-style-no-margin, h4.is-style-no-margin, h5.is-style-no-margin, h6.is-style-no-margin {
 	margin: 0 !important;
+}
+
+/*--------------------------------------------------------------
+# Themes
+--------------------------------------------------------------*/
+.is-dark-mode {
+	background-color: #323232;
+}
+
+.is-dark-mode footer.c-footer {
+	background-color: #212121;
 }
 
 /*# sourceMappingURL=style.css.map */
