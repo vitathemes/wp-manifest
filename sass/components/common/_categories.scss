@@ -25,3 +25,15 @@
     }
   }
 }
+
+
+.is-dark-mode {
+  a {
+    color: $wp-manifest__neutral-gray-light-color;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      color: $wp-manifest__primary-color;
+    }
+  }
+}

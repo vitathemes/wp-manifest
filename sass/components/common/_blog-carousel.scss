@@ -46,7 +46,7 @@
   line-height: 166.3%;
   font-family: $wp-manifest__secondary-font;
   letter-spacing: 0.1em;
-  color: #000000;
+  color: $wp-manifest__tertiary-color;
   transition: $wp-manifest_global-transition;
 
   &:hover {
@@ -59,7 +59,7 @@
 }
 
 .c-blog-carousel__content__cell__excerpt {
-  margin: 48px 0 64px;
+  margin: 48px 0 32px;
 }
 
 .c-blog-carousel__content {
@@ -81,7 +81,7 @@
   font-size: 16px;
   line-height: 166.3%;
   letter-spacing: 0.1em;
-  color: #000000;
+  color: $wp-manifest__tertiary-color;
   margin-right: 24px;
 
   &:last-child {

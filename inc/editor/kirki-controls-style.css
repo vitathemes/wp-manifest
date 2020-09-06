@@ -23,21 +23,21 @@
     display: flex;
     flex-wrap: wrap;
 }
-.customize-control-kirki-background .background-attachment .buttonset .switch-label,
-.customize-control-kirki-background .background-size .buttonset .switch-label {
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #555;
-    padding: 0.5em 1em;
-    margin: 0;
-    text-align: center;
-    flex-grow: 1;
-}
-.customize-control-kirki-background .background-attachment .buttonset .switch-input:checked + .switch-label,
-.customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label {
-    background-color: #3498DB;
-    color: #fff;
-}
+/*.customize-control-kirki-background .background-attachment .buttonset .switch-label,*/
+/*.customize-control-kirki-background .background-size .buttonset .switch-label {*/
+/*    background: rgba(0, 0, 0, 0.05);*/
+/*    border: 1px solid rgba(0, 0, 0, 0.1);*/
+/*    color: #555;*/
+/*    padding: 0.5em 1em;*/
+/*    margin: 0;*/
+/*    text-align: center;*/
+/*    flex-grow: 1;*/
+/*}*/
+/*.customize-control-kirki-background .background-attachment .buttonset .switch-input:checked + .switch-label,*/
+/*.customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label {*/
+/*    background-color: #3498DB;*/
+/*    color: #fff;*/
+/*}*/
 
 .customize-control-kirki-code textarea {
     width: 100%;
@@ -340,7 +340,28 @@
     color: #000;
 }
 
+.customize-control-kirki-react-select {
+    position: relative;
+    z-index: 10;
+}
 
+.customize-control-kirki-radio-buttonset .buttonset {
+    display: flex;
+    flex-wrap: wrap;
+}
+.customize-control-kirki-radio-buttonset .buttonset .switch-label {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px rgba(0, 0, 0, 0.1);
+    color: #555d66;
+    margin: 0;
+    text-align: center;
+    padding: 0.5em 1em;
+    flex-grow: 1;
+}
+.customize-control-kirki-radio-buttonset .buttonset .switch-input:checked + .switch-label {
+    background-color: #00a0d2;
+    color: rgba(255, 255, 255, 0.8);
+}
 
 .customize-control-kirki-radio-image > .image {
     display: flex;
@@ -648,74 +669,74 @@
     color: #aaa;
 }
 
-.customize-control-kirki-switch {
-    position: relative;
-}
-.customize-control-kirki-switch .switch-off,
-.customize-control-kirki-switch .switch-on {
-    opacity: 1;
-    padding: 8px;
-    font-size: 14px;
-    line-height: 18px;
-}
-.customize-control-kirki-switch .switch-on {
-    color: #fff;
-    opacity: 0;
-    padding-right: 0;
-}
-.customize-control-kirki-switch .switch-off {
-    color: #777;
-    padding-left: 0;
-}
-.customize-control-kirki-switch .switch {
-    border: none;
-    margin-bottom: 1.5rem;
-    outline: 0;
-    padding: 0;
-    user-select: none;
-    border-radius: 3rem;
-}
-.customize-control-kirki-switch label {
-    background: #b4b9be;
-    float: left;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    position: relative;
-    transition: left 0.15s ease-out;
-    border-radius: 3rem;
-}
-.customize-control-kirki-switch label:after {
-    background: #FFFFFF;
-    content: "";
-    display: block;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: calc(.85rem + 10px);
-    height: calc(.85rem + 10px);
-    transition: all 0.25s ease-in-out;
-    border-radius: 3rem;
-}
-.customize-control-kirki-switch input + label {
-    margin-left: 0;
-    margin-right: 0;
-}
-.customize-control-kirki-switch input:checked + label {
-    background: #0073aa;
-}
-.customize-control-kirki-switch input:checked + label:after {
-    left: auto;
-    right: 5px;
-    background: #ffffff;
-}
-.customize-control-kirki-switch input:checked + label .switch-on {
-    opacity: 1;
-}
-.customize-control-kirki-switch input:checked + label .switch-off {
-    opacity: 0;
-}
+/*.customize-control-kirki-switch {*/
+/*    position: relative;*/
+/*}*/
+/*.customize-control-kirki-switch .switch-off,*/
+/*.customize-control-kirki-switch .switch-on {*/
+/*    opacity: 1;*/
+/*    padding: 8px;*/
+/*    font-size: 14px;*/
+/*    line-height: 18px;*/
+/*}*/
+/*.customize-control-kirki-switch .switch-on {*/
+/*    color: #fff;*/
+/*    opacity: 0;*/
+/*    padding-right: 0;*/
+/*}*/
+/*.customize-control-kirki-switch .switch-off {*/
+/*    color: #777;*/
+/*    padding-left: 0;*/
+/*}*/
+/*.customize-control-kirki-switch .switch {*/
+/*    border: none;*/
+/*    margin-bottom: 1.5rem;*/
+/*    outline: 0;*/
+/*    padding: 0;*/
+/*    user-select: none;*/
+/*    border-radius: 3rem;*/
+/*}*/
+/*.customize-control-kirki-switch label {*/
+/*    background: #b4b9be;*/
+/*    float: left;*/
+/*    cursor: pointer;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    margin-bottom: 1rem;*/
+/*    position: relative;*/
+/*    transition: left 0.15s ease-out;*/
+/*    border-radius: 3rem;*/
+/*}*/
+/*.customize-control-kirki-switch label:after {*/
+/*    background: #FFFFFF;*/
+/*    content: "";*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    left: 5px;*/
+/*    top: 5px;*/
+/*    width: calc(.85rem + 10px);*/
+/*    height: calc(.85rem + 10px);*/
+/*    transition: all 0.25s ease-in-out;*/
+/*    border-radius: 3rem;*/
+/*}*/
+/*.customize-control-kirki-switch input + label {*/
+/*    margin-left: 0;*/
+/*    margin-right: 0;*/
+/*}*/
+/*.customize-control-kirki-switch input:checked + label {*/
+/*    background: #0073aa;*/
+/*}*/
+/*.customize-control-kirki-switch input:checked + label:after {*/
+/*    left: auto;*/
+/*    right: 5px;*/
+/*    background: #ffffff;*/
+/*}*/
+/*.customize-control-kirki-switch input:checked + label .switch-on {*/
+/*    opacity: 1;*/
+/*}*/
+/*.customize-control-kirki-switch input:checked + label .switch-off {*/
+/*    opacity: 0;*/
+/*}*/
 
 .customize-control-kirki-toggle {
     position: relative;
@@ -836,3 +857,68 @@
 }
 
 /*# sourceMappingURL=styles.css.map */
+#customize-theme-controls .control-section-kirki-expanded .accordion-section-title {
+    display: none;
+}
+#customize-theme-controls .control-section-kirki-expanded .customize-section-back {
+    display: none;
+}
+#customize-theme-controls .customize-pane-child.control-section-kirki-expanded {
+    position: relative;
+    visibility: visible;
+    height: auto;
+    margin-left: -100%;
+}
+#customize-theme-controls .customize-pane-child.control-section-kirki-expanded h3 .customize-action {
+    display: none;
+}
+#customize-theme-controls .control-section-kirki-link .button {
+    margin-top: -3px;
+}
+
+#customize-theme-controls .customize-pane-child.current-section-parent,
+.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent {
+    transform: translateX(-100%);
+}
+
+.control-section-kirki-nested {
+    margin: 0 -12px;
+}
+
+/*# sourceMappingURL=sections.css.map */
+.select2-dropdown {
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.select2-container {
+    min-width: 100px;
+    width: 100% !important;
+}
+.select2-container--open .select2-dropdown--above,
+.select2-container--open .select2-dropdown--below {
+    z-index: 9999999;
+    min-width: 100px;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.select2-container--default .select2-selection--multiple, .select2-container--default .select2-selection--single {
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.wp-customizer .select2-container {
+    z-index: 8 !important;
+}
+.wp-customizer .select2-container.select2-container--open {
+    z-index: 999999 !important;
+}
+
+/*# sourceMappingURL=kirki.css.map */

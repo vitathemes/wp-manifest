@@ -62,3 +62,21 @@
     }
   }
 }
+
+
+
+//
+.is-dark-mode {
+  .c-btn--primary {
+    color: $wp-manifest__neutral-white;
+
+    &:hover {
+      color: $wp-manifest__neutral-white;
+      background-color: $wp-manifest__primary-color;
+
+      .dashicons {
+        color: $wp-manifest__neutral-white;
+      }
+    }
+  }
+}

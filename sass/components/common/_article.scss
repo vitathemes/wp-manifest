@@ -97,7 +97,7 @@
   font-size: 16px;
   line-height: 166.3%;
   letter-spacing: 0.1em;
-  color: #000000;
+  color: $wp-manifest__tertiary-color;
 }
 
 .c-article__main__author__bio {
@@ -143,5 +143,13 @@
         margin-bottom: 0;
       }
     }
+  }
+}
+
+
+
+.is-dark-mode {
+  .c-article__header__meta__item {
+    color: $wp-manifest__neutral-gray-color;
   }
 }

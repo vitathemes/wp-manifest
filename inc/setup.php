@@ -311,7 +311,7 @@ add_action( 'enqueue_block_editor_assets', 'wp_manifest_enqueue_editor_scripts' 
 
 function wp_manifest_enqueue_customizer_style( $hook_suffix ) {
 	// Load your css.
-	//wp_register_style( 'kirki-styles-css', get_template_directory_uri() . '/inc/editor/kirki-controls-style.css', false, '1.0.0' );
+	wp_register_style( 'kirki-styles-css', get_template_directory_uri() . '/inc/editor/kirki-controls-style.css', false, '1.0.0' );
 	wp_enqueue_style( 'kirki-styles-css' );
 }
 

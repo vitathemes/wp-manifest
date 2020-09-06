@@ -43,3 +43,19 @@
 .wp-block-file {
   margin: 1rem 0;
 }
+
+
+.is-dark-mode {
+
+  .wp-block-button__link , .wp-block-file .wp-block-file__button {
+    &:hover {
+      color: #FFFFFF;
+      background-color: $wp-manifest__primary-color;
+      border-color: $wp-manifest__primary-color;
+    }
+  }
+
+  .is-style-outline .wp-block-button__link, .wp-block-button__link.is-style-outline {
+    color: $wp-manifest__neutral-white;
+  }
+}

@@ -24,6 +24,7 @@ textarea {
 	font-size: 16px;
 	line-height: 166.3%;
 	letter-spacing: 0.1em;
+	background: transparent;
 
 	&::placeholder {
 		font-size: 12px;
@@ -31,7 +32,7 @@ textarea {
 		display: flex;
 		align-items: center;
 		letter-spacing: 0.1em;
-		color: #CCCCCC;
+		color: $wp-manifest__main-primary-light-color;
 	}
 
 	&:focus {
@@ -57,6 +58,7 @@ select {
 
 textarea {
 	width: 100%;
+	background: transparent;
 }
 
 
@@ -83,6 +85,41 @@ input[type="submit"], form button {
 
 		svg {
 			fill: #FFFFFF;
+		}
+	}
+}
+
+
+.is-dark-mode {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea,
+	select {
+		border-bottom-color: $wp-manifest__neutral-white;
+		color: $wp-manifest__neutral-white;
+
+		&::placeholder {
+			color: $wp-manifest__neutral-gray-light-color;
+		}
+	}
+
+	input[type="submit"], form button {
+
+		&:hover {
+			background-color: $wp-manifest__primary-color;
 		}
 	}
 }

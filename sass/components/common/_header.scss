@@ -9,7 +9,6 @@
   width: 100%;
   color: #fff;
   transition: $wp-manifest_global-transition;
-  background: #fff;
   font-weight: 400;
 }
 
@@ -80,15 +79,14 @@
 .c-header__site-title {
   margin: 0;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-family: var(--heading-typography-font-family);
-  color: $wp-manifest__secondary-color;
+  font-size: var(--text-typography-font-size);
+  color: $wp-manifest__tertiary-color;
 
   &:visited {
-    color: $wp-manifest__secondary-color;
+    color: $wp-manifest__tertiary-color;
   }
 }
 
@@ -117,7 +115,7 @@
       content: '';
       width: 80%;
       height: 1px;
-      background-color: $wp-manifest__main-primary-color;
+      background-color: $wp-manifest__secondary-color;
       display: block;
       margin: 4px auto 0;
     }
@@ -129,6 +127,7 @@
     text-transform: uppercase;
     line-height: 16px;
     font-family: $wp-manifest__primary-font;
+    color: $wp-manifest__secondary-color;
 
     &:hover {
       color: $wp-manifest__primary-color;

@@ -18,7 +18,7 @@ blockquote {
 	margin: 0;
 	border-left: 2px solid $wp-manifest__neutral-dark-gray-color;
 	padding-left: 64px;
-	color: $wp-manifest__main-primary-color;
+	color: $wp-manifest__secondary-color;
 	font-weight: bold;
 	font-size: 19px;
 	line-height: 32px;
@@ -29,7 +29,7 @@ blockquote {
 	}
 
 	cite {
-		color: $wp-manifest__main-primary-light-color;
+		color: $wp-manifest__tertiary-color;
 		font-weight: 400;
 		font-size: 19px;
 		line-height: 32px;
@@ -49,6 +49,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	color: $wp-manifest__secondary-color;
 }
 
 code,
@@ -72,4 +73,21 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+
+.is-dark-mode {
+	pre,
+	big,
+	code,
+	kbd,
+	tt,
+	var,
+	abbr,
+	acronym,
+	mark,
+	ins
+	{
+		color: $wp-manifest__main-primary-dark-color;
+	}
 }

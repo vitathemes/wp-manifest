@@ -15,9 +15,9 @@ figure {
 }
 
 .dashicons  {
-	color: $wp-manifest__neutral-dark-gray-color;
+	color: $wp-manifest__secondary-color;
 
 	&:hover {
-		color: $wp-manifest__main-primary-color;
+		color: $wp-manifest__primary-color;
 	}
 }

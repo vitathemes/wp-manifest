@@ -31,3 +31,15 @@
   vertical-align: middle;
   color: $wp-manifest__neutral-dark-gray-color;
 }
+
+
+.is-dark-mode {
+
+  .c-social-share__link__icon {
+    color: $wp-manifest__neutral-gray-color;
+
+    &:hover {
+      color: $wp-manifest__primary-color;
+    }
+  }
+}

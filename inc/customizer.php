@@ -53,15 +53,15 @@ add_action( 'init', function () {
 // Add Branding fields
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'radio-buttonset',
-		'settings'    => 'theme_mode',
-		'label'       => esc_html__( 'Theme Mode', 'wp-manifest' ),
-		'section'     => 'branding',
-		'default'     => 'light',
-		'priority'    => 10,
-		'choices'     => [
-			'light'   => esc_html__( 'Light', 'wp-manifest' ),
-			'dark' => esc_html__( 'Dark', 'wp-manifest' ),
+		'type'     => 'radio-buttonset',
+		'settings' => 'theme_mode',
+		'label'    => esc_html__( 'Theme Mode', 'wp-manifest' ),
+		'section'  => 'branding',
+		'default'  => 'light',
+		'priority' => 10,
+		'choices'  => [
+			'light' => esc_html__( 'Light', 'wp-manifest' ),
+			'dark'  => esc_html__( 'Dark', 'wp-manifest' ),
 		],
 	] );
 
@@ -94,19 +94,6 @@ add_action( 'init', function () {
 		'label'    => __( 'Primary Color', 'wp-manifest' ),
 		'section'  => 'branding',
 		'default'  => '#3F51B5',
-	] );
-
-	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'switch',
-		'settings'    => 'switch_setting',
-		'label'       => esc_html__( 'This is the label', 'wp-manifest' ),
-		'section'     => 'branding',
-		'default'     => '1',
-		'priority'    => 10,
-		'choices'     => [
-			'on'  => esc_html__( 'Enable', 'wp-manifest' ),
-			'off' => esc_html__( 'Disable', 'wp-manifest' ),
-		],
 	] );
 
 // </editor-fold>
@@ -193,11 +180,51 @@ add_action( 'init', function () {
 			'font-family' => 'Red Hat Display',
 			'font-size'   => '48px',
 			'variant'     => 'regular',
-			'color'       => '#000'
+			//'color'       => '#000'
 		],
 
 		'priority'  => 10,
 		'transport' => 'auto',
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'color',
+		'settings' => 'headings_typography_color',
+		'label'    => __( 'Headings Color', 'wp-manifest' ),
+		'section'  => 'typography',
+		'default'  => '#000',
+		'output'   => [
+			[
+				'element' => 'h1',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			],
+			[
+				'element' => 'h2',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			],
+			[
+				'element' => 'h3',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			],
+			[
+				'element' => 'h4',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			],
+			[
+				'element' => 'h5',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			],
+			[
+				'element' => 'h6',
+				'property' => 'color',
+				'transport' => 'postMessage'
+			]
+		]
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -210,7 +237,7 @@ add_action( 'init', function () {
 			'variant'     => 'regular',
 			'font-size'   => '19px',
 			'line-height' => '1.5',
-			'color'       => '#000',
+			//'color'       => '#000',
 		],
 		'output'    => [
 			[
@@ -219,6 +246,21 @@ add_action( 'init', function () {
 		],
 		'priority'  => 10,
 		'transport' => 'auto',
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'color',
+		'settings' => 'text_typography_color',
+		'label'    => __( 'Text Color', 'wp-manifest' ),
+		'section'  => 'typography',
+		'default'  => '#565656',
+		'output'   => [
+			[
+				'element' => 'p',
+				'property' => 'color',
+				'transport' => 'auto'
+			]
+		]
 	] );
 // </editor-fold>
 
@@ -296,24 +338,26 @@ function wp_manifest_add_edit_icons( $wp_customize ) {
 add_action( 'customize_preview_init', 'wp_manifest_add_edit_icons' );
 
 function wp_manifest_enqueue_fonts() {
-	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
+	$wp_manifest_text_typography    = get_theme_mod( 'text_typography' );
+	$wp_manifest_heading_typography = get_theme_mod( 'headings_typography' );
 
-	if( $wp_manifest_heading_typography['font-family']  ) {
-		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family='. $wp_manifest_heading_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+	if ( $wp_manifest_heading_typography['font-family'] ) {
+		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=' . $wp_manifest_heading_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
 	} else {
-		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400');
+		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400' );
 	}
-	if( $wp_manifest_text_typography['font-family']  ) {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family='. $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+	if ( $wp_manifest_text_typography['font-family'] ) {
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
 	} else {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400');
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400' );
 	}
 }
-add_action('wp_head', 'wp_manifest_enqueue_fonts');
-add_action('admin_head', 'wp_manifest_enqueue_fonts');
+
+add_action( 'wp_head', 'wp_manifest_enqueue_fonts' );
+add_action( 'admin_head', 'wp_manifest_enqueue_fonts' );
 
 function wp_manifest_customize_preview_js() {
 	wp_enqueue_script( 'wp-manifest-js-customizer', get_template_directory_uri() . '/js/customizer.js', array(), false, true );
 }
-add_action( 'customize_preview_init', 'wp_manifest_customize_preview_js' );
+
+add_action( 'customize_controls_enqueue_scripts', 'wp_manifest_customize_preview_js' );

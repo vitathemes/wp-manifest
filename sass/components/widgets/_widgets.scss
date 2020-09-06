@@ -39,6 +39,18 @@
 	}
 }
 
+.search-form {
+  display: flex;
+
+  .search-submit {
+    margin-left: 8px;
+  }
+
+  label {
+    flex-grow: 1;
+  }
+}
+
 
 /* Search Widget*/
 .wp-block-search {
@@ -92,4 +104,29 @@
   text-align: center;
   vertical-align: middle;
   color: $wp-manifest__neutral-dark-gray-color;
+}
+
+.s-widget--search-form {
+  max-width: 500px;
+}
+
+
+.is-dark-mode {
+
+  .wp-calendar-table, tr {
+    background-color: $wp-manifest__neutral-gray-color;
+  }
+
+  .wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
+    background-color: $wp-manifest__neutral-gray-light-color;
+  }
+
+  table th {
+    color: $wp-manifest__main-primary-color;
+  }
+
+  table td {
+    color: $wp-manifest__main-primary-dark-color;
+  }
+
 }

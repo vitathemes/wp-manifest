@@ -106,8 +106,8 @@ function wp_manifest_typography() {
 	            --text-typography-variant: ' . $wp_manifest_text_typography["variant"] . ';
 	
 	            --primary-color: ' . get_theme_mod( "branding_primary_color", "#3F51B5" ) . ';
-	            --secondary-color: ' . $wp_manifest_text_typography['color'] . ';
-	            --tertiary-color: ' . $wp_manifest_heading_typography["color"] . ';
+	            --secondary-color: ' . get_theme_mod( 'text_typography_color' , '#000') . ';
+	            --tertiary-color: ' . get_theme_mod( 'headings_typography_color' , '#565656') . ';
 			}';
 
 	return $html;
