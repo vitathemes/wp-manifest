@@ -18,12 +18,20 @@
     fill: #fff;
   }
 
+  .dashicons {
+    color: $wp-manifest__neutral-white;
+  }
+
   &:hover {
     color: #FFFFFF;
     background-color: $wp-manifest__main-primary-dark-color;
 
     svg {
       fill: #FFFFFF;
+    }
+
+    .dashicons {
+      color: $wp-manifest__neutral-white;
     }
   }
 }

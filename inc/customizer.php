@@ -21,7 +21,14 @@ add_action( 'init', function () {
 
 // Home Page
 	Kirki::add_section( 'homepage', array(
-		'title'    => esc_html__( 'Home Page', 'wp-manifest' ),
+		'title'    => esc_html__( 'Homepage', 'wp-manifest' ),
+		'panel'    => '',
+		'priority' => 4,
+	) );
+
+	// Home Page
+	Kirki::add_section( 'blogpage', array(
+		'title'    => esc_html__( 'Blog Settings', 'wp-manifest' ),
 		'panel'    => '',
 		'priority' => 4,
 	) );
@@ -80,14 +87,6 @@ add_action( 'init', function () {
 
 // -- Home page Fields --
 // <editor-fold desc="HomePage">
-	Kirki::add_field( 'wp-manifest', [
-		'type'     => 'dropdown-pages',
-		'settings' => 'homepage_page',
-		'label'    => esc_html__( 'Select Homepage', 'wp-manifest' ),
-		'section'  => 'homepage',
-		'default'  => 42,
-		'priority' => 10,
-	] );
 
 // Home Page Title Text
 	Kirki::add_field( 'wp-manifest', [
@@ -149,10 +148,64 @@ add_action( 'init', function () {
 
 	Kirki::add_field( 'wp-manifest', [
 		'type'        => 'toggle',
+		'settings'    => 'show_portfolio_homepage',
+		'label'       => esc_html__( 'Show Portfolio', 'wp-manifest' ),
+		'section'     => 'homepage',
+		'default'     => 1,
+		'priority'    => 10,
+	] );
+
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
 		'settings'    => 'show_latest_posts_homepage',
 		'label'       => esc_html__( 'Show latest posts', 'wp-manifest' ),
 		'section'     => 'homepage',
-		'default'     => '1',
+		'default'     => 1,
+		'priority'    => 10,
+	] );
+
+// </editor-fold>
+
+	// -- Home page Fields --
+// <editor-fold desc="BlogSettings">
+
+// Home Page Title Text
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
+		'settings'    => 'show_blog_carousel',
+		'label'       => esc_html__( 'Show Blog Carousel', 'wp-manifest' ),
+		'section'     => 'blogpage',
+		'default'     => 0,
+		'priority'    => 10,
+	] );
+
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
+		'settings'    => 'show_categories',
+		'label'       => esc_html__( 'Show Categories', 'wp-manifest' ),
+		'section'     => 'blogpage',
+		'default'     => 0,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
+		'settings'    => 'show_posts_thumbnail',
+		'label'       => esc_html__( 'Show Posts Thumbnail', 'wp-manifest' ),
+		'section'     => 'blogpage',
+		'default'     => 1,
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'        => 'toggle',
+		'settings'    => 'show_share_icons',
+		'label'       => esc_html__( 'Show Social Share Icons', 'wp-manifest' ),
+		'section'     => 'blogpage',
+		'default'     => 1,
 		'priority'    => 10,
 	] );
 
@@ -299,16 +352,24 @@ add_action( 'init', function () {
 } );
 
 function wp_manifest_add_edit_icons( $wp_customize ) {
-	$wp_customize->selective_refresh->add_partial( 'copyright_text', array(
-		'selector' => '.footer-main',
+	$wp_customize->selective_refresh->add_partial( 'homepage_title', array(
+		'selector' => '.homepage-title',
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector' => '.description',
 	) );
 
-	$wp_customize->selective_refresh->add_partial( 'social-mail', array(
-		'selector' => '.social-links',
+	$wp_customize->selective_refresh->add_partial( 'homepage_info_left', array(
+		'selector' => '.c-info__col__title',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'homepage_info_right', array(
+		'selector' => '.c-info__col--desc',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_posts_thumbnail', array(
+		'selector' => '.c-article__header__image',
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'show_post_thumbnail', array(
@@ -316,7 +377,7 @@ function wp_manifest_add_edit_icons( $wp_customize ) {
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'show_share_icons', array(
-		'selector' => '.social-share',
+		'selector' => '.c-social-share',
 	) );
 
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(

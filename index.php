@@ -20,6 +20,7 @@ get_header(); ?>
         <div class="o-page__header o-col">
             <h1 class="u-margin-none">Blog</h1>
         </div>
+	    <?php if ( get_theme_mod( 'show_blog_carousel' , false ) == true ): ?>
         <div class="c-blog-carousel o-col">
             <div class="c-blog-carousel__image js-blog-image-carousel">
 				<?php
@@ -67,9 +68,13 @@ get_header(); ?>
                 </nav>
             </div>
         </div>
+        <?php endif;
+	    if ( get_theme_mod( 'show_categories' , false ) == true ):
+	    ?>
         <ul class="c-categories s-categories">
 		    <?php wp_list_categories(array('title_li' => '')); ?>
         </ul>
+        <?php endif; ?>
         <?php if ( have_posts() ) : ?>
             <div id="site-content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
                 <div class="u-flex u-flex-wrap u-dir-column-m">

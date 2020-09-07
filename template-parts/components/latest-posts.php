@@ -5,7 +5,7 @@ $latest_posts = new WP_Query( array(
 ) );
 if ( $latest_posts->have_posts() ):
 	?>
-    <section class="c-component">
+    <section class="c-component c-posts">
         <div class="o-wrapper">
             <div class="o-col u-dir-column-m u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
                 <h2 class="u-margin-none u-margin-bottom-small-m">Latest Posts</h2>

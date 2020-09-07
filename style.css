@@ -2083,6 +2083,10 @@ ol.children:last-child {
 	fill: #fff;
 }
 
+.c-btn--primary .dashicons {
+	color: #FFFFFF;
+}
+
 .c-btn--primary:hover {
 	color: #FFFFFF;
 	background-color: #323232;
@@ -2090,6 +2094,10 @@ ol.children:last-child {
 
 .c-btn--primary:hover svg {
 	fill: #FFFFFF;
+}
+
+.c-btn--primary:hover .dashicons {
+	color: #FFFFFF;
 }
 
 .c-btn__icon {

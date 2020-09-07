@@ -13,9 +13,11 @@ get_header();
 
     <div class="o-page o-page--home">
 		<?php get_template_part( 'template-parts/components/page-header' ); ?>
-		<?php get_template_part( 'template-parts/components/slider' ); ?>
+		<?php if ( get_theme_mod( 'show_portfolio_homepage' , true ) == true ): ?>
+			<?php get_template_part( 'template-parts/components/slider' ); ?>
+		<?php endif; ?>
 		<?php get_template_part( 'template-parts/components/info' ); ?>
-		<?php if ( get_theme_mod( 'show_latest_posts_homepage' ) == true ): ?>
+		<?php if ( get_theme_mod( 'show_latest_posts_homepage', true ) == true ): ?>
 			<?php get_template_part( 'template-parts/components/latest-posts' ); ?>
 		<?php endif; ?>
     </div>
