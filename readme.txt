@@ -2,17 +2,17 @@
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.5
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/license-list.html#GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A Minimal theme called WP Manifest.
 
 == Description ==
 
-Manifest is a newborn theme. Clean, simple and fast.
+WP Manifest is a newborn theme. Clean, simple and fast.
 
 == Installation ==
 
@@ -43,8 +43,6 @@ WP Manifest includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Copyright ==
 
-
-WP-Manifest WordPress Theme, Copyright 2019-2020 WordPress.org
 WP-Manifest is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
