@@ -222,11 +222,16 @@ add_action( 'init', function () {
 			'font-family' => 'Red Hat Display',
 			'font-size'   => '48px',
 			'variant'     => 'regular',
+			'line-height' => '1.5',
 			//'color'       => '#000'
 		],
-
 		'priority'  => 10,
-		'transport' => 'auto',
+		'transport' => 'refresh',
+		'output' => array(
+			array(
+				'element' => 'h1'
+			)
+		)
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -235,38 +240,6 @@ add_action( 'init', function () {
 		'label'    => __( 'Headings Color', 'wp-manifest' ),
 		'section'  => 'typography',
 		'default'  => '#000',
-		'output'   => [
-			[
-				'element' => 'h1',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			],
-			[
-				'element' => 'h2',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			],
-			[
-				'element' => 'h3',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			],
-			[
-				'element' => 'h4',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			],
-			[
-				'element' => 'h5',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			],
-			[
-				'element' => 'h6',
-				'property' => 'color',
-				'transport' => 'postMessage'
-			]
-		]
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -281,13 +254,8 @@ add_action( 'init', function () {
 			'line-height' => '1.5',
 			//'color'       => '#000',
 		],
-		'output'    => [
-			[
-				'element' => 'body',
-			]
-		],
 		'priority'  => 10,
-		'transport' => 'auto',
+		'transport' => 'refresh',
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -296,13 +264,6 @@ add_action( 'init', function () {
 		'label'    => __( 'Text Color', 'wp-manifest' ),
 		'section'  => 'typography',
 		'default'  => '#565656',
-		'output'   => [
-			[
-				'element' => 'p',
-				'property' => 'color',
-				'transport' => 'auto'
-			]
-		]
 	] );
 // </editor-fold>
 

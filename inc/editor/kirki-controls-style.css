@@ -340,11 +340,6 @@
     color: #000;
 }
 
-.customize-control-kirki-react-select {
-    position: relative;
-    z-index: 10;
-}
-
 .customize-control-kirki-radio-buttonset .buttonset {
     display: flex;
     flex-wrap: wrap;
