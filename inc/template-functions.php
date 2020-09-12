@@ -250,11 +250,27 @@ function wp_manifest_comment_form() {
 }
 
 function wp_manifest_generate_post_category( $post_id ) {
-	$category      = wp_manifest_get_post_primary_category( $post_id );
-	$category_name = $category['primary_category']->name;
-	$category_link = get_category_link( $category['primary_category']->term_id );
+	$categories      = wp_get_post_categories( $post_id );
 
-	return sprintf( '<a class="c-post__header__category" href="%s">%s</a>', $category_link, $category_name );
+    $categories_markup = "<div class='c-categories c-categories--post-cats'>";
+    $i = 0;
+    foreach ($categories as $category) {
+        $i++;
+	    $cat = get_category( $category );
+        if ($i == 4) {
+            break;
+        }
+	    $category_name = $cat->name;
+	    $category_link = get_category_link( $cat->term_id );
+	    $categories_markup .= sprintf( '<a class="c-post__header__category" href="%s">%s</a>', $category_link, $category_name );
+	    $categories_markup .= ', ';
+    }
+	$categories_markup = trim($categories_markup);
+    if (substr($categories_markup, -1) == ",") {
+	    $categories_markup = substr_replace($categories_markup, '', -1, '1');
+    }
+	$categories_markup .= "</div>";
+    return $categories_markup;
 }
 
 

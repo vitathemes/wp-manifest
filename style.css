@@ -2465,7 +2465,7 @@ ol.children:last-child {
 	font-size: 0.75rem;
 	line-height: 1.25rem;
 	letter-spacing: 0.1em;
-	color: var(--tertiary-color);
+	color: var(--secondary-color);
 }
 
 .c-post__header__date {
@@ -2509,6 +2509,11 @@ ol.children:last-child {
 
 .is-dark-mode a:hover {
 	color: var(--primary-color);
+}
+
+.c-categories--post-cats {
+	line-height: 1.25rem;
+	margin-bottom: 0;
 }
 
 .c-post-pagination {

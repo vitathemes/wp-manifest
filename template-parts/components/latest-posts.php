@@ -1,7 +1,8 @@
 <?php
 $latest_posts = new WP_Query( array(
 	'posts_per_page' => 3,
-	'status'         => 'publish'
+	'status'         => 'publish',
+    'order' => 'asc'
 ) );
 if ( $latest_posts->have_posts() ):
 	?>
