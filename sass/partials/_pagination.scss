@@ -22,6 +22,10 @@
       background-color: $wp-manifest__neutral-gray-color;
       color: #000;
     }
+
+    &.current {
+      background-color: $wp-manifest__neutral-gray-color;
+    }
   }
 
   span.page-numbers:hover {

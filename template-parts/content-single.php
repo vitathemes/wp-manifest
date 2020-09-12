@@ -59,7 +59,26 @@
         <div class="c-article__content s-article-content u-margin-bottom-huge">
 			<?php the_content(); ?>
         </div>
-		<?php the_tags( '<div class="c-article__main__tags"><span class="c-article__main__tags__title">Tags:&ensp;</span><div class="c-article__main__tags__list">', ', ', '</div></div>' ); ?>
+	    <?php if ( wp_manifest_is_paginated_post() ): ?>
+            <div class="c-post-pagination s-page-pagination">
+			    <?php
+			    $defaults = array(
+				    'before'           => '<p class="c-post-pagination__title">' . __( 'Read More Pages:', 'wp-manifest' ) . '</p><div class="c-post-pagination__links">',
+				    'after'            => '</div></p>',
+				    'link_before'      => '',
+				    'link_after'       => '',
+				    'next_or_number'   => 'next',
+				    'separator'        => ' ',
+				    'nextpagelink'     => __( 'Next page', 'wp-manifest' ),
+				    'previouspagelink' => __( 'Previous page', 'wp-manifest' ),
+				    'pagelink'         => '%',
+				    'echo'             => 1
+			    );
+			    wp_link_pages( $defaults );
+			    ?>
+            </div>
+	    <?php endif; ?>
+		<?php the_tags( '<div class="c-article__main__tags"><span class="c-article__main__tags__title">'. __( 'Tags:', 'wp-manifest' ) . '&ensp;</span><div class="c-article__main__tags__list">', ', ', '</div></div>' ); ?>
     </main>
 </article>
 <div class="c-comments">

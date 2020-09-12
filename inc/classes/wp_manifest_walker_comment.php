@@ -42,7 +42,7 @@ class Wp_manifest_walker_comment extends Walker_Comment {
 							printf(
 								wp_kses(
 								/* translators: %s: comment author link */
-									__( '%s <span class="screen-reader-text says">says:</span>', 'wp-indigo' ),
+									__( '%s <span class="screen-reader-text says">says:</span>', 'wp-manifest' ),
 									array(
 										'span' => array(
 											'class' => array(),
@@ -62,20 +62,20 @@ class Wp_manifest_walker_comment extends Walker_Comment {
                             <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 								<?php
 								/* translators: 1: comment date, 2: comment time */
-								$comment_timestamp = sprintf( __( '%1$s', 'wp-indigo' ), get_comment_date( 'd M, Y', $comment ) );
+								$comment_timestamp = sprintf( __( '%1$s', 'wp-manifest' ), get_comment_date( 'd M, Y', $comment ) );
 								?>
                                 <time datetime="<?php comment_time( 'd, Y' ); ?>" title="<?php echo $comment_timestamp; ?>">
 									<?php echo $comment_timestamp; ?>
                                 </time>
                             </a>
 							<?php
-							edit_comment_link( __( 'Edit', 'wp-indigo' ), '<span class="edit-link-sep">&mdash;</span> ' );
+							edit_comment_link( __( 'Edit', 'wp-manifest' ), '<span class="edit-link-sep">&mdash;</span> ' );
 							?>
                         </div><!-- .comment-metadata -->
                     </div>
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-                        <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'wp-indigo' ); ?></p>
+                        <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'wp-manifest' ); ?></p>
 					<?php endif; ?>
 					<?php comment_text(); ?>
 

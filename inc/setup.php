@@ -213,9 +213,7 @@ function wp_manifest_is_comment_by_post_author( $comment = null ) {
 	return false;
 }
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 560;
-}
+if ( ! isset( $content_width ) ) $content_width = 1200;
 
 function wp_manifest_rearrange_form_fields( $fields ) {
 	$comment_field = $fields['comment'];
