@@ -48,13 +48,25 @@ add_action( 'init', function () {
 	) );
 
 	// Home Page
-	Kirki::add_section( 'footer', array(
-		'title'    => esc_html__( 'Footer', 'wp-manifest' ),
+	Kirki::add_section( 'header', array(
+		'title'    => esc_html__( 'Header', 'wp-manifest' ),
 		'panel'    => '',
 		'priority' => 6,
 	) );
 
 // </editor-fold>
+
+
+// Header
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'toggle',
+		'settings' => 'search_icon_header',
+		'label'    => esc_html__( 'Search Icon', 'wp-manifest' ),
+		'section'  => 'header',
+		'default'  => 1,
+		'priority' => 10,
+	] );
+// Header
 
 
 // Add Branding fields

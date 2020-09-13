@@ -3083,7 +3083,7 @@ ol.children:last-child {
 }
 
 .u-vertical-middle {
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 /* Color
