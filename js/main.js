@@ -20,6 +20,10 @@
                 sliderOptions.cellAlign = 'left';
             }
 
+            if (window.matchMedia("(max-width: 700px)").matches) {
+                sliderOptions.groupCells = false;
+            }
+
             var slider = new Flickity('.js-slider', sliderOptions);
         }
 
@@ -62,5 +66,12 @@
                 el.classList.add("is-active");
             }
         }
+
+
+        var searchToggle = document.querySelector('.js-search-toggle');
+        var searchForm = document.querySelector('.js-search-form');
+        searchToggle.addEventListener('click', function () {
+            searchForm.classList.toggle('is-open');
+        })
     });
 })();

@@ -1,6 +1,13 @@
 .c-footer {
   background-color: #FAFAFA;
   padding: 128px 0;
+
+  @media #{$mobile} {
+    padding: 64px 0;
+  }
+  @media #{$tablet} {
+    padding: 64px 0;
+  }
 }
 
 .c-footer__title {
@@ -43,4 +50,13 @@
   letter-spacing: 0.1em;
   align-self: flex-end;
   margin: 0;
+}
+
+.c-footer__main {
+  @media #{$mobile} {
+    flex-wrap: wrap;
+  }
+  @media #{$tablet} {
+    flex-wrap: wrap;
+  }
 }

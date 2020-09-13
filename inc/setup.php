@@ -83,6 +83,7 @@ function wp_manifest_scripts() {
 		'flickity-hash'
 	), false, true );
 	wp_enqueue_script( 'wp-manifest-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), false, true );
+	wp_enqueue_style( 'dashicons' );
 
 	if ( is_singular() && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -192,13 +193,6 @@ function register_portfolio_category() {
 }
 
 add_action( 'init', __NAMESPACE__ . '\register_portfolio_category', 0 );
-
-add_image_size( 'wp_manifest_article_thumbnail', 352, 258, true );
-add_image_size( 'wp_manifest_article_thumbnailx2', 702, 516, true );
-add_image_size( 'wp_wp_manifest_medium', 544, 0, true );
-add_image_size( 'wp_wp_manifest_medium_square', 544, 544, true );
-add_image_size( 'wp_manifest_single_portfolio', 1120, 472, true );
-
 
 //
 function wp_manifest_is_comment_by_post_author( $comment = null ) {

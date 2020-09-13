@@ -18,6 +18,16 @@
   max-height: 544px;
   max-width: 544px;
   text-decoration: none;
+
+  @media #{$mobile} {
+    max-height: 285px;
+    max-width: 285px;
+  }
+
+  @media #{$tablet} {
+    max-height: 400px;
+    max-width: 400px;
+  }
 }
 
 .c-slider__title {

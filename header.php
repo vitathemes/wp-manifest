@@ -48,6 +48,12 @@
                     <button class="menu-toggle c-header__toggle" aria-controls="primary-menu" aria-expanded="false">
                         <span class="dashicons dashicons-menu-alt"></span></button>
 					<?php wp_manifest_show_menu(); ?>
+                    <div class="c-header__search">
+                        <div class="c-header__search__form js-search-form s-header-search">
+		                    <?php get_search_form(); ?>
+                        </div>
+                        <span class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></span>
+                    </div>
                 </nav><!-- #site-navigation -->
             </div>
         </div>
