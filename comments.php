@@ -21,11 +21,11 @@ if ( post_password_required() ) {
 	return;
 }
 
-$wp_indigo_discussion = wp_manifest_get_discussion_data();
+$wp_manifest_discussion = wp_manifest_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
-    <div class="<?php echo $wp_indigo_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+    <div class="<?php echo $wp_manifest_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
         <h2 class="comments-title">
 			<?php
 			if ( comments_open() ) {
@@ -35,7 +35,7 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
 					esc_html_e( 'Leave a comment', 'wp-manifest' );
 				}
 			} else {
-				if ( '1' == $wp_indigo_discussion->responses ) {
+				if ( '1' == $wp_manifest_discussion->responses ) {
 					/* translators: %s: post title */
 					printf( esc_html( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-manifest' ), esc_html( get_the_title() ) ) );
 				} else {
@@ -44,11 +44,11 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
 						esc_html( _nx(
 							'%1$s reply on &ldquo;%2$s&rdquo;',
 							'%1$s replies on &ldquo;%2$s&rdquo;',
-							$wp_indigo_discussion->responses,
+							$wp_manifest_discussion->responses,
 							'comments title',
 							'wp-manifest'
 						) ),
-						esc_html( number_format_i18n( $wp_indigo_discussion->responses ) ),
+						esc_html( number_format_i18n( $wp_manifest_discussion->responses ) ),
 						esc_html( get_the_title() )
 					);
 				}
@@ -81,7 +81,7 @@ $wp_indigo_discussion = wp_manifest_get_discussion_data();
 
 		// Show comment navigation
 		if ( get_comment_pages_count() > 1 ) :
-			$wp_indigo_comments_text = __( 'Comments', 'wp-manifest' );
+			$wp_manifest_comments_text = __( 'Comments', 'wp-manifest' );
 			the_comments_navigation(
 				array(
 					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', esc_html_e( 'Previous', 'wp-manifest' ) ),

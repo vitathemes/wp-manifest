@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: VitaThemes
 Author URI: https://vitathemes.com
 Description: Just another minimal WordPress theme
-Version: 0.9.0
+Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1235,7 +1235,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 
 .comment-content a {
 	word-wrap: break-word;
-	color: #000000;
+	color: var(--secondary-color);
 	font-weight: 400;
 	font-size: 19px;
 	line-height: 23px;
@@ -1262,6 +1262,8 @@ input[type="submit"]:hover svg, form button:hover svg {
 
 .comments .comment-header {
 	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
 }
 
 .comments .comment-avatar {
@@ -1301,7 +1303,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 	margin: 5px 0;
 }
 
-.comments .comment-body {
+.comments .comment-meta {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -1322,6 +1324,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 	font-size: 1em;
 	margin-top: 0;
 	margin-right: 24px;
+	color: var(--tertiary-color);
 }
 
 @media only screen and (max-width: 560px) {
@@ -1392,17 +1395,17 @@ ol.children:last-child {
 	}
 }
 
-.comment-reply .comment-reply-link {
+.comment-reply-link {
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 27px;
 	text-align: center;
 	letter-spacing: 0.1em;
-	color: #7B7B7B;
+	color: var(--secondary-color);
 	transition: 0.25s;
 }
 
-.comment-reply .comment-reply-link:hover {
+.comment-reply-link:hover {
 	color: var(--primary-color);
 }
 
@@ -1448,6 +1451,11 @@ ol.children:last-child {
 
 .comment-form-comment {
 	width: 100%;
+}
+
+#cancel-comment-reply-link {
+	font-size: 0.5em;
+	margin-left: 2em;
 }
 
 /* Widgets
