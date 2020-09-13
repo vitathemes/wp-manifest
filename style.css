@@ -3077,6 +3077,11 @@ a.u-color-primary-light:hover .dashicons {
 	background-color: #CCCCCC;
 }
 
+.pagination .page-numbers.current:hover {
+	background-color: #CCCCCC;
+	color: var(--secondary-color);
+}
+
 .pagination span.page-numbers:hover {
 	background-color: transparent;
 }

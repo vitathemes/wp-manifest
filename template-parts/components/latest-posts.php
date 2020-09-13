@@ -21,7 +21,7 @@ if ( $latest_posts->have_posts() ):
                         <article class="c-post">
                             <header class="c-post__header u-margin-bottom-small">
                                 <a class="c-post__header__link" href="<?php the_permalink(); ?>"></a>
-                                <img srcset="<?php wp_manifest_generate_srcset(get_the_ID()); ?>" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="" class="c-post__header__img"/>
+                                <?php the_post_thumbnail('wp_manifest_medium_thumbnail', array('class' => 'c-post__header__img')); ?>
                             </header>
                             <main class="c-post__main u-flex u-dir-column">
                                 <div class="u-flex u-justify-between u-margin-bottom-small">

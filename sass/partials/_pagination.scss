@@ -25,6 +25,11 @@
 
     &.current {
       background-color: $wp-manifest__neutral-gray-color;
+
+      &:hover {
+        background-color: $wp-manifest__neutral-gray-color;
+        color: $wp-manifest__secondary-color;
+      }
     }
   }
 

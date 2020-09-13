@@ -195,8 +195,8 @@ add_action( 'init', __NAMESPACE__ . '\register_portfolio_category', 0 );
 
 add_image_size( 'wp_manifest_article_thumbnail', 352, 258, true );
 add_image_size( 'wp_manifest_article_thumbnailx2', 702, 516, true );
-add_image_size( 'wp_manifest_medium', 544, 0, true );
-add_image_size( 'wp_manifest_medium_square', 544, 544, true );
+add_image_size( 'wp_wp_manifest_medium', 544, 0, true );
+add_image_size( 'wp_wp_manifest_medium_square', 544, 544, true );
 add_image_size( 'wp_manifest_single_portfolio', 1120, 472, true );
 
 
@@ -383,5 +383,7 @@ function wp_manifest_color_palette() {
 
 add_action( 'init', 'wp_manifest_color_palette' );
 
-add_image_size( 'manifest_medium', 544, 0, true );
-add_image_size( 'manifest_medium_square', 544, 544, true );
+add_image_size( 'wp_wp_manifest_medium', 544, 0, true );
+add_image_size( 'wp_manifest_medium_square', 544, 544, true );
+add_image_size( 'wp_manifest_medium_thumbnail', 352, 258, true );
+add_image_size( 'wp_manifest_large_thumbnail', 544, 258, true );

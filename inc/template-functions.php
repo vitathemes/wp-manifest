@@ -288,13 +288,6 @@ function wp_manifest_get_post_category( $post_id ) {
 	return array( 'name' => $category_name, 'url' => $category_link );
 }
 
-function wp_manifest_generate_srcset( $post_id ) {
-	$x1 = get_the_post_thumbnail_url( $post_id, '' );
-	$x2 = get_the_post_thumbnail_url( $post_id, '' );
-
-	echo $x1 . " x1, " . $x2 . " x2";
-}
-
 function wp_manifest_is_paginated_post() {
 	global $multipage;
 	return 0 !== $multipage;

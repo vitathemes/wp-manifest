@@ -23,6 +23,6 @@
 		</div>
 	</div>
 	<div class="c-portfolio__image">
-		<?php the_post_thumbnail( 'manifest_medium_square', array( 'class' => 'c-portfolio__image__img' ) ); ?>
+		<?php the_post_thumbnail( 'wp_manifest_medium_square', array( 'class' => 'c-portfolio__image__img' ) ); ?>
 	</div>
 </article>

@@ -27,7 +27,7 @@ get_header(); ?>
 				$postsCount = 1;
 				while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post(); ?>
                     <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__image__cell">
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__image-link "><?php the_post_thumbnail( 'manifest_medium_square', array( 'class' => 'c-article__image' ) ); ?></a>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__image-link "><?php the_post_thumbnail( 'wp_manifest_medium_square', array( 'class' => 'c-article__image' ) ); ?></a>
                     </div>
 					<?php
 					$postsCount ++;
