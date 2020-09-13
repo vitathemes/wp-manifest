@@ -1,0 +1,13 @@
+.u-hide {
+  display: none;
+}
+
+@media #{$mobile} {
+  .u-hide {
+    display: block;
+  }
+
+  .u-hide-m {
+    display: none;
+  }
+}

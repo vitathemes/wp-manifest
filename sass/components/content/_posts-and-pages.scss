@@ -1,0 +1,47 @@
+.sticky {
+  display: block;
+}
+
+.post:not(body),
+.page:not(body) {
+  margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+
+.s-content {
+  p {
+    margin: 0.75em 0 1em;
+    font-weight: var(--text-typography-variant);
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        color: $wp-manifest__primary-color;
+      }
+    }
+  }
+
+  *:not(h1,h2,h3,h4,h5,h6) {
+    font-weight: var(--text-typography-variant);
+  }
+
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+  }
+}

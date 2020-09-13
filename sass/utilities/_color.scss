@@ -1,0 +1,18 @@
+.u-color-primary-light {
+  color: $wp-manifest__secondary-color;
+}
+
+.u-color-dark-gray {
+  color: $wp-manifest__secondary-color;
+}
+
+a.u-color-primary-light {
+
+  &:hover {
+    color: $wp-manifest__primary-color;
+
+    .dashicons {
+      color: $wp-manifest__primary-color;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.wp-block-button__link , .wp-block-file .wp-block-file__button {
+  padding: 8px 32px;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 166.3%;
+  font-family: $wp-manifest__secondary-font;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-block;
+  color: #FFFFFF;
+  background-color: $wp-manifest__main-primary-light-color;
+  transition: $wp-manifest_global-transition;
+  border-radius: 0;
+  border: 1px solid $wp-manifest__main-primary-light-color;
+
+  svg {
+    fill: #fff;
+  }
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: $wp-manifest__main-primary-dark-color;
+    border-color: $wp-manifest__main-primary-dark-color;
+
+    svg {
+      fill: #FFFFFF;
+    }
+  }
+}
+
+.is-style-outline .wp-block-button__link{
+  border-color: $wp-manifest__secondary-font;
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: $wp-manifest__main-primary-dark-color;
+    border-radius: 0;
+    border-color: $wp-manifest__main-primary-dark-color;
+  }
+}
+
+
+.wp-block-file {
+  margin: 1rem 0;
+}
+
+
+.is-dark-mode {
+
+  .wp-block-button__link , .wp-block-file .wp-block-file__button {
+    &:hover {
+      color: #FFFFFF;
+      background-color: $wp-manifest__primary-color;
+      border-color: $wp-manifest__primary-color;
+    }
+  }
+
+  .is-style-outline .wp-block-button__link, .wp-block-button__link.is-style-outline {
+    color: $wp-manifest__neutral-white;
+  }
+}
