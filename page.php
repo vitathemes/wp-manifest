@@ -11,16 +11,7 @@
  *
  */
 get_header();
-?>
 
-    <div class="o-wrapper">
-        <div class="o-page o-page--default">
-			<?php
-			while ( have_posts() ): the_post();
-				the_content();
-			endwhile;
-			?>
-        </div>
-    </div>
-<?php
+manifest_page_template();
+
 get_footer();
