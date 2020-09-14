@@ -1,0 +1,48 @@
+.c-post-pagination {
+  width: 70%;
+  margin: auto;
+
+  @media #{$tablet} {
+    width: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+.c-post-pagination__title {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.s-page-pagination {
+  .post-page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $wp-manifest__neutral-gray-color;
+    min-width: 2em;
+    min-height: 2em;
+    margin: 0.25em;
+    transition: $wp-manifest_global-transition;
+    padding: 0.25em 0.5em;
+    font-size: 1rem;
+
+    &:hover {
+
+    }
+  }
+
+  a.post-page-numbers:hover {
+    background-color: $wp-manifest__neutral-gray-color;
+    color: $wp-manifest__main-primary-color;
+  }
+}
+
+.c-post-pagination__links {
+  display: flex;
+  justify-content: center;
+}

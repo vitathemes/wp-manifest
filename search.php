@@ -5,15 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  */
-get_header();
-indigo_show_profile(); ?>
+get_header(); ?>
 
-    <section class="blog search">
-
+<section class="blog search">
+    <div class="o-wrapper">
         <h1>
-            <?php
-            printf( esc_html__('Search Results for: %s', 'wp-indigo' ), get_search_query());
-            ?>
+			<?php
+			printf( esc_html__( 'Search Results for: %s', 'wp-manifest' ), get_search_query() );
+			?>
         </h1>
         <div class="list">
 			<?php if ( have_posts() ) : ?><?php
@@ -32,8 +31,8 @@ indigo_show_profile(); ?>
 
 				the_posts_pagination( array(
 					'mid_size'  => 2,
-					'prev_text' => __( 'Previous', 'wp-indigo' ),
-					'next_text' => __( 'Next', 'wp-indigo' ),
+					'prev_text' => __( 'Previous', 'wp-manifest' ),
+					'next_text' => __( 'Next', 'wp-manifest' ),
 				) );
 
 			else :
@@ -43,5 +42,6 @@ indigo_show_profile(); ?>
 			endif;
 			?>
         </div>
-    </section>
+    </div>
+</section>
 <?php get_footer(); ?>

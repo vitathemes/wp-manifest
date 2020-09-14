@@ -1,0 +1,22 @@
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: $wp-manifest_global-transition;
+
+	&:visited {
+		//color: $color__link-visited;
+	}
+
+	&:hover {
+		color: $wp-manifest__primary-color;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

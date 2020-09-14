@@ -1,0 +1,46 @@
+.c-info {
+  margin: 160px 0;
+}
+
+.c-info__main {
+  display: flex;
+
+  @media #{$mobile} {
+    flex-wrap: wrap;
+  }
+
+  @media #{$tablet} {
+    flex-wrap: wrap;
+  }
+}
+
+.c-info__col {
+  width: 50%;
+  max-width: 100%;
+
+  &:first-child {
+    padding-right: 15px;
+
+    @media #{$mobile} {
+      margin-bottom: 48px;
+    }
+  }
+
+  &:last-child {
+    padding-left: 15px;
+  }
+
+  @media #{$tablet} {
+    width: 100%;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+.c-info__col__title {
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  color: $wp-manifest__tertiary-color;
+}

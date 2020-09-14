@@ -1,0 +1,7 @@
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+}
+
+*:focus {
+	outline: 1px dotted #666666;
+}

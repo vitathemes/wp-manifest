@@ -1,0 +1,237 @@
+.c-comments {
+  width: 70%;
+  margin: auto;
+
+  @media #{$tablet} {
+    width: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+
+.comment-content a {
+  word-wrap: break-word;
+  color: $wp-manifest__secondary-color;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    color: $wp-manifest__primary-color;
+  }
+}
+
+.bypostauthor {
+  display: block;
+}
+
+.comments {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+
+  & > li > ol.children {
+    border-bottom: 0;
+  }
+
+  .comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .comment-avatar {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    margin-right: 24px;
+
+    @media #{$mobile} {
+      min-width: 36px;
+      min-height: 36px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .comment-info {
+    display: inline-block;
+    width: 70%;
+    vertical-align: middle;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .comment {
+    padding: 20px 10px;
+    margin: 5px 0;
+  }
+
+  .comment-meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .comment-metadata a * {
+    font-size: 0.813em;
+    text-decoration: none;
+    color: #888888;
+    font-weight: 400;
+  }
+
+
+  &:last-child {
+    margin-bottom: 10px;
+  }
+
+
+  .comment-author {
+    font-size: 1em;
+    margin-top: 0;
+    margin-right: 24px;
+    color: $wp-manifest__tertiary-color;
+
+    @media #{$mobile} {
+      a {
+        font-size: 15px !important;
+      }
+    }
+  }
+}
+
+
+ol.children {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 30px;
+
+  @media #{$mobile} {
+    margin-top: 15px;
+    padding-left: 10px;
+    margin-left: 5px;
+  }
+}
+
+ol.children:last-child {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.comment-navigation {
+  margin-bottom: 40px;
+}
+
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.comments > .comment:first-child {
+  border-top: 0;
+}
+
+.comment-content p, .screen-reader-text.says {
+  font-weight: 400;
+}
+
+.comment-content p {
+  margin-bottom: 16px;
+  color: $wp-manifest__main-primary-light-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  @media #{$mobile} {
+    font-size: 16px;
+  }
+}
+
+.comment-content a {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  @media #{$mobile} {
+    font-size: 16px;
+  }
+}
+
+
+.comment-reply-link {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: $wp-manifest__secondary-color;
+  transition: 0.25s;
+
+  &:hover {
+    color: $wp-manifest__primary-color;
+  }
+}
+
+
+.comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comment-field {
+  width: 30%;
+
+  label {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    color: $wp-manifest__main-primary-light-color;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  @media #{$mobile} {
+    width: 100%;
+  }
+}
+
+.comment-form-cookies {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+
+
+  input {
+    margin: 5px 10px 0 0;
+  }
+}
+
+.comment-form-comment {
+  width: 100%;
+}
+
+#cancel-comment-reply-link {
+  font-size: 0.5em;
+  margin-left: 2em;
+}
