@@ -75,6 +75,7 @@ add_action( 'after_setup_theme', 'wp_manifest_setup' );
 // External Assets
 function wp_manifest_scripts() {
 	wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri() );
+	wp_style_add_data( 'wp-manifest-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
 	wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
 	wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
