@@ -786,6 +786,7 @@ figure {
 
 .dashicons {
 	color: var(--secondary-color);
+	vertical-align: middle;
 }
 
 .dashicons:hover {
@@ -2511,6 +2512,10 @@ ol.children:last-child {
 	}
 }
 
+.c-header__404 .c-header__main {
+	justify-content: center;
+}
+
 /* Info
 --------------------------------------------- */
 .c-info {
@@ -3269,6 +3274,40 @@ a.u-color-primary-light:hover .dashicons {
 
 .pagination span.page-numbers:hover {
 	background-color: transparent;
+}
+
+.not-found {
+	text-align: center;
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.not-found .big-title {
+	font-weight: 500;
+	font-size: 140px;
+	line-height: 185px;
+	letter-spacing: 0.05em;
+	color: #E7E7E7;
+	text-align: center;
+}
+
+.not-found p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 33px;
+	line-height: 44px;
+	letter-spacing: 0.05em;
+	text-align: center;
+}
+
+.not-found .s-widget--search-form {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.is-dark-mode .not-found .big-title {
+	color: #E7E7E7;
 }
 
 /*--------------------------------------------------------------

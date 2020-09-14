@@ -792,6 +792,10 @@ figure {
 	transform: rotate(180deg);
 }
 
+.dashicons-arrow-left-alt {
+	transform: rotate(180deg);
+}
+
 .dashicons:hover {
 	color: var(--primary-color);
 }
