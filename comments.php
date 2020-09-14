@@ -21,56 +21,89 @@ if ( post_password_required() ) {
 	return;
 }
 
+<<<<<<< HEAD
 $wp_manifest_discussion = wp_manifest_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
     <div class="<?php echo $wp_manifest_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+=======
+$discussion = indigo_get_discussion_data();
+?>
+
+<div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
+    <div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+>>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
         <h2 class="comments-title">
 			<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
-					esc_html_e( 'Join the Conversation', 'wp-manifest' );
+					_e( 'Join the Conversation', 'wp-indigo' );
 				} else {
-					esc_html_e( 'Leave a comment', 'wp-manifest' );
+					_e( 'Leave a comment', 'wp-indigo' );
 				}
 			} else {
+<<<<<<< HEAD
 				if ( '1' == $wp_manifest_discussion->responses ) {
+=======
+				if ( '1' == $discussion->responses ) {
+>>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
 					/* translators: %s: post title */
-					printf( esc_html( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-manifest' ), esc_html( get_the_title() ) ) );
+					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-indigo' ), get_the_title() );
 				} else {
 					printf(
 					/* translators: 1: number of comments, 2: post title */
-						esc_html( _nx(
+						_nx(
 							'%1$s reply on &ldquo;%2$s&rdquo;',
 							'%1$s replies on &ldquo;%2$s&rdquo;',
+<<<<<<< HEAD
 							$wp_manifest_discussion->responses,
 							'comments title',
 							'wp-manifest'
 						) ),
 						esc_html( number_format_i18n( $wp_manifest_discussion->responses ) ),
 						esc_html( get_the_title() )
+=======
+							$discussion->responses,
+							'comments title',
+							'wp-indigo'
+						),
+						number_format_i18n( $discussion->responses ),
+						get_the_title()
+>>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
 					);
 				}
 			}
 			?>
         </h2><!-- .comments-title -->
-
+        <?php
+        // Show comment form.
+        indigo_comment_form( 'asc' );
+        ?>
+		<?php
+		// Only show discussion meta information when comments are open and available.
+		if ( have_comments() && comments_open() ) {
+			get_template_part( 'template-parts/post/discussion', 'meta' );
+		}
+		?>
     </div><!-- .comments-title-flex -->
 	<?php
-	// Show comment form at top if showing newest comments at the top.
-	if ( comments_open() ) {
-		wp_manifest_comment_form();
-	}
-	if ( have_comments() ):
-		echo "<h3>" . esc_html( 'Comments', 'wp-manifest' ) . "</h3>";
+	if ( have_comments() ) :
+
+		// Show comment form at top if showing newest comments at the top.
+		if ( comments_open() ) {
+			indigo_comment_form( 'desc' );
+
+			echo "<h3>" . __( 'Comments', 'wp-indigo' ) . "</h3>";
+		}
+
 		?>
-        <ol class="commentlist comment-list comments">
+        <ol class="comment-list comments">
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new Wp_manifest_walker_comment(),
-					'avatar_size' => 70,
+					'walker'      => new Indigo_Walker_Comment(),
+					'avatar_size' => 60,
 					'short_ping'  => true,
 					'style'       => 'ol',
 				)
@@ -80,12 +113,17 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 		<?php
 
 		// Show comment navigation
+<<<<<<< HEAD
 		if ( get_comment_pages_count() > 1 ) :
 			$wp_manifest_comments_text = __( 'Comments', 'wp-manifest' );
+=======
+		if ( have_comments() ) :
+			$comments_text = __( 'Comments', 'wp-indigo' );
+>>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
 			the_comments_navigation(
 				array(
-					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', esc_html_e( 'Previous', 'wp-manifest' ) ),
-					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', esc_html_e( 'Next', 'wp-manifest' ) ),
+					'prev_text' => sprintf( ' <span class="nav-prev-text"> < <span class="secondary-text">%s</span></span>', __( 'Previous', 'wp-indigo' )),
+					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> > </span> ', __( 'Next', 'wp-indigo' )),
 				)
 			);
 		endif;
@@ -93,10 +131,13 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 		if ( ! comments_open() ) :
 			?>
             <h3 class="no-comments">
-				<?php esc_html_e( 'Comments are disabled.', 'wp-manifest' ); ?>
+				<?php _e( 'Comments are disabled.', 'wp-indigo' ); ?>
             </h3>
 		<?php
 		endif;
-	endif;
+
+	else :
+
+	endif; // if have_comments();
 	?>
 </div><!-- #comments -->

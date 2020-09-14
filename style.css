@@ -1,7 +1,8 @@
 /*!
 Theme Name: WP Manifest
-Theme URI: http://underscores.me/
+Theme URI: https://demo.vitathemes.com/manifest
 Author: VitaThemes
+<<<<<<< HEAD
 Author URI: https://vitathemes.com
 Description: Just another minimal WordPress theme
 Version: 1.0.0
@@ -3341,3 +3342,12 @@ h1.is-style-no-margin, h2.is-style-no-margin, h3.is-style-no-margin, h4.is-style
 }
 
 /*# sourceMappingURL=style.css.map */
+=======
+Author URI: https://vitathemes.com/
+Description: Manifest is a newborn theme. Clean, simple and fast.
+Version: 1.0.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: wp-manifest
+*/
+>>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
