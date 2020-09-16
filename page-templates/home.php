@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-    <div class="o-page o-page--home">
+    <div id="content" class="o-page o-page--home">
 		<?php get_template_part( 'template-parts/components/page-header' ); ?>
 		<?php if ( get_theme_mod( 'show_portfolio_homepage' , true ) == true ): ?>
 			<?php get_template_part( 'template-parts/components/slider' ); ?>

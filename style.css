@@ -388,12 +388,12 @@ html {
 # Objects
 --------------------------------------------------------------*/
 .o-wrapper {
-	max-width: 75rem;
+	max-width: 72rem;
 	margin: 0 auto;
 	clear: both;
 }
 
-@media (max-width: 77rem) {
+@media (max-width: 74rem) {
 	.expand-width-wrapper .o-wrapper {
 		margin-left: 0;
 		margin-right: 0;
@@ -570,7 +570,7 @@ h6 {
 
 h1, .h1 {
 	font-family: var(--heading-typography-font-family);
-	font-size: var(--heading-typography-font-size);
+	font-size: clamp(1em, var(--heading-typography-font-size), 10em);
 	color: var(--tertiary-color);
 	line-height: 1.175;
 	font-weight: var(--heading-typography-variant);
@@ -579,7 +579,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 0.5em);
+	font-size: clamp(0.85em, calc(var(--heading-typography-font-size) - 0.5em), 8em);
 	color: var(--tertiary-color);
 	line-height: 1.167;
 	font-weight: var(--heading-typography-variant);
@@ -588,7 +588,7 @@ h2, .h2 {
 
 h3, .h3 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 0.75em);
+	font-size: clamp(0.75em, calc(var(--heading-typography-font-size) - 0.75em), 7em);
 	color: var(--tertiary-color);
 	line-height: 1.154;
 	font-weight: var(--heading-typography-variant);
@@ -597,7 +597,7 @@ h3, .h3 {
 
 h4, .h4 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1em);
+	font-size: clamp(0.65em, calc(var(--heading-typography-font-size) - 1em), 6em);
 	color: var(--tertiary-color);
 	line-height: 1.15;
 	font-weight: var(--heading-typography-variant);
@@ -606,7 +606,7 @@ h4, .h4 {
 
 h5, .h5 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1.25em);
+	font-size: clamp(0.5em, calc(var(--heading-typography-font-size) - 1.25em), 5em);
 	color: var(--tertiary-color);
 	line-height: 1.205;
 	font-weight: var(--heading-typography-variant);
@@ -615,7 +615,7 @@ h5, .h5 {
 
 h6, .h6 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1.5em);
+	font-size: clamp(0.45em, calc(var(--heading-typography-font-size) - 1.5em), 4em);
 	color: var(--tertiary-color);
 	line-height: 1.194;
 	font-weight: var(--heading-typography-variant);
@@ -786,7 +786,7 @@ figure {
 
 .dashicons {
 	color: var(--secondary-color);
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 .dashicons:hover {
@@ -2019,10 +2019,8 @@ ol.children:last-child {
 .c-blog-carousel__content__cell__title {
 	margin: 24px 0 16px;
 	font-weight: normal;
-	font-size: 23px;
 	line-height: 166.3%;
 	font-family: var(--heading-typography-font-family);
-	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
 	transition: 0.25s;
 }
@@ -2357,10 +2355,16 @@ ol.children:last-child {
 .s-header-menu li {
 	margin-right: 53px;
 	margin-bottom: 0;
+	padding: 10px 0;
 }
 
 .s-header-menu li:last-child {
 	margin-right: 0;
+}
+
+.s-header-menu li:hover > .sub-menu {
+	left: auto;
+	transition-delay: 0s;
 }
 
 .s-header-menu li.current-menu-item::after {
@@ -2385,12 +2389,32 @@ ol.children:last-child {
 	color: var(--primary-color);
 }
 
+.s-header-menu .sub-menu {
+	flex-direction: column;
+	margin-top: 0;
+	top: 100%;
+	transition-delay: 2.5s;
+}
+
+.s-header-menu .sub-menu li {
+	padding: 10px 20px;
+}
+
 .c-header__search-toggle.dashicons {
 	width: 22px;
 	height: 22px;
 	font-size: 25px;
 	cursor: pointer;
 	z-index: 5;
+	background-color: transparent;
+	border: none;
+	appearance: none;
+	padding: 0;
+}
+
+.c-header__search-toggle.c-header__search-toggle--close {
+	position: absolute;
+	display: none;
 }
 
 .c-header__search {
@@ -2398,6 +2422,7 @@ ol.children:last-child {
 	margin-left: 40px;
 	display: flex;
 	align-items: center;
+	flex-direction: row-reverse;
 }
 
 @media only screen and (max-width: 560px) {
@@ -2425,9 +2450,11 @@ ol.children:last-child {
 	transition: 0s;
 	transform: scale(0, 1);
 	transform-origin: right center;
+	display: none;
 }
 
 .c-header__search__form.is-open {
+	display: block;
 	min-width: 250px;
 	transform: scale(1, 1);
 	transition: 0.3s;
@@ -2625,7 +2652,7 @@ ol.children:last-child {
 	color: var(--secondary-color);
 	line-height: 166.3%;
 	letter-spacing: 0.05em;
-	font-size: 1rem;
+	font-size: calc(var(--text-typography-font-size) - 3px);
 }
 
 .c-post__main__title {
@@ -2747,6 +2774,11 @@ ol.children:last-child {
 
 .c-slider__slide-main {
 	padding: 0 15px;
+	transition: 0.2s ease-in-out;
+}
+
+.c-slider__slide-main:hover, .c-slider__slide-main:focus-within {
+	transform: scale(0.96);
 }
 
 .c-slider__image {

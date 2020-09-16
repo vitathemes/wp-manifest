@@ -42,7 +42,7 @@
   color: $wp-manifest__secondary-color;
   line-height: 166.3%;
   letter-spacing: 0.05em;
-  font-size: 1rem;
+  font-size: calc(var(--text-typography-font-size) - 3px);
 }
 
 .c-post__main__title {

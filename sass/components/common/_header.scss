@@ -110,9 +110,18 @@
   li {
     margin-right: 53px;
     margin-bottom: 0;
+    padding: 10px 0;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &:hover {
+
+      & > .sub-menu {
+        left: auto;
+        transition-delay: 0s;
+      }
     }
   }
 
@@ -140,6 +149,17 @@
       color: $wp-manifest__primary-color;
     }
   }
+
+  .sub-menu {
+    flex-direction: column;
+    margin-top: 0;
+    top: 100%;
+    transition-delay: 2.5s;
+
+    li {
+      padding: 10px 20px;
+    }
+  }
 }
 
 
@@ -151,6 +171,15 @@
   font-size: 25px;
   cursor: pointer;
   z-index: 5;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  padding: 0;
+}
+
+.c-header__search-toggle.c-header__search-toggle--close {
+  position: absolute;
+  display: none;
 }
 
 .c-header__search {
@@ -158,6 +187,7 @@
   margin-left: 40px;
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
 
   @media #{$mobile} {
     margin-left: 0;
@@ -181,8 +211,10 @@
   transition: 0s;
   transform: scale(0, 1);
   transform-origin: right center;
+  display: none;
 
   &.is-open {
+    display: block;
     min-width: 250px;
     transform: scale(1, 1);
     transition: 0.3s;

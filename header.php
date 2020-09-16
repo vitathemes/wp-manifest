@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="main">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
     <header id="masthead" class="c-header">
         <div class="o-wrapper">
             <div class="c-header__main">
@@ -50,10 +50,11 @@
 					<?php wp_manifest_show_menu(); ?>
                     <?php if (get_theme_mod('search_icon_header', 1) == 1): ?>
                     <div class="c-header__search">
+                        <button class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></button>
                         <div class="c-header__search__form js-search-form s-header-search">
 		                    <?php get_search_form(); ?>
                         </div>
-                        <span class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></span>
+                        <button class="dashicons dashicons-no-alt js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></button>
                     </div>
                     <?php endif; ?>
                 </nav><!-- #site-navigation -->

@@ -7,8 +7,8 @@
  */
 get_header(); ?>
 
-<div id="content-area post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="o-wrapper">
+<div id="content post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div  class="o-wrapper">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content-single', get_post_type() );

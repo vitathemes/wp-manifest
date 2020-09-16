@@ -15,7 +15,7 @@ $carousel_posts = new WP_Query( array(
 	'status'         => 'publish'
 ) );
 get_header(); ?>
-<section class="o-page">
+<section id="content" class="o-page">
     <div class="o-wrapper">
         <div class="o-page__header o-col">
             <h1 class="u-margin-none">Blog</h1>
@@ -43,7 +43,7 @@ get_header(); ?>
 						$category = wp_manifest_get_post_category( get_the_ID() ); ?>
                         <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__content__cell">
                             <a class="c-blog-carousel__content__cell__category" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
-							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title">', '</h2></a>' ); ?>
+							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title h3">', '</h2></a>' ); ?>
                             <span class="c-blog-carousel__content__cell__date u-color-dark-gray"><?php echo get_the_time( 'd M, Y' ); ?></span>
                             <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
                                 <p class="u-margin-none">

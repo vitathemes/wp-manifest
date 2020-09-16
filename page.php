@@ -14,7 +14,7 @@ get_header();
 ?>
 
     <div class="o-wrapper">
-        <div class="o-page o-page--default">
+        <div id="content" class="o-page o-page--default">
 			<?php
 			while ( have_posts() ): the_post();
 				the_content();

@@ -15,7 +15,7 @@ wp_head();
         </h1>
     </div>
 </header>
-    <section class="lost-container not-found u-margin-bottom-larger-m u-margin-bottom-larger">
+    <section id="content" class="lost-container not-found u-margin-bottom-larger-m u-margin-bottom-larger">
         <div class="o-wrapper">
             <h2 class="big-title"><?php _e('404' , 'wp-manifest'); ?></h2>
             <p><?php _e('Oops! we are sorry, but the page you requested was not found. You can search or return to home.' , 'wp-manifest'); ?></p>

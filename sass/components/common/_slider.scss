@@ -12,6 +12,11 @@
 
 .c-slider__slide-main {
   padding: 0 15px;
+  transition: 0.2s ease-in-out;
+
+  &:hover, &:focus-within {
+    transform: scale(0.96);
+  }
 }
 
 .c-slider__image {

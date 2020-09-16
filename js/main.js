@@ -69,9 +69,19 @@
 
 
         var searchToggle = document.querySelector('.js-search-toggle');
+        var searchCloseToggle = document.querySelector('.js-search-toggle-close');
         var searchForm = document.querySelector('.js-search-form');
         searchToggle.addEventListener('click', function () {
+            searchToggle.style.opacity = '0';
+            searchCloseToggle.style.display = 'block';
             searchForm.classList.toggle('is-open');
-        })
+            searchForm.querySelector('input[type="search"]').focus();
+        });
+
+        searchCloseToggle.addEventListener('click', function () {
+            searchToggle.style.opacity = '1';
+            searchCloseToggle.style.display = 'none';
+            searchForm.classList.toggle('is-open');
+        });
     });
 })();

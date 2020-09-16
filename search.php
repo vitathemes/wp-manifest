@@ -14,7 +14,7 @@ get_header(); ?>
 			printf( esc_html__( 'Search Results for: %s', 'wp-manifest' ), get_search_query() );
 			?>
         </h1>
-        <div id="site-content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
+        <div id="content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
             <div class="u-flex u-flex-wrap u-dir-column-m">
 				<?php if ( have_posts() ) : ?><?php
 					/* Start the Loop */
