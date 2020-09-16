@@ -1,7 +1,7 @@
 <?php
 
 $posts_category = get_theme_mod( 'homepage_slider_category' );
-$posts_number   = get_theme_mod( 'homepage_slider_items' );
+$posts_number   = get_theme_mod( 'homepage_slider_items' , 8 );
 
 $portfolios_params = array(
 	'post_type'      => 'portfolio',
@@ -30,7 +30,7 @@ if ( $portfolios->have_posts() ) :
                 <div class="c-slider__slide js-slider-slide">
                     <div class="c-slider__slide-main">
                         <a href="<?php the_permalink(); ?>" class="c-slider__slide-link">
-							<?php the_post_thumbnail( 'manifest_medium_square', array( 'class' => 'c-slider__image' ) ); ?>
+							<?php the_post_thumbnail( 'wp_manifest_medium_square', array( 'class' => 'c-slider__image' ) ); ?>
 							<?php the_title( '<h3 class="c-slider__title">', '</h3>' ) ?>
                         </a>
                     </div>

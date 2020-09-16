@@ -7,11 +7,20 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-get_header(); ?>
 
-<?php
-indigo_show_profile();
-manifest_primary_menu();
+get_header();
 ?>
 
-<?php get_footer(); ?>
+    <div class="o-page o-page--home">
+		<?php get_template_part( 'template-parts/components/page-header' ); ?>
+		<?php if ( get_theme_mod( 'show_portfolio_homepage' , true ) == true ): ?>
+			<?php get_template_part( 'template-parts/components/slider' ); ?>
+		<?php endif; ?>
+		<?php get_template_part( 'template-parts/components/info' ); ?>
+		<?php if ( get_theme_mod( 'show_latest_posts_homepage', true ) == true ): ?>
+			<?php get_template_part( 'template-parts/components/latest-posts' ); ?>
+		<?php endif; ?>
+    </div>
+
+<?php
+get_footer();

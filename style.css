@@ -1,11 +1,10 @@
 /*!
 Theme Name: WP Manifest
-Theme URI: https://demo.vitathemes.com/manifest
+Theme URI: http://underscores.me/
 Author: VitaThemes
-<<<<<<< HEAD
 Author URI: https://vitathemes.com
 Description: Just another minimal WordPress theme
-Version: 0.9.0
+Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -787,6 +786,7 @@ figure {
 
 .dashicons {
 	color: var(--secondary-color);
+	vertical-align: middle;
 }
 
 .dashicons:hover {
@@ -1458,6 +1458,10 @@ ol.children:last-child {
 #cancel-comment-reply-link {
 	font-size: 0.5em;
 	margin-left: 2em;
+}
+
+.comment-edit-link {
+	margin-right: 20px;
 }
 
 /* Widgets
@@ -2508,6 +2512,10 @@ ol.children:last-child {
 	}
 }
 
+.c-header__404 .c-header__main {
+	justify-content: center;
+}
+
 /* Info
 --------------------------------------------- */
 .c-info {
@@ -3084,7 +3092,7 @@ ol.children:last-child {
 }
 
 .u-vertical-middle {
-	vertical-align: middle !important;
+	vertical-align: middle;
 }
 
 /* Color
@@ -3268,6 +3276,40 @@ a.u-color-primary-light:hover .dashicons {
 	background-color: transparent;
 }
 
+.not-found {
+	text-align: center;
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.not-found .big-title {
+	font-weight: 500;
+	font-size: 140px;
+	line-height: 185px;
+	letter-spacing: 0.05em;
+	color: #E7E7E7;
+	text-align: center;
+}
+
+.not-found p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 33px;
+	line-height: 44px;
+	letter-spacing: 0.05em;
+	text-align: center;
+}
+
+.not-found .s-widget--search-form {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.is-dark-mode .not-found .big-title {
+	color: #E7E7E7;
+}
+
 /*--------------------------------------------------------------
 # Gutenberg
 --------------------------------------------------------------*/
@@ -3342,12 +3384,3 @@ h1.is-style-no-margin, h2.is-style-no-margin, h3.is-style-no-margin, h4.is-style
 }
 
 /*# sourceMappingURL=style.css.map */
-=======
-Author URI: https://vitathemes.com/
-Description: Manifest is a newborn theme. Clean, simple and fast.
-Version: 1.0.0
-License: MIT
-License URI: https://opensource.org/licenses/MIT
-Text Domain: wp-manifest
-*/
->>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9
