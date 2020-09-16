@@ -54,7 +54,7 @@
                         <div class="c-header__search__form js-search-form s-header-search">
 		                    <?php get_search_form(); ?>
                         </div>
-                        <button class="dashicons dashicons-no-alt js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></button>
+                        <span class="dashicons dashicons-no-alt js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></span>
                     </div>
                     <?php endif; ?>
                 </nav><!-- #site-navigation -->

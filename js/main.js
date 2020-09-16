@@ -83,5 +83,11 @@
             searchCloseToggle.style.display = 'none';
             searchForm.classList.toggle('is-open');
         });
+
+        searchForm.querySelector('input[type="search"]').onblur = function(){
+            searchToggle.style.opacity = '1';
+            searchCloseToggle.style.display = 'none';
+            searchForm.classList.toggle('is-open');
+        };
     });
 })();

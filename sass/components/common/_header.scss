@@ -107,6 +107,23 @@
 // Header Menu Scope
 .s-header-menu {
 
+  & > li::after {
+    content: '';
+    width: 80%;
+    height: 1px;
+    background-color: $wp-manifest__secondary-color;
+    display: block;
+    margin: 4px auto 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  & li:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
   li {
     margin-right: 53px;
     margin-bottom: 0;
@@ -128,12 +145,7 @@
   li.current-menu-item {
 
     &::after {
-      content: '';
-      width: 80%;
-      height: 1px;
-      background-color: $wp-manifest__secondary-color;
-      display: block;
-      margin: 4px auto 0;
+      opacity: 1;
     }
   }
 
@@ -144,10 +156,6 @@
     line-height: 16px;
     font-family: $wp-manifest__primary-font;
     color: $wp-manifest__secondary-color;
-
-    &:hover {
-      color: $wp-manifest__primary-color;
-    }
   }
 
   .sub-menu {
@@ -158,6 +166,10 @@
 
     li {
       padding: 10px 20px;
+    }
+
+    a:hover {
+      color: $wp-manifest__primary-color;
     }
   }
 }
