@@ -1,0 +1,51 @@
+.u-margin-none {
+  margin: 0;
+}
+
+.u-margin-auto {
+  margin: auto;
+}
+
+.u-margin-bottom-tiny {
+  margin: 0 0 8px;
+}
+
+.u-margin-bottom-default {
+  margin: 0 0 15px;
+}
+
+.u-margin-bottom-medium {
+  margin: 0 0 24px;
+}
+
+.u-margin-bottom-medium-normal {
+  margin: 0 0 30px;
+}
+
+.u-margin-bottom-large {
+  margin: 0 0 48px;
+
+  @include mq($until: tablet) {
+    margin: 0 0 48px;
+  }
+}
+
+.u-margin-bottom-huge {
+  margin: 0 0 65px;
+
+  @include mq($until: tablet) {
+    margin: 0 0 40px;
+  }
+}
+
+.u-margin-bottom-ultra-huge {
+  margin: 0 0 120px;
+
+  @include mq($until: tablet) {
+    margin: 0 0 60px;
+  }
+}
+
+.u-last-child-margin-none:last-child {
+  margin-bottom: 0;
+}
