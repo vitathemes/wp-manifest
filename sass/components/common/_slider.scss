@@ -15,7 +15,10 @@
   transition: 0.2s ease-in-out;
 
   &:hover, &:focus-within {
-    transform: scale(0.96);
+
+    .c-slider__image {
+      transform: scale(1.2);
+    }
   }
 }
 
@@ -23,6 +26,7 @@
   max-height: 544px;
   max-width: 544px;
   text-decoration: none;
+  transition: 0.2s ease-out;
 
   @media #{$mobile} {
     max-height: 285px;
@@ -47,4 +51,8 @@
   letter-spacing: 0.1em;
   color: #000;
   text-decoration: none;
+}
+
+.c-slider__slide__image-wrapper {
+  overflow: hidden;
 }

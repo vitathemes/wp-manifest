@@ -36,7 +36,11 @@ class Wp_manifest_walker_comment extends Walker_Comment
                 <div class="comment-content">
                     <div class="comment-header">
 	                    <?php
-	                    printf(__('<div class="comment-author">%s</div>'), get_comment_author($comment));
+                        if (get_comment_author_url($comment) != "") {
+	                        printf(__('<div class="comment-author"><a href="%s">%s</a></div>'), esc_url(get_comment_author_url($comment)), esc_html(get_comment_author($comment)));
+                        } else {
+	                        printf(__('<div class="comment-author">%s</div>'), get_comment_author($comment));
+                        }
 	                    ?>
 
                         <div class="time">

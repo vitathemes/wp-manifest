@@ -25,8 +25,8 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 ?>
 
 <div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
-    <div class="<?php echo $wp_manifest_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-        <h2 class="comments-title">
+    <div class="comments-header <?php echo $wp_manifest_discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
+        <h5 class="comments-title">
 			<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
@@ -54,7 +54,10 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 				}
 			}
 			?>
-        </h2><!-- .comments-title -->
+        </h5><!-- .comments-title -->
+        <p>
+            <?php esc_html_e( 'Required fields are marked *', 'wp-manifest' ); ?>
+        </p>
 
     </div><!-- .comments-title-flex -->
 	<?php
@@ -63,7 +66,7 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 		wp_manifest_comment_form();
 	}
 	if ( have_comments() ):
-		echo "<h3>" . esc_html( 'Comments', 'wp-manifest' ) . "</h3>";
+		echo "<h5>" . esc_html( 'Comments', 'wp-manifest' ) . "</h5>";
 		?>
         <ol class="commentlist comment-list comments">
 			<?php

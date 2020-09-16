@@ -1,6 +1,6 @@
 <article class="c-article c-article--single">
     <header class="c-article__header">
-        <ul class="c-article__header__categories">
+        <ul class="c-article__header__categories u-margin-bottom-larger">
 			<?php
 			//get all the categories the post belongs to
 			$categories = wp_get_post_categories( get_the_ID() );
@@ -14,7 +14,9 @@
 			}
 			?>
         </ul>
-		<?php the_title( '<a href="' . get_permalink() . '" class="c-article__title-link"><h1 class="c-article__title">', '</h1></a>' ); ?>
+		<div class="u-margin-bottom-xlarge">
+			<?php the_title( '<h1 class="c-article__title u-margin-none">', '</h1>' ); ?>
+        </div>
         <div class="c-article__header__meta">
             <span class="c-article__header__meta__item c-article__header__meta__item--date"><?php echo get_the_time( 'd M, Y' ); ?></span>
             <a href="#comments" class="c-article__header__meta__item c-article__header__meta__item--comments">

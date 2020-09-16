@@ -108,15 +108,15 @@
 .s-header-menu {
 
   & > li::after {
-    content: '';
-    width: 80%;
-    height: 1px;
-    background-color: $wp-manifest__secondary-color;
-    display: block;
-    margin: 4px auto 0;
-    opacity: 0;
-    transition: 0.3s;
-  }
+      content: '';
+      width: 80%;
+      height: 1px;
+      background-color: $wp-manifest__secondary-color;
+      display: block;
+      margin: 4px auto 0;
+      opacity: 0;
+      transition: 0.3s;
+    }
 
   & li:hover {
     &::after {
@@ -156,6 +156,10 @@
     line-height: 16px;
     font-family: $wp-manifest__primary-font;
     color: $wp-manifest__secondary-color;
+
+    &::after {
+      content: unset;
+    }
   }
 
   .sub-menu {

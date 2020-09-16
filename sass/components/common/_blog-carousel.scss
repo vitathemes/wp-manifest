@@ -28,11 +28,6 @@
 .c-blog-carousel__content__cell__category {
   color: $wp-manifest__neutral-dark-gray-color;
   transition: 0s;
-
-  &:hover {
-    color: $wp-manifest__main-primary-color;
-    text-decoration: underline;
-  }
 }
 
 .c-blog-carousel__content__cell__date {
@@ -40,16 +35,11 @@
 }
 
 .c-blog-carousel__content__cell__title {
-  margin: 24px 0 16px;
   font-weight: normal;
   line-height: 166.3%;
   font-family: $wp-manifest__secondary-font;
   color: $wp-manifest__tertiary-color;
   transition: $wp-manifest_global-transition;
-
-  &:hover {
-    color: $wp-manifest__primary-color;
-  }
 
   @media #{$mobile} {
     margin: 16px 0 8px;

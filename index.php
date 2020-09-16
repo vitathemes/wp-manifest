@@ -42,13 +42,17 @@ get_header(); ?>
 					while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post();
 						$category = wp_manifest_get_post_category( get_the_ID() ); ?>
                         <div id="slide<?php echo $postsCount; ?>" class="c-blog-carousel__content__cell">
-                            <a class="c-blog-carousel__content__cell__category" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
-							<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link"><h2 class="c-blog-carousel__content__cell__title h3">', '</h2></a>' ); ?>
+                            <div>
+                                <a class="c-blog-carousel__content__cell__category u-margin-bottom-small" href="<?php echo $category['url']; ?>"><?php echo $category['name']; ?></a>
+                            </div>
+							<div>
+								<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link u-margin-bottom-medium"><h2 class="c-blog-carousel__content__cell__title h3 u-margin-none">', '</h2></a>' ); ?>
+                            </div>
                             <span class="c-blog-carousel__content__cell__date u-color-dark-gray"><?php echo get_the_time( 'd M, Y' ); ?></span>
                             <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
                                 <p class="u-margin-none">
 									<?php echo strip_tags( get_the_excerpt() ); ?>
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link">
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link u-link-no-hover">
                                         <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                                     </a>
                                 </p>
@@ -72,7 +76,7 @@ get_header(); ?>
 	    if ( get_theme_mod( 'show_categories' , false ) == true ):
 	    ?>
         <ul class="c-categories s-categories">
-		    <?php wp_list_categories(array('title_li' => '')); ?>
+		    <?php wp_list_categories(array('title_li' => '', 'depth' => 1)); ?>
         </ul>
         <?php endif; ?>
         <?php if ( have_posts() ) : ?>
