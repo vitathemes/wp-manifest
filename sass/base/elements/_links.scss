@@ -1,44 +1,46 @@
-a {
-	color: inherit;
-	text-decoration: none;
-	transition: $wp-manifest_global-transition;
-	display: inline-block;
-
-	&::after {
-		content: '';
-		width: 100%;
-		height: 1px;
-		background-color: $wp-manifest__secondary-color;
-		display: block;
-		margin: 4px auto 0;
-		opacity: 0;
-		transition: 0.3s;
-	}
-
-	&:visited {
-		//color: $color__link-visited;
-	}
-
-	&:hover {
+.main , footer {
+	a {
+		color: inherit;
 		text-decoration: none;
+		transition: $wp-manifest_global-transition;
+		display: inline-block;
 
 		&::after {
-			opacity: 1;
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: $wp-manifest__secondary-color;
+			display: block;
+			margin: 4px auto 0;
+			opacity: 0;
+			transition: 0.3s;
+		}
+
+		&:visited {
+			//color: $color__link-visited;
+		}
+
+		&:hover {
+			text-decoration: none;
+
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		&:focus {
+			outline: thin dotted;
+		}
+
+		&:hover,
+		&:active {
+			outline: 0;
 		}
 	}
 
-	&:focus {
-		outline: thin dotted;
-	}
-
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
-
-.u-link-no-hover {
-	&::after {
-		content: unset;
+	.u-link-no-hover {
+		&::after {
+			content: unset;
+		}
 	}
 }

@@ -112,16 +112,6 @@ add_action( 'init', function () {
 
 
 // SliderCategory
-	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'select',
-		'settings'    => 'homepage_slider_category',
-		'label'       => esc_html__( 'Select Portfolio Category', 'wp-manifest' ),
-		'section'     => 'homepage',
-		'placeholder' => esc_html__( 'Select a category...', 'wp-manifest' ),
-		'priority'    => 10,
-		'multiple'    => 1,
-		'choices'     => Kirki_Helper::get_terms( array( 'portfolio_category' ) )
-	] );
 
 // Add
 	Kirki::add_field( 'wp-manifest', [
@@ -147,6 +137,16 @@ add_action( 'init', function () {
 		'default'  => esc_html__( 'Full-time UI/UX designer Head of Design at VeronaLabs.com', 'wp-manifest' ),
 		'priority' => 10,
 	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'link',
+		'settings' => 'homepage_info_left_link',
+		'label'    => esc_html__( 'Link url', 'wp-manifest' ),
+		'section'  => 'homepage',
+		'default'  => esc_url( '/about' ),
+		'priority' => 10,
+	] );
+
 
 	// Info - Right Side
 	Kirki::add_field( 'wp-manifest', [

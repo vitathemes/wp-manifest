@@ -624,6 +624,7 @@ h6, .h6 {
 
 * {
 	letter-spacing: 0.01em;
+	word-wrap: break-word;
 }
 
 p {
@@ -800,14 +801,14 @@ table {
 
 /* Links
 --------------------------------------------- */
-a {
+.main a, footer a {
 	color: inherit;
 	text-decoration: none;
 	transition: 0.25s;
 	display: inline-block;
 }
 
-a::after {
+.main a::after, footer a::after {
 	content: '';
 	width: 100%;
 	height: 1px;
@@ -818,23 +819,23 @@ a::after {
 	transition: 0.3s;
 }
 
-a:hover {
+.main a:hover, footer a:hover {
 	text-decoration: none;
 }
 
-a:hover::after {
+.main a:hover::after, footer a:hover::after {
 	opacity: 1;
 }
 
-a:focus {
+.main a:focus, footer a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+.main a:hover, .main a:active, footer a:hover, footer a:active {
 	outline: 0;
 }
 
-.u-link-no-hover::after {
+.main .u-link-no-hover::after, footer .u-link-no-hover::after {
 	content: unset;
 }
 
@@ -2178,10 +2179,14 @@ ol.children:last-child {
 	transition: 0.25s;
 }
 
+.wp-block-button.c-btn.c-btn--primary a::after {
+	content: unset;
+}
+
 .wp-block-button.c-btn.c-btn--primary a:hover {
 	color: #FFFFFF;
-	background-color: #7B7B7B;
-	border-color: #7B7B7B;
+	background-color: #323232;
+	border-color: #323232;
 }
 
 .is-dark-mode .c-btn--primary {
@@ -2443,6 +2448,7 @@ ol.children:last-child {
 	margin-top: 0;
 	top: 100%;
 	transition-delay: 2.5s;
+	background-color: #FFFFFF;
 }
 
 .s-header-menu .sub-menu li {

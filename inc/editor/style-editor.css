@@ -65,8 +65,8 @@
 
 .wp-block-button__link:hover {
     color: #FFFFFF;
-    background-color: #999999;
-    border-color: #999999;
+    background-color: #323232;
+    border-color: #323232;
 }
 
 .wp-block-button__link:hover svg {
@@ -79,9 +79,9 @@
 
 .is-style-outline .wp-block-button__link:hover {
     color: #FFFFFF;
-    background-color: #565656;
+    background-color: #323232;
     border-radius: 0;
-    border-color: #565656;
+    border-color: #323232;
 }
 
 .editor-styles-wrapper p {

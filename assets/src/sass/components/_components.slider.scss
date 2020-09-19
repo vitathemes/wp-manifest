@@ -2,10 +2,6 @@
 
 }
 
-.c-slider__main {
-
-}
-
 .c-slider__slide {
   max-width: 574px;
 }
@@ -17,7 +13,6 @@
 .c-slider__image {
   max-height: 544px;
   max-width: 544px;
-<<<<<<< HEAD:sass/components/common/_slider.scss
   text-decoration: none;
 
   @media #{$mobile} {
@@ -29,8 +24,6 @@
     max-height: 400px;
     max-width: 400px;
   }
-=======
->>>>>>> 74d6f719cc37b2864adf25a946474c2406d9a8e9:assets/src/sass/components/_components.slider.scss
 }
 
 .c-slider__title {
