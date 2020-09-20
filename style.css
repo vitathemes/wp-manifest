@@ -1496,14 +1496,14 @@ ol.children:last-child {
 	margin: 5px 10px 0 0;
 }
 
-.comment-form-comment {
+.comment-form-comment, .comment-form-cookies {
 	width: 100%;
-	margin-top: 48px;
+	margin-top: 24px;
 }
 
 @media only screen and (max-width: 560px) {
-	.comment-form-comment {
-		margin-top: 32px;
+	.comment-form-comment, .comment-form-cookies {
+		margin-top: 16px;
 	}
 }
 
@@ -2811,6 +2811,10 @@ ol.children:last-child {
 	font-size: 1rem;
 }
 
+.s-page-pagination .post-page-numbers::after {
+	content: unset;
+}
+
 .s-page-pagination a.post-page-numbers:hover {
 	background-color: #CCCCCC;
 	color: #000000;
@@ -3340,6 +3344,10 @@ ol.children:last-child {
 	transition: 0.25s;
 	padding: 0.25em;
 	font-size: 1rem;
+}
+
+.pagination .page-numbers::after {
+	content: unset;
 }
 
 .pagination .page-numbers:hover {

@@ -247,12 +247,12 @@ ol.children:last-child {
   }
 }
 
-.comment-form-comment {
+.comment-form-comment , .comment-form-cookies {
   width: 100%;
-  margin-top: 48px;
+  margin-top: 24px;
 
   @media #{$mobile} {
-    margin-top: 32px;
+    margin-top: 16px;
   }
 }
 
