@@ -146,8 +146,6 @@ function wp_manifest_typography() {
 add_action( 'admin_head', 'wp_manifest_theme_settings' );
 add_action( 'wp_head', 'wp_manifest_theme_settings' );
 function wp_manifest_theme_settings() {
-	$wp_manifest_text_typography    = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography = get_theme_mod( 'headings_typography' );
 	$wp_indigo_theme_typography     = wp_manifest_typography();
 	?>
     <style>
@@ -155,8 +153,6 @@ function wp_manifest_theme_settings() {
     </style>
 	<?php
 }
-
-;
 
 
 function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
