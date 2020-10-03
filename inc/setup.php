@@ -56,7 +56,7 @@ function wp_manifest_setup() {
 	 */
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100,
-		'width'       => 100,
+		'width'       => 300,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );

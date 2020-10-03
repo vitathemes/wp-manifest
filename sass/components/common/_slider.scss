@@ -51,6 +51,10 @@
   letter-spacing: 0.1em;
   color: #000;
   text-decoration: none;
+
+  &::after {
+    content: unset !important;
+  }
 }
 
 .c-slider__slide__image-wrapper {

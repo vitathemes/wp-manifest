@@ -28,20 +28,8 @@
             <div class="c-header__main">
                 <div class="c-header__logo">
 					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
-						?>
-                        <h1 class="c-header__site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </h1>
-					<?php
-					else :
-						?>
-                        <p class="c-header__site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </p>
-					<?php
-					endif; ?>
+					wp_manifest_header_branding();
+					 ?>
                 </div><!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation c-header__menu">

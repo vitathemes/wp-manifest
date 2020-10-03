@@ -203,6 +203,27 @@ add_action( 'init', function () {
 		'priority' => 10,
 	] );
 
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'categories_type',
+		'label'       => esc_html__( 'Categories style', 'kirki' ),
+		'section'     => 'blogpage',
+		'default'     => 'dropdown',
+		'priority'    => 10,
+		'choices'     => [
+			'dropdown'   => esc_html__( 'Dropdown', 'kirki' ),
+			'list' => esc_html__( 'List', 'kirki' ),
+		],
+		'active_callback'  => [
+			[
+				'setting'  => 'show_categories',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	] );
+
+
 	Kirki::add_field( 'wp-manifest', [
 		'type'     => 'toggle',
 		'settings' => 'show_posts_thumbnail',
@@ -629,7 +650,7 @@ function wp_manifest_enqueue_fonts() {
 		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400' );
 	}
 	if ( $wp_manifest_text_typography['font-family'] ) {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_text_typography['font-weight'] );
 	} else {
 		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400' );
 	}

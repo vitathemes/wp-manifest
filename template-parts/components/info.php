@@ -2,7 +2,7 @@
     <div class="o-wrapper">
         <div class="c-info__main">
             <div class="c-info__col o-col o-col--1/2">
-                <h3 class="c-info__col__title u-margin-none">
+                <h3 class="c-info__col__title">
 					<?php echo strip_tags( get_theme_mod( 'homepage_info_left' , 'Full-time UI/UX designer Head of Design at VeronaLabs.com' ) ); ?>
                 </h3>
                 <a class="c-info__col__link" href="<?php echo esc_url(get_theme_mod( 'homepage_info_left_link', '/about')); ?>">

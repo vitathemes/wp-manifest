@@ -42,3 +42,23 @@
   line-height: 1.25rem;
   margin-bottom: 0;
 }
+
+
+// Dropdown
+.c-categories--dropdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  label {
+    margin-right: 40px;
+
+    @media #{$mobile} {
+      margin-right: 24px;
+    }
+  }
+
+  select {
+    width: auto;
+  }
+}

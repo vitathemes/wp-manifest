@@ -25,6 +25,10 @@
   width: 100%;
 }
 
+.c-article__image-link:hover::after {
+  content: unset;
+}
+
 .c-blog-carousel__content__cell__category {
   color: $wp-manifest__neutral-dark-gray-color;
   transition: 0s;

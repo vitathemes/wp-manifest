@@ -821,9 +821,18 @@ table {
 
 .main a:hover, footer a:hover {
 	text-decoration: none;
+	color: #000000;
 }
 
-.main a:hover::after, footer a:hover::after {
+.main a:hover .dashicons, footer a:hover .dashicons {
+	color: #000000;
+}
+
+.main a:active, .main a:focus, footer a:active, footer a:focus {
+	text-decoration: none;
+}
+
+.main a:active::after, .main a:focus::after, footer a:active::after, footer a:focus::after {
 	opacity: 1;
 }
 
@@ -1102,6 +1111,10 @@ input[type="submit"]:hover svg, form button:hover svg {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+}
+
+.main-navigation a::after {
+	content: unset;
 }
 
 /* Small menu. */
@@ -2052,6 +2065,10 @@ ol.children:last-child {
 	width: 100%;
 }
 
+.c-article__image-link:hover::after {
+	content: unset;
+}
+
 .c-blog-carousel__content__cell__category {
 	color: #7B7B7B;
 	transition: 0s;
@@ -2389,26 +2406,15 @@ ol.children:last-child {
 	color: var(--tertiary-color);
 }
 
+.c-header__logo a::after {
+	content: unset;
+}
+
 .c-header__menu-items {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	margin: 0;
-}
-
-.s-header-menu > li::after {
-	content: '';
-	width: 80%;
-	height: 1px;
-	background-color: var(--secondary-color);
-	display: block;
-	margin: 4px auto 0;
-	opacity: 0;
-	transition: 0.3s;
-}
-
-.s-header-menu li:hover::after {
-	opacity: 1;
 }
 
 .s-header-menu li {
@@ -2427,7 +2433,14 @@ ol.children:last-child {
 }
 
 .s-header-menu li.current-menu-item::after {
+	content: '';
+	width: 80%;
+	height: 1px;
+	background-color: var(--secondary-color);
+	display: block;
+	margin: 4px auto 0;
 	opacity: 1;
+	transition: 0.3s;
 }
 
 .s-header-menu a {
@@ -2659,6 +2672,7 @@ ol.children:last-child {
 	font-weight: normal;
 	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
+	margin: 0 0 48px;
 }
 
 /* Post
@@ -2774,6 +2788,26 @@ ol.children:last-child {
 	margin-bottom: 0;
 }
 
+.c-categories--dropdown {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.c-categories--dropdown label {
+	margin-right: 40px;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-categories--dropdown label {
+		margin-right: 24px;
+	}
+}
+
+.c-categories--dropdown select {
+	width: auto;
+}
+
 .c-post-pagination {
 	width: 70%;
 	margin: auto;
@@ -2873,6 +2907,10 @@ ol.children:last-child {
 	letter-spacing: 0.1em;
 	color: #000;
 	text-decoration: none;
+}
+
+.c-slider__slide-link::after {
+	content: unset !important;
 }
 
 .c-slider__slide__image-wrapper {

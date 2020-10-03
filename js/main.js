@@ -11,9 +11,11 @@
                 wrapAround: true,
                 autoPlay: 5000,
                 cellAlign: 'center',
+                initialIndex: 0,
                 imagesLoaded: true,
                 groupCells: 2,
-                pauseAutoPlayOnHover: false
+                pauseAutoPlayOnHover: false,
+                accessibility: true
             };
 
             if ($slides < 4) {
@@ -40,7 +42,8 @@
                 imagesLoaded: true,
                 initialIndex: 0,
                 groupCells: false,
-                pauseAutoPlayOnHover: false
+                pauseAutoPlayOnHover: false,
+                accessibility: true
             };
 
             if (window.matchMedia("(max-width: 700px)").matches) {
@@ -50,8 +53,23 @@
             var blogImageCarousel = new Flickity('.js-blog-image-carousel', blogCarouselOptions);
             blogCarouselOptions.fade = true;
             var blogContentCarousel = new Flickity('.js-blog-content-carousel', blogCarouselOptions);
+            document.querySelectorAll('.c-blog-carousel__content__cell a').forEach(function (link) {
+                link.tabIndex = -1;
+            })
+            document.querySelectorAll('.c-blog-carousel__content__cell.is-selected a').forEach(function (link) {
+                link.tabIndex = 0;
+            })
             blogImageCarousel.on('change', function (index) {
                 blogContentCarousel.select(index);
+                document.querySelectorAll('.c-blog-carousel__content__cell').forEach(function (el) {
+                    el.querySelectorAll('a').forEach(function (link) {
+                        link.tabIndex = -1;
+                    })
+                });
+
+                document.querySelectorAll('.c-blog-carousel__content__cell.is-selected a').forEach(function (link) {
+                    link.tabIndex = 0;
+                })
             });
             document.querySelectorAll('.js-blog-carousel-nav-item').forEach(function (item) {
                 item.addEventListener('click', function (event) {
@@ -72,6 +90,7 @@
         var searchCloseToggle = document.querySelector('.js-search-toggle-close');
         var searchForm = document.querySelector('.js-search-form');
         searchToggle.addEventListener('click', function () {
+
             searchToggle.style.opacity = '0';
             searchCloseToggle.style.display = 'block';
             searchForm.classList.toggle('is-open');
@@ -90,4 +109,12 @@
             searchForm.classList.toggle('is-open');
         };
     });
+
+    window.addEventListener('focus', function () {
+        console.log(document.activeElement);
+        if (document.activeElement == document.querySelector('.c-blog-carousel__content__cell *')) {
+            console.log('Carousel Focused!');
+        }
+    });
+
 })();

@@ -60,6 +60,10 @@
   a {
     display: block;
     text-decoration: none;
+
+    &::after {
+      content: unset;
+    }
   }
 
   .current_page_item > a,

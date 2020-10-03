@@ -97,6 +97,10 @@
   }
 }
 
+.c-header__logo a::after {
+  content: unset;
+}
+
 .c-header__menu-items {
   display: flex;
   justify-content: flex-end;
@@ -106,23 +110,6 @@
 
 // Header Menu Scope
 .s-header-menu {
-
-  & > li::after {
-      content: '';
-      width: 80%;
-      height: 1px;
-      background-color: $wp-manifest__secondary-color;
-      display: block;
-      margin: 4px auto 0;
-      opacity: 0;
-      transition: 0.3s;
-    }
-
-  & li:hover {
-    &::after {
-      opacity: 1;
-    }
-  }
 
   li {
     margin-right: 53px;
@@ -145,7 +132,14 @@
   li.current-menu-item {
 
     &::after {
+      content: '';
+      width: 80%;
+      height: 1px;
+      background-color: $wp-manifest__secondary-color;
+      display: block;
+      margin: 4px auto 0;
       opacity: 1;
+      transition: 0.3s;
     }
   }
 
