@@ -22,26 +22,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="main">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
     <header id="masthead" class="c-header">
         <div class="o-wrapper">
             <div class="c-header__main">
                 <div class="c-header__logo">
 					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
-						?>
-                        <h1 class="c-header__site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </h1>
-					<?php
-					else :
-						?>
-                        <p class="c-header__site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                        </p>
-					<?php
-					endif; ?>
+					wp_manifest_header_branding();
+					 ?>
                 </div><!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation c-header__menu">
@@ -50,10 +38,11 @@
 					<?php wp_manifest_show_menu(); ?>
                     <?php if (get_theme_mod('search_icon_header', 1) == 1): ?>
                     <div class="c-header__search">
+                        <button class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></button>
                         <div class="c-header__search__form js-search-form s-header-search">
 		                    <?php get_search_form(); ?>
                         </div>
-                        <span class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></span>
+                        <span class="dashicons dashicons-no-alt js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></span>
                     </div>
                     <?php endif; ?>
                 </nav><!-- #site-navigation -->

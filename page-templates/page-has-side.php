@@ -9,7 +9,7 @@ get_header();
 ?>
 
 	<div class="o-container">
-		<div class="o-page o-page--default">
+		<div id="content" class="o-page o-page--default">
 			<div class="u-flex u-flex-wrap-m">
 				<div class="o-page__sidebar">
 					<?php the_title('<h1 class="o-page__title u-hide-m">', '</h1>'); ?>

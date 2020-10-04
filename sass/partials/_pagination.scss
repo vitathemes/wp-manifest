@@ -18,6 +18,10 @@
     padding: 0.25em;
     font-size: 1rem;
 
+    &::after {
+      content: unset;
+    }
+
     &:hover {
       background-color: $wp-manifest__neutral-gray-color;
       color: #000;

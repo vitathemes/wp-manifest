@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 
-<section class="portfolio c-archive c-archive--portfolio">
+<section id="content" class="portfolio c-archive c-archive--portfolio">
     <div class="o-wrapper">
 		<?php
 		the_archive_title( '<h1 class="c-archive__title">', '</h1>' );

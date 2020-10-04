@@ -8,10 +8,9 @@
 .c-article--single {
 
   .c-article__title {
-    font-size: 48px;
-    line-height: 64px;
-    letter-spacing: 0.05em;
-    margin: 48px 0 64px;
+    font-size: var(--heading-typography-font-size);
+    line-height: var(--heading-typography-line-height);
+    letter-spacing: var(--heading-typography-letter-spacing);
   }
 
   .c-article__main {

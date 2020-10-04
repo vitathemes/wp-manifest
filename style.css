@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: VitaThemes
 Author URI: https://vitathemes.com
 Description: Just another minimal WordPress theme
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -388,12 +388,12 @@ html {
 # Objects
 --------------------------------------------------------------*/
 .o-wrapper {
-	max-width: 75rem;
+	max-width: 72rem;
 	margin: 0 auto;
 	clear: both;
 }
 
-@media (max-width: 77rem) {
+@media (max-width: 74rem) {
 	.expand-width-wrapper .o-wrapper {
 		margin-left: 0;
 		margin-right: 0;
@@ -570,7 +570,7 @@ h6 {
 
 h1, .h1 {
 	font-family: var(--heading-typography-font-family);
-	font-size: var(--heading-typography-font-size);
+	font-size: clamp(1em, var(--heading-typography-font-size), 10em);
 	color: var(--tertiary-color);
 	line-height: 1.175;
 	font-weight: var(--heading-typography-variant);
@@ -579,7 +579,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 0.5em);
+	font-size: clamp(0.85em, calc(var(--heading-typography-font-size) - 0.5em), 8em);
 	color: var(--tertiary-color);
 	line-height: 1.167;
 	font-weight: var(--heading-typography-variant);
@@ -588,7 +588,7 @@ h2, .h2 {
 
 h3, .h3 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 0.75em);
+	font-size: clamp(0.75em, calc(var(--heading-typography-font-size) - 0.75em), 7em);
 	color: var(--tertiary-color);
 	line-height: 1.154;
 	font-weight: var(--heading-typography-variant);
@@ -597,7 +597,7 @@ h3, .h3 {
 
 h4, .h4 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1em);
+	font-size: clamp(0.65em, calc(var(--heading-typography-font-size) - 1em), 6em);
 	color: var(--tertiary-color);
 	line-height: 1.15;
 	font-weight: var(--heading-typography-variant);
@@ -606,7 +606,7 @@ h4, .h4 {
 
 h5, .h5 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1.25em);
+	font-size: clamp(0.5em, calc(var(--heading-typography-font-size) - 1.25em), 5em);
 	color: var(--tertiary-color);
 	line-height: 1.205;
 	font-weight: var(--heading-typography-variant);
@@ -615,7 +615,7 @@ h5, .h5 {
 
 h6, .h6 {
 	font-family: var(--heading-typography-font-family);
-	font-size: calc(var(--heading-typography-font-size) - 1.5em);
+	font-size: clamp(0.45em, calc(var(--heading-typography-font-size) - 1.5em), 4em);
 	color: var(--tertiary-color);
 	line-height: 1.194;
 	font-weight: var(--heading-typography-variant);
@@ -624,6 +624,7 @@ h6, .h6 {
 
 * {
 	letter-spacing: 0.01em;
+	word-wrap: break-word;
 }
 
 p {
@@ -786,11 +787,11 @@ figure {
 
 .dashicons {
 	color: var(--secondary-color);
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 .dashicons:hover {
-	color: var(--primary-color);
+	color: #000000;
 }
 
 table {
@@ -800,22 +801,51 @@ table {
 
 /* Links
 --------------------------------------------- */
-a {
+.main a, footer a {
 	color: inherit;
 	text-decoration: none;
 	transition: 0.25s;
+	display: inline-block;
 }
 
-a:hover {
-	color: var(--primary-color);
+.main a::after, footer a::after {
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: var(--secondary-color);
+	display: block;
+	margin: 4px auto 0;
+	opacity: 0;
+	transition: 0.3s;
 }
 
-a:focus {
+.main a:hover, footer a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.main a:hover .dashicons, footer a:hover .dashicons {
+	color: #000000;
+}
+
+.main a:active, .main a:focus, footer a:active, footer a:focus {
+	text-decoration: none;
+}
+
+.main a:active::after, .main a:focus::after, footer a:active::after, footer a:focus::after {
+	opacity: 1;
+}
+
+.main a:focus, footer a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+.main a:hover, .main a:active, footer a:hover, footer a:active {
 	outline: 0;
+}
+
+.main .u-link-no-hover::after, footer .u-link-no-hover::after {
+	content: unset;
 }
 
 /* Forms
@@ -1083,6 +1113,10 @@ input[type="submit"]:hover svg, form button:hover svg {
 	text-decoration: none;
 }
 
+.main-navigation a::after {
+	content: unset;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1219,6 +1253,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 .c-comments {
 	width: 70%;
 	margin: auto;
+	margin-top: 96px;
 }
 
 @media only screen and (min-width: 561px) and (max-width: 980px) {
@@ -1226,12 +1261,32 @@ input[type="submit"]:hover svg, form button:hover svg {
 		width: 90%;
 		padding-left: 15px;
 		padding-right: 15px;
+		margin-top: 64px;
 	}
 }
 
 @media only screen and (max-width: 560px) {
 	.c-comments {
 		width: 100%;
+		margin-top: 64px;
+	}
+}
+
+.c-comments .form-submit {
+	margin: 0;
+}
+
+.comments-title {
+	margin: 0 0 8px;
+}
+
+.comments-header {
+	margin: 0 0 64px;
+}
+
+@media only screen and (max-width: 560px) {
+	.comments-header {
+		margin-bottom: 48px;
 	}
 }
 
@@ -1242,10 +1297,6 @@ input[type="submit"]:hover svg, form button:hover svg {
 	font-size: 19px;
 	line-height: 23px;
 	letter-spacing: 0.05em;
-}
-
-.comment-content a:hover {
-	color: var(--primary-color);
 }
 
 .bypostauthor {
@@ -1322,7 +1373,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 	margin-bottom: 10px;
 }
 
-.comments .comment-author {
+.comments .comment-author, .comments .comment-author a {
 	font-size: 1em;
 	margin-top: 0;
 	margin-right: 24px;
@@ -1330,7 +1381,7 @@ input[type="submit"]:hover svg, form button:hover svg {
 }
 
 @media only screen and (max-width: 560px) {
-	.comments .comment-author a {
+	.comments .comment-author a, .comments .comment-author a a {
 		font-size: 15px !important;
 	}
 }
@@ -1415,6 +1466,13 @@ ol.children:last-child {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-bottom: 96px;
+}
+
+@media only screen and (max-width: 560px) {
+	.comment-form {
+		margin-bottom: 64px;
+	}
 }
 
 .comment-field {
@@ -1451,8 +1509,15 @@ ol.children:last-child {
 	margin: 5px 10px 0 0;
 }
 
-.comment-form-comment {
+.comment-form-comment, .comment-form-cookies {
 	width: 100%;
+	margin-top: 24px;
+}
+
+@media only screen and (max-width: 560px) {
+	.comment-form-comment, .comment-form-cookies {
+		margin-top: 16px;
+	}
 }
 
 #cancel-comment-reply-link {
@@ -1681,10 +1746,9 @@ ol.children:last-child {
 # Article--single
 -------------------------*/
 .c-article--single .c-article__title {
-	font-size: 48px;
-	line-height: 64px;
-	letter-spacing: 0.05em;
-	margin: 48px 0 64px;
+	font-size: var(--heading-typography-font-size);
+	line-height: var(--heading-typography-line-height);
+	letter-spacing: var(--heading-typography-letter-spacing);
 }
 
 .c-article--single .c-article__main {
@@ -1827,10 +1891,9 @@ ol.children:last-child {
 # Article--single
 -------------------------*/
 .c-article--single .c-article__title {
-	font-size: 48px;
-	line-height: 64px;
-	letter-spacing: 0.05em;
-	margin: 48px 0 64px;
+	font-size: var(--heading-typography-font-size);
+	line-height: var(--heading-typography-line-height);
+	letter-spacing: var(--heading-typography-letter-spacing);
 }
 
 .c-article--single .c-article__main {
@@ -2002,14 +2065,13 @@ ol.children:last-child {
 	width: 100%;
 }
 
+.c-article__image-link:hover::after {
+	content: unset;
+}
+
 .c-blog-carousel__content__cell__category {
 	color: #7B7B7B;
 	transition: 0s;
-}
-
-.c-blog-carousel__content__cell__category:hover {
-	color: #000000;
-	text-decoration: underline;
 }
 
 .c-blog-carousel__content__cell__date {
@@ -2017,18 +2079,11 @@ ol.children:last-child {
 }
 
 .c-blog-carousel__content__cell__title {
-	margin: 24px 0 16px;
 	font-weight: normal;
-	font-size: 23px;
 	line-height: 166.3%;
 	font-family: var(--heading-typography-font-family);
-	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
 	transition: 0.25s;
-}
-
-.c-blog-carousel__content__cell__title:hover {
-	color: var(--primary-color);
 }
 
 @media only screen and (max-width: 560px) {
@@ -2141,10 +2196,14 @@ ol.children:last-child {
 	transition: 0.25s;
 }
 
+.wp-block-button.c-btn.c-btn--primary a::after {
+	content: unset;
+}
+
 .wp-block-button.c-btn.c-btn--primary a:hover {
 	color: #FFFFFF;
-	background-color: #7B7B7B;
-	border-color: #7B7B7B;
+	background-color: #323232;
+	border-color: #323232;
 }
 
 .is-dark-mode .c-btn--primary {
@@ -2347,6 +2406,10 @@ ol.children:last-child {
 	color: var(--tertiary-color);
 }
 
+.c-header__logo a::after {
+	content: unset;
+}
+
 .c-header__menu-items {
 	display: flex;
 	justify-content: flex-end;
@@ -2357,10 +2420,16 @@ ol.children:last-child {
 .s-header-menu li {
 	margin-right: 53px;
 	margin-bottom: 0;
+	padding: 10px 0;
 }
 
 .s-header-menu li:last-child {
 	margin-right: 0;
+}
+
+.s-header-menu li:hover > .sub-menu {
+	left: auto;
+	transition-delay: 0s;
 }
 
 .s-header-menu li.current-menu-item::after {
@@ -2370,6 +2439,8 @@ ol.children:last-child {
 	background-color: var(--secondary-color);
 	display: block;
 	margin: 4px auto 0;
+	opacity: 1;
+	transition: 0.3s;
 }
 
 .s-header-menu a {
@@ -2381,7 +2452,23 @@ ol.children:last-child {
 	color: var(--secondary-color);
 }
 
-.s-header-menu a:hover {
+.s-header-menu a::after {
+	content: unset;
+}
+
+.s-header-menu .sub-menu {
+	flex-direction: column;
+	margin-top: 0;
+	top: 100%;
+	transition-delay: 2.5s;
+	background-color: #FFFFFF;
+}
+
+.s-header-menu .sub-menu li {
+	padding: 10px 20px;
+}
+
+.s-header-menu .sub-menu a:hover {
 	color: var(--primary-color);
 }
 
@@ -2391,6 +2478,15 @@ ol.children:last-child {
 	font-size: 25px;
 	cursor: pointer;
 	z-index: 5;
+	background-color: transparent;
+	border: none;
+	appearance: none;
+	padding: 0;
+}
+
+.c-header__search-toggle.c-header__search-toggle--close {
+	position: absolute;
+	display: none;
 }
 
 .c-header__search {
@@ -2398,6 +2494,7 @@ ol.children:last-child {
 	margin-left: 40px;
 	display: flex;
 	align-items: center;
+	flex-direction: row-reverse;
 }
 
 @media only screen and (max-width: 560px) {
@@ -2425,9 +2522,11 @@ ol.children:last-child {
 	transition: 0s;
 	transform: scale(0, 1);
 	transform-origin: right center;
+	display: none;
 }
 
 .c-header__search__form.is-open {
+	display: block;
 	min-width: 250px;
 	transform: scale(1, 1);
 	transition: 0.3s;
@@ -2573,6 +2672,7 @@ ol.children:last-child {
 	font-weight: normal;
 	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
+	margin: 0 0 48px;
 }
 
 /* Post
@@ -2625,16 +2725,12 @@ ol.children:last-child {
 	color: var(--secondary-color);
 	line-height: 166.3%;
 	letter-spacing: 0.05em;
-	font-size: 1rem;
+	font-size: calc(var(--text-typography-font-size) - 3px);
 }
 
 .c-post__main__title {
 	transition: 0.25s;
 	line-height: 1.35em;
-}
-
-.c-post__main__title:hover {
-	color: var(--primary-color);
 }
 
 .c-post__header__category {
@@ -2692,6 +2788,26 @@ ol.children:last-child {
 	margin-bottom: 0;
 }
 
+.c-categories--dropdown {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.c-categories--dropdown label {
+	margin-right: 40px;
+}
+
+@media only screen and (max-width: 560px) {
+	.c-categories--dropdown label {
+		margin-right: 24px;
+	}
+}
+
+.c-categories--dropdown select {
+	width: auto;
+}
+
 .c-post-pagination {
 	width: 70%;
 	margin: auto;
@@ -2729,6 +2845,10 @@ ol.children:last-child {
 	font-size: 1rem;
 }
 
+.s-page-pagination .post-page-numbers::after {
+	content: unset;
+}
+
 .s-page-pagination a.post-page-numbers:hover {
 	background-color: #CCCCCC;
 	color: #000000;
@@ -2747,12 +2867,18 @@ ol.children:last-child {
 
 .c-slider__slide-main {
 	padding: 0 15px;
+	transition: 0.2s ease-in-out;
+}
+
+.c-slider__slide-main:hover .c-slider__image, .c-slider__slide-main:focus-within .c-slider__image {
+	transform: scale(1.2);
 }
 
 .c-slider__image {
 	max-height: 544px;
 	max-width: 544px;
 	text-decoration: none;
+	transition: 0.2s ease-out;
 }
 
 @media only screen and (max-width: 560px) {
@@ -2781,6 +2907,14 @@ ol.children:last-child {
 	letter-spacing: 0.1em;
 	color: #000;
 	text-decoration: none;
+}
+
+.c-slider__slide-link::after {
+	content: unset !important;
+}
+
+.c-slider__slide__image-wrapper {
+	overflow: hidden;
 }
 
 /* Slider
@@ -3105,14 +3239,6 @@ ol.children:last-child {
 	color: var(--secondary-color);
 }
 
-a.u-color-primary-light:hover {
-	color: var(--primary-color);
-}
-
-a.u-color-primary-light:hover .dashicons {
-	color: var(--primary-color);
-}
-
 /* Flex
 --------------------------------------------- */
 .u-flex {
@@ -3256,6 +3382,10 @@ a.u-color-primary-light:hover .dashicons {
 	transition: 0.25s;
 	padding: 0.25em;
 	font-size: 1rem;
+}
+
+.pagination .page-numbers::after {
+	content: unset;
 }
 
 .pagination .page-numbers:hover {

@@ -1,15 +1,34 @@
 .c-comments {
   width: 70%;
   margin: auto;
+  margin-top: 96px;
 
   @media #{$tablet} {
     width: 90%;
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 64px;
   }
 
   @media #{$mobile} {
     width: 100%;
+    margin-top: 64px;
+  }
+
+  .form-submit {
+    margin: 0;
+  }
+}
+
+.comments-title {
+  margin: 0 0 8px;
+}
+
+.comments-header {
+  margin: 0 0 64px;
+
+  @media #{$mobile} {
+    margin-bottom: 48px;
   }
 }
 
@@ -21,10 +40,6 @@
   font-size: 19px;
   line-height: 23px;
   letter-spacing: 0.05em;
-
-  &:hover {
-    color: $wp-manifest__primary-color;
-  }
 }
 
 .bypostauthor {
@@ -100,7 +115,7 @@
   }
 
 
-  .comment-author {
+  .comment-author , .comment-author a {
     font-size: 1em;
     margin-top: 0;
     margin-right: 24px;
@@ -192,6 +207,11 @@ ol.children:last-child {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 96px;
+
+  @media #{$mobile} {
+    margin-bottom: 64px;
+  }
 }
 
 .comment-field {
@@ -227,8 +247,13 @@ ol.children:last-child {
   }
 }
 
-.comment-form-comment {
+.comment-form-comment , .comment-form-cookies {
   width: 100%;
+  margin-top: 24px;
+
+  @media #{$mobile} {
+    margin-top: 16px;
+  }
 }
 
 #cancel-comment-reply-link {

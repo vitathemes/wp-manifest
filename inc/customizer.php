@@ -112,16 +112,6 @@ add_action( 'init', function () {
 
 
 // SliderCategory
-	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'select',
-		'settings'    => 'homepage_slider_category',
-		'label'       => esc_html__( 'Select Portfolio Category', 'wp-manifest' ),
-		'section'     => 'homepage',
-		'placeholder' => esc_html__( 'Select a category...', 'wp-manifest' ),
-		'priority'    => 10,
-		'multiple'    => 1,
-		'choices'     => Kirki_Helper::get_terms( array( 'portfolio_category' ) )
-	] );
 
 // Add
 	Kirki::add_field( 'wp-manifest', [
@@ -148,6 +138,16 @@ add_action( 'init', function () {
 		'priority' => 10,
 	] );
 
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'link',
+		'settings' => 'homepage_info_left_link',
+		'label'    => esc_html__( 'Link url', 'wp-manifest' ),
+		'section'  => 'homepage',
+		'default'  => esc_url( '/about' ),
+		'priority' => 10,
+	] );
+
+
 	// Info - Right Side
 	Kirki::add_field( 'wp-manifest', [
 		'type'     => 'editor',
@@ -159,22 +159,22 @@ add_action( 'init', function () {
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_portfolio_homepage',
-		'label'       => esc_html__( 'Show Portfolio', 'wp-manifest' ),
-		'section'     => 'homepage',
-		'default'     => 1,
-		'priority'    => 10,
+		'type'     => 'toggle',
+		'settings' => 'show_portfolio_homepage',
+		'label'    => esc_html__( 'Show Portfolio', 'wp-manifest' ),
+		'section'  => 'homepage',
+		'default'  => 1,
+		'priority' => 10,
 	] );
 
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_latest_posts_homepage',
-		'label'       => esc_html__( 'Show latest posts', 'wp-manifest' ),
-		'section'     => 'homepage',
-		'default'     => 1,
-		'priority'    => 10,
+		'type'     => 'toggle',
+		'settings' => 'show_latest_posts_homepage',
+		'label'    => esc_html__( 'Show latest posts', 'wp-manifest' ),
+		'section'  => 'homepage',
+		'default'  => 1,
+		'priority' => 10,
 	] );
 
 // </editor-fold>
@@ -185,40 +185,61 @@ add_action( 'init', function () {
 // Home Page Title Text
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_blog_carousel',
-		'label'       => esc_html__( 'Show Blog Carousel', 'wp-manifest' ),
-		'section'     => 'blogpage',
-		'default'     => 0,
-		'priority'    => 10,
+		'type'     => 'toggle',
+		'settings' => 'show_blog_carousel',
+		'label'    => esc_html__( 'Show Blog Carousel', 'wp-manifest' ),
+		'section'  => 'blogpage',
+		'default'  => 0,
+		'priority' => 10,
 	] );
 
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_categories',
-		'label'       => esc_html__( 'Show Categories', 'wp-manifest' ),
+		'type'     => 'toggle',
+		'settings' => 'show_categories',
+		'label'    => esc_html__( 'Show Categories', 'wp-manifest' ),
+		'section'  => 'blogpage',
+		'default'  => 0,
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'theme_config_id', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'categories_type',
+		'label'       => esc_html__( 'Categories style', 'kirki' ),
 		'section'     => 'blogpage',
-		'default'     => 0,
+		'default'     => 'dropdown',
 		'priority'    => 10,
+		'choices'     => [
+			'dropdown'   => esc_html__( 'Dropdown', 'kirki' ),
+			'list' => esc_html__( 'List', 'kirki' ),
+		],
+		'active_callback'  => [
+			[
+				'setting'  => 'show_categories',
+				'operator' => '===',
+				'value'    => true,
+			],
+		]
+	] );
+
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'toggle',
+		'settings' => 'show_posts_thumbnail',
+		'label'    => esc_html__( 'Show Posts Thumbnail', 'wp-manifest' ),
+		'section'  => 'blogpage',
+		'default'  => 1,
+		'priority' => 10,
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_posts_thumbnail',
-		'label'       => esc_html__( 'Show Posts Thumbnail', 'wp-manifest' ),
-		'section'     => 'blogpage',
-		'default'     => 1,
-		'priority'    => 10,
-	] );
-
-	Kirki::add_field( 'wp-manifest', [
-		'type'        => 'toggle',
-		'settings'    => 'show_share_icons',
-		'label'       => esc_html__( 'Show Social Share Icons', 'wp-manifest' ),
-		'section'     => 'blogpage',
-		'default'     => 1,
-		'priority'    => 10,
+		'type'     => 'toggle',
+		'settings' => 'show_share_icons',
+		'label'    => esc_html__( 'Show Social Share Icons', 'wp-manifest' ),
+		'section'  => 'blogpage',
+		'default'  => 1,
+		'priority' => 10,
 	] );
 
 // </editor-fold>
@@ -226,24 +247,277 @@ add_action( 'init', function () {
 // -- Typography Fields --
 // <editor-fold desc="Typography">
 	Kirki::add_field( 'wp-manifest', [
-		'type'     => 'typography',
-		'settings' => 'headings_typography',
-		'label'    => esc_html__( 'Headlines', 'wp-manifest' ),
-		'section'  => 'typography',
-		'default'  => [
-			'font-family' => 'Red Hat Display',
-			'font-size'   => '48px',
-			'variant'     => 'regular',
-			'line-height' => '1.5',
-			//'color'       => '#000'
+		'type'      => 'typography',
+		'settings'  => 'headings_typography',
+		'label'     => esc_html__( 'Headlines', 'wp-manifest' ),
+		'section'   => 'typography',
+		'default'   => [
+			'font-family'    => 'Red Hat Display',
+			'font-size'      => '48px',
+			'variant'        => 'regular',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0.1em'
 		],
+		'transport' => 'auto',
 		'priority'  => 10,
-		'transport' => 'refresh',
-		'output' => array(
+		'output'    => array(
 			array(
-				'element' => 'h1'
-			)
-		)
+				'element' => 'h1',
+			),
+			array(
+				'element' => '.h1',
+			),
+			array(
+				'element'       => 'h2',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.5em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => 'h2',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => 'h2',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => 'h2',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => '.h2',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.5em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => '.h2',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => '.h2',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => '.h2',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => 'h3',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.75em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => 'h3',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => 'h3',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => 'h3',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => '.h3',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.75em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => '.h3',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => '.h3',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => '.h3',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => 'h4',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.5208‬‬em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => 'h4',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => 'h4',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => 'h4',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => '.h4',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 0.5208‬em‬)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => '.h4',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => '.h4',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => '.h4',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => 'h5',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 1.25em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => 'h5',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => 'h5',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => 'h5',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => '.h5',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 1.25em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => '.h5',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => '.h5',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => '.h5',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => 'h6',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 1.5em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => 'h6',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => 'h6',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => 'h6',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+			array(
+				'element'       => '.h6',
+				'property'      => 'font-size',
+				'value_pattern' => 'calc($ - 1.5em)',
+				'choice'        => 'font-size',
+			),
+			array(
+				'element'       => '.h6',
+				'property'      => 'font-weight',
+				'value_pattern' => '$',
+				'choice'        => 'variant',
+			),
+			array(
+				'element'       => '.h6',
+				'property'      => 'font-family',
+				'value_pattern' => '$',
+				'choice'        => 'font-family',
+			),
+			array(
+				'element'       => '.h6',
+				'property'      => 'letter-spacing',
+				'value_pattern' => '$',
+				'choice'        => 'letter-spacing',
+			),
+
+		),
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -260,14 +534,20 @@ add_action( 'init', function () {
 		'label'     => esc_html__( 'Texts', 'wp-manifest' ),
 		'section'   => 'typography',
 		'default'   => [
-			'font-family' => 'Lato',
-			'variant'     => 'regular',
-			'font-size'   => '19px',
-			'line-height' => '1.5',
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '19px',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0.1em'
 			//'color'       => '#000',
 		],
+		'transport' => 'auto',
 		'priority'  => 10,
-		'transport' => 'refresh',
+		'output'    => array(
+			array(
+				'element' => 'body',
+			),
+		),
 	] );
 
 	Kirki::add_field( 'wp-manifest', [
@@ -370,7 +650,7 @@ function wp_manifest_enqueue_fonts() {
 		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400' );
 	}
 	if ( $wp_manifest_text_typography['font-family'] ) {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
+		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_text_typography['font-weight'] );
 	} else {
 		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400' );
 	}

@@ -59,7 +59,7 @@ function wp_manifest_show_menu() {
 			'menu_class'     => 's-header-menu c-header__menu-items',
 			'menu_id'        => 'primary-menu',
 			'container'      => '',
-			'depth'          => 2,
+			'depth'          => 3,
 		);
 		wp_nav_menu( $wp_manifest_menu_args );
 	}
@@ -70,18 +70,20 @@ function wp_manifest_typography() {
 	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
 	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
 	$wp_manifest_default_heading_typography = array(
-		'font-family' => "Red Hat Display",
-		'font-size'   => "48px",
-		'variant'     => 'regular',
-		'line-height' => '1.5',
-		'color'       => '#000000'
+		'font-family'    => "Red Hat Display",
+		'font-size'      => "48px",
+		'variant'        => 'regular',
+		'line-height'    => '1.5',
+		'color'          => '#000000',
+		'letter-spacing' => '0.05em'
 	);
-	$default_text_typography                = array(
-		'font-family' => "Lato",
-		'font-size'   => "19px",
-		'variant'     => 'regular',
-		'line-height' => '1.5',
-		'color'       => '#000000'
+	$wp_manifest_text_typography            = array(
+		'font-family'    => "Lato",
+		'font-size'      => "19px",
+		'variant'        => 'regular',
+		'line-height'    => '1.5',
+		'color'          => '#565656',
+		'letter-spacing' => '0.05em'
 	);
 
 	if ( empty( $wp_manifest_heading_typography ) || $wp_manifest_heading_typography['font-family'] == "" ) {
@@ -90,36 +92,34 @@ function wp_manifest_typography() {
 		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
 	}
 	if ( empty( $wp_manifest_text_typography ) ) {
-		$wp_manifest_text_typography = $default_text_typography;
+		$wp_manifest_text_typography = $wp_manifest_text_typography;
 	} else {
-		$wp_manifest_text_typography = array_merge( $default_text_typography, $wp_manifest_text_typography );
+		$wp_manifest_text_typography = array_merge( $wp_manifest_text_typography, $wp_manifest_text_typography );
 	}
 
-	if (get_theme_mod( 'theme_mode', 'light') == 'dark') {
-		if (get_theme_mod( 'headings_typography_color') == "") {
+	if ( get_theme_mod( 'theme_mode', 'light' ) == 'dark' ) {
+		if ( get_theme_mod( 'headings_typography_color' ) == "" ) {
 			$wp_manifest_tertiary_color = "#FFFFFF";
-		}else {
-			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color', '#FFFFFF');
-        }
-	    if (get_theme_mod( 'text_typography_color') == "") {
-		    $wp_manifest_secondary_color = "#CCCCCC";
-        }
-	    else {
-		    $wp_manifest_secondary_color = get_theme_mod( 'text_typography_color', '#CCCCCC');
-        }
-    }
+		} else {
+			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color', '#FFFFFF' );
+		}
+		if ( get_theme_mod( 'text_typography_color' ) == "" ) {
+			$wp_manifest_secondary_color = "#CCCCCC";
+		} else {
+			$wp_manifest_secondary_color = get_theme_mod( 'text_typography_color', '#CCCCCC' );
+		}
+	}
 
-	if (get_theme_mod( 'theme_mode', 'light') == 'light') {
-		if (get_theme_mod( 'headings_typography_color') == "") {
+	if ( get_theme_mod( 'theme_mode', 'light' ) == 'light' ) {
+		if ( get_theme_mod( 'headings_typography_color' ) == "" ) {
 			$wp_manifest_tertiary_color = "#000000";
-		}else {
-			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color');
+		} else {
+			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color' );
 		}
-		if (get_theme_mod( 'text_typography_color') == "") {
+		if ( get_theme_mod( 'text_typography_color' ) == "" ) {
 			$wp_manifest_secondary_color = "#565656";
-		}
-		else {
-			$wp_manifest_secondary_color = get_theme_mod( 'text_typography_color');
+		} else {
+			$wp_manifest_secondary_color = get_theme_mod( 'text_typography_color' );
 		}
 	}
 
@@ -128,10 +128,12 @@ function wp_manifest_typography() {
 	            --heading-typography-font-family: ' . $wp_manifest_heading_typography["font-family"] . ';
 	            --heading-typography-line-height: ' . $wp_manifest_heading_typography["line-height"] . ';
 	            --heading-typography-variant: ' . $wp_manifest_heading_typography["variant"] . ';
+	            --heading-typography-letter-spacing: ' . $wp_manifest_heading_typography["letter-spacing"] . ';
 	            --text-typography-font-size: ' . $wp_manifest_text_typography["font-size"] . ';
 	            --text-typography-font-family: ' . $wp_manifest_text_typography["font-family"] . ';
 	            --text-typography-line-height: ' . $wp_manifest_text_typography["line-height"] . ';
 	            --text-typography-variant: ' . $wp_manifest_text_typography["variant"] . ';
+	            --text-typography-letter-spacing: ' . $wp_manifest_text_typography["letter-spacing"] . ';
 	
 	            --primary-color: ' . get_theme_mod( "branding_primary_color", "#3F51B5" ) . ';
 	            --secondary-color: ' . $wp_manifest_secondary_color . ';
@@ -144,17 +146,13 @@ function wp_manifest_typography() {
 add_action( 'admin_head', 'wp_manifest_theme_settings' );
 add_action( 'wp_head', 'wp_manifest_theme_settings' );
 function wp_manifest_theme_settings() {
-	$wp_manifest_text_typography    = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography = get_theme_mod( 'headings_typography' );
-	$wp_indigo_theme_typography     = wp_manifest_typography();
+	$wp_indigo_theme_typography = wp_manifest_typography();
 	?>
     <style>
         <?php echo $wp_indigo_theme_typography; ?>
     </style>
 	<?php
 }
-
-;
 
 
 function wp_manifest_get_post_primary_category( $post_id, $term = 'category', $return_all_categories = false ) {
@@ -250,27 +248,28 @@ function wp_manifest_comment_form() {
 }
 
 function wp_manifest_generate_post_category( $post_id ) {
-	$categories      = wp_get_post_categories( $post_id );
+	$categories = wp_get_post_categories( $post_id );
 
-    $categories_markup = "<div class='c-categories c-categories--post-cats'>";
-    $i = 0;
-    foreach ($categories as $category) {
-        $i++;
-	    $cat = get_category( $category );
-        if ($i == 4) {
-            break;
-        }
-	    $category_name = $cat->name;
-	    $category_link = get_category_link( $cat->term_id );
-	    $categories_markup .= sprintf( '<a class="c-post__header__category" href="%s">%s</a>', $category_link, $category_name );
-	    $categories_markup .= ', ';
-    }
-	$categories_markup = trim($categories_markup);
-    if (substr($categories_markup, -1) == ",") {
-	    $categories_markup = substr_replace($categories_markup, '', -1, '1');
-    }
+	$categories_markup = "<div class='c-categories c-categories--post-cats'>";
+	$i                 = 0;
+	foreach ( $categories as $category ) {
+		$i ++;
+		$cat = get_category( $category );
+		if ( $i == 4 ) {
+			break;
+		}
+		$category_name     = $cat->name;
+		$category_link     = get_category_link( $cat->term_id );
+		$categories_markup .= sprintf( '<a class="c-post__header__category" href="%s">%s</a>', $category_link, $category_name );
+		$categories_markup .= ', ';
+	}
+	$categories_markup = trim( $categories_markup );
+	if ( substr( $categories_markup, - 1 ) == "," ) {
+		$categories_markup = substr_replace( $categories_markup, '', - 1, '1' );
+	}
 	$categories_markup .= "</div>";
-    return $categories_markup;
+
+	return $categories_markup;
 }
 
 
@@ -290,5 +289,31 @@ function wp_manifest_get_post_category( $post_id ) {
 
 function wp_manifest_is_paginated_post() {
 	global $multipage;
+
 	return 0 !== $multipage;
 }
+
+if ( ! function_exists( 'wp_manifest_header_branding' ) ) :
+	/**
+	 * Displays Branding logo or site title
+	 */
+	function wp_manifest_header_branding() {
+		if ( has_custom_logo() ) {
+			the_custom_logo();
+		} else {
+			if ( is_front_page() && is_home() ) {
+				?>
+                <h1 class="c-header__site-title">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                </h1>
+				<?php
+			} else {
+				?>
+                <h2 class="c-header__site-title">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                </h2>
+				<?php
+			}
+		}
+	}
+endif;

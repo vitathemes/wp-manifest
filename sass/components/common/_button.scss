@@ -63,10 +63,14 @@
       background-color: $wp-manifest__main-primary-light-color;
       transition: $wp-manifest_global-transition;
 
+      &::after {
+        content: unset;
+      }
+
       &:hover {
         color: #FFFFFF;
-        background-color: $wp-manifest__neutral-dark-gray-color;
-        border-color: $wp-manifest__neutral-dark-gray-color;
+        background-color: $wp-manifest__main-primary-dark-color;
+        border-color: $wp-manifest__main-primary-dark-color;
       }
     }
   }
