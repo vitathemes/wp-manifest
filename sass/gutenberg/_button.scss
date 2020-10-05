@@ -50,8 +50,8 @@
   .wp-block-button__link , .wp-block-file .wp-block-file__button {
     &:hover {
       color: #FFFFFF;
-      background-color: $wp-manifest__primary-color;
-      border-color: $wp-manifest__primary-color;
+      background-color: $wp-manifest__tertiary-color;
+      border-color: $wp-manifest__tertiary-color;
     }
   }
 

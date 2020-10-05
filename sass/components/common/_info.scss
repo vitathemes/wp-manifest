@@ -44,4 +44,14 @@
   letter-spacing: 0.1em;
   color: $wp-manifest__tertiary-color;
   margin: 0 0 48px;
+
+
+}
+
+.c-info__col--desc {
+  font-size: 1.25rem;
+
+  p {
+    margin: 0;
+  }
 }
