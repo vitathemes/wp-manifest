@@ -163,29 +163,3 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
-
-
-if ( ! function_exists( 'wp_manifest_header_branding' ) ) :
-	/**
-	 * Displays Branding logo or site title
-	 */
-	function wp_manifest_header_branding() {
-		if ( has_custom_logo() ) {
-			the_custom_logo();
-		} else {
-			if ( is_front_page() && is_home() ) {
-				?>
-                <h1 class="c-header__site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                </h1>
-				<?php
-			} else {
-				?>
-                <h2 class="c-header__site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                </h2>
-				<?php
-			}
-		}
-	}
-endif;

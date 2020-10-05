@@ -17,9 +17,9 @@ wp_head();
 </header>
     <section id="content" class="lost-container not-found u-margin-bottom-larger-m u-margin-bottom-larger">
         <div class="o-wrapper">
-            <h2 class="big-title"><?php _e('404' , 'wp-manifest'); ?></h2>
-            <p><?php _e('Oops! we are sorry, but the page you requested was not found. You can search or return to home.' , 'wp-manifest'); ?></p>
-            <a class="c-btn c-btn--primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="dashicons dashicons-arrow-left-alt"></span> <?php _e('Go Home' , 'wp-manifest'); ?></a>
+            <h2 class="big-title"><?php esc_html_e('404' , 'wp-manifest'); ?></h2>
+            <p><?php esc_html_e('Oops! we are sorry, but the page you requested was not found. You can search or return to home.' , 'wp-manifest'); ?></p>
+            <a class="c-btn c-btn--primary" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="dashicons dashicons-arrow-left-alt"></span> <?php esc_html_e('Go Home' , 'wp-manifest'); ?></a>
             <br>
             <br>
 	        <div class="s-widget s-widget--search-form">

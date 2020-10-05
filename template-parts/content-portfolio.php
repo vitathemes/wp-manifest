@@ -11,7 +11,7 @@
 				//get the name of the category
 				$cat_id = $cat->term_id;
 				//make a list item containing a link to the category
-				echo '<li class="c-portfolio__content__categories__item"><a class="c-portfolio__content__categories__item__link" href="'.get_category_link($cat_id).'">'.$cat->name.'</a></li>';
+				echo '<li class="c-portfolio__content__categories__item"><a class="c-portfolio__content__categories__item__link" href="'. esc_url(get_category_link($cat_id)) .'">'. esc_html($cat->name) .'</a></li>';
 			}
 			?>
 		</ul>

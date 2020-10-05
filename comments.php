@@ -29,36 +29,17 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
         <h5 class="comments-title">
 			<?php
 			if ( comments_open() ) {
-				if ( have_comments() ) {
-					esc_html_e( 'Join the Conversation', 'wp-manifest' );
-				} else {
-					esc_html_e( 'Leave a comment', 'wp-manifest' );
-				}
+				esc_html_e( 'Leave a Reply', 'wp-manifest' );
 			} else {
-				if ( '1' == $wp_manifest_discussion->responses ) {
-					/* translators: %s: post title */
-					printf( esc_html( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'wp-manifest' ), esc_html( get_the_title() ) ) );
-				} else {
-					printf(
-					/* translators: 1: number of comments, 2: post title */
-						esc_html( _nx(
-							'%1$s reply on &ldquo;%2$s&rdquo;',
-							'%1$s replies on &ldquo;%2$s&rdquo;',
-							$wp_manifest_discussion->responses,
-							'comments title',
-							'wp-manifest'
-						) ),
-						esc_html( number_format_i18n( $wp_manifest_discussion->responses ) ),
-						esc_html( get_the_title() )
-					);
-				}
+				esc_html_e( 'Comments are disabled.', 'wp-manifest' );
 			}
 			?>
         </h5><!-- .comments-title -->
-        <p>
-            <?php esc_html_e( 'Required fields are marked *', 'wp-manifest' ); ?>
-        </p>
-
+		<?php if ( comments_open() ) { ?>
+            <p>
+				<?php esc_html_e( 'Required fields are marked *', 'wp-manifest' ); ?>
+            </p>
+		<?php } ?>
     </div><!-- .comments-title-flex -->
 	<?php
 	// Show comment form at top if showing newest comments at the top.
@@ -95,9 +76,7 @@ $wp_manifest_discussion = wp_manifest_get_discussion_data();
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-            <h3 class="no-comments">
-				<?php esc_html_e( 'Comments are disabled.', 'wp-manifest' ); ?>
-            </h3>
+
 		<?php
 		endif;
 	endif;
