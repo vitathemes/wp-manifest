@@ -4,14 +4,14 @@
 		<ul class="c-portfolio__content__categories">
 			<?php
 			//get all the categories the post belongs to
-			$categories = wp_get_post_terms( get_the_ID() , 'portfolio_category' );
+			$wp_manifest_categories = wp_get_post_terms( get_the_ID() , 'portfolio_category' );
 			//loop through them
-			foreach($categories as $c){
-				$cat = get_category( $c );
+			foreach($wp_manifest_categories as $c){
+				$wp_manifest_cat = get_category( $c );
 				//get the name of the category
-				$cat_id = $cat->term_id;
+				$wp_manifest_cat_id = $wp_manifest_cat->term_id;
 				//make a list item containing a link to the category
-				echo '<li class="c-portfolio__content__categories__item"><a class="c-portfolio__content__categories__item__link" href="'. esc_url(get_category_link($cat_id)) .'">'. esc_html($cat->name) .'</a></li>';
+				echo '<li class="c-portfolio__content__categories__item"><a class="c-portfolio__content__categories__item__link" href="'. esc_url(get_category_link($wp_manifest_cat_id)) .'">'. esc_html($wp_manifest_cat->name) .'</a></li>';
 			}
 			?>
 		</ul>
