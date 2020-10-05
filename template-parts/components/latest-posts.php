@@ -9,7 +9,7 @@ if ( $latest_posts->have_posts() ):
     <section class="c-component c-posts">
         <div class="o-wrapper">
             <div class="o-col u-dir-column-m u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
-                <h2 class="u-margin-none u-margin-bottom-small-m"><?php _e('Latest Posts', 'wp-manifest') ?></h2>
+                <h2 class="u-margin-none u-margin-bottom-small-m"><?php esc_html_e('Latest Posts', 'wp-manifest') ?></h2>
                 <a class="u-color-primary-light" href="<?php echo esc_url(site_url( 'blog' )); ?>">
                     See All
                     <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
@@ -34,7 +34,7 @@ if ( $latest_posts->have_posts() ):
 											<?php the_title( '<h3 class="c-post__main__title h4 u-margin-none">', '</h3>' ); ?>
                                         </a>
                                     </div>
-                                    <p class="c-post__main__excerpt u-margin-none"><?php echo strip_tags( get_the_excerpt() ); ?></p>
+                                    <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags(get_the_excerpt()) ); ?></p>
                                 </div>
                             </main>
                         </article>
