@@ -9,8 +9,8 @@ if ( $latest_posts->have_posts() ):
     <section class="c-component c-posts">
         <div class="o-wrapper">
             <div class="o-col u-dir-column-m u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
-                <h2 class="u-margin-none u-margin-bottom-small-m">Latest Posts</h2>
-                <a class="u-color-primary-light" href="<?php echo site_url( 'blog' ); ?>">
+                <h2 class="u-margin-none u-margin-bottom-small-m"><?php _e('Latest Posts', 'wp-manifest') ?></h2>
+                <a class="u-color-primary-light" href="<?php echo esc_url(site_url( 'blog' )); ?>">
                     See All
                     <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                 </a>

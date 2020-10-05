@@ -110,11 +110,11 @@
         };
     });
 
-    window.addEventListener('focus', function () {
-        console.log(document.activeElement);
-        if (document.activeElement == document.querySelector('.c-blog-carousel__content__cell *')) {
-            console.log('Carousel Focused!');
-        }
-    });
+    //window.addEventListener('focus', function () {
+        //console.log(document.activeElement.closest(".c-blog-carousel__content__cell").index);
+        //if (document.activeElement == document.querySelector('.c-blog-carousel__content__cell *')) {
+            //console.log(document.activeElement.closest(".c-blog-carousel__content__cell"));
+        //}
+    //});
 
 })();

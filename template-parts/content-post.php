@@ -13,7 +13,7 @@
             <a href="<?php the_permalink(); ?>">
 				<?php the_title('<h3 class="c-post__main__title u-margin-none u-margin-bottom-medium">', '</h3>'); ?>
             </a>
-            <p class="c-post__main__excerpt u-margin-none"><?php echo strip_tags(get_the_excerpt()); ?></p>
+            <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html(get_the_excerpt()); ?></p>
         </div>
     </main>
 </article>

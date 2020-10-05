@@ -378,7 +378,7 @@ function wp_manifest_color_palette() {
 
 add_action( 'init', 'wp_manifest_color_palette' );
 
-add_image_size( 'wp_wp_manifest_medium', 544, 0, true );
+add_image_size( 'wp_manifest_medium', 544, 0, true );
 add_image_size( 'wp_manifest_medium_square', 544, 544, true );
 add_image_size( 'wp_manifest_medium_thumbnail', 352, 258, true );
 add_image_size( 'wp_manifest_large_thumbnail', 544, 258, true );

@@ -84,18 +84,6 @@ add_action( 'init', function () {
 		],
 	] );
 
-// -- Branding Fields --
-// <editor-fold desc="branding">
-
-	Kirki::add_field( 'wp-manifest', [
-		'type'     => 'color',
-		'settings' => 'branding_primary_color',
-		'label'    => __( 'Primary Color', 'wp-manifest' ),
-		'section'  => 'branding',
-		'default'  => '#3F51B5',
-	] );
-
-// </editor-fold>
 
 // -- Home page Fields --
 // <editor-fold desc="HomePage">

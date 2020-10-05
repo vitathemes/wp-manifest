@@ -5,8 +5,6 @@
  * @package WP_Manifest
  */
 
-require "classes/wp_manifest_walker_comment.php";
-
 // Register Menu
 function wp_manifest_register_primary_menu() {
 	register_nav_menu( 'primary-menu', __( 'Primary Menu', 'wp-manifest' ) );
@@ -60,6 +58,7 @@ function wp_manifest_show_menu() {
 			'menu_id'        => 'primary-menu',
 			'container'      => '',
 			'depth'          => 3,
+			'walker'         => new Wp_manifest_walker_nav()
 		);
 		wp_nav_menu( $wp_manifest_menu_args );
 	}
@@ -149,7 +148,7 @@ function wp_manifest_theme_settings() {
 	$wp_indigo_theme_typography = wp_manifest_typography();
 	?>
     <style>
-        <?php echo $wp_indigo_theme_typography; ?>
+        <?php echo esc_html($wp_indigo_theme_typography); ?>
     </style>
 	<?php
 }
@@ -276,7 +275,7 @@ function wp_manifest_generate_post_category( $post_id ) {
 function wp_manifest_show_post_data( $post_id ) {
 	$category = wp_manifest_generate_post_category( $post_id );
 	$date     = sprintf( '<span class="c-post__header__date">%s</span>', get_the_time( 'd M, Y' ) );
-	echo $category . $date;
+	echo wp_kses_post($category . $date);
 }
 
 function wp_manifest_get_post_category( $post_id ) {
@@ -304,13 +303,13 @@ if ( ! function_exists( 'wp_manifest_header_branding' ) ) :
 			if ( is_front_page() && is_home() ) {
 				?>
                 <h1 class="c-header__site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h1>
 				<?php
 			} else {
 				?>
                 <h2 class="c-header__site-title">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h2>
 				<?php
 			}

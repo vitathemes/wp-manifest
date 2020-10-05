@@ -7,13 +7,16 @@
  */
 get_header(); ?>
 
-<section class="blog search">
+<section class="blog search o-page">
     <div class="o-wrapper">
-        <h1>
-			<?php
-			printf( esc_html__( 'Search Results for: %s', 'wp-manifest' ), get_search_query() );
-			?>
-        </h1>
+        <div class="o-page__header o-col">
+            <h1>
+				<?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'wp-manifest' ), get_search_query() );
+				?>
+            </h1>
+        </div>
         <div id="content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
             <div class="u-flex u-flex-wrap u-dir-column-m">
 				<?php if ( have_posts() ) : ?><?php
