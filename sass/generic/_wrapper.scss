@@ -2,26 +2,23 @@
 
 $wrappers: expand-width-wrapper !global;
 
-@mixin wrapper($name, $width)
-{
-  .#{$name}
-  {
+@mixin wrapper($name, $width) {
+  .#{$name} {
     max-width: $width;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     clear: both;
+    padding-right: 16px;
+    padding-left: 16px;
   }
-  @media(max-width: $width+2rem)
-  {
-    @each $wrapper in $wrappers
-    {
-      .#{$wrapper} .#{$name}
-      {
+  @media(max-width: $width+2rem) {
+    @each $wrapper in $wrappers {
+      .#{$wrapper} .#{$name} {
         margin-left: 0;
         margin-right: 0;
       }
     }
-    .#{$name}
-    {
+    .#{$name} {
       margin-left: 1rem;
       margin-right: 1rem;
     }

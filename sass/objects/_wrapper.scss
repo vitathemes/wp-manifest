@@ -1,2 +1,13 @@
 @include wrapper(o-wrapper, 72rem);
 
+.o-wrapper--header {
+  @media #{$mobile} {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @media #{$tablet} {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

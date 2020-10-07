@@ -8,14 +8,16 @@ if ( $latest_posts->have_posts() ):
 	?>
     <section class="c-component c-posts">
         <div class="o-wrapper">
-            <div class="o-col u-dir-column-m u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
-                <h2 class="u-margin-none u-margin-bottom-small-m"><?php esc_html_e('Latest Posts', 'wp-manifest') ?></h2>
-                <a class="u-color-primary-light" href="<?php echo esc_url(site_url( 'blog' )); ?>">
-                    See All
-                    <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
-                </a>
+            <div class="u-row">
+                <div class="o-col u-dir-column-m u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
+                    <h5 class="u-margin-none u-margin-bottom-small-m"><?php esc_html_e('Latest Posts', 'wp-manifest') ?></h5>
+                    <a class="u-color-primary-light" href="<?php echo esc_url(site_url( 'blog' )); ?>">
+                        See All
+                        <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
+                    </a>
+                </div>
             </div>
-            <div class="u-flex u-dir-column-m">
+            <div class="u-row u-dir-column-m">
 				<?php while ( $latest_posts->have_posts() ):
 					$latest_posts->the_post(); ?>
                     <div class="o-col o-col--1/3">
@@ -28,10 +30,10 @@ if ( $latest_posts->have_posts() ):
                                 <div class="u-flex u-justify-between u-margin-bottom-small">
 									<?php wp_manifest_show_post_data( get_the_ID() ); ?>
                                 </div>
-                                <div class="u-flex u-dir-column u-justify-between u-flex-grow">
-                                    <div class="u-margin-none u-margin-bottom-medium">
+                                <div class="u-flex u-dir-column u-flex-grow">
+                                    <div class="u-margin-none u-margin-bottom-small">
                                         <a href="<?php the_permalink(); ?>">
-											<?php the_title( '<h3 class="c-post__main__title h4 u-margin-none">', '</h3>' ); ?>
+											<?php the_title( '<h3 class="c-post__main__title h5 u-margin-none">', '</h3>' ); ?>
                                         </a>
                                     </div>
                                     <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags(get_the_excerpt()) ); ?></p>

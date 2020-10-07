@@ -1,6 +1,12 @@
 .c-widget {
   margin: 0 0 2.5em;
 
+  @media #{$mobile} {
+    &:last-child {
+      margin: 0;
+    }
+  }
+
   // Make sure select elements fit in widgets.
   select {
     max-width: 100%;

@@ -47,7 +47,7 @@ h4, .h4 {
 
 h5, .h5 {
   font-family: var(--heading-typography-font-family);
-  font-size: clamp(0.5em, calc(var(--heading-typography-font-size) - 1.25em) , 5em);
+  font-size: clamp(0.5em, calc(var(--heading-typography-font-size) / 2.08) , 5em);
   color: var(--tertiary-color);
   line-height: 1.205;
   font-weight: var(--heading-typography-variant);

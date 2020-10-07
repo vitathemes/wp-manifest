@@ -50,6 +50,20 @@
   justify-content: flex-start;
   align-items: center;
 
+  @media #{$mobile} {
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+
+    label {
+      width: 100%;
+    }
+
+    select {
+      max-width: 100%;
+      width: 100% !important;
+    }
+  }
+
   label {
     margin-right: 40px;
 
@@ -59,6 +73,11 @@
   }
 
   select {
+    max-width: 100%;
     width: auto;
+
+    @media #{$desktop} {
+      min-width: 407px;
+    }
   }
 }
