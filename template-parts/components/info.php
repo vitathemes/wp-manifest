@@ -2,11 +2,11 @@
     <div class="o-wrapper">
         <div class="c-info__main">
             <div class="c-info__col o-col o-col--1/2">
-                <div class="c-info__col__title h3">
+                <div class="c-info__col__title h5">
 					<?php echo wp_kses_post( get_theme_mod( 'homepage_info_left' , __('Full-time UI/UX designer Head of Design at VeronaLabs.com', 'wp-manifest') ) ); ?>
                 </div>
                 <a class="c-info__col__link" href="<?php echo esc_url(get_theme_mod( 'homepage_info_left_link', '/about')); ?>">
-                    <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
+                    <span class="c-info__col__link__text">Read More</span> <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                 </a>
             </div>
             <div class="c-info__col o-col o-col--1/2 u-margin-none c-info__col--desc">

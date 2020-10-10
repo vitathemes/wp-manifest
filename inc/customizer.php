@@ -358,7 +358,7 @@ add_action( 'init', function () {
 			array(
 				'element'       => 'h4',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.5208‬‬em)',
+				'value_pattern' => 'calc($ - 0.85‬‬em)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -383,7 +383,7 @@ add_action( 'init', function () {
 			array(
 				'element'       => '.h4',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.5208‬em‬)',
+				'value_pattern' => 'calc($ - 0.85‬em‬)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -408,7 +408,7 @@ add_action( 'init', function () {
 			array(
 				'element'       => 'h5',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 1.25em)',
+				'value_pattern' => 'calc($ / 2.08)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -433,7 +433,7 @@ add_action( 'init', function () {
 			array(
 				'element'       => '.h5',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 1.25em)',
+				'value_pattern' => 'calc($ / 2.08)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -524,7 +524,7 @@ add_action( 'init', function () {
 		'default'   => [
 			'font-family'    => 'Lato',
 			'variant'        => 'regular',
-			'font-size'      => '19px',
+			'font-size'      => '16px',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0.1em'
 			//'color'       => '#000',

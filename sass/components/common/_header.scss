@@ -15,7 +15,7 @@
 // Main Container of HEADER Section
 .c-header__main {
   display: flex;
-  padding: 96px 16px;
+  padding: 32px 0 96px;
   align-items: center;
 
   @media #{$mobile} {
@@ -111,6 +111,10 @@
 // Header Menu Scope
 .s-header-menu {
 
+  ul li {
+    margin-right: 0;
+  }
+
   li {
     margin-right: 53px;
     margin-bottom: 0;
@@ -118,6 +122,17 @@
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &::after {
+      content: '';
+      width: 35px;
+      height: 1px;
+      background-color: transparent;
+      display: block;
+      margin: 4px auto 0;
+      opacity: 1;
+      transition: 0.3s;
     }
 
     &:hover {
@@ -132,24 +147,18 @@
   li.current-menu-item {
 
     &::after {
-      content: '';
-      width: 80%;
-      height: 1px;
-      background-color: $wp-manifest__secondary-color;
-      display: block;
-      margin: 4px auto 0;
-      opacity: 1;
-      transition: 0.3s;
+      background-color: $wp-manifest__tertiary-color;
     }
   }
 
   a {
-    font-size: 0.833em;
-    letter-spacing: 0.3em;
+    font-size: 0.833rem;
     text-transform: uppercase;
-    line-height: 16px;
+    line-height: 1;
     font-family: $wp-manifest__primary-font;
-    color: $wp-manifest__secondary-color;
+    color: $wp-manifest__tertiary-color;
+    letter-spacing: var(--heading-typography-letter-spacing);
+    font-weight: var(--heading-typography-variant);
 
     &::after {
       content: unset;
@@ -177,8 +186,8 @@
 // Search
 
 .c-header__search-toggle.dashicons {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   font-size: 25px;
   cursor: pointer;
   z-index: 5;
@@ -231,12 +240,12 @@
     transition: 0.3s;
 
     @media #{$tablet} {
-      min-width: 150px;
+      min-width: 250px;
       max-width: 100%;
     }
 
     @media #{$mobile} {
-      min-width: 150px;
+      min-width: 250px;
       max-width: 100%;
     }
 
@@ -246,11 +255,11 @@
       transition: 0.35s;
 
       @media #{$mobile} {
-        max-width: 150px;
+        max-width: 250px;
       }
 
       @media #{$tablet} {
-        max-width: 150px;
+        max-width: 250px;
       }
     }
   }

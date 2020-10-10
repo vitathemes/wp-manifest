@@ -12,7 +12,7 @@ get_header();
 ?>
 
     <div id="content" class="o-page o-page--home">
-		<?php get_template_part( 'template-parts/components/page-header' ); ?>
+		<?php get_template_part( 'template-parts/components/pageheader' ); ?>
 		<?php if ( get_theme_mod( 'show_portfolio_homepage' , true ) == true ): ?>
 			<?php get_template_part( 'template-parts/components/slider' ); ?>
 		<?php endif; ?>

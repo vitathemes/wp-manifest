@@ -24,7 +24,7 @@
 <div id="page" class="main">
     <a tabindex="1" class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-manifest' ); ?></a>
     <header id="masthead" class="c-header">
-        <div class="o-wrapper">
+        <div class="o-wrapper o-wrapper--header">
             <div class="c-header__main">
                 <div class="c-header__logo">
 					<?php
@@ -42,7 +42,7 @@
                         <div class="c-header__search__form js-search-form s-header-search">
 		                    <?php get_search_form(); ?>
                         </div>
-                        <span class="dashicons dashicons-no-alt js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></span>
+                        <span class="dashicons dashicons-search js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></span>
                     </div>
                     <?php endif; ?>
                 </nav><!-- #site-navigation -->

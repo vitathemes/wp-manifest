@@ -17,10 +17,13 @@ $carousel_posts = new WP_Query( array(
 get_header(); ?>
 <section id="content" class="o-page">
     <div class="o-wrapper">
-        <div class="o-page__header o-col">
-            <h1 class="u-margin-none">Blog</h1>
-        </div>
+       <div class="u-row">
+           <div class="o-page__header o-col">
+               <h1 class="u-margin-none">Blog</h1>
+           </div>
+       </div>
 		<?php if ( get_theme_mod( 'show_blog_carousel', false ) == true ): ?>
+        <div class="u-row">
             <div class="c-blog-carousel o-col">
                 <div class="c-blog-carousel__image js-blog-image-carousel">
 					<?php
@@ -72,13 +75,14 @@ get_header(); ?>
                     </nav>
                 </div>
             </div>
+        </div>
 		<?php endif;
 		if ( get_theme_mod( 'show_categories', false ) == true ):
 			get_template_part( 'template-parts/components/categories-list' );
 		endif; ?>
 		<?php if ( have_posts() ) : ?>
             <div id="site-content" class="u-margin-bottom-huge u-margin-bottom-larger-m">
-                <div class="u-flex u-flex-wrap u-dir-column-m">
+                <div class="u-row u-flex-wrap u-dir-column-m">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :

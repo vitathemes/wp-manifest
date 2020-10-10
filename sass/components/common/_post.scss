@@ -5,13 +5,17 @@
   height: 100%;
 
   @media #{$mobile} {
-    margin-bottom: 48px;
+    margin-bottom: 56px;
   }
 }
 
 .c-post__header {
   height: 258px;
   position: relative;
+
+  @media #{$mobile} {
+    height: 137px;
+  }
 }
 
 .c-post__header__link {
@@ -48,6 +52,7 @@
 .c-post__main__title {
   transition: $wp-manifest_global-transition;
   line-height: 1.35em;
+  min-height: 62px;
 }
 
 .c-post__header__category {
