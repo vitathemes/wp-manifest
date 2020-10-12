@@ -4,11 +4,11 @@
   padding: 0 16px;
   flex-basis: 100%;
 
-  @media #{$mobile} {
+  @media #{$tablet} {
     padding: 0;
   }
 
-  @media #{$tablet} {
+  @media #{$mobile} {
     padding: 0;
   }
 }
@@ -46,3 +46,10 @@
   }
 }
 
+@media #{$tablet} {
+  .o-col--1\/5, .o-col--2\/3 {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}

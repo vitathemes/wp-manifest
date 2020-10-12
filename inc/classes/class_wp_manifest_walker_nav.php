@@ -25,7 +25,7 @@ class Wp_manifest_walker_nav extends Walker_Nav_Menu {
 		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
 		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
 		$atts['href']   = ! empty( $item->url )        ? $item->url        : '';
-		$atts['tabindex']   =  '1';
+		//$atts['tabindex']   =  '1';
 
 		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 

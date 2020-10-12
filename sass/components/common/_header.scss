@@ -213,12 +213,14 @@
     margin-left: 0;
     margin-right: 10px;
     order: 1;
+    position: unset;
   }
 
   @media #{$tablet} {
     margin-left: 0;
     margin-right: 10px;
     order: 1;
+    position: unset;
   }
 }
 
@@ -232,6 +234,15 @@
   transform: scale(0, 1);
   transform-origin: right center;
   display: none;
+
+  @media #{$tablet} {
+
+  }
+
+  @media #{$mobile} {
+
+  }
+
 
   &.is-open {
     display: block;
@@ -247,6 +258,8 @@
     @media #{$mobile} {
       min-width: 250px;
       max-width: 100%;
+      position: absolute;
+      top: 100%;
     }
 
     .search-field {
@@ -273,11 +286,21 @@
     right: -30px;
 
     @media #{$mobile} {
-      right: -24px;
+      right: 0;
+      padding: 0 15px;
+
+      .search-field {
+        max-width: unset;
+      }
     }
 
     @media #{$tablet} {
-      right: -24px;
+      right: 0;
+      padding: 0 15px;
+
+      .search-field {
+        max-width: unset;
+      }
     }
   }
 
