@@ -2,7 +2,7 @@
 $latest_posts = new WP_Query( array(
 	'posts_per_page' => 3,
 	'status'         => 'publish',
-	'order'          => 'asc'
+	'order'          => 'desc'
 ) );
 if ( $latest_posts->have_posts() ):
 	?>
