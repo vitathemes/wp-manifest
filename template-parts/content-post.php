@@ -9,7 +9,7 @@
         <div class="u-flex u-justify-between u-margin-bottom-small">
 			<?php wp_manifest_show_post_data(get_the_ID()); ?>
         </div>
-        <div class="u-flex u-dir-column u-justify-between u-flex-grow">
+        <div class="u-flex u-dir-column u-flex-grow">
             <a href="<?php the_permalink(); ?>">
 				<?php the_title('<h3 class="c-post__main__title u-margin-none u-margin-bottom-medium">', '</h3>'); ?>
             </a>
