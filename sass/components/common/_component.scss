@@ -8,3 +8,13 @@
     margin: 0 0 64px 0;
   }
 }
+
+
+.c-component.c-posts {
+
+  .c-posts__more-links {
+    @media #{$mobile} {
+      font-size: 0.85rem;
+    }
+  }
+}

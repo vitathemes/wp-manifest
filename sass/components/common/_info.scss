@@ -57,7 +57,7 @@
 }
 
 .c-info__col--desc {
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
 
   p {
     margin: 0;
@@ -70,8 +70,6 @@
 
     .c-info__col__link__text {
       max-width: 116px;
-      transform: scale(1, 1);
-      transform-origin: right center;
     }
   }
 }
@@ -79,8 +77,8 @@
 .c-info__col__link__text {
   white-space: nowrap;
   max-width: 0;
-  transform: scale(0, 1);
-  transform-origin: left center;
+  overflow: hidden;
   display: inline-block;
   transition: 0.3s;
+  line-height: 0.85;
 }
