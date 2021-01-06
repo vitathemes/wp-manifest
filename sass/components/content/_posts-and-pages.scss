@@ -26,7 +26,6 @@
 .s-content {
   p {
     margin: 0.75em 0 1em;
-    font-weight: var(--text-typography-variant);
 
     a {
       text-decoration: underline;
@@ -35,10 +34,6 @@
         color: $wp-manifest__tertiary-color;
       }
     }
-  }
-
-  *:not(h1,h2,h3,h4,h5,h6) {
-    font-weight: var(--text-typography-variant);
   }
 
   h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {

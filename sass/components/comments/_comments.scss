@@ -36,10 +36,6 @@
 .comment-content a {
   word-wrap: break-word;
   color: $wp-manifest__secondary-color;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 23px;
-  letter-spacing: 0.05em;
 }
 
 .bypostauthor {
@@ -116,16 +112,9 @@
 
 
   .comment-author , .comment-author a {
-    font-size: 1em;
     margin-top: 0;
     margin-right: 24px;
     color: $wp-manifest__tertiary-color;
-
-    @media #{$mobile} {
-      a {
-        font-size: 15px !important;
-      }
-    }
   }
 }
 
@@ -161,39 +150,18 @@ ol.children:last-child {
   border-top: 0;
 }
 
-.comment-content p, .screen-reader-text.says {
-  font-weight: 400;
-}
-
 .comment-content p {
   margin-bottom: 16px;
   color: $wp-manifest__main-primary-light-color;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-
-  @media #{$mobile} {
-    font-size: 16px;
-  }
 }
 
 .comment-content a {
-  font-size: 1rem;
-  line-height: 1.5;
   letter-spacing: 0.05em;
-
-  @media #{$mobile} {
-    font-size: 16px;
-  }
 }
 
 
 .comment-reply-link {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 27px;
   text-align: center;
-  letter-spacing: 0.1em;
   color: $wp-manifest__secondary-color;
   transition: 0.25s;
 
@@ -218,12 +186,8 @@ ol.children:last-child {
   width: 30%;
 
   label {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
     display: flex;
     align-items: center;
-    letter-spacing: 0.1em;
     color: $wp-manifest__main-primary-light-color;
   }
 
@@ -239,8 +203,6 @@ ol.children:last-child {
 .comment-form-cookies {
   display: flex;
   align-items: flex-start;
-  font-size: 14px;
-
 
   input {
     margin: 5px 10px 0 0;
@@ -257,7 +219,6 @@ ol.children:last-child {
 }
 
 #cancel-comment-reply-link {
-  font-size: 0.5em;
   margin-left: 2em;
 }
 

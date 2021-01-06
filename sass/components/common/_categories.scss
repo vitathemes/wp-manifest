@@ -18,7 +18,6 @@
 
   a {
     color: $wp-manifest__main-primary-light-color;
-    letter-spacing: 0.1em;
 
     &:hover {
       color: $wp-manifest__main-primary-color;
@@ -30,7 +29,6 @@
 .is-dark-mode {
   a {
     color: $wp-manifest__neutral-gray-light-color;
-    letter-spacing: 0.1em;
 
     &:hover {
       color: $wp-manifest__tertiary-color;
@@ -39,7 +37,6 @@
 }
 
 .c-categories--post-cats {
-  line-height: 1.25rem;
   margin-bottom: 0;
 }
 

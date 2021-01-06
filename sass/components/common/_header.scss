@@ -147,18 +147,13 @@
   li.current-menu-item {
 
     &::after {
-      background-color: $wp-manifest__tertiary-color;
+      background-color: $wp-manifest__secondary-color;
     }
   }
 
   a {
-    font-size: 0.833rem;
     text-transform: uppercase;
-    line-height: 1;
-    font-family: $wp-manifest__primary-font;
-    color: $wp-manifest__tertiary-color;
-    letter-spacing: var(--heading-typography-letter-spacing);
-    font-weight: var(--heading-typography-variant);
+    color: $wp-manifest__secondary-color;
 
     &::after {
       content: unset;
@@ -188,7 +183,7 @@
 .c-header__search-toggle.dashicons {
   width: 25px;
   height: 25px;
-  font-size: 25px;
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 5;
   background-color: transparent;

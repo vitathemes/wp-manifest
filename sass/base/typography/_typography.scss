@@ -4,10 +4,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: $wp-manifest__secondary-color;
-	font-family: $wp-manifest__primary-font;
-	font-size: $wp-manifest_base-font-size;
-	line-height: $font__line-height-body;
+	color: $wp-manifest__tertiary-color;
 }
 
 @import "headings";
