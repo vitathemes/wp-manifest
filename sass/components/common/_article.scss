@@ -7,20 +7,6 @@
 -------------------------*/
 .c-article--single {
 
-  .c-article__title {
-    font-size: var(--heading-typography-font-size);
-    line-height: var(--heading-typography-line-height);
-    letter-spacing: var(--heading-typography-letter-spacing);
-
-    @media #{$tablet} {
-      font-size: calc(var(--heading-typography-font-size) / 1.45);
-    }
-
-    @media #{$mobile} {
-      font-size: calc(var(--heading-typography-font-size) / 1.45);
-    }
-  }
-
   .c-article__main {
     width: 70%;
     margin: auto;
@@ -52,8 +38,6 @@
 
 .c-article__header__meta__item {
   color: $wp-manifest__neutral-dark-gray-color !important;
-  font-size: 16px;
-  line-height: 166.3%;
   letter-spacing: 0.1em;
   display: inline-block;
 
@@ -100,12 +84,6 @@
   }
 }
 
-.c-article__header__categories__item__link {
-  font-size: 16px;
-  line-height: 166.3%;
-  letter-spacing: 0.1em;
-}
-
 .c-article__main__author {
   margin: 39px 0;
   display: flex;
@@ -119,17 +97,11 @@
 }
 
 .c-article__main__author__name {
-  font-size: 16px;
-  line-height: 166.3%;
-  letter-spacing: 0.1em;
   color: $wp-manifest__tertiary-color;
 }
 
 .c-article__main__author__bio {
   width: 100%;
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 21px;
 }
 
 .c-article__main__tags {
@@ -161,7 +133,7 @@
       margin-bottom: 16px;
 
       &::marker {
-        font-size: 14px;
+        font-size: 0.85rem;
       }
 
       &:last-child {

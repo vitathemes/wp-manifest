@@ -3,8 +3,6 @@
   font-weight: bold;
   font-size: 1rem;
   line-height: 166.3%;
-  font-family: $wp-manifest__secondary-font;
-  letter-spacing: 0.1em;
   cursor: pointer;
   display: inline-block;
   color: #FFFFFF;
@@ -29,7 +27,6 @@
 }
 
 .is-style-outline .wp-block-button__link{
-  border-color: $wp-manifest__secondary-font;
 
   &:hover {
     color: #FFFFFF;

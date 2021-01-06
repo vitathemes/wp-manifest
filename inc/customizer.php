@@ -9,6 +9,14 @@ add_action( 'init', function () {
 		'option_type' => 'theme_mod'
 	) );
 
+
+// Panels
+	Kirki::add_panel( 'general_settings', array(
+		'priority'    => 10,
+		'title'       => esc_html__( 'General', 'kirki' ),
+		'description' => esc_html__( 'General settings', 'kirki' ),
+	) );
+
 // Add sections \\
 // <editor-fold desc="Sections">
 // Branding
@@ -17,7 +25,6 @@ add_action( 'init', function () {
 		'panel'    => '',
 		'priority' => 3,
 	) );
-
 
 // Home Page
 	Kirki::add_section( 'homepage', array(
@@ -43,14 +50,14 @@ add_action( 'init', function () {
 // Elements
 	Kirki::add_section( 'elements', array(
 		'title'    => esc_html__( 'Elements', 'wp-manifest' ),
-		'panel'    => '',
+		'panel'    => 'general_settings',
 		'priority' => 5,
 	) );
 
 	// Home Page
 	Kirki::add_section( 'header', array(
 		'title'    => esc_html__( 'Header', 'wp-manifest' ),
-		'panel'    => '',
+		'panel'    => 'general_settings',
 		'priority' => 6,
 	) );
 
@@ -59,12 +66,43 @@ add_action( 'init', function () {
 
 // Header
 	Kirki::add_field( 'wp-manifest', [
+		'type'     => 'custom',
+		'settings' => 'general_settings_heading',
+		//'label'       => esc_html__( 'This is the label', 'kirki' ), // optional
+		'section'  => 'header',
+		'default'  => '<h3 style="padding:15px 10px; margin:0;">' . __( 'General', 'wp-manifest' ) . '</h3>',
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
 		'type'     => 'toggle',
 		'settings' => 'search_icon_header',
 		'label'    => esc_html__( 'Search Icon', 'wp-manifest' ),
 		'section'  => 'header',
 		'default'  => 1,
 		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'wp-manifest', [
+		'type'      => 'typography',
+		'settings'  => 'header_typography',
+		'label'     => esc_html__( 'Header Typography', 'wp-manifest' ),
+		'section'   => 'header',
+		'default'   => [
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '13px',
+			'line-height'    => '1.25',
+			'letter-spacing' => '0.3em'
+			//'color'       => '#000',
+		],
+		'transport' => 'auto',
+		'priority'  => 10,
+		'output'    => array(
+			array(
+				'element' => '.s-header-menu a',
+			),
+		),
 	] );
 // Header
 
@@ -192,17 +230,17 @@ add_action( 'init', function () {
 	] );
 
 	Kirki::add_field( 'theme_config_id', [
-		'type'        => 'radio-buttonset',
-		'settings'    => 'categories_type',
-		'label'       => esc_html__( 'Categories style', 'kirki' ),
-		'section'     => 'blogpage',
-		'default'     => 'dropdown',
-		'priority'    => 10,
-		'choices'     => [
-			'dropdown'   => esc_html__( 'Dropdown', 'kirki' ),
-			'list' => esc_html__( 'List', 'kirki' ),
+		'type'            => 'radio-buttonset',
+		'settings'        => 'categories_type',
+		'label'           => esc_html__( 'Categories style', 'kirki' ),
+		'section'         => 'blogpage',
+		'default'         => 'dropdown',
+		'priority'        => 10,
+		'choices'         => [
+			'dropdown' => esc_html__( 'Dropdown', 'kirki' ),
+			'list'     => esc_html__( 'List', 'kirki' ),
 		],
-		'active_callback'  => [
+		'active_callback' => [
 			[
 				'setting'  => 'show_categories',
 				'operator' => '===',
@@ -242,7 +280,7 @@ add_action( 'init', function () {
 		'default'   => [
 			'font-family'    => 'Red Hat Display',
 			'font-size'      => '48px',
-			'variant'        => 'regular',
+			'variant'        => '400',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0.1em'
 		],
@@ -258,14 +296,14 @@ add_action( 'init', function () {
 			array(
 				'element'       => 'h2',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.5em)',
+				'value_pattern' => 'calc($ - ‭0.9375‬‬rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => 'h2',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => 'h2',
@@ -279,18 +317,24 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => 'h2',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => '.h2',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.5em)',
+				'value_pattern' => 'calc($ - ‭0.9375‬‬rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => '.h2',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => '.h2',
@@ -303,12 +347,18 @@ add_action( 'init', function () {
 				'property'      => 'letter-spacing',
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
+			),
+			array(
+				'element'       => '.h2',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
 			),
 
 			array(
 				'element'       => 'h3',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.75em)',
+				'value_pattern' => 'calc(48px * 0.4791‬‬)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -329,11 +379,17 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => 'h3',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => '.h3',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.75em)',
+				'value_pattern' => 'calc($ - 0.3125rem‬)',
 				'choice'        => 'font-size',
 			),
 			array(
@@ -353,19 +409,25 @@ add_action( 'init', function () {
 				'property'      => 'letter-spacing',
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
+			),
+			array(
+				'element'       => '.h3',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
 			),
 
 			array(
 				'element'       => 'h4',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.85‬‬em)',
+				'value_pattern' => 'calc($ - ‭1.8125‬‬rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => 'h4',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => 'h4',
@@ -379,18 +441,24 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => 'h4',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => '.h4',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 0.85‬em‬)',
+				'value_pattern' => 'calc($ - ‭1.8125‬‬rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => '.h4',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => '.h4',
@@ -403,19 +471,25 @@ add_action( 'init', function () {
 				'property'      => 'letter-spacing',
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
+			),
+			array(
+				'element'       => '.h4',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
 			),
 
 			array(
 				'element'       => 'h5',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ / 2.08)',
+				'value_pattern' => 'calc($ - 2rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => 'h5',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => 'h5',
@@ -429,18 +503,24 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => 'h5',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => '.h5',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ / 2.08)',
+				'value_pattern' => 'calc($ - 2rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => '.h5',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => '.h5',
@@ -454,18 +534,24 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => '.h5',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => 'h6',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 1.5em)',
+				'value_pattern' => 'calc($ - 2.25rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => 'h6',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => 'h6',
@@ -479,18 +565,24 @@ add_action( 'init', function () {
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
 			),
+			array(
+				'element'       => 'h6',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
+			),
 
 			array(
 				'element'       => '.h6',
 				'property'      => 'font-size',
-				'value_pattern' => 'calc($ - 1.5em)',
+				'value_pattern' => 'calc($ - 2.25rem)',
 				'choice'        => 'font-size',
 			),
 			array(
 				'element'       => '.h6',
 				'property'      => 'font-weight',
 				'value_pattern' => '$',
-				'choice'        => 'variant',
+				'choice'        => 'font-weight',
 			),
 			array(
 				'element'       => '.h6',
@@ -503,6 +595,12 @@ add_action( 'init', function () {
 				'property'      => 'letter-spacing',
 				'value_pattern' => '$',
 				'choice'        => 'letter-spacing',
+			),
+			array(
+				'element'       => '.h6',
+				'property'      => 'line-height',
+				'value_pattern' => '$',
+				'choice'        => 'line-height',
 			),
 
 		),
@@ -523,7 +621,7 @@ add_action( 'init', function () {
 		'section'   => 'typography',
 		'default'   => [
 			'font-family'    => 'Lato',
-			'variant'        => 'regular',
+			'variant'        => '400',
 			'font-size'      => '16px',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0.1em'

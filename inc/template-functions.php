@@ -66,77 +66,10 @@ function wp_manifest_show_menu() {
 
 // Load theme typography
 function wp_manifest_typography() {
-	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
-	$wp_manifest_default_heading_typography = array(
-		'font-family'    => "Red Hat Display",
-		'font-size'      => "48px",
-		'variant'        => 'regular',
-		'line-height'    => '1.5',
-		'color'          => '#000000',
-		'letter-spacing' => '0.05em'
-	);
-	$wp_manifest_text_typography            = array(
-		'font-family'    => "Lato",
-		'font-size'      => "19px",
-		'variant'        => 'regular',
-		'line-height'    => '1.5',
-		'color'          => '#565656',
-		'letter-spacing' => '0.05em'
-	);
-
-	if ( empty( $wp_manifest_heading_typography ) || $wp_manifest_heading_typography['font-family'] == "" ) {
-		$wp_manifest_heading_typography = $wp_manifest_default_heading_typography;
-	} else {
-		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
-	}
-	if ( empty( $wp_manifest_text_typography ) ) {
-		$wp_manifest_text_typography = $wp_manifest_text_typography;
-	} else {
-		$wp_manifest_text_typography = array_merge( $wp_manifest_text_typography, $wp_manifest_text_typography );
-	}
-
-	if ( get_theme_mod( 'theme_mode', 'light' ) == 'dark' ) {
-		if ( get_theme_mod( 'headings_typography_color' ) == "" ) {
-			$wp_manifest_tertiary_color = "#FFFFFF";
-		} else {
-			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color', '#FFFFFF' );
-		}
-		if ( get_theme_mod( 'text_typography_color' ) == "" ) {
-			$wp_manifest_secondary_color = "#CCCCCC";
-		} else {
-			$wp_manifest_secondary_color = get_theme_mod( 'text_typography_color', '#CCCCCC' );
-		}
-	}
-
-	if ( get_theme_mod( 'theme_mode', 'light' ) == 'light' ) {
-		if ( get_theme_mod( 'headings_typography_color' ) == "" ) {
-			$wp_manifest_tertiary_color = "#000000";
-		} else {
-			$wp_manifest_tertiary_color = get_theme_mod( 'headings_typography_color' );
-		}
-		if ( get_theme_mod( 'text_typography_color' ) == "" ) {
-			$wp_manifest_secondary_color = "#565656";
-		} else {
-			$wp_manifest_secondary_color = get_theme_mod( 'text_typography_color' );
-		}
-	}
 
 	$html = ':root {
-				--heading-typography-font-size: ' . $wp_manifest_heading_typography["font-size"] . ';
-	            --heading-typography-font-family: ' . $wp_manifest_heading_typography["font-family"] . ';
-	            --heading-typography-line-height: ' . $wp_manifest_heading_typography["line-height"] . ';
-	            --heading-typography-variant: ' . $wp_manifest_heading_typography["variant"] . ';
-	            --heading-typography-letter-spacing: ' . $wp_manifest_heading_typography["letter-spacing"] . ';
-	            --text-typography-font-size: ' . $wp_manifest_text_typography["font-size"] . ';
-	            --text-typography-font-family: ' . $wp_manifest_text_typography["font-family"] . ';
-	            --text-typography-line-height: ' . $wp_manifest_text_typography["line-height"] . ';
-	            --text-typography-variant: ' . $wp_manifest_text_typography["variant"] . ';
-	            --text-typography-letter-spacing: ' . $wp_manifest_text_typography["letter-spacing"] . ';
-	
-	            --primary-color: ' . get_theme_mod( "branding_primary_color", "#3F51B5" ) . ';
-	            --secondary-color: ' . $wp_manifest_secondary_color . ';
-	            --tertiary-color: ' . $wp_manifest_tertiary_color . ';
+	            --secondary-color: ' . get_theme_mod( 'headings_typography_color', '#000' ) . ';
+	            --tertiary-color: ' . get_theme_mod( 'text_typography_color', '#ccc' ) . ';
 			}';
 
 	return $html;

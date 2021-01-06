@@ -54,15 +54,6 @@ main {
 	display: block;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 /* Grouping content
 	 ========================================================================== */
 /**
@@ -546,10 +537,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: var(--secondary-color);
-	font-family: var(--text-typography-font-family);
-	font-size: var(--text-typography-font-size);
-	line-height: 1.5;
+	color: var(--tertiary-color);
 }
 
 h1,
@@ -559,62 +547,7 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: var(--heading-typography-font-family);
-	font-weight: var(--heading-typography-variant);
-}
-
-h1, .h1 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(1em, var(--heading-typography-font-size), 10em);
-	color: var(--tertiary-color);
-	line-height: 1.175;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
-}
-
-h2, .h2 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(0.85em, calc(var(--heading-typography-font-size) - 0.5em), 8em);
-	color: var(--tertiary-color);
-	line-height: 1.167;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
-}
-
-h3, .h3 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(0.75em, calc(var(--heading-typography-font-size) - 0.75em), 7em);
-	color: var(--tertiary-color);
-	line-height: 1.154;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
-}
-
-h4, .h4 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(0.65em, calc(var(--heading-typography-font-size) - 1em), 6em);
-	color: var(--tertiary-color);
-	line-height: 1.15;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
-}
-
-h5, .h5 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(0.5em, calc(var(--heading-typography-font-size) / 2.08), 5em);
-	color: var(--tertiary-color);
-	line-height: 1.205;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
-}
-
-h6, .h6 {
-	font-family: var(--heading-typography-font-family);
-	font-size: clamp(0.45em, calc(var(--heading-typography-font-size) - 1.5em), 4em);
-	color: var(--tertiary-color);
-	line-height: 1.194;
-	font-weight: var(--heading-typography-variant);
-	margin: 1rem 0 1.5rem;
+	color: var(--secondary-color);
 }
 
 * {
@@ -665,7 +598,6 @@ address {
 
 pre {
 	background: #eee;
-	font-family: var(--heading-typography-font-family);
 	line-height: 1.6;
 	margin-top: 1.25rem;
 	margin-bottom: 1.5rem;
@@ -673,13 +605,6 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 	color: var(--secondary-color);
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: var(--heading-typography-font-family);
 }
 
 abbr,
@@ -732,7 +657,6 @@ ul,
 ol {
 	margin: 1.5rem 0;
 	padding-left: 1em;
-	font-family: var(--heading-typography-font-family);
 }
 
 ul {
@@ -855,7 +779,6 @@ input[type="submit"] {
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
 	letter-spacing: 0.1em;
 	cursor: pointer;
 	display: inline-block;
@@ -984,7 +907,6 @@ input[type="submit"], form button {
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
 	letter-spacing: 0.1em;
 	cursor: pointer;
 	display: inline-block;
@@ -1244,7 +1166,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .s-content p {
 	margin: 0.75em 0 1em;
-	font-weight: var(--text-typography-variant);
 }
 
 .s-content p a {
@@ -1253,10 +1174,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .s-content p a:hover {
 	color: var(--tertiary-color);
-}
-
-.s-content * {
-	font-weight: var(--text-typography-variant);
 }
 
 .s-content h1:first-child, .s-content h2:first-child, .s-content h3:first-child, .s-content h4:first-child, .s-content h5:first-child, .s-content h6:first-child {
@@ -1308,10 +1225,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .comment-content a {
 	word-wrap: break-word;
 	color: var(--secondary-color);
-	font-weight: 400;
-	font-size: 19px;
-	line-height: 23px;
-	letter-spacing: 0.05em;
 }
 
 .bypostauthor {
@@ -1389,16 +1302,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .comments .comment-author, .comments .comment-author a {
-	font-size: 1em;
 	margin-top: 0;
 	margin-right: 24px;
 	color: var(--tertiary-color);
-}
-
-@media only screen and (max-width: 560px) {
-	.comments .comment-author a, .comments .comment-author a a {
-		font-size: 15px !important;
-	}
 }
 
 ol.children {
@@ -1433,42 +1339,17 @@ ol.children:last-child {
 	border-top: 0;
 }
 
-.comment-content p, .screen-reader-text.says {
-	font-weight: 400;
-}
-
 .comment-content p {
 	margin-bottom: 16px;
 	color: #565656;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0.05em;
-}
-
-@media only screen and (max-width: 560px) {
-	.comment-content p {
-		font-size: 16px;
-	}
 }
 
 .comment-content a {
-	font-size: 1rem;
-	line-height: 1.5;
 	letter-spacing: 0.05em;
 }
 
-@media only screen and (max-width: 560px) {
-	.comment-content a {
-		font-size: 16px;
-	}
-}
-
 .comment-reply-link {
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 27px;
 	text-align: center;
-	letter-spacing: 0.1em;
 	color: var(--secondary-color);
 	transition: 0.25s;
 }
@@ -1495,12 +1376,8 @@ ol.children:last-child {
 }
 
 .comment-field label {
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 19px;
 	display: flex;
 	align-items: center;
-	letter-spacing: 0.1em;
 	color: #565656;
 }
 
@@ -1517,7 +1394,6 @@ ol.children:last-child {
 .comment-form-cookies {
 	display: flex;
 	align-items: flex-start;
-	font-size: 14px;
 }
 
 .comment-form-cookies input {
@@ -1536,7 +1412,6 @@ ol.children:last-child {
 }
 
 #cancel-comment-reply-link {
-	font-size: 0.5em;
 	margin-left: 2em;
 }
 
@@ -1561,8 +1436,6 @@ ol.children:last-child {
 }
 
 .c-widget__title {
-	font-size: 23px;
-	line-height: 30px;
 	letter-spacing: 0.05em;
 	margin: 0 0 1.25rem;
 }
@@ -1766,24 +1639,6 @@ ol.children:last-child {
 /*-----------------------
 # Article--single
 -------------------------*/
-.c-article--single .c-article__title {
-	font-size: var(--heading-typography-font-size);
-	line-height: var(--heading-typography-line-height);
-	letter-spacing: var(--heading-typography-letter-spacing);
-}
-
-@media only screen and (min-width: 561px) and (max-width: 980px) {
-	.c-article--single .c-article__title {
-		font-size: calc(var(--heading-typography-font-size) / 1.45);
-	}
-}
-
-@media only screen and (max-width: 560px) {
-	.c-article--single .c-article__title {
-		font-size: calc(var(--heading-typography-font-size) / 1.45);
-	}
-}
-
 .c-article--single .c-article__main {
 	width: 70%;
 	margin: auto;
@@ -1822,8 +1677,6 @@ ol.children:last-child {
 
 .c-article__header__meta__item {
 	color: #7B7B7B !important;
-	font-size: 16px;
-	line-height: 166.3%;
 	letter-spacing: 0.1em;
 	display: inline-block;
 }
@@ -1872,12 +1725,6 @@ ol.children:last-child {
 	content: ",";
 }
 
-.c-article__header__categories__item__link {
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
-}
-
 .c-article__main__author {
 	margin: 39px 0;
 	display: flex;
@@ -1891,17 +1738,11 @@ ol.children:last-child {
 }
 
 .c-article__main__author__name {
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
 }
 
 .c-article__main__author__bio {
 	width: 100%;
-	margin-top: 16px;
-	font-size: 16px;
-	line-height: 21px;
 }
 
 .c-article__main__tags {
@@ -1931,7 +1772,7 @@ ol.children:last-child {
 }
 
 .s-article-content ul li::marker {
-	font-size: 14px;
+	font-size: 0.85rem;
 }
 
 .s-article-content ul li:last-child {
@@ -1947,24 +1788,6 @@ ol.children:last-child {
 /*-----------------------
 # Article--single
 -------------------------*/
-.c-article--single .c-article__title {
-	font-size: var(--heading-typography-font-size);
-	line-height: var(--heading-typography-line-height);
-	letter-spacing: var(--heading-typography-letter-spacing);
-}
-
-@media only screen and (min-width: 561px) and (max-width: 980px) {
-	.c-article--single .c-article__title {
-		font-size: calc(var(--heading-typography-font-size) / 1.45);
-	}
-}
-
-@media only screen and (max-width: 560px) {
-	.c-article--single .c-article__title {
-		font-size: calc(var(--heading-typography-font-size) / 1.45);
-	}
-}
-
 .c-article--single .c-article__main {
 	width: 70%;
 	margin: auto;
@@ -2003,8 +1826,6 @@ ol.children:last-child {
 
 .c-article__header__meta__item {
 	color: #7B7B7B !important;
-	font-size: 16px;
-	line-height: 166.3%;
 	letter-spacing: 0.1em;
 	display: inline-block;
 }
@@ -2053,12 +1874,6 @@ ol.children:last-child {
 	content: ",";
 }
 
-.c-article__header__categories__item__link {
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
-}
-
 .c-article__main__author {
 	margin: 39px 0;
 	display: flex;
@@ -2072,17 +1887,11 @@ ol.children:last-child {
 }
 
 .c-article__main__author__name {
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
 }
 
 .c-article__main__author__bio {
 	width: 100%;
-	margin-top: 16px;
-	font-size: 16px;
-	line-height: 21px;
 }
 
 .c-article__main__tags {
@@ -2112,7 +1921,7 @@ ol.children:last-child {
 }
 
 .s-article-content ul li::marker {
-	font-size: 14px;
+	font-size: 0.85rem;
 }
 
 .s-article-content ul li:last-child {
@@ -2168,13 +1977,12 @@ ol.children:last-child {
 }
 
 .c-blog-carousel__content__cell__date {
-	font-size: 16px;
+	font-size: 1rem;
 }
 
 .c-blog-carousel__content__cell__title {
 	font-weight: normal;
 	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
 	color: var(--tertiary-color);
 	transition: 0.25s;
 }
@@ -2213,9 +2021,7 @@ ol.children:last-child {
 }
 
 .c-blog-carousel__nav__link {
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
+	font-size: 1rem;
 	color: var(--tertiary-color);
 	margin-right: 24px;
 }
@@ -2233,9 +2039,7 @@ ol.children:last-child {
 .c-btn {
 	padding: 8px 32px;
 	font-weight: bold;
-	font-size: 16px;
-	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
+	font-size: 1rem;
 	letter-spacing: 0.1em;
 	cursor: pointer;
 	display: inline-block;
@@ -2280,11 +2084,6 @@ ol.children:last-child {
 
 .wp-block-button.c-btn a {
 	padding: 8px 32px;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
-	letter-spacing: 0.1em;
 	cursor: pointer;
 	display: inline-block;
 }
@@ -2360,9 +2159,6 @@ ol.children:last-child {
 
 .c-footer__title {
 	font-weight: normal;
-	font-size: 48px;
-	line-height: 64px;
-	letter-spacing: 0.05em;
 	margin-bottom: 32px;
 }
 
@@ -2378,16 +2174,7 @@ ol.children:last-child {
 	margin-bottom: 0;
 }
 
-.s-footer-menu a {
-	font-weight: normal;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
-}
-
 .c-footer__copyright {
-	font-size: 0.833em;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
 	align-self: flex-end;
 	margin: 0;
 }
@@ -2553,17 +2340,12 @@ ol.children:last-child {
 }
 
 .s-header-menu li.current-menu-item::after {
-	background-color: var(--tertiary-color);
+	background-color: var(--secondary-color);
 }
 
 .s-header-menu a {
-	font-size: 0.833rem;
 	text-transform: uppercase;
-	line-height: 1;
-	font-family: var(--text-typography-font-family);
-	color: var(--tertiary-color);
-	letter-spacing: var(--heading-typography-letter-spacing);
-	font-weight: var(--heading-typography-variant);
+	color: var(--secondary-color);
 }
 
 .s-header-menu a::after {
@@ -2589,7 +2371,7 @@ ol.children:last-child {
 .c-header__search-toggle.dashicons {
 	width: 25px;
 	height: 25px;
-	font-size: 25px;
+	font-size: 1.5rem;
 	cursor: pointer;
 	z-index: 5;
 	background-color: transparent;
@@ -2803,8 +2585,6 @@ ol.children:last-child {
 }
 
 .c-info__col__title {
-	font-weight: normal;
-	letter-spacing: 0.1em;
 	color: var(--tertiary-color);
 	margin: 0 0 48px;
 }
@@ -2816,7 +2596,7 @@ ol.children:last-child {
 }
 
 .c-info__col--desc {
-	font-size: 1.1875rem;
+	font-size: 1.18em;
 }
 
 .c-info__col--desc p {
@@ -2902,15 +2682,13 @@ ol.children:last-child {
 }
 
 .c-post__header__category {
-	font-size: 0.75rem;
-	line-height: 1.25rem;
-	letter-spacing: 0.1em;
+	font-size: 0.75em;
 	color: var(--secondary-color);
 }
 
 .c-post__header__date {
 	font-size: 0.75rem;
-	line-height: 1.25rem;
+	line-height: 1.25em;
 	color: var(--secondary-color);
 }
 
@@ -2935,7 +2713,6 @@ ol.children:last-child {
 
 .s-categories a {
 	color: #565656;
-	letter-spacing: 0.1em;
 }
 
 .s-categories a:hover {
@@ -2944,7 +2721,6 @@ ol.children:last-child {
 
 .is-dark-mode a {
 	color: #F4F4F4;
-	letter-spacing: 0.1em;
 }
 
 .is-dark-mode a:hover {
@@ -2952,7 +2728,6 @@ ol.children:last-child {
 }
 
 .c-categories--post-cats {
-	line-height: 1.25rem;
 	margin-bottom: 0;
 }
 
@@ -3086,14 +2861,11 @@ ol.children:last-child {
 
 .c-slider__title {
 	font-weight: normal;
-	font-size: 16px;
-	line-height: 166.3%;
-	letter-spacing: 0.1em;
+	font-size: 1rem;
 	margin: 15px 0 0 0;
 }
 
 .c-slider__slide-link {
-	letter-spacing: 0.1em;
 	color: #000;
 	text-decoration: none;
 }
@@ -3259,9 +3031,7 @@ ol.children:last-child {
 }
 
 .c-portfolio__tagline {
-	font-size: 16px;
-	line-height: 150%;
-	letter-spacing: 0.5em;
+	font-size: 1rem;
 	margin: 0 0 48px;
 	display: block;
 	color: var(--tertiary-color);
@@ -3297,19 +3067,6 @@ ol.children:last-child {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-/* Jetpack infinite scroll
---------------------------------------------- */
-/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	display: none;
-}
-
-/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
@@ -3612,9 +3369,8 @@ ol.children:last-child {
 
 .not-found .big-title {
 	font-weight: 500;
-	font-size: 140px;
-	line-height: 185px;
-	letter-spacing: 0.05em;
+	font-size: 8.75rem;
+	line-height: 1.4em;
 	color: #E7E7E7;
 	text-align: center;
 }
@@ -3622,9 +3378,7 @@ ol.children:last-child {
 .not-found p {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 33px;
-	line-height: 44px;
-	letter-spacing: 0.05em;
+	font-size: 2rem;
 	text-align: center;
 }
 
@@ -3645,8 +3399,6 @@ ol.children:last-child {
 	font-weight: bold;
 	font-size: 1rem;
 	line-height: 166.3%;
-	font-family: var(--heading-typography-font-family);
-	letter-spacing: 0.1em;
 	cursor: pointer;
 	display: inline-block;
 	color: #FFFFFF;
@@ -3668,10 +3420,6 @@ ol.children:last-child {
 
 .wp-block-button__link:hover svg, .wp-block-file .wp-block-file__button:hover svg {
 	fill: #FFFFFF;
-}
-
-.is-style-outline .wp-block-button__link {
-	border-color: var(--heading-typography-font-family);
 }
 
 .is-style-outline .wp-block-button__link:hover {
