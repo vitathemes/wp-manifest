@@ -206,9 +206,15 @@ function wp_manifest_generate_post_category( $post_id ) {
 
 
 function wp_manifest_show_post_data( $post_id ) {
-	$category = wp_manifest_generate_post_category( $post_id );
-	$date     = sprintf( '<span class="c-post__header__date">%s</span>', get_the_time( 'd M, Y' ) );
-	echo wp_kses_post($category . $date);
+	$category = '';
+	$date     = '';
+	if ( get_theme_mod( 'show_cat_archive', true ) ) {
+		$category = wp_manifest_generate_post_category( $post_id );
+	}
+	if ( get_theme_mod( 'show_date_archive', true ) ) {
+		$date = sprintf( '<span class="c-post__header__date">%s</span>', get_the_time( 'd M, Y' ) );
+	}
+	echo wp_kses_post( $category . $date );
 }
 
 function wp_manifest_get_post_category( $post_id ) {

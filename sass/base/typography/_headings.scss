@@ -7,3 +7,47 @@ h6 {
   clear: both;
   color: $wp-manifest__secondary-color;
 }
+
+
+h1, .h1 {
+  font-size: 48px;
+  line-height: 64px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  font-family: $default_font_family_secondary;
+}
+
+h2, .h2 {
+  font-weight: normal;
+  font-size: 33px;
+  line-height: 44px;
+  font-family: inherit;
+}
+
+h3, .h3 {
+  font-size: 23px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+h4, .h4 {
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+h5, .h5 {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+h6, .h6 {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  font-family: inherit;
+}

@@ -47,12 +47,13 @@
   line-height: 166.3%;
   letter-spacing: 0.05em;
   font-size: var(--text-typography-font-size);
+  flex-grow: 1;
+  margin-top: auto;
 }
 
 .c-post__main__title {
   transition: $wp-manifest_global-transition;
   line-height: 1.35em;
-  min-height: 62px;
 }
 
 .c-post__header__category {

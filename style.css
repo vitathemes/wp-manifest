@@ -21,6 +21,28 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+/* red-hat-display-regular - latin */
+@font-face {
+	font-family: 'Red Hat Display';
+	font-style: normal;
+	font-weight: 400;
+	src: url("./fonts/red-hat-display-v4-latin-regular.eot");
+	/* IE9 Compat Modes */
+	src: local(""), url("./fonts/red-hat-display-v4-latin-regular.eot?#iefix") format("embedded-opentype"), url("./fonts/red-hat-display-v4-latin-regular.woff2") format("woff2"), url("./fonts/red-hat-display-v4-latin-regular.woff") format("woff"), url("./fonts/red-hat-display-v4-latin-regular.ttf") format("truetype"), url("./fonts/red-hat-display-v4-latin-regular.svg#RedHatDisplay") format("svg");
+	/* Legacy iOS */
+}
+
+/* lato-regular - latin */
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: url("./fonts/lato-v17-latin-regular.eot");
+	/* IE9 Compat Modes */
+	src: local(""), url("./fonts/lato-v17-latin-regular.eot?#iefix") format("embedded-opentype"), url("./fonts/lato-v17-latin-regular.woff2") format("woff2"), url("./fonts/lato-v17-latin-regular.woff") format("woff"), url("./fonts/lato-v17-latin-regular.ttf") format("truetype"), url("./fonts/lato-v17-latin-regular.svg#Lato") format("svg");
+	/* Legacy iOS */
+}
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -550,6 +572,49 @@ h6 {
 	color: var(--secondary-color);
 }
 
+h1, .h1 {
+	font-size: 48px;
+	line-height: 64px;
+	letter-spacing: 0.05em;
+	font-weight: 400;
+	font-family: "Red Hat Display", Arial;
+}
+
+h2, .h2 {
+	font-weight: normal;
+	font-size: 33px;
+	line-height: 44px;
+	font-family: inherit;
+}
+
+h3, .h3 {
+	font-size: 23px;
+	line-height: 30px;
+	font-weight: 400;
+	font-family: inherit;
+}
+
+h4, .h4 {
+	font-size: 19px;
+	line-height: 23px;
+	font-weight: 400;
+	font-family: inherit;
+}
+
+h5, .h5 {
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 400;
+	font-family: inherit;
+}
+
+h6, .h6 {
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 400;
+	font-family: inherit;
+}
+
 * {
 	word-wrap: break-word;
 }
@@ -640,6 +705,8 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	font-family: "Lato", Arial;
+	line-height: 1.5;
 }
 
 *:focus {
@@ -2554,6 +2621,8 @@ ol.children:last-child {
 .c-info__col {
 	width: 50%;
 	max-width: 100%;
+	line-height: 1.66;
+	font-size: 1.1875rem;
 }
 
 .c-info__col:first-child {
@@ -2587,16 +2656,14 @@ ol.children:last-child {
 .c-info__col__title {
 	color: var(--tertiary-color);
 	margin: 0 0 48px;
+	line-height: 1.66;
+	font-size: 1.4375rem;
 }
 
 @media only screen and (max-width: 560px) {
 	.c-info__col__title {
 		margin: 0 0 20px;
 	}
-}
-
-.c-info__col--desc {
-	font-size: 1.18em;
 }
 
 .c-info__col--desc p {
@@ -2673,12 +2740,13 @@ ol.children:last-child {
 	line-height: 166.3%;
 	letter-spacing: 0.05em;
 	font-size: var(--text-typography-font-size);
+	flex-grow: 1;
+	margin-top: auto;
 }
 
 .c-post__main__title {
 	transition: 0.25s;
 	line-height: 1.35em;
-	min-height: 62px;
 }
 
 .c-post__header__category {

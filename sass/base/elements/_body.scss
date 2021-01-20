@@ -1,5 +1,7 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	font-family: $default_font_family; // Fallback for when there is no custom font family defined.
+	line-height: 1.5; // Fallback for when companion plugin not installed
 }
 
 *:focus {

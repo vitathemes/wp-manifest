@@ -10,9 +10,9 @@ if ( $latest_posts->have_posts() ):
         <div class="o-wrapper">
             <div class="u-row">
                 <div class="o-col u-flex u-align-start-m u-align-center u-justify-between u-margin-bottom-larger">
-                    <h5 class="u-margin-none u-margin-bottom-small-m"><?php esc_html_e('Latest Posts', 'wp-manifest') ?></h5>
-                    <a class="c-posts__more-links u-color-primary-light" href="<?php echo esc_url(site_url( 'blog' )); ?>">
-                        <?php esc_html_e('View All', 'wp-manifest'); ?>
+                    <h5 class="u-margin-none u-margin-bottom-small-m"><?php esc_html_e( 'Latest Posts', 'wp-manifest' ) ?></h5>
+                    <a class="c-posts__more-links u-color-primary-light" href="<?php echo esc_url( site_url( 'blog' ) ); ?>">
+						<?php esc_html_e( 'View All', 'wp-manifest' ); ?>
                         <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                     </a>
                 </div>
@@ -22,10 +22,12 @@ if ( $latest_posts->have_posts() ):
 					$latest_posts->the_post(); ?>
                     <div class="o-col o-col--1/3">
                         <article class="c-post">
-                            <header class="c-post__header u-margin-bottom-small">
-                                <a class="c-post__header__link" href="<?php the_permalink(); ?>"></a>
-								<?php the_post_thumbnail( 'wp_manifest_medium_thumbnail', array( 'class' => 'c-post__header__img' ) ); ?>
-                            </header>
+							<?php if ( get_theme_mod( 'show_thumbnail_archive', true ) ): ?>
+                                <header class="c-post__header u-margin-bottom-small">
+                                    <a class="c-post__header__link" href="<?php the_permalink(); ?>"></a>
+									<?php the_post_thumbnail( 'wp_manifest_medium_thumbnail', array( 'class' => 'c-post__header__img' ) ); ?>
+                                </header>
+							<?php endif; ?>
                             <main class="c-post__main u-flex u-dir-column">
                                 <div class="u-flex u-justify-between u-margin-bottom-small">
 									<?php wp_manifest_show_post_data( get_the_ID() ); ?>
@@ -36,7 +38,9 @@ if ( $latest_posts->have_posts() ):
 											<?php the_title( '<h3 class="c-post__main__title h5 u-margin-none">', '</h3>' ); ?>
                                         </a>
                                     </div>
-                                    <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags(get_the_excerpt()) ); ?></p>
+									<?php if ( get_theme_mod( 'show_excerpt_archive', true ) ): ?>
+                                        <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags( get_the_excerpt() ) ); ?></p>
+									<?php endif; ?>
                                 </div>
                             </main>
                         </article>
