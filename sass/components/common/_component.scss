@@ -13,6 +13,8 @@
 .c-component.c-posts {
 
   .c-posts__more-links {
+    color: var(--headings-colors);
+
     @media #{$mobile} {
       font-size: 0.85rem;
     }

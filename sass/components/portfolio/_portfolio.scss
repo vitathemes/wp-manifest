@@ -18,7 +18,7 @@
 }
 
 .c-portfolio__content__title {
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__body-color;
   margin: 0 0 24px;
 
   &::after {
@@ -83,7 +83,7 @@
 
   .c-portfolio__title {
     margin: 0 0 64px;
-    color: $wp-manifest__tertiary-color;
+    color: $wp-manifest__body-color;
   }
 
   .c-portfolio__image {
@@ -100,5 +100,5 @@
   font-size: 1rem;
   margin: 0 0 48px;
   display: block;
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__body-color;
 }

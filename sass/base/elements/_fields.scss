@@ -34,10 +34,6 @@ textarea {
     letter-spacing: 0.1em;
     color: $wp-manifest__main-primary-light-color;
   }
-
-  &:focus {
-    color: $color__text-input-focus;
-  }
 }
 
 select {
@@ -118,7 +114,7 @@ input[type="submit"], form button {
   input[type="submit"], form button {
 
     &:hover {
-      background-color: $wp-manifest__tertiary-color;
+      background-color: $wp-manifest__body-color;
     }
   }
 }

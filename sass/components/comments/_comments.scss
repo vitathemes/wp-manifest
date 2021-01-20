@@ -35,7 +35,7 @@
 
 .comment-content a {
   word-wrap: break-word;
-  color: $wp-manifest__secondary-color;
+  color: $wp-manifest__heading-color;
 }
 
 .bypostauthor {
@@ -114,7 +114,7 @@
   .comment-author , .comment-author a {
     margin-top: 0;
     margin-right: 24px;
-    color: $wp-manifest__tertiary-color;
+    color: $wp-manifest__body-color;
   }
 }
 
@@ -162,11 +162,11 @@ ol.children:last-child {
 
 .comment-reply-link {
   text-align: center;
-  color: $wp-manifest__secondary-color;
+  color: $wp-manifest__heading-color;
   transition: 0.25s;
 
   &:hover {
-    color: $wp-manifest__tertiary-color;
+    color: $wp-manifest__body-color;
   }
 }
 

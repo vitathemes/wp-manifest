@@ -68,8 +68,9 @@ function wp_manifest_show_menu() {
 function wp_manifest_typography() {
 
 	$html = ':root {
-	            --secondary-color: ' . get_theme_mod( 'headings_typography_color', '#000' ) . ';
-	            --tertiary-color: ' . get_theme_mod( 'text_typography_color', '#ccc' ) . ';
+	            --headings-colors: ' . get_theme_mod( 'headings_typography_color', '#000' ) . ';
+	            --base-font-color: ' . get_theme_mod( 'text_typography_color', '#565656' ) . ';
+	            --base-font-color-secondary: ' . get_theme_mod( 'text_typography_color_secondary', '#7B7B7B' ) . ';
 			}';
 
 	return $html;

@@ -43,7 +43,7 @@
 }
 
 .c-post__main__excerpt {
-  color: $wp-manifest__secondary-color;
+  color: $wp-manifest__heading-color;
   line-height: 166.3%;
   letter-spacing: 0.05em;
   font-size: var(--text-typography-font-size);
@@ -58,11 +58,11 @@
 
 .c-post__header__category {
   font-size: 0.75em;
-  color: $wp-manifest__secondary-color;
+  color: $wp-manifest__heading-color;
 }
 
 .c-post__header__date {
   font-size: 0.75rem;
   line-height: 1.25em;
-  color: $wp-manifest__secondary-color;
+  color: $wp-manifest__heading-color;
 }

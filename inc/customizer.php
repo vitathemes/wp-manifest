@@ -21,8 +21,8 @@ if ( function_exists( 'Kirki' ) ) {
 // Add sections \\
 // <editor-fold desc="Sections">
 // Branding
-		Kirki::add_section( 'branding', array(
-			'title'    => esc_html__( 'Branding', 'wp-manifest' ),
+		Kirki::add_section( 'colors', array(
+			'title'    => esc_html__( 'Colors', 'wp-manifest' ),
 			'panel'    => '',
 			'priority' => 3,
 		) );
@@ -114,13 +114,13 @@ if ( function_exists( 'Kirki' ) ) {
 // Header
 
 
-// Add Branding fields
+// Add Colors fields
 
 		Kirki::add_field( 'wp-manifest', [
 			'type'     => 'radio-buttonset',
 			'settings' => 'theme_mode',
 			'label'    => esc_html__( 'Theme Mode', 'wp-manifest' ),
-			'section'  => 'branding',
+			'section'  => 'colors',
 			'default'  => 'light',
 			'priority' => 10,
 			'choices'  => [
@@ -129,6 +129,29 @@ if ( function_exists( 'Kirki' ) ) {
 			],
 		] );
 
+		Kirki::add_field( 'wp-manifest', [
+			'type'     => 'color',
+			'settings' => 'headings_typography_color',
+			'label'    => __( 'Headings Color', 'wp-manifest' ),
+			'section'  => 'colors',
+			'default'  => '#000',
+		] );
+
+		Kirki::add_field( 'wp-manifest', [
+			'type'     => 'color',
+			'settings' => 'text_typography_color',
+			'label'    => __( 'Body Font Color', 'wp-manifest' ),
+			'section'  => 'colors',
+			'default'  => '#565656',
+		] );
+
+		Kirki::add_field( 'wp-manifest', [
+			'type'     => 'color',
+			'settings' => 'text_typography_color_secondary',
+			'label'    => __( 'Body Font Secondary Color', 'wp-manifest' ),
+			'section'  => 'colors',
+			'default'  => '#7B7B7B',
+		] );
 
 // -- Home page Fields --
 // <editor-fold desc="HomePage">
@@ -314,12 +337,6 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 				array(
 					'element'       => 'h2 .h2',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h2 .h2',
 					'property'      => 'letter-spacing',
 					'value_pattern' => '$',
 					'choice'        => 'letter-spacing',
@@ -458,14 +475,6 @@ if ( function_exists( 'Kirki' ) ) {
 		] );
 
 		Kirki::add_field( 'wp-manifest', [
-			'type'     => 'color',
-			'settings' => 'headings_typography_color',
-			'label'    => __( 'Headings Color', 'wp-manifest' ),
-			'section'  => 'typography',
-			'default'  => '#000',
-		] );
-
-		Kirki::add_field( 'wp-manifest', [
 			'type'      => 'typography',
 			'settings'  => 'text_typography',
 			'label'     => esc_html__( 'Texts', 'wp-manifest' ),
@@ -482,18 +491,26 @@ if ( function_exists( 'Kirki' ) ) {
 			'priority'  => 10,
 			'output'    => array(
 				array(
-					'element' => array('body', '.body-font'),
+					'element' => 'body'
+				),
+				array(
+					'element' => '.body-font'
+				),
+				array(
+					'element'       => 'h2 .h2',
+					'property'      => 'font-family',
+					'value_pattern' => '$',
+					'choice'        => 'font-family',
+				),
+				array(
+					'element'       => 'h3 .h3',
+					'property'      => 'font-family',
+					'value_pattern' => '$',
+					'choice'        => 'font-family',
 				),
 			),
 		] );
 
-		Kirki::add_field( 'wp-manifest', [
-			'type'     => 'color',
-			'settings' => 'text_typography_color',
-			'label'    => __( 'Text Color', 'wp-manifest' ),
-			'section'  => 'typography',
-			'default'  => '#565656',
-		] );
 // </editor-fold>
 
 		// -- Footer Fields --

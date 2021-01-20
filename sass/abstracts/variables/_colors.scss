@@ -5,21 +5,15 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
-
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-$wp-manifest__secondary-color: var(--secondary-color);
-$wp-manifest__tertiary-color: var(--tertiary-color);
+$wp-manifest__heading-color: var(--headings-colors);
+$wp-manifest__body-color: var(--base-font-color);
+$wp-manifest__body-secondary-color: var(--base-font-color-secondary);
 $wp-manifest__main-primary-color: #000000;
 $wp-manifest__main-primary-dark-color: #323232;
 $wp-manifest__main-primary-light-color: #565656;
