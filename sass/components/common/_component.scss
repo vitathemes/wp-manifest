@@ -13,10 +13,14 @@
 .c-component.c-posts {
 
   .c-posts__more-links {
-    color: var(--headings-colors);
+    color: $wp-manifest__body-secondary-color;
 
     @media #{$mobile} {
       font-size: 0.85rem;
+    }
+
+    &:hover {
+      color: $wp-manifest__heading-color;
     }
   }
 }

@@ -774,12 +774,12 @@ figure {
 }
 
 .dashicons {
-	color: var(--headings-colors);
+	color: inherit;
 	vertical-align: middle !important;
 }
 
 .dashicons:hover {
-	color: #000000;
+	color: inherit;
 }
 
 table {
@@ -794,17 +794,6 @@ table {
 	text-decoration: none;
 	transition: 0.25s;
 	display: inline-block;
-}
-
-.main a::after, footer a::after {
-	content: '';
-	width: 100%;
-	height: 1px;
-	background-color: var(--headings-colors);
-	display: block;
-	margin: 4px auto 0;
-	opacity: 0;
-	transition: 0.3s;
 }
 
 .main a:hover, footer a:hover {
@@ -2182,13 +2171,17 @@ ol.children:last-child {
 }
 
 .c-component.c-posts .c-posts__more-links {
-	color: var(--headings-colors);
+	color: var(--base-font-color-secondary);
 }
 
 @media only screen and (max-width: 560px) {
 	.c-component.c-posts .c-posts__more-links {
 		font-size: 0.85rem;
 	}
+}
+
+.c-component.c-posts .c-posts__more-links:hover {
+	color: var(--headings-colors);
 }
 
 /* Footer
@@ -2640,7 +2633,7 @@ ol.children:last-child {
 }
 
 .c-info__col__title {
-	color: var(--base-font-color);
+	color: var(--headings-colors);
 	margin: 0 0 48px;
 	line-height: 1.66;
 	font-size: 1.4375rem;
