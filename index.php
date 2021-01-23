@@ -49,9 +49,9 @@ get_header(); ?>
                                     <a tabindex="-1" class="c-blog-carousel__content__cell__category u-margin-bottom-small" href="<?php echo esc_url($category['url']); ?>"><?php echo esc_html($category['name']); ?></a>
                                 </div>
                                 <div>
-									<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link u-margin-bottom-medium"><h3 class="c-blog-carousel__content__cell__title h4 u-margin-none">', '</h3></a>' ); ?>
+									<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link u-margin-bottom-medium"><h3 class="c-blog-carousel__content__cell__title u-margin-none">', '</h3></a>' ); ?>
                                 </div>
-                                <span class="c-blog-carousel__content__cell__date u-color-dark-gray"><?php echo esc_html(get_the_time( 'd M, Y' )); ?></span>
+                                <span class="c-blog-carousel__content__cell__date"><?php echo esc_html(get_the_time( 'd M, Y' )); ?></span>
                                 <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
                                     <p class="u-margin-none">
 										<?php echo esc_html(strip_tags( get_the_excerpt() )); ?>

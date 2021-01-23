@@ -44,6 +44,11 @@ function wp_meliora_register_required_plugins() {
 			'slug'      => 'kirki',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'LibWp',
+			'slug'      => 'libwp',
+			'required'  => true,
+		)
 	);
 
 	/*
@@ -56,7 +61,7 @@ function wp_meliora_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'meliora',
+		'id'           => 'manifest',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

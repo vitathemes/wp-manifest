@@ -280,3 +280,41 @@ add_image_size( 'wp_manifest_medium', 540, 0, true );
 add_image_size( 'wp_manifest_medium_square', 540, 540, true );
 add_image_size( 'wp_manifest_medium_thumbnail', 350, 250, true );
 add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
+
+
+/**
+ * Register Post-type and Taxonomy
+ */
+if (function_exists('LibWp')) {
+	LibWp()->postType()
+	       ->setName('portfolio')
+	       ->setLabels([
+		       'name'          => _x('Portfolio', 'Post type general name', 'wp-manifest'),
+		       'singular_name' => _x('Portfolio', 'Post type singular name', 'wp-manifest'),
+		       'menu_name'     => _x('Portfolio', 'Admin Menu text', 'wp-manifest'),
+		       'add_new'       => __('Add New', 'wp-manifest'),
+		       'edit_item'     => __('Edit Portfolio', 'wp-manifest'),
+		       'view_item'     => __('View Portfolio', 'wp-manifest'),
+		       'all_items'     => __('All Portfolio', 'wp-manifest'),
+	       ])
+	       ->setFeatures([
+		       'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'
+	       ])
+	       ->setArgument('show_ui', true)
+	       ->register();
+
+	LibWp()->taxonomy()
+	       ->setName('types')
+	       ->setPostTypes('portfolio')
+	       ->setLabels([
+		       'name'          => _x('Category', 'taxonomy general name', 'wp-manifest'),
+		       'singular_name' => _x('Category', 'taxonomy singular name', 'wp-manifest'),
+		       'search_items'  => __('Search Categories', 'wp-manifest'),
+		       'all_items'     => __('All Categories', 'wp-manifest'),
+		       'edit_item'     => __('Edit Type', 'wp-manifest'),
+		       'add_new_item'  => __('Add New Category', 'wp-manifest'),
+		       'new_item_name' => __('New Category Name', 'wp-manifest'),
+		       'menu_name'     => __('Categories', 'wp-manifest'),
+	       ])
+	       ->register();
+}

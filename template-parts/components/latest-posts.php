@@ -29,7 +29,7 @@ if ( $latest_posts->have_posts() ):
                                 </header>
 							<?php endif; ?>
                             <main class="c-post__main u-flex u-dir-column">
-                                <div class="u-flex u-justify-between u-margin-bottom-small u-align-center">
+                                <div class="u-flex u-justify-between u-margin-bottom-medium u-align-center">
 									<?php wp_manifest_show_post_data( get_the_ID() ); ?>
                                 </div>
                                 <div class="u-flex u-dir-column u-flex-grow">
