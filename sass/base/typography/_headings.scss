@@ -15,6 +15,11 @@ h1, .h1 {
   letter-spacing: 0.05em;
   font-weight: 400;
   font-family: $default_font_family_secondary;
+
+  @media #{$mobile} {
+    font-size: 33px !important;
+    line-height: 44px !important;
+  }
 }
 
 h2, .h2 {

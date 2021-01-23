@@ -390,8 +390,6 @@ html {
 	.o-wrapper {
 		margin-left: 1rem;
 		margin-right: 1rem;
-		padding-right: 0;
-		padding-left: 0;
 	}
 }
 
@@ -580,6 +578,13 @@ h1, .h1 {
 	letter-spacing: 0.05em;
 	font-weight: 400;
 	font-family: "Red Hat Display", Arial;
+}
+
+@media only screen and (max-width: 560px) {
+	h1, .h1 {
+		font-size: 33px !important;
+		line-height: 44px !important;
+	}
 }
 
 h2, .h2 {
@@ -2463,6 +2468,7 @@ ol.children:last-child {
 	border: none;
 	appearance: none;
 	padding: 0;
+	color: var(--headings-colors);
 }
 
 .c-header__search-toggle.c-header__search-toggle--close {

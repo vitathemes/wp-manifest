@@ -1,4 +1,5 @@
 /* eslint-env browser */
+var slider;
 (function () {
     'use strict';
 
@@ -26,7 +27,7 @@
                 sliderOptions.groupCells = false;
             }
 
-            var slider = new Flickity('.js-slider', sliderOptions);
+            slider = new Flickity('.js-slider', sliderOptions);
         }
 
 
@@ -118,3 +119,62 @@
     //});
 
 })();
+
+
+var menuToggle = document.querySelector('.c-header__toggle');
+var menu = document.querySelector('.c-header__menu-items');
+var menuLinks = menu.getElementsByTagName('a');
+var menuListItems = menu.querySelectorAll('li');
+
+var focus, isToggleItem, isBackward;
+var lastIndex = menuListItems.length - 1;
+var lastParentIndex = document.querySelectorAll('.c-header__menu > ul > li').length - 1;
+document.addEventListener('focusin', function () {
+    focus = document.activeElement;
+    if (isToggleItem && focus !== menuLinks[0]) {
+        document.querySelectorAll('.c-header__menu > ul > li')[lastParentIndex].querySelector('a').focus();
+    }
+
+    if (focus === menuToggle) {
+        isToggleItem = true;
+    } else {
+        isToggleItem = false;
+    }
+
+    if (focus.classList.contains('c-slider__slide-link')) {
+        var homepageSliderCells = document.querySelectorAll('.js-slider-slide');
+        var focusedCell = focus.parentNode.parentNode;
+        var indexOfFocusedCell = 0;
+        homepageSliderCells.forEach(function (el) {
+           if (el === focusedCell) {
+               slider.select( indexOfFocusedCell );
+           }
+
+           if (window.matchMedia("(max-width: 768px)").matches) {
+               indexOfFocusedCell ++;
+           } else {
+               indexOfFocusedCell += 0.5;
+           }
+
+        });
+    }
+
+}, true);
+
+document.addEventListener('keydown', function (e) {
+    if (e.shiftKey && e.keyCode == 9) {
+        isBackward = true;
+    } else {
+        isBackward = false;
+    }
+});
+
+for (el of menuLinks) {
+    el.addEventListener('blur', function (e) {
+        if (!isBackward) {
+            if (e.target === menuLinks[lastIndex]) {
+                menuToggle.focus();
+            }
+        }
+    });
+}

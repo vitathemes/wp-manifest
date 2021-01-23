@@ -9,8 +9,7 @@ get_header(); ?>
 
 <section class="portfolio c-archive c-archive--portfolio">
     <div class="o-wrapper">
-
-        <div class="u-flex u-flex-nowrap-m u-flex-wrap">
+        <div class="u-row u-flex-nowrap-m u-flex-wrap">
             <div class="o-col--1/2">
 				<?php
 				printf( '<h1 class="c-archive__title">%s</h1>', 'Works' );

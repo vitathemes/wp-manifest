@@ -190,6 +190,7 @@
   border: none;
   appearance: none;
   padding: 0;
+  color: $wp-manifest__heading-color;
 }
 
 .c-header__search-toggle.c-header__search-toggle--close {
@@ -237,7 +238,6 @@
   @media #{$mobile} {
 
   }
-
 
   &.is-open {
     display: block;
