@@ -30,14 +30,14 @@ if ( function_exists( 'Kirki' ) ) {
 // Home Page
 		Kirki::add_section( 'homepage', array(
 			'title'    => esc_html__( 'Homepage', 'wp-manifest' ),
-			'panel'    => '',
+			'panel'    => 'elements',
 			'priority' => 4,
 		) );
 
 		// Home Page
 		Kirki::add_section( 'blogpage', array(
-			'title'    => esc_html__( 'Blog Settings', 'wp-manifest' ),
-			'panel'    => '',
+			'title'    => esc_html__( 'Blog', 'wp-manifest' ),
+			'panel'    => 'elements',
 			'priority' => 4,
 		) );
 
@@ -277,25 +277,6 @@ if ( function_exists( 'Kirki' ) ) {
 					'value'    => true,
 				],
 			]
-		] );
-
-
-		Kirki::add_field( 'wp-manifest', [
-			'type'     => 'toggle',
-			'settings' => 'show_posts_thumbnail',
-			'label'    => esc_html__( 'Show Posts Thumbnail', 'wp-manifest' ),
-			'section'  => 'blogpage',
-			'default'  => 1,
-			'priority' => 10,
-		] );
-
-		Kirki::add_field( 'wp-manifest', [
-			'type'     => 'toggle',
-			'settings' => 'show_share_icons',
-			'label'    => esc_html__( 'Show Social Share Icons', 'wp-manifest' ),
-			'section'  => 'blogpage',
-			'default'  => 1,
-			'priority' => 10,
 		] );
 
 // </editor-fold>
@@ -630,7 +611,7 @@ if ( function_exists( 'Kirki' ) ) {
 
 		Kirki::add_field( 'wp-manifest', [
 			'type'     => 'toggle',
-			'settings' => 'show_comment_single',
+			'settings' => 'show_comments_single',
 			'label'    => esc_html__( 'Show comments', 'wp-manifest' ),
 			'section'  => 'elements-single',
 			'default'  => 1,
@@ -690,31 +671,49 @@ function wp_manifest_add_edit_icons( $wp_customize ) {
 		'selector' => '.c-social-share',
 	) );
 
+	$wp_customize->selective_refresh->add_partial( 'show_thumbnail_single', array(
+		'selector' => '.c-article--single .c-article__header__image',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_cat_single', array(
+		'selector' => '.c-article--single .c-article__header__categories',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_date_single', array(
+		'selector' => '.c-article--single .c-article__header__meta__item--date',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_comments_single', array(
+		'selector' => '.c-article--single .c-article__header__meta__item--comments',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_tags_single', array(
+		'selector' => '.c-article__main__tags',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_cat_archive', array(
+		'selector' => '.c-post .c-categories--post-cats',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_date_archive', array(
+		'selector' => '.c-post .c-post__header__date',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_thumbnail_archive', array(
+		'selector' => '.c-post .c-post__header',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'show_blog_carousel', array(
+		'selector' => '.c-blog-carousel',
+	) );
+
+
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.c-header__site-title',
 	) );
 }
 
 add_action( 'customize_preview_init', 'wp_manifest_add_edit_icons' );
-
-function wp_manifest_enqueue_fonts() {
-	$wp_manifest_text_typography    = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography = get_theme_mod( 'headings_typography' );
-
-	if ( $wp_manifest_heading_typography['font-family'] ) {
-		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=' . $wp_manifest_heading_typography['font-family'] . ':wght@' . $wp_manifest_heading_typography['font-weight'] );
-	} else {
-		wp_enqueue_style( 'wp-manifest-headings-fonts', '//fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400' );
-	}
-	if ( $wp_manifest_text_typography['font-family'] ) {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=' . $wp_manifest_text_typography['font-family'] . ':wght@' . $wp_manifest_text_typography['font-weight'] );
-	} else {
-		wp_enqueue_style( 'wp-manifest-body-font', '//fonts.googleapis.com/css2?family=Lato:wght@400' );
-	}
-}
-
-add_action( 'wp_head', 'wp_manifest_enqueue_fonts' );
-add_action( 'admin_head', 'wp_manifest_enqueue_fonts' );
 
 function wp_manifest_customize_preview_js() {
 	wp_enqueue_script( 'wp-manifest-js-customizer', get_template_directory_uri() . '/js/customizer.js', array(), false, true );
