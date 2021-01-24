@@ -56,15 +56,15 @@
 						$facebook_url = "https://www.facebook.com/sharer.php?u=" . get_permalink();
 						?>
 
-                        <a aria-label="<?php esc_html_e( 'Facebook Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $facebook_url ); ?>">
+                        <a aria-label="<?php esc_attr_e( 'Facebook Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $facebook_url ); ?>">
                             <span class="dashicons dashicons-facebook-alt c-social-share__link__icon"></span>
                         </a>
 
-                        <a aria-label="<?php esc_html_e( 'Twitter Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $twitter_url ); ?>">
+                        <a aria-label="<?php esc_attr_e( 'Twitter Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $twitter_url ); ?>">
                             <span class="dashicons dashicons-twitter c-social-share__link__icon"></span>
                         </a>
 
-                        <a aria-label="<?php esc_html_e( 'Linkedin Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $linkedin_url ); ?>">
+                        <a aria-label="<?php esc_attr_e( 'Linkedin Account', 'wp-manifest' ); ?>" class="c-social-share__link" target="_blank" href="<?php echo esc_url( $linkedin_url ); ?>">
                             <span class="dashicons dashicons-linkedin c-social-share__link__icon"></span>
                         </a>
 

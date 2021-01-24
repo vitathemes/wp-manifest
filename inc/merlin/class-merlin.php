@@ -450,7 +450,7 @@ class Merlin {
 		wp_enqueue_script( 'merlin', trailingslashit( $this->base_url ) . $this->directory . '/assets/js/merlin' . $suffix . '.js', array( 'jquery-core' ), MERLIN_VERSION );
 
 		$texts = array(
-			'something_went_wrong' => esc_html__( 'Something went wrong. Please refresh the page and try again!', 'wp-meliora' ),
+			'something_went_wrong' => esc_html__( 'Something went wrong. Please refresh the page and try again!', 'wp-manifest' ),
 		);
 
 		// Localize the javascript.
@@ -596,12 +596,12 @@ class Merlin {
 
 		// Make sure $args are an array.
 		if ( empty( $args ) ) {
-			return __( 'Please define default parameters in the form of an array.', 'wp-meliora' );
+			return __( 'Please define default parameters in the form of an array.', 'wp-manifest' );
 		}
 
 		// Define an icon.
 		if ( false === array_key_exists( 'icon', $args ) ) {
-			return __( 'Please define an SVG icon filename.', 'wp-meliora' );
+			return __( 'Please define an SVG icon filename.', 'wp-manifest' );
 		}
 
 		// Set defaults.
@@ -710,20 +710,20 @@ class Merlin {
 
 		$this->steps = array(
 			'welcome' => array(
-				'name'    => esc_html__( 'Welcome', 'wp-meliora' ),
+				'name'    => esc_html__( 'Welcome', 'wp-manifest' ),
 				'view'    => array( $this, 'welcome' ),
 				'handler' => array( $this, 'welcome_handler' ),
 			),
 		);
 
 		$this->steps['child'] = array(
-			'name' => esc_html__( 'Child', 'wp-meliora' ),
+			'name' => esc_html__( 'Child', 'wp-manifest' ),
 			'view' => array( $this, 'child' ),
 		);
 
 		if ( $this->license_step_enabled ) {
 			$this->steps['license'] = array(
-				'name' => esc_html__( 'License', 'wp-meliora' ),
+				'name' => esc_html__( 'License', 'wp-manifest' ),
 				'view' => array( $this, 'license' ),
 			);
 		}
@@ -731,7 +731,7 @@ class Merlin {
 		// Show the plugin importer, only if TGMPA is included.
 		if ( class_exists( 'TGM_Plugin_Activation' ) ) {
 			$this->steps['plugins'] = array(
-				'name' => esc_html__( 'Plugins', 'wp-meliora' ),
+				'name' => esc_html__( 'Plugins', 'wp-manifest' ),
 				'view' => array( $this, 'plugins' ),
 			);
 		}
@@ -739,13 +739,13 @@ class Merlin {
 		// Show the content importer, only if there's demo content added.
 		if ( ! empty( $this->import_files ) ) {
 			$this->steps['content'] = array(
-				'name' => esc_html__( 'Content', 'wp-meliora' ),
+				'name' => esc_html__( 'Content', 'wp-manifest' ),
 				'view' => array( $this, 'content' ),
 			);
 		}
 
 		$this->steps['ready'] = array(
-			'name' => esc_html__( 'Ready', 'wp-meliora' ),
+			'name' => esc_html__( 'Ready', 'wp-manifest' ),
 			'view' => array( $this, 'ready' ),
 		);
 
@@ -850,7 +850,7 @@ class Merlin {
 		</footer>
 
 	<?php
-		$this->logger->debug( __( 'The welcome step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The welcome step has been displayed', 'wp-manifest' ) );
 	}
 
 	/**
@@ -944,7 +944,7 @@ class Merlin {
 			<?php wp_nonce_field( 'merlin' ); ?>
 		</footer>
 		<?php
-		$this->logger->debug( __( 'The license activation step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The license activation step has been displayed', 'wp-manifest' ) );
 	}
 
 
@@ -1014,7 +1014,7 @@ class Merlin {
 			<?php wp_nonce_field( 'merlin' ); ?>
 		</footer>
 	<?php
-		$this->logger->debug( __( 'The child theme installation step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The child theme installation step has been displayed', 'wp-manifest' ) );
 	}
 
 	/**
@@ -1101,8 +1101,8 @@ class Merlin {
 								<span><?php echo esc_html( $plugin['name'] ); ?></span>
 
 								<span class="badge">
-									<span class="hint--top" aria-label="<?php esc_attr_e( 'Required', 'wp-meliora' ); ?>">
-										<?php esc_html_e( 'req', 'wp-meliora' ); ?>
+									<span class="hint--top" aria-label="<?php esc_attr_e( 'Required', 'wp-manifest' ); ?>">
+										<?php esc_html_e( 'req', 'wp-manifest' ); ?>
 									</span>
 								</span>
 							</label>
@@ -1142,7 +1142,7 @@ class Merlin {
 		</form>
 
 	<?php
-		$this->logger->debug( __( 'The plugin installation step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The plugin installation step has been displayed', 'wp-manifest' ) );
 	}
 
 	/**
@@ -1188,7 +1188,7 @@ class Merlin {
 					</select>
 
 					<div class="merlin__select-control-help">
-						<span class="hint--top" aria-label="<?php echo esc_attr__( 'Select Demo', 'wp-meliora' ); ?>">
+						<span class="hint--top" aria-label="<?php echo esc_attr__( 'Select Demo', 'wp-manifest' ); ?>">
 							<?php echo wp_kses( $this->svg( array( 'icon' => 'downarrow' ) ), $this->svg_allowed_html() ); ?>
 						</span>
 					</div>
@@ -1226,7 +1226,7 @@ class Merlin {
 		</form>
 
 	<?php
-		$this->logger->debug( __( 'The content import step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The content import step has been displayed', 'wp-manifest' ) );
 	}
 
 
@@ -1306,7 +1306,7 @@ class Merlin {
 		</footer>
 
 	<?php
-		$this->logger->debug( __( 'The final step has been displayed', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The final step has been displayed', 'wp-manifest' ) );
 	}
 
 	/**
@@ -1383,7 +1383,7 @@ class Merlin {
 				switch_theme( $slug );
 			endif;
 
-			$this->logger->debug( __( 'The existing child theme was activated', 'wp-meliora' ) );
+			$this->logger->debug( __( 'The existing child theme was activated', 'wp-manifest' ) );
 
 			wp_send_json(
 				array(
@@ -1400,7 +1400,7 @@ class Merlin {
 			switch_theme( $slug );
 		endif;
 
-		$this->logger->debug( __( 'The newly generated child theme was activated', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The newly generated child theme was activated', 'wp-manifest' ) );
 
 		wp_send_json(
 			array(
@@ -1421,7 +1421,7 @@ class Merlin {
 			wp_send_json(
 				array(
 					'success' => false,
-					'message' => esc_html__( 'Yikes! The theme activation failed. Please try again or contact support.', 'wp-meliora' ),
+					'message' => esc_html__( 'Yikes! The theme activation failed. Please try again or contact support.', 'wp-manifest' ),
 				)
 			);
 		}
@@ -1430,7 +1430,7 @@ class Merlin {
 			wp_send_json(
 				array(
 					'success' => false,
-					'message' => esc_html__( 'Please add your license key before attempting to activate one.', 'wp-meliora' ),
+					'message' => esc_html__( 'Please add your license key before attempting to activate one.', 'wp-manifest' ),
 				)
 			);
 		}
@@ -1443,7 +1443,7 @@ class Merlin {
 			$result = apply_filters( 'merlin_ajax_activate_license', $license_key );
 		}
 
-		$this->logger->debug( __( 'The license activation was performed with the following results', 'wp-meliora' ), $result );
+		$this->logger->debug( __( 'The license activation was performed with the following results', 'wp-manifest' ), $result );
 
 		wp_send_json( array_merge( array( 'done' => 1 ), $result ) );
 	}
@@ -1489,7 +1489,7 @@ class Merlin {
 			if ( is_wp_error( $response ) ) {
 				$message = $response->get_error_message();
 			} else {
-				$message = esc_html__( 'An error occurred, please try again.', 'wp-meliora' );
+				$message = esc_html__( 'An error occurred, please try again.', 'wp-manifest' );
 			}
 		} else {
 
@@ -1502,35 +1502,35 @@ class Merlin {
 					case 'expired':
 						$message = sprintf(
 							/* translators: Expiration date */
-							esc_html__( 'Your license key expired on %s.', 'wp-meliora' ),
+							esc_html__( 'Your license key expired on %s.', 'wp-manifest' ),
 							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
 						);
 						break;
 
 					case 'revoked':
-						$message = esc_html__( 'Your license key has been disabled.', 'wp-meliora' );
+						$message = esc_html__( 'Your license key has been disabled.', 'wp-manifest' );
 						break;
 
 					case 'missing':
-						$message = esc_html__( 'This appears to be an invalid license key. Please try again or contact support.', 'wp-meliora' );
+						$message = esc_html__( 'This appears to be an invalid license key. Please try again or contact support.', 'wp-manifest' );
 						break;
 
 					case 'invalid':
 					case 'site_inactive':
-						$message = esc_html__( 'Your license is not active for this URL.', 'wp-meliora' );
+						$message = esc_html__( 'Your license is not active for this URL.', 'wp-manifest' );
 						break;
 
 					case 'item_name_mismatch':
 						/* translators: EDD Item Name */
-						$message = sprintf( esc_html__( 'This appears to be an invalid license key for %s.', 'wp-meliora' ), $this->edd_item_name );
+						$message = sprintf( esc_html__( 'This appears to be an invalid license key for %s.', 'wp-manifest' ), $this->edd_item_name );
 						break;
 
 					case 'no_activations_left':
-						$message = esc_html__( 'Your license key has reached its activation limit.', 'wp-meliora' );
+						$message = esc_html__( 'Your license key has reached its activation limit.', 'wp-manifest' );
 						break;
 
 					default:
-						$message = esc_html__( 'An error occurred, please try again.', 'wp-meliora' );
+						$message = esc_html__( 'An error occurred, please try again.', 'wp-manifest' );
 						break;
 				}
 			} else {
@@ -1620,7 +1620,7 @@ class Merlin {
 		// Let's remove the tabs so that it displays nicely.
 		$output = trim( preg_replace( '/\t+/', '', $output ) );
 
-		$this->logger->debug( __( 'The child theme functions.php content was generated', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The child theme functions.php content was generated', 'wp-manifest' ) );
 
 		// Filterable return.
 		return apply_filters( 'merlin_generate_child_functions_php', $output, $slug );
@@ -1651,7 +1651,7 @@ class Merlin {
 		// Let's remove the tabs so that it displays nicely.
 		$output = trim( preg_replace( '/\t+/', '', $output ) );
 
-		$this->logger->debug( __( 'The child theme style.css content was generated', 'wp-meliora' ) );
+		$this->logger->debug( __( 'The child theme style.css content was generated', 'wp-manifest' ) );
 
 		return apply_filters( 'merlin_generate_child_style_css', $output, $slug, $parent, $version );
 	}
@@ -1685,9 +1685,9 @@ class Merlin {
 		if ( ! empty( $screenshot ) && file_exists( $screenshot ) ) {
 			$copied = copy( $screenshot, $path . '/screenshot.' . $screenshot_ext );
 
-			$this->logger->debug( __( 'The child theme screenshot was copied to the child theme, with the following result', 'wp-meliora' ), array( 'copied' => $copied ) );
+			$this->logger->debug( __( 'The child theme screenshot was copied to the child theme, with the following result', 'wp-manifest' ), array( 'copied' => $copied ) );
 		} else {
-			$this->logger->debug( __( 'The child theme screenshot was not generated, because of these results', 'wp-meliora' ), array( 'screenshot' => $screenshot ) );
+			$this->logger->debug( __( 'The child theme screenshot was not generated, because of these results', 'wp-manifest' ), array( 'screenshot' => $screenshot ) );
 		}
 	}
 
@@ -1716,7 +1716,7 @@ class Merlin {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-activate',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Activating', 'wp-meliora' ),
+					'message'       => esc_html__( 'Activating', 'wp-manifest' ),
 				);
 				break;
 			}
@@ -1732,7 +1732,7 @@ class Merlin {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-update',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Updating', 'wp-meliora' ),
+					'message'       => esc_html__( 'Updating', 'wp-manifest' ),
 				);
 				break;
 			}
@@ -1748,7 +1748,7 @@ class Merlin {
 					'_wpnonce'      => wp_create_nonce( 'bulk-plugins' ),
 					'action'        => 'tgmpa-bulk-install',
 					'action2'       => - 1,
-					'message'       => esc_html__( 'Installing', 'wp-meliora' ),
+					'message'       => esc_html__( 'Installing', 'wp-manifest' ),
 				);
 				break;
 			}
@@ -1756,7 +1756,7 @@ class Merlin {
 
 		if ( $json ) {
 			$this->logger->debug(
-				__( 'A plugin with the following data will be processed', 'wp-meliora' ),
+				__( 'A plugin with the following data will be processed', 'wp-manifest' ),
 				array(
 					'plugin_slug' => $_POST['slug'],
 					'message'     => $json['message'],
@@ -1764,11 +1764,11 @@ class Merlin {
 			);
 
 			$json['hash']    = md5( serialize( $json ) );
-			$json['message'] = esc_html__( 'Installing', 'wp-meliora' );
+			$json['message'] = esc_html__( 'Installing', 'wp-manifest' );
 			wp_send_json( $json );
 		} else {
 			$this->logger->debug(
-				__( 'A plugin with the following data was processed', 'wp-meliora' ),
+				__( 'A plugin with the following data was processed', 'wp-manifest' ),
 				array(
 					'plugin_slug' => $_POST['slug'],
 				)
@@ -1777,7 +1777,7 @@ class Merlin {
 			wp_send_json(
 				array(
 					'done'    => 1,
-					'message' => esc_html__( 'Success', 'wp-meliora' ),
+					'message' => esc_html__( 'Success', 'wp-manifest' ),
 				)
 			);
 		}
@@ -1800,12 +1800,12 @@ class Merlin {
 		}
 
 		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) || empty( $_POST['content'] ) && isset( $content[ $_POST['content'] ] ) ) {
-			$this->logger->error( __( 'The content importer AJAX call failed to start, because of incorrect data', 'wp-meliora' ) );
+			$this->logger->error( __( 'The content importer AJAX call failed to start, because of incorrect data', 'wp-manifest' ) );
 
 			wp_send_json_error(
 				array(
 					'error'   => 1,
-					'message' => esc_html__( 'Invalid content!', 'wp-meliora' ),
+					'message' => esc_html__( 'Invalid content!', 'wp-manifest' ),
 				)
 			);
 		}
@@ -1816,7 +1816,7 @@ class Merlin {
 		if ( isset( $_POST['proceed'] ) ) {
 			if ( is_callable( $this_content['install_callback'] ) ) {
 				$this->logger->info(
-					__( 'The content import AJAX call will be executed with this import data', 'wp-meliora' ),
+					__( 'The content import AJAX call will be executed with this import data', 'wp-manifest' ),
 					array(
 						'title' => $this_content['title'],
 						'data'  => $this_content['data'],
@@ -1858,7 +1858,7 @@ class Merlin {
 			wp_send_json( $json );
 		} else {
 			$this->logger->error(
-				__( 'The content import AJAX call failed with this passed data', 'wp-meliora' ),
+				__( 'The content import AJAX call failed with this passed data', 'wp-manifest' ),
 				array(
 					'selected_content_index' => $selected_import,
 					'importing_content'      => $_POST['content'],
@@ -1869,7 +1869,7 @@ class Merlin {
 			wp_send_json(
 				array(
 					'error'   => 1,
-					'message' => esc_html__( 'Error', 'wp-meliora' ),
+					'message' => esc_html__( 'Error', 'wp-manifest' ),
 					'logs'    => '',
 					'errors'  => '',
 				)
@@ -1883,12 +1883,12 @@ class Merlin {
 	 */
 	public function _ajax_get_total_content_import_items() {
 		if ( ! check_ajax_referer( 'merlin_nonce', 'wpnonce' ) && empty( $_POST['selected_index'] ) ) {
-			$this->logger->error( __( 'The content importer AJAX call for retrieving total content import items failed to start, because of incorrect data.', 'wp-meliora' ) );
+			$this->logger->error( __( 'The content importer AJAX call for retrieving total content import items failed to start, because of incorrect data.', 'wp-manifest' ) );
 
 			wp_send_json_error(
 				array(
 					'error'   => 1,
-					'message' => esc_html__( 'Invalid data!', 'wp-meliora' ),
+					'message' => esc_html__( 'Invalid data!', 'wp-manifest' ),
 				)
 			);
 		}
@@ -1979,11 +1979,11 @@ class Merlin {
 
 		if ( ! empty( $import_files['content'] ) ) {
 			$content['content'] = array(
-				'title'            => esc_html__( 'Content', 'wp-meliora' ),
-				'description'      => esc_html__( 'Demo content data.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'Content', 'wp-manifest' ),
+				'description'      => esc_html__( 'Demo content data.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'install_callback' => array( $this->importer, 'import' ),
 				'data'             => $import_files['content'],
@@ -1992,11 +1992,11 @@ class Merlin {
 
 		if ( ! empty( $import_files['widgets'] ) ) {
 			$content['widgets'] = array(
-				'title'            => esc_html__( 'Widgets', 'wp-meliora' ),
-				'description'      => esc_html__( 'Sample widgets data.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'Widgets', 'wp-manifest' ),
+				'description'      => esc_html__( 'Sample widgets data.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'install_callback' => array( 'Merlin_Widget_Importer', 'import' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'data'             => $import_files['widgets'],
@@ -2005,11 +2005,11 @@ class Merlin {
 
 		if ( ! empty( $import_files['sliders'] ) ) {
 			$content['sliders'] = array(
-				'title'            => esc_html__( 'Revolution Slider', 'wp-meliora' ),
-				'description'      => esc_html__( 'Sample Revolution sliders data.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'Revolution Slider', 'wp-manifest' ),
+				'description'      => esc_html__( 'Sample Revolution sliders data.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'install_callback' => array( $this, 'import_revolution_sliders' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'data'             => $import_files['sliders'],
@@ -2018,11 +2018,11 @@ class Merlin {
 
 		if ( ! empty( $import_files['options'] ) ) {
 			$content['options'] = array(
-				'title'            => esc_html__( 'Options', 'wp-meliora' ),
-				'description'      => esc_html__( 'Sample theme options data.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'Options', 'wp-manifest' ),
+				'description'      => esc_html__( 'Sample theme options data.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'install_callback' => array( 'Merlin_Customizer_Importer', 'import' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'data'             => $import_files['options'],
@@ -2031,11 +2031,11 @@ class Merlin {
 
 		if ( ! empty( $import_files['redux'] ) ) {
 			$content['redux'] = array(
-				'title'            => esc_html__( 'Redux Options', 'wp-meliora' ),
-				'description'      => esc_html__( 'Redux framework options.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'Redux Options', 'wp-manifest' ),
+				'description'      => esc_html__( 'Redux framework options.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'install_callback' => array( 'Merlin_Redux_Importer', 'import' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'data'             => $import_files['redux'],
@@ -2044,11 +2044,11 @@ class Merlin {
 
 		if ( false !== has_action( 'merlin_after_all_import' ) ) {
 			$content['after_import'] = array(
-				'title'            => esc_html__( 'After import setup', 'wp-meliora' ),
-				'description'      => esc_html__( 'After import setup.', 'wp-meliora' ),
-				'pending'          => esc_html__( 'Pending', 'wp-meliora' ),
-				'installing'       => esc_html__( 'Installing', 'wp-meliora' ),
-				'success'          => esc_html__( 'Success', 'wp-meliora' ),
+				'title'            => esc_html__( 'After import setup', 'wp-manifest' ),
+				'description'      => esc_html__( 'After import setup.', 'wp-manifest' ),
+				'pending'          => esc_html__( 'Pending', 'wp-manifest' ),
+				'installing'       => esc_html__( 'Installing', 'wp-manifest' ),
+				'success'          => esc_html__( 'Success', 'wp-manifest' ),
 				'install_callback' => array( $this->hooks, 'after_all_import_action' ),
 				'checked'          => $this->is_possible_upgrade() ? 0 : 1,
 				'data'             => $selected_import_index,
@@ -2074,7 +2074,7 @@ class Merlin {
 
 		$response = $importer->importSliderFromPost( true, true, $file );
 
-		$this->logger->info( __( 'The revolution slider import was executed', 'wp-meliora' ) );
+		$this->logger->info( __( 'The revolution slider import was executed', 'wp-manifest' ) );
 
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 			return 'true';
@@ -2090,7 +2090,7 @@ class Merlin {
 	 */
 	public function pt_importer_new_ajax_request_response_data( $data ) {
 		$data['url']      = admin_url( 'admin-ajax.php' );
-		$data['message']  = esc_html__( 'Installing', 'wp-meliora' );
+		$data['message']  = esc_html__( 'Installing', 'wp-manifest' );
 		$data['proceed']  = 'true';
 		$data['action']   = 'merlin_content';
 		$data['content']  = 'content';
@@ -2111,7 +2111,7 @@ class Merlin {
 			update_option( 'page_on_front', $homepage->ID );
 			update_option( 'show_on_front', 'page' );
 
-			$this->logger->debug( __( 'The home page was set', 'wp-meliora' ), array( 'homepage_id' => $homepage ) );
+			$this->logger->debug( __( 'The home page was set', 'wp-manifest' ), array( 'homepage_id' => $homepage ) );
 		}
 
 		// Set static blog page.
@@ -2121,7 +2121,7 @@ class Merlin {
 			update_option( 'page_for_posts', $blogpage->ID );
 			update_option( 'show_on_front', 'page' );
 
-			$this->logger->debug( __( 'The blog page was set', 'wp-meliora' ), array( 'blog_page_id' => $blogpage ) );
+			$this->logger->debug( __( 'The blog page was set', 'wp-manifest' ), array( 'blog_page_id' => $blogpage ) );
 		}
 	}
 
@@ -2136,7 +2136,7 @@ class Merlin {
 			$hello_world->post_status = 'draft';
 			wp_update_post( $hello_world );
 
-			$this->logger->debug( __( 'The Hello world post status was set to draft', 'wp-meliora' ) );
+			$this->logger->debug( __( 'The Hello world post status was set to draft', 'wp-manifest' ) );
 		}
 	}
 
@@ -2160,7 +2160,7 @@ class Merlin {
 			if ( ! empty( $import_file['import_file_name'] ) ) {
 				$filtered_import_file_info[] = $import_file;
 			} else {
-				$this->logger->warning( __( 'This predefined demo import does not have the name parameter: import_file_name', 'wp-meliora' ), $import_file );
+				$this->logger->warning( __( 'This predefined demo import does not have the name parameter: import_file_name', 'wp-manifest' ), $import_file );
 			}
 		}
 
