@@ -30,7 +30,7 @@ get_header(); ?>
 					$postsCount = 1;
 					while ( $carousel_posts->have_posts() ) : $carousel_posts->the_post(); ?>
                         <div id="slide<?php echo esc_attr($postsCount); ?>" class="c-blog-carousel__image__cell">
-                            <a tabindex="-1" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__image-link"><?php the_post_thumbnail( 'wp_manifest_medium_square', array( 'class' => 'c-article__image' ) ); ?></a>
+                            <a tabindex="-1" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__image-link" tabindex="-1"><?php the_post_thumbnail( 'wp_manifest_medium_square', array( 'class' => 'c-article__image' ) ); ?></a>
                         </div>
 						<?php
 						$postsCount ++;
@@ -49,9 +49,9 @@ get_header(); ?>
                                     <a tabindex="-1" class="c-blog-carousel__content__cell__category u-margin-bottom-small" href="<?php echo esc_url($category['url']); ?>"><?php echo esc_html($category['name']); ?></a>
                                 </div>
                                 <div>
-									<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link u-margin-bottom-medium"><h3 class="c-blog-carousel__content__cell__title h4 u-margin-none">', '</h3></a>' ); ?>
+									<?php the_title( '<a href="' . get_permalink() . '" class="c-blog-carousel__content__cell__title-link u-margin-bottom-medium" tabindex="-1"><h3 class="c-blog-carousel__content__cell__title u-margin-none">', '</h3></a>' ); ?>
                                 </div>
-                                <span class="c-blog-carousel__content__cell__date u-color-dark-gray"><?php echo esc_html(get_the_time( 'd M, Y' )); ?></span>
+                                <span class="c-blog-carousel__content__cell__date"><?php echo esc_html(get_the_time( 'd M, Y' )); ?></span>
                                 <div class="c-blog-carousel__content__cell__excerpt s-article-excerpt">
                                     <p class="u-margin-none">
 										<?php echo esc_html(strip_tags( get_the_excerpt() )); ?>
@@ -59,7 +59,6 @@ get_header(); ?>
                                             <span class="u-vertical-middle dashicons dashicons-arrow-right-alt"></span>
                                         </a>
                                     </p>
-
                                 </div>
                             </div>
 							<?php
@@ -70,7 +69,7 @@ get_header(); ?>
                     </div>
                     <nav class="c-blog-carousel__nav">
 						<?php for ( $i = 1; $i < $postsCount; $i ++ ): ?>
-                            <a tabindex="1" href="#slide<?php echo esc_attr($i); ?>" class="js-blog-carousel-nav-item c-blog-carousel__nav__link <?php echo $i == 1 ? esc_attr("is-active") : null; ?>"><?php echo esc_html($i); ?></a>
+                            <a href="#slide<?php echo esc_attr($i); ?>" class="js-blog-carousel-nav-item c-blog-carousel__nav__link <?php echo $i == 1 ? esc_attr("is-active") : null; ?>"><?php echo esc_html($i); ?></a>
 						<?php endfor; ?>
                     </nav>
                 </div>

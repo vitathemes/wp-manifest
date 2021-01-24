@@ -1,5 +1,5 @@
 .c-categories {
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .s-categories {
@@ -31,13 +31,14 @@
     color: $wp-manifest__neutral-gray-light-color;
 
     &:hover {
-      color: $wp-manifest__tertiary-color;
+      color: $wp-manifest__body-color;
     }
   }
 }
 
 .c-categories--post-cats {
   margin-bottom: 0;
+  color: $wp-manifest__body-secondary-color;
 }
 
 
@@ -63,6 +64,7 @@
 
   label {
     margin-right: 40px;
+    color: $wp-manifest__heading-color;
 
     @media #{$mobile} {
       margin-right: 24px;
@@ -72,6 +74,7 @@
   select {
     max-width: 100%;
     width: auto;
+    color: $wp-manifest__body-color;
 
     @media #{$desktop} {
       min-width: 407px;

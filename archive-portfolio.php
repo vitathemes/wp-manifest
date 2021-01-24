@@ -9,9 +9,20 @@ get_header(); ?>
 
 <section class="portfolio c-archive c-archive--portfolio">
     <div class="o-wrapper">
-		<?php
-		printf( '<h1 class="c-archive__title">%s</h1>', 'Works' );
-		?>
+        <div class="u-row u-flex-nowrap-m u-flex-wrap">
+            <div class="o-col--1/2">
+				<?php
+				printf( '<h1 class="c-archive__title">%s</h1>', 'Works' );
+				?>
+            </div>
+            <div class="o-col--1/2">
+                <p class="c-archive__desc">
+					<?php
+					echo bloginfo( 'description' );
+					?>
+                </p>
+            </div>
+        </div>
 
         <div id="content" class="content">
 			<?php if ( have_posts() ) :

@@ -26,6 +26,7 @@
 
 .c-article__header__meta {
   margin: 0 0 64px;
+  color: $wp-manifest__body-secondary-color;
 
   @media #{$mobile} {
     margin: 0 0 40px;
@@ -37,7 +38,7 @@
 }
 
 .c-article__header__meta__item {
-  color: $wp-manifest__neutral-dark-gray-color !important;
+  color: $wp-manifest__body-secondary-color;
   letter-spacing: 0.1em;
   display: inline-block;
 
@@ -66,9 +67,11 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  color: $wp-manifest__body-secondary-color;
 
   li {
     margin-bottom: 8px;
+    color: $wp-manifest__body-secondary-color;
   }
 }
 
@@ -97,7 +100,7 @@
 }
 
 .c-article__main__author__name {
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__heading-color;
 }
 
 .c-article__main__author__bio {
@@ -112,10 +115,11 @@
 
 .c-article__main__tags__list {
   font-size: 1rem;
+  color: $wp-manifest__body-secondary-color;
 }
 
 .c-article__main__tags__title {
-  color: $wp-manifest__neutral-dark-gray-color;
+  color: $wp-manifest__heading-color;
 }
 
 /*------------------------
@@ -123,7 +127,7 @@
 --------------------------*/
 
 .s-article-content {
-
+  color: $wp-manifest__heading-color;
 
   ul {
     margin: 32px 0;

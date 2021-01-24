@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 
-<div id="content post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="content post-<?php the_ID(); ?>" <?php post_class('c-post c-post--single'); ?>>
     <div  class="o-wrapper">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 

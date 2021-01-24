@@ -1,2 +1,33 @@
+/* red-hat-display-regular - latin */
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/red-hat-display-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./fonts/red-hat-display-v4-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./fonts/red-hat-display-v4-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./fonts/red-hat-display-v4-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('./fonts/red-hat-display-v4-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./fonts/red-hat-display-v4-latin-regular.svg#RedHatDisplay') format('svg'); /* Legacy iOS */
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/lato-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('./fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('./fonts/lato-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('./fonts/lato-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('./fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+$default_font_family: 'Lato', Arial;
+$default_font_family_secondary: 'Red Hat Display', Arial;
+
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;

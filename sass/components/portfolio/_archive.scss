@@ -18,3 +18,17 @@
     margin-bottom: 64px;
   }
 }
+
+.c-archive__desc {
+  font-size: 1.2rem;
+  color: $wp-manifest__heading-color;
+  margin: 0;
+
+  @media #{$tablet} {
+    margin-bottom: 64px;
+  }
+
+  @media #{$mobile} {
+    margin-bottom: 64px;
+  }
+}

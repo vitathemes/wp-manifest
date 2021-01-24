@@ -31,17 +31,18 @@
 
 .c-blog-carousel__content__cell__category {
   color: $wp-manifest__neutral-dark-gray-color;
-  transition: 0s;
+  transition: 0.2s;
 }
 
 .c-blog-carousel__content__cell__date {
   font-size: 1rem;
+  color: $wp-manifest__body-secondary-color;
 }
 
 .c-blog-carousel__content__cell__title {
   font-weight: normal;
   line-height: 166.3%;
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__heading-color;
   transition: $wp-manifest_global-transition;
 
   @media #{$mobile} {
@@ -51,6 +52,7 @@
 
 .c-blog-carousel__content__cell__excerpt {
   margin: 48px 0 32px;
+  line-height: 1.66;
 }
 
 .c-blog-carousel__content {
@@ -70,11 +72,12 @@
 .c-blog-carousel__nav {
   display: flex;
   margin-top: auto;
+  color: $wp-manifest__heading-color;
 }
 
 .c-blog-carousel__nav__link {
   font-size: 1rem;
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__heading-color;
   margin-right: 24px;
 
   &:last-child {
@@ -82,6 +85,6 @@
   }
 
   &.is-active {
-    color: $wp-manifest__neutral-dark-gray-color;
+    color: $wp-manifest__body-secondary-color;
   }
 }

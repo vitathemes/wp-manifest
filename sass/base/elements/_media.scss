@@ -15,10 +15,10 @@ figure {
 }
 
 .dashicons  {
-	color: $wp-manifest__secondary-color;
+	color: inherit;
 	vertical-align: middle !important;
 
 	&:hover {
-		color: $wp-manifest__main-primary-color;
+		color: inherit;
 	}
 }

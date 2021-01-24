@@ -90,10 +90,10 @@
   text-transform: uppercase;
   font-family: var(--heading-typography-font-family);
   font-size: var(--text-typography-font-size);
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__body-color;
 
   &:visited {
-    color: $wp-manifest__tertiary-color;
+    color: $wp-manifest__body-color;
   }
 }
 
@@ -147,13 +147,13 @@
   li.current-menu-item {
 
     &::after {
-      background-color: $wp-manifest__secondary-color;
+      background-color: $wp-manifest__heading-color;
     }
   }
 
   a {
     text-transform: uppercase;
-    color: $wp-manifest__secondary-color;
+    color: $wp-manifest__heading-color;
 
     &::after {
       content: unset;
@@ -172,7 +172,7 @@
     }
 
     a:hover {
-      color: $wp-manifest__tertiary-color;
+      color: $wp-manifest__body-color;
     }
   }
 }
@@ -190,6 +190,7 @@
   border: none;
   appearance: none;
   padding: 0;
+  color: $wp-manifest__heading-color;
 }
 
 .c-header__search-toggle.c-header__search-toggle--close {
@@ -237,7 +238,6 @@
   @media #{$mobile} {
 
   }
-
 
   &.is-open {
     display: block;

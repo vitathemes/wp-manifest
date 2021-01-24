@@ -43,10 +43,10 @@ function wp_manifest_setup() {
 		'caption',
 	) );
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+//	add_theme_support( 'custom-background', apply_filters( 'custom_background_args', array(
+//		'default-color' => 'ffffff',
+//		'default-image' => '',
+//	) ) );
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	/**
@@ -200,83 +200,45 @@ function wp_manifest_enqueue_customizer_style( $hook_suffix ) {
 
 add_action( 'admin_enqueue_scripts', 'wp_manifest_enqueue_customizer_style' );
 
-
-function wp_manifest_color_palette() {
-	$wp_manifest_text_typography            = get_theme_mod( 'text_typography' );
-	$wp_manifest_heading_typography         = get_theme_mod( 'headings_typography' );
-	$wp_manifest_default_heading_typography = array(
-		'font-family' => "Red Hat Display",
-		'font-size'   => "48px",
-		'variant'     => 'regular',
-		'line-height' => '1.5',
-		'color'       => '#000000'
-	);
-	$default_text_typography                = array(
-		'font-family' => "Lato",
-		'font-size'   => "19px",
-		'variant'     => 'regular',
-		'line-height' => '1.5',
-		'color'       => '#565656'
-	);
-
-	if ( empty( $wp_manifest_heading_typography ) || $wp_manifest_heading_typography['font-family'] == "" ) {
-		$wp_manifest_heading_typography = $wp_manifest_default_heading_typography;
-	} else {
-		$wp_manifest_heading_typography = array_merge( $wp_manifest_default_heading_typography, $wp_manifest_heading_typography );
-	}
-	if ( empty( $wp_manifest_text_typography ) ) {
-		$wp_manifest_text_typography = $default_text_typography;
-	} else {
-		$wp_manifest_text_typography = array_merge( $default_text_typography, $wp_manifest_text_typography );
-	}
-
-	add_theme_support( 'editor-color-palette', array(
-		array(
-			'name'  => __( 'Theme Primary', 'wp-manifest' ),
-			'slug'  => 'theme-primary',
-			'color' => get_theme_mod( "branding_primary_color", "#3F51B5" ),
-		),
-		array(
-			'name'  => __( 'Theme Secondary', 'wp-manifest' ),
-			'slug'  => 'theme-secondary',
-			'color' => $wp_manifest_heading_typography["color"],
-		),
-		array(
-			'name'  => __( 'Theme Tertiary', 'wp-manifest' ),
-			'slug'  => 'theme-tertiary',
-			'color' => $wp_manifest_text_typography['color'],
-		),
-		array(
-			'name'  => __( 'Primary Gray', 'wp-manifest' ),
-			'slug'  => 'primary-gray',
-			'color' => '#323232',
-		),
-		array(
-			'name'  => __( 'Dark Gray', 'wp-manifest' ),
-			'slug'  => 'dark-gray',
-			'color' => '#7B7B7B',
-		),
-		array(
-			'name'  => __( 'Gray', 'wp-manifest' ),
-			'slug'  => 'gray',
-			'color' => '#CCCCCC',
-		),
-		array(
-			'name'  => __( 'Light Gray', 'wp-manifest' ),
-			'slug'  => 'light-gray',
-			'color' => '#F4F4F4',
-		),
-		array(
-			'name'  => __( 'White', 'wp-manifest' ),
-			'slug'  => 'white',
-			'color' => '#FFFFFF',
-		),
-	) );
-}
-
-add_action( 'init', 'wp_manifest_color_palette' );
-
 add_image_size( 'wp_manifest_medium', 540, 0, true );
 add_image_size( 'wp_manifest_medium_square', 540, 540, true );
 add_image_size( 'wp_manifest_medium_thumbnail', 350, 250, true );
 add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
+
+
+/**
+ * Register Post-type and Taxonomy
+ */
+if (function_exists('LibWp')) {
+	LibWp()->postType()
+	       ->setName('portfolio')
+	       ->setLabels([
+		       'name'          => _x('Portfolio', 'Post type general name', 'wp-manifest'),
+		       'singular_name' => _x('Portfolio', 'Post type singular name', 'wp-manifest'),
+		       'menu_name'     => _x('Portfolio', 'Admin Menu text', 'wp-manifest'),
+		       'add_new'       => __('Add New', 'wp-manifest'),
+		       'edit_item'     => __('Edit Portfolio', 'wp-manifest'),
+		       'view_item'     => __('View Portfolio', 'wp-manifest'),
+		       'all_items'     => __('All Portfolio', 'wp-manifest'),
+	       ])
+	       ->setFeatures([
+		       'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'
+	       ])
+	       ->setArgument('show_ui', true)
+	       ->register();
+
+	LibWp()->taxonomy()
+	       ->setName('types')
+	       ->setPostTypes('portfolio')
+	       ->setLabels([
+		       'name'          => _x('Category', 'taxonomy general name', 'wp-manifest'),
+		       'singular_name' => _x('Category', 'taxonomy singular name', 'wp-manifest'),
+		       'search_items'  => __('Search Categories', 'wp-manifest'),
+		       'all_items'     => __('All Categories', 'wp-manifest'),
+		       'edit_item'     => __('Edit Type', 'wp-manifest'),
+		       'add_new_item'  => __('Add New Category', 'wp-manifest'),
+		       'new_item_name' => __('New Category Name', 'wp-manifest'),
+		       'menu_name'     => __('Categories', 'wp-manifest'),
+	       ])
+	       ->register();
+}

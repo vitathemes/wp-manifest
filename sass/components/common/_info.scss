@@ -21,6 +21,8 @@
 .c-info__col {
   width: 50%;
   max-width: 100%;
+  line-height: 1.66;
+  font-size: 1.1875rem;
 
   &:first-child {
     padding-right: 15px;
@@ -46,8 +48,10 @@
 }
 
 .c-info__col__title {
-  color: $wp-manifest__tertiary-color;
+  color: $wp-manifest__heading-color;
   margin: 0 0 48px;
+  line-height: 1.66;
+  font-size: 1.4375rem;
 
   @media #{$mobile} {
     margin: 0 0 20px;
