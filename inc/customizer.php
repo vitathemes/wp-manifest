@@ -14,8 +14,8 @@ if ( function_exists( 'Kirki' ) ) {
 // Panels
 		Kirki::add_panel( 'elements', array(
 			'priority'    => 10,
-			'title'       => esc_html__( 'Elements', 'kirki' ),
-			'description' => esc_html__( '', 'kirki' ),
+			'title'       => esc_html__( 'Elements', 'wp-manifest' ),
+			'description' => esc_html__( '', 'wp-manifest' ),
 		) );
 
 // Add sections \\
@@ -72,14 +72,6 @@ if ( function_exists( 'Kirki' ) ) {
 
 
 // Header
-		Kirki::add_field( 'wp-manifest', [
-			'type'     => 'custom',
-			'settings' => 'general_settings_heading',
-			//'label'       => esc_html__( 'This is the label', 'kirki' ), // optional
-			'section'  => 'header',
-			'default'  => '<h3 style="padding:15px 10px; margin:0;">' . __( 'General', 'wp-manifest' ) . '</h3>',
-			'priority' => 10,
-		] );
 
 		Kirki::add_field( 'wp-manifest', [
 			'type'     => 'toggle',
@@ -262,13 +254,13 @@ if ( function_exists( 'Kirki' ) ) {
 		Kirki::add_field( 'theme_config_id', [
 			'type'            => 'radio-buttonset',
 			'settings'        => 'categories_type',
-			'label'           => esc_html__( 'Categories style', 'kirki' ),
+			'label'           => esc_html__( 'Categories style', 'wp-manifest' ),
 			'section'         => 'blogpage',
 			'default'         => 'dropdown',
 			'priority'        => 10,
 			'choices'         => [
-				'dropdown' => esc_html__( 'Dropdown', 'kirki' ),
-				'list'     => esc_html__( 'List', 'kirki' ),
+				'dropdown' => esc_html__( 'Dropdown', 'wp-manifest' ),
+				'list'     => esc_html__( 'List', 'wp-manifest' ),
 			],
 			'active_callback' => [
 				[

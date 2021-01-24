@@ -47,7 +47,7 @@ function wp_meliora_register_required_plugins() {
 		array(
 			'name'      => 'LibWp',
 			'slug'      => 'libwp',
-			'required'  => true,
+			'required'  => false,
 		)
 	);
 
