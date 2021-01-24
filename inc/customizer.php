@@ -15,7 +15,7 @@ if ( function_exists( 'Kirki' ) ) {
 		Kirki::add_panel( 'elements', array(
 			'priority'    => 10,
 			'title'       => esc_html__( 'Elements', 'wp-manifest' ),
-			'description' => esc_html__( '', 'wp-manifest' ),
+			'description' => '',
 		) );
 
 // Add sections \\
@@ -493,7 +493,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_title',
 			'label'    => esc_html__( 'Footer Title', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => "Need a project?",
+			'default'  => __("Need a project?", 'wp-manifest'),
 			'priority' => 10,
 		] );
 
@@ -503,7 +503,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_phone',
 			'label'    => esc_html__( 'Phone', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => "(239) 555-0108",
+			'default'  => __("(239) 555-0108", 'wp-manifest'),
 			'priority' => 10,
 		] );
 
@@ -513,7 +513,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_email',
 			'label'    => esc_html__( 'Email', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => "tanya.hill@example.com",
+			'default'  => __("tanya.hill@example.com", 'wp-manifest'),
 			'priority' => 10,
 		] );
 
@@ -522,7 +522,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'copyright_text',
 			'label'    => esc_html__( 'Copyright Text', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => "© Copyright Manifest Theme. Allrights reserved",
+			'default'  => __("© Copyright Manifest Theme. Allrights reserved", 'wp-manifest'),
 			'priority' => 10,
 		] );
 
