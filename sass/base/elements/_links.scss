@@ -21,10 +21,6 @@ a {
     }
   }
 
-  &:focus {
-    outline: thin dotted;
-  }
-
   &:hover,
   &:active {
     outline: 0;
@@ -32,7 +28,7 @@ a {
 }
 
 .u-link-no-hover {
-	&::after {
-		content: unset;
-	}
+  &::after {
+    content: unset;
+  }
 }

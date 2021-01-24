@@ -821,10 +821,6 @@ a:active::after, a:focus::after {
 	opacity: 1;
 }
 
-a:focus {
-	outline: thin dotted;
-}
-
 a:hover, a:active {
 	outline: 0;
 }
@@ -2051,7 +2047,7 @@ ol.children:last-child {
 
 .c-blog-carousel__content__cell__category {
 	color: #7B7B7B;
-	transition: 0s;
+	transition: 0.2s;
 }
 
 .c-blog-carousel__content__cell__date {
@@ -2723,13 +2719,13 @@ ol.children:last-child {
 }
 
 .c-post__header {
-	height: 258px;
+	height: 250px;
 	position: relative;
 }
 
 @media only screen and (max-width: 560px) {
 	.c-post__header {
-		height: 137px;
+		height: 211px;
 	}
 }
 

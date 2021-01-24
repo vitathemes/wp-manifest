@@ -158,7 +158,6 @@ document.addEventListener('focusin', function () {
 
         });
     }
-
 }, true);
 
 document.addEventListener('keydown', function (e) {
@@ -178,3 +177,13 @@ for (el of menuLinks) {
         }
     });
 }
+
+( function() {
+    var dropdown = document.getElementById( 'cat' );
+    function onCatChange() {
+        if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+            location.href = window.location.origin + "/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+        }
+    }
+    dropdown.onchange = onCatChange;
+})();
