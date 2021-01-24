@@ -10,8 +10,6 @@ require get_template_directory() . '/inc/customizer.php';
 
 require get_template_directory() . '/inc/template-functions.php';
 
-require get_template_directory() . '/inc/block-pattern.php';
-
 /**
  * Load TGMPA file
  */

@@ -73,95 +73,106 @@ add_action( 'after_setup_theme', 'wp_manifest_setup' );
  * Enqueue scripts and styles.
  */
 // External Assets
-function wp_manifest_scripts() {
-	wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri() );
-	wp_style_add_data( 'wp-manifest-style', 'rtl', 'replace' );
-	wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
-	wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
-	wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
-	wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array(
-		'flickity',
-		'flickity-hash'
-	), false, true );
-	wp_enqueue_script( 'wp-manifest-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), false, true );
-	wp_enqueue_style( 'dashicons' );
+if ( ! function_exists( 'wp_manifest_scripts' ) ) {
+	function wp_manifest_scripts() {
+		wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri() );
+		wp_style_add_data( 'wp-manifest-style', 'rtl', 'replace' );
+		wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
+		wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
+		wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
+		wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array(
+			'flickity',
+			'flickity-hash'
+		), false, true );
+		wp_enqueue_script( 'wp-manifest-navigation-script', get_template_directory_uri() . '/js/navigation.js', array(), false, true );
+		wp_enqueue_style( 'dashicons' );
 
-	if ( is_singular() && comments_open() ) {
-		wp_enqueue_script( 'comment-reply' );
+		if ( is_singular() && comments_open() ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
 }
 
 add_action( 'wp_enqueue_scripts', 'wp_manifest_scripts' );
 
 //
-function wp_manifest_is_comment_by_post_author( $comment = null ) {
-	if ( is_object( $comment ) && $comment->user_id > 0 ) {
-		$user = get_userdata( $comment->user_id );
-		$post = get_post( $comment->comment_post_ID );
-		if ( ! empty( $user ) && ! empty( $post ) ) {
-			return $comment->user_id === $post->post_author;
+if ( ! function_exists( 'wp_manifest_is_comment_by_post_author' ) ) {
+	function wp_manifest_is_comment_by_post_author( $comment = null ) {
+		if ( is_object( $comment ) && $comment->user_id > 0 ) {
+			$user = get_userdata( $comment->user_id );
+			$post = get_post( $comment->comment_post_ID );
+			if ( ! empty( $user ) && ! empty( $post ) ) {
+				return $comment->user_id === $post->post_author;
+			}
 		}
-	}
 
-	return false;
+		return false;
+	}
 }
 
-if ( ! isset( $content_width ) ) $content_width = 1200;
+if ( ! isset( $content_width ) ) {
+	$content_width = 1200;
+}
+if ( ! function_exists( 'wp_manifest_rearrange_form_fields' ) ) {
+	function wp_manifest_rearrange_form_fields( $fields ) {
+		$comment_field = $fields['comment'];
+		unset( $fields['comment'] );
+		$fields['comment'] = $comment_field;
 
-function wp_manifest_rearrange_form_fields( $fields ) {
-	$comment_field = $fields['comment'];
-	unset( $fields['comment'] );
-	$fields['comment'] = $comment_field;
-
-	return $fields;
+		return $fields;
+	}
 }
 
 add_filter( 'comment_form_fields', 'wp_manifest_rearrange_form_fields' );
 
-function wp_manifest_register_sidebars() {
+if ( ! function_exists( 'wp_manifest_register_sidebars' ) ) {
+	function wp_manifest_register_sidebars() {
 
-	register_sidebar( array(
-		'name'          => 'Footer widget area 1',
-		'id'            => 'footer-widgets-1',
-		'before_widget' => '<div class="c-widget s-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="c-widget__title">',
-		'after_title'   => '</h2>',
-	) );
+		register_sidebar( array(
+			'name'          => 'Footer widget area 1',
+			'id'            => 'footer-widgets-1',
+			'before_widget' => '<div class="c-widget s-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="c-widget__title">',
+			'after_title'   => '</h2>',
+		) );
 
-	register_sidebar( array(
-		'name'          => 'Footer widget area 2',
-		'id'            => 'footer-widgets-2',
-		'before_widget' => '<div class="c-widget s-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="c-widget__title">',
-		'after_title'   => '</h2>',
-	) );
+		register_sidebar( array(
+			'name'          => 'Footer widget area 2',
+			'id'            => 'footer-widgets-2',
+			'before_widget' => '<div class="c-widget s-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="c-widget__title">',
+			'after_title'   => '</h2>',
+		) );
 
-	register_sidebar( array(
-		'name'          => 'Footer widget area 3',
-		'id'            => 'footer-widgets-3',
-		'before_widget' => '<div class="c-widget s-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="c-widget__title">',
-		'after_title'   => '</h2>',
-	) );
+		register_sidebar( array(
+			'name'          => 'Footer widget area 3',
+			'id'            => 'footer-widgets-3',
+			'before_widget' => '<div class="c-widget s-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="c-widget__title">',
+			'after_title'   => '</h2>',
+		) );
 
-	register_sidebar( array(
-		'name'          => 'Pages widget area',
-		'id'            => 'page-widget-area',
-		'before_widget' => '<div class="c-widget s-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="c-widget__title">',
-		'after_title'   => '</h2>',
-	) );
+		register_sidebar( array(
+			'name'          => 'Pages widget area',
+			'id'            => 'page-widget-area',
+			'before_widget' => '<div class="c-widget s-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="c-widget__title">',
+			'after_title'   => '</h2>',
+		) );
 
+	}
 }
 
 add_action( 'widgets_init', 'wp_manifest_register_sidebars' );
 
-function wp_manifest_editor_style() {
-	wp_enqueue_style( 'wp-manifest-block-editor-style', get_theme_file_uri( '/inc/editor/style-editor.css' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
+if ( ! function_exists( 'wp_manifest_editor_style' ) ) {
+	function wp_manifest_editor_style() {
+		wp_enqueue_style( 'wp-manifest-block-editor-style', get_theme_file_uri( '/inc/editor/style-editor.css' ), array(), wp_get_theme()->get( 'Version' ), 'all' );
+	}
 }
 
 add_action( 'admin_init', 'wp_manifest_editor_style' );
@@ -179,23 +190,26 @@ add_theme_support( 'infinite-scroll', array(
 	'posts_per_page' => false,
 ) );
 
-
-function wp_manifest_enqueue_editor_scripts() {
-	wp_enqueue_script(
-		'wp_manifest_blocks_scripts',
-		get_template_directory_uri() . "/js/blocks.js",
-		array( 'wp-blocks', 'wp-dom' ),
-		false,
-		true
-	);
+if ( ! function_exists( 'wp_manifest_enqueue_editor_scripts' ) ) {
+	function wp_manifest_enqueue_editor_scripts() {
+		wp_enqueue_script(
+			'wp_manifest_blocks_scripts',
+			get_template_directory_uri() . "/js/blocks.js",
+			array( 'wp-blocks', 'wp-dom' ),
+			false,
+			true
+		);
+	}
 }
 
 add_action( 'enqueue_block_editor_assets', 'wp_manifest_enqueue_editor_scripts' );
 
-function wp_manifest_enqueue_customizer_style( $hook_suffix ) {
-	// Load your css.
-	wp_register_style( 'kirki-styles-css', get_template_directory_uri() . '/inc/editor/kirki-controls-style.css', false, '1.0.0' );
-	wp_enqueue_style( 'kirki-styles-css' );
+if ( ! function_exists( 'wp_manifest_enqueue_customizer_style' ) ) {
+	function wp_manifest_enqueue_customizer_style( $hook_suffix ) {
+		// Load your css.
+		wp_register_style( 'kirki-styles-css', get_template_directory_uri() . '/inc/editor/kirki-controls-style.css', false, '1.0.0' );
+		wp_enqueue_style( 'kirki-styles-css' );
+	}
 }
 
 add_action( 'admin_enqueue_scripts', 'wp_manifest_enqueue_customizer_style' );
@@ -209,36 +223,41 @@ add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
 /**
  * Register Post-type and Taxonomy
  */
-if (function_exists('LibWp')) {
+if ( function_exists( 'LibWp' ) ) {
 	LibWp()->postType()
-	       ->setName('portfolio')
-	       ->setLabels([
-		       'name'          => _x('Portfolio', 'Post type general name', 'wp-manifest'),
-		       'singular_name' => _x('Portfolio', 'Post type singular name', 'wp-manifest'),
-		       'menu_name'     => _x('Portfolio', 'Admin Menu text', 'wp-manifest'),
-		       'add_new'       => __('Add New', 'wp-manifest'),
-		       'edit_item'     => __('Edit Portfolio', 'wp-manifest'),
-		       'view_item'     => __('View Portfolio', 'wp-manifest'),
-		       'all_items'     => __('All Portfolio', 'wp-manifest'),
-	       ])
-	       ->setFeatures([
-		       'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'
-	       ])
-	       ->setArgument('show_ui', true)
+	       ->setName( 'portfolio' )
+	       ->setLabels( [
+		       'name'          => _x( 'Portfolio', 'Post type general name', 'wp-manifest' ),
+		       'singular_name' => _x( 'Portfolio', 'Post type singular name', 'wp-manifest' ),
+		       'menu_name'     => _x( 'Portfolio', 'Admin Menu text', 'wp-manifest' ),
+		       'add_new'       => __( 'Add New', 'wp-manifest' ),
+		       'edit_item'     => __( 'Edit Portfolio', 'wp-manifest' ),
+		       'view_item'     => __( 'View Portfolio', 'wp-manifest' ),
+		       'all_items'     => __( 'All Portfolio', 'wp-manifest' ),
+	       ] )
+	       ->setFeatures( [
+		       'title',
+		       'editor',
+		       'author',
+		       'thumbnail',
+		       'excerpt',
+		       'comments'
+	       ] )
+	       ->setArgument( 'show_ui', true )
 	       ->register();
 
 	LibWp()->taxonomy()
-	       ->setName('types')
-	       ->setPostTypes('portfolio')
-	       ->setLabels([
-		       'name'          => _x('Category', 'taxonomy general name', 'wp-manifest'),
-		       'singular_name' => _x('Category', 'taxonomy singular name', 'wp-manifest'),
-		       'search_items'  => __('Search Categories', 'wp-manifest'),
-		       'all_items'     => __('All Categories', 'wp-manifest'),
-		       'edit_item'     => __('Edit Type', 'wp-manifest'),
-		       'add_new_item'  => __('Add New Category', 'wp-manifest'),
-		       'new_item_name' => __('New Category Name', 'wp-manifest'),
-		       'menu_name'     => __('Categories', 'wp-manifest'),
-	       ])
+	       ->setName( 'types' )
+	       ->setPostTypes( 'portfolio' )
+	       ->setLabels( [
+		       'name'          => _x( 'Category', 'taxonomy general name', 'wp-manifest' ),
+		       'singular_name' => _x( 'Category', 'taxonomy singular name', 'wp-manifest' ),
+		       'search_items'  => __( 'Search Categories', 'wp-manifest' ),
+		       'all_items'     => __( 'All Categories', 'wp-manifest' ),
+		       'edit_item'     => __( 'Edit Type', 'wp-manifest' ),
+		       'add_new_item'  => __( 'Add New Category', 'wp-manifest' ),
+		       'new_item_name' => __( 'New Category Name', 'wp-manifest' ),
+		       'menu_name'     => __( 'Categories', 'wp-manifest' ),
+	       ] )
 	       ->register();
 }

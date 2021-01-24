@@ -52,7 +52,7 @@ if ( ! function_exists( 'wp_manifest_posted_by' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wp_manifest_entry_footer' ) ) :
+if ( ! function_exists( 'wp_manifest_entry_footer' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
@@ -110,7 +110,7 @@ if ( ! function_exists( 'wp_manifest_entry_footer' ) ) :
 			'</span>'
 		);
 	}
-endif;
+}
 
 if ( ! function_exists( 'wp_manifest_post_thumbnail' ) ) :
 	/**
