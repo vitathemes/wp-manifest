@@ -7,7 +7,7 @@
  * @package WP_Manifest
  */
 
-if ( ! function_exists( 'wp_manifest_posted_on' ) ) :
+if ( ! function_exists( 'wp_manifest_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
@@ -34,9 +34,9 @@ if ( ! function_exists( 'wp_manifest_posted_on' ) ) :
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
-endif;
+}
 
-if ( ! function_exists( 'wp_manifest_posted_by' ) ) :
+if ( ! function_exists( 'wp_manifest_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
@@ -50,7 +50,7 @@ if ( ! function_exists( 'wp_manifest_posted_by' ) ) :
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
-endif;
+}
 
 if ( ! function_exists( 'wp_manifest_entry_footer' ) ) {
 	/**
@@ -112,7 +112,7 @@ if ( ! function_exists( 'wp_manifest_entry_footer' ) ) {
 	}
 }
 
-if ( ! function_exists( 'wp_manifest_post_thumbnail' ) ) :
+if ( ! function_exists( 'wp_manifest_post_thumbnail' ) ) {
 	/**
 	 * Displays an optional post thumbnail.
 	 *
@@ -151,9 +151,9 @@ if ( ! function_exists( 'wp_manifest_post_thumbnail' ) ) :
 		<?php
 		endif; // End is_singular().
 	}
-endif;
+}
 
-if ( ! function_exists( 'wp_body_open' ) ) :
+if ( ! function_exists( 'wp_body_open' ) ) {
 	/**
 	 * Shim for sites older than 5.2.
 	 *
@@ -162,4 +162,4 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	function wp_body_open() {
 		do_action( 'wp_body_open' );
 	}
-endif;
+}
