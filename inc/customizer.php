@@ -297,153 +297,59 @@ if ( function_exists( 'Kirki' ) ) {
 					'element' => '.h1',
 				),
 				array(
-					'element'       => 'h2 .h2',
+					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
+					'property'      => 'font-weight',
+					'value_pattern' => '$',
+					'choice'        => 'font-weight',
+				),
+				array(
+					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
+					'property'      => 'letter-spacing',
+					'value_pattern' => '$',
+					'choice'        => 'letter-spacing',
+				),
+				array(
+					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
+					'property'      => 'line-height',
+					'value_pattern' => '$',
+					'choice'        => 'line-height',
+				),
+
+				array(
+					'element'       => array( 'h2', '.h2' ),
 					'property'      => 'font-size',
 					'value_pattern' => 'calc($ - ‭0.9375‬‬rem)',
 					'choice'        => 'font-size',
 				),
-				array(
-					'element'       => 'h2 .h2',
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'font-weight',
-				),
-				array(
-					'element'       => 'h2 .h2',
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => 'h2 .h2',
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
 
 				array(
-					'element'       => 'h3 .h3',
+					'element'       => array( 'h3', '.h3' ),
 					'property'      => 'font-size',
 					'value_pattern' => 'calc(48px - 0.3125rem‬‬)',
 					'choice'        => 'font-size',
 				),
-				array(
-					'element'       => 'h3 .h3',
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'variant',
-				),
-				array(
-					'element'       => 'h3 .h3',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h3 .h3',
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => 'h3 .h3',
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
 
 				array(
-					'element'       => 'h4 .h4',
+					'element'       => array( 'h4', '.h4' ),
 					'property'      => 'font-size',
 					'value_pattern' => 'calc($ - ‭1.8125‬‬rem)',
 					'choice'        => 'font-size',
 				),
-				array(
-					'element'       => 'h4 .h4',
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'font-weight',
-				),
-				array(
-					'element'       => 'h4 .h4',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h4 .h4',
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => 'h4 .h4',
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
 
 				array(
-					'element'       => 'h5 .h5',
+					'element'       => array( 'h5', '.h5' ),
 					'property'      => 'font-size',
 					'value_pattern' => 'calc($ - 2rem)',
 					'choice'        => 'font-size',
 				),
-				array(
-					'element'       => 'h5 .h5',
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'font-weight',
-				),
-				array(
-					'element'       => 'h5 .h5',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h5 .h5',
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => 'h5 .h5',
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
 
 				array(
-					'element'       => 'h6 .h6',
+					'element'       => array( 'h6', '.h6' ),
 					'property'      => 'font-size',
 					'value_pattern' => 'calc($ - 2.25rem)',
 					'choice'        => 'font-size',
 				),
-				array(
-					'element'       => 'h6 .h6',
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'font-weight',
-				),
-				array(
-					'element'       => 'h6 .h6',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h6 .h6',
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => 'h6 .h6',
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
+
 			),
 		] );
 
@@ -493,7 +399,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_title',
 			'label'    => esc_html__( 'Footer Title', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => __("Need a project?", 'wp-manifest'),
+			'default'  => __( "Need a project?", 'wp-manifest' ),
 			'priority' => 10,
 		] );
 
@@ -503,7 +409,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_phone',
 			'label'    => esc_html__( 'Phone', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => __("(239) 555-0108", 'wp-manifest'),
+			'default'  => __( "(239) 555-0108", 'wp-manifest' ),
 			'priority' => 10,
 		] );
 
@@ -513,7 +419,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'footer_email',
 			'label'    => esc_html__( 'Email', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => __("tanya.hill@example.com", 'wp-manifest'),
+			'default'  => __( "tanya.hill@example.com", 'wp-manifest' ),
 			'priority' => 10,
 		] );
 
@@ -522,7 +428,7 @@ if ( function_exists( 'Kirki' ) ) {
 			'settings' => 'copyright_text',
 			'label'    => esc_html__( 'Copyright Text', 'wp-manifest' ),
 			'section'  => 'footer',
-			'default'  => __("© Copyright Manifest Theme. Allrights reserved", 'wp-manifest'),
+			'default'  => __( "© Copyright Manifest Theme. Allrights reserved", 'wp-manifest' ),
 			'priority' => 10,
 		] );
 
