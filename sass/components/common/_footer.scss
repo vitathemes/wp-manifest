@@ -1,6 +1,7 @@
 .c-footer {
   background-color: #FAFAFA;
   padding: 128px 0;
+  color: $wp-manifest__heading-color;
 
   @media #{$mobile} {
     padding: 64px 0;

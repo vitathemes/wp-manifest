@@ -26,8 +26,12 @@
     list-style: none;
 
     li {
-      margin-bottom: 1em;
+      margin-bottom: 1.5em;
     }
+  }
+
+  a:hover {
+    color: $wp-manifest__body-color;
   }
 
 	.search-form {

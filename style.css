@@ -1505,7 +1505,11 @@ ol.children:last-child {
 }
 
 .s-widget .menu li {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
+}
+
+.s-widget a:hover {
+	color: var(--base-font-color);
 }
 
 .s-widget .search-form {
@@ -2229,6 +2233,7 @@ ol.children:last-child {
 .c-footer {
 	background-color: #FAFAFA;
 	padding: 128px 0;
+	color: var(--headings-colors);
 }
 
 @media only screen and (max-width: 560px) {
