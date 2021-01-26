@@ -34,6 +34,7 @@
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
+		button.classList.toggle( 'is-active' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
@@ -48,6 +49,7 @@
 
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
+			button.classList.remove( 'is-active' );
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );

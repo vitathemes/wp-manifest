@@ -80,7 +80,8 @@
 }
 
 .c-header__logo {
-
+  min-width: 20%;
+  margin-right: 32px;
 }
 
 .c-header__site-title {
@@ -180,9 +181,9 @@
 
 // Search
 
-.c-header__search-toggle.dashicons {
-  width: 25px;
-  height: 25px;
+.c-header__search-toggle {
+  width: 19px;
+  height: 19px;
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 5;
@@ -191,6 +192,12 @@
   appearance: none;
   padding: 0;
   color: $wp-manifest__heading-color;
+  position: relative;
+  line-height: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .c-header__search-toggle.c-header__search-toggle--close {

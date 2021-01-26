@@ -553,6 +553,178 @@ html {
 	margin-left: -1rem;
 }
 
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	padding: 15px 15px;
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+.hamburger:hover {
+	opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+	opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+	background-color: #000;
+}
+
+.hamburger-box {
+	width: 30px;
+	height: 22px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -1px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	width: 30px;
+	height: 2px;
+	background-color: #000;
+	border-radius: 4px;
+	position: absolute;
+	transition-property: transform;
+	transition-duration: 0.15s;
+	transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+	content: "";
+	display: block;
+}
+
+.hamburger-inner::before {
+	top: -10px;
+}
+
+.hamburger-inner::after {
+	bottom: -10px;
+}
+
+/*
+   * 3DX
+   */
+.hamburger--3dx .hamburger-box {
+	perspective: 60px;
+}
+
+.hamburger--3dx .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx.is-active .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateY(180deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}
+
+/*
+   * 3DX Reverse
+   */
+.hamburger--3dx-r .hamburger-box {
+	perspective: 60px;
+}
+
+.hamburger--3dx-r .hamburger-inner {
+	transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx-r .hamburger-inner::before, .hamburger--3dx-r .hamburger-inner::after {
+	transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx-r.is-active .hamburger-inner {
+	background-color: transparent !important;
+	transform: rotateY(-180deg);
+}
+
+.hamburger--3dx-r.is-active .hamburger-inner::before {
+	transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx-r.is-active .hamburger-inner::after {
+	transform: translate3d(0, -10px, 0) rotate(-45deg);
+}
+
+.o-search-icon {
+	cursor: pointer;
+	width: 19px;
+	height: 19px;
+	position: relative;
+	display: inline-block;
+}
+
+.o-search-icon::before {
+	width: 16px;
+	height: 16px;
+	border: 2px solid #000;
+	border-radius: 12px;
+}
+
+.o-search-icon::after {
+	width: 8px;
+	height: 0;
+	border-bottom: 2px solid #000;
+	transform: rotate(45deg) translateY(-2px);
+	bottom: 0;
+	right: 0;
+}
+
+@media only screen and (max-width: 560px) {
+	.o-search-icon {
+		display: block;
+		order: 3;
+	}
+}
+
+.o-search-icon::after,
+.o-search-icon::before {
+	content: "";
+	position: absolute;
+	transform-origin: center;
+	border-color: #000;
+	display: block;
+	transition: all 200ms ease-in-out;
+	will-change: transform, width, border;
+}
+
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
@@ -2108,7 +2280,7 @@ ol.children:last-child {
 }
 
 .c-blog-carousel__nav__link {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: var(--headings-colors);
 	margin-right: 24px;
 }
@@ -2387,6 +2559,11 @@ ol.children:last-child {
 	}
 }
 
+.c-header__logo {
+	min-width: 20%;
+	margin-right: 32px;
+}
+
 .c-header__site-title {
 	margin: 0;
 	font-weight: bold;
@@ -2471,9 +2648,9 @@ ol.children:last-child {
 	color: var(--base-font-color);
 }
 
-.c-header__search-toggle.dashicons {
-	width: 25px;
-	height: 25px;
+.c-header__search-toggle {
+	width: 19px;
+	height: 19px;
 	font-size: 1.5rem;
 	cursor: pointer;
 	z-index: 5;
@@ -2482,6 +2659,12 @@ ol.children:last-child {
 	appearance: none;
 	padding: 0;
 	color: var(--headings-colors);
+	position: relative;
+	line-height: 0;
+}
+
+.c-header__search-toggle:hover {
+	background-color: transparent;
 }
 
 .c-header__search-toggle.c-header__search-toggle--close {
@@ -2781,9 +2964,21 @@ ol.children:last-child {
 	margin-top: auto;
 }
 
+.c-post__main__excerpt__link {
+	color: var(--headings-colors);
+}
+
+.c-post__main__excerpt__link:hover, .c-post__main__excerpt__link:hover span {
+	color: var(--base-font-color-secondary);
+}
+
 .c-post__main__title {
 	transition: 0.25s;
 	line-height: 1.66em;
+}
+
+.c-post__main__title:hover {
+	color: var(--base-font-color-secondary);
 }
 
 .c-post__header__category {
@@ -3009,16 +3204,17 @@ ol.children:last-child {
 .c-slider__title {
 	font-weight: normal;
 	font-size: 1rem;
+	transition: 0.25s;
 	margin: 15px 0 0 0;
 }
 
 .c-slider__slide-link {
-	color: #000;
+	color: var(--headings-colors);
 	text-decoration: none;
 }
 
-.c-slider__slide-link::after {
-	content: unset !important;
+.c-slider__slide-link:hover .c-slider__title {
+	color: var(--base-font-color-secondary);
 }
 
 .c-slider__slide__image-wrapper {

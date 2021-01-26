@@ -39,7 +39,11 @@ if ( $latest_posts->have_posts() ):
                                         </a>
                                     </div>
 									<?php if ( get_theme_mod( 'show_excerpt_archive', true ) ): ?>
-                                        <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags( get_the_excerpt() ) ); ?></p>
+                                        <p class="c-post__main__excerpt u-margin-none"><?php echo esc_html( strip_tags( get_the_excerpt() ) ); ?>
+                                        <a class="c-post__main__excerpt__link" href="<?php the_permalink(); ?>" aria-label="Read more about <?php the_title(); ?>">More
+                                            <span class="dashicons dashicons-arrow-right-alt2"></span>
+                                        </a>
+                                        </p>
 									<?php endif; ?>
                                 </div>
                             </main>

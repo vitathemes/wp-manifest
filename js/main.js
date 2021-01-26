@@ -10,7 +10,6 @@ var slider;
                 prevNextButtons: false,
                 pageDots: false,
                 wrapAround: true,
-                autoPlay: 5000,
                 cellAlign: 'center',
                 initialIndex: 0,
                 imagesLoaded: true,
@@ -88,25 +87,15 @@ var slider;
 
 
         var searchToggle = document.querySelector('.js-search-toggle');
-        var searchCloseToggle = document.querySelector('.js-search-toggle-close');
         var searchForm = document.querySelector('.js-search-form');
         searchToggle.addEventListener('click', function () {
 
-            searchToggle.style.opacity = '0';
-            searchCloseToggle.style.display = 'block';
             searchForm.classList.toggle('is-open');
             searchForm.querySelector('input[type="search"]').focus();
         });
 
-        searchCloseToggle.addEventListener('click', function () {
-            searchToggle.style.opacity = '1';
-            searchCloseToggle.style.display = 'none';
-            searchForm.classList.toggle('is-open');
-        });
-
         searchForm.querySelector('input[type="search"]').onblur = function(){
             searchToggle.style.opacity = '1';
-            searchCloseToggle.style.display = 'none';
             searchForm.classList.toggle('is-open');
         };
     });
@@ -178,12 +167,12 @@ for (el of menuLinks) {
     });
 }
 
-( function() {
-    var dropdown = document.getElementById( 'cat' );
-    function onCatChange() {
-        if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-            location.href = window.location.origin + "/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
-        }
-    }
-    dropdown.onchange = onCatChange;
-})();
+// ( function() {
+//     var dropdown = document.getElementById( 'cat' );
+//     function onCatChange() {
+//         if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+//             location.href = window.location.origin + "/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+//         }
+//     }
+//     dropdown.onchange = onCatChange;
+// })();
