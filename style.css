@@ -1256,6 +1256,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .comments-desc {
 	margin: 0;
+	color: var(--base-font-color);
 }
 
 .comments-header {
