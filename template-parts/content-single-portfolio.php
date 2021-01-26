@@ -1,4 +1,4 @@
-<article class="c-portfolio c-portfolio--single">
+<article class="c-portfolio c-portfolio--single o-page">
     <ul class="c-portfolio__content__categories">
 		<?php
 		//get all the categories the post belongs to

@@ -39,6 +39,10 @@
 .c-categories--post-cats {
   margin-bottom: 0;
   color: $wp-manifest__body-secondary-color;
+
+  @media #{$mobile} {
+    width: 100%;
+  }
 }
 
 
@@ -51,6 +55,7 @@
   @media #{$mobile} {
     flex-wrap: wrap;
     margin-bottom: 48px;
+    width: 100%;
 
     label {
       width: 100%;

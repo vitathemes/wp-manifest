@@ -51,15 +51,16 @@
 }
 
 .c-portfolio__content__categories__item__link {
-  color: $wp-manifest__main-primary-color;
+  color: $wp-manifest__heading-color;
 }
 
 .c-portfolio__image {
   width: 50%;
+  margin-bottom: 120px;
 
   @media #{$mobile} {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 48px;
   }
 }
 
@@ -83,7 +84,7 @@
 
   .c-portfolio__title {
     margin: 0 0 64px;
-    color: $wp-manifest__body-color;
+    color: $wp-manifest__heading-color;
   }
 
   .c-portfolio__image {

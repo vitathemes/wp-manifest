@@ -210,11 +210,11 @@ ol.children:last-child {
 
 .comment-form-cookies {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   color: $wp-manifest__body-secondary-color;
 
   input {
-    margin: 5px 10px 0 0;
+    margin: 0 10px 0 0;
   }
 }
 

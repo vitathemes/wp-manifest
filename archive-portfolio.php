@@ -24,7 +24,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <div id="content" class="content">
+        <div id="content" class="content o-page">
 			<?php if ( have_posts() ) :
 				/* Start the Loop */
 				while ( have_posts() ) :

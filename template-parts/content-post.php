@@ -6,7 +6,7 @@
     </header>
     <?php endif; ?>
     <main class="c-post__main u-flex u-dir-column">
-        <div class="u-flex u-align-center u-justify-between u-margin-bottom-small">
+        <div class="u-flex u-flex-wrap-m u-align-center u-justify-between u-margin-bottom-small">
 			<?php wp_manifest_show_post_data(get_the_ID()); ?>
         </div>
         <div class="u-flex u-dir-column u-flex-grow">
