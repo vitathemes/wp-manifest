@@ -1,0 +1,39 @@
+.o-search-icon {
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    border-radius: 12px;
+  }
+
+  &::after {
+    width: 8px;
+    height: 0;
+    border-bottom: 2px solid #000;
+    transform: rotate(45deg) translateY(-2px);
+    bottom: 0;
+    right: 0;
+  }
+
+  @media #{$mobile} {
+    display: block;
+    order: 3;
+  }
+}
+
+.o-search-icon::after,
+.o-search-icon::before {
+  content: "";
+  position: absolute;
+  transform-origin: center;
+  border-color: #000;
+  display: block;
+  transition: all 200ms ease-in-out;
+  will-change: transform, width, border;
+}

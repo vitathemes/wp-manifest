@@ -13,5 +13,16 @@ if ( get_theme_mod( 'categories_type', 'dropdown' ) == "list" ) { ?>
 			<?php wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
         </div>
     </div>
+    <script>
+        ( function() {
+            var dropdown = document.getElementById( 'cat' );
+            function onCatChange() {
+                if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+                    location.href = "<?php echo home_url();?>/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+                }
+            }
+            dropdown.onchange = onCatChange;
+        })();
+    </script>
 	<?php
 }

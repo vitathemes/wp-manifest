@@ -29,22 +29,26 @@
                 <div class="c-header__logo">
 					<?php
 					wp_manifest_header_branding();
-					 ?>
+					?>
                 </div><!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation c-header__menu">
-                    <button class="menu-toggle c-header__toggle" aria-controls="primary-menu" aria-expanded="false">
-                        <span class="dashicons dashicons-menu-alt"></span></button>
+                    <button class="menu-toggle c-header__toggle hamburger hamburger--3dx" aria-controls="primary-menu" aria-expanded="false">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                    </button>
 					<?php wp_manifest_show_menu(); ?>
-                    <?php if (get_theme_mod('search_icon_header', 1) == 1): ?>
-                    <div class="c-header__search">
-                        <button class="dashicons dashicons-search js-search-toggle c-header__search-toggle"></button>
-                        <div class="c-header__search__form js-search-form s-header-search">
-		                    <?php get_search_form(); ?>
+					<?php if ( get_theme_mod( 'search_icon_header', 1 ) == 1 ): ?>
+                        <div class="c-header__search">
+                            <button class="js-search-toggle c-header__search-toggle">
+                                <span class="o-search-icon"></span>
+                            </button>
+                            <div class="c-header__search__form js-search-form s-header-search">
+								<?php get_search_form(); ?>
+                            </div>
                         </div>
-                        <span class="dashicons dashicons-search js-search-toggle js-search-toggle-close  c-header__search-toggle c-header__search-toggle--close"></span>
-                    </div>
-                    <?php endif; ?>
+					<?php endif; ?>
                 </nav><!-- #site-navigation -->
             </div>
         </div>

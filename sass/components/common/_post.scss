@@ -51,9 +51,21 @@
   margin-top: auto;
 }
 
+.c-post__main__excerpt__link {
+  color: $wp-manifest__heading-color;
+
+  &:hover , &:hover span{
+    color: $wp-manifest__body-secondary-color;
+  }
+}
+
 .c-post__main__title {
   transition: $wp-manifest_global-transition;
   line-height: 1.66em;
+
+  &:hover {
+    color: $wp-manifest__body-secondary-color;
+  }
 }
 
 .c-post__header__category {

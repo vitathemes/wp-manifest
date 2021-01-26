@@ -214,8 +214,8 @@ if ( ! function_exists( 'wp_manifest_enqueue_customizer_style' ) ) {
 
 add_action( 'admin_enqueue_scripts', 'wp_manifest_enqueue_customizer_style' );
 
-add_image_size( 'wp_manifest_medium', 540, 0, true );
-add_image_size( 'wp_manifest_medium_square', 540, 540, true );
+add_image_size( 'wp_manifest_medium', 544, 0, true );
+add_image_size( 'wp_manifest_medium_square', 544, 544, true );
 add_image_size( 'wp_manifest_medium_thumbnail', 350, 250, true );
 add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
 
@@ -244,6 +244,7 @@ if ( function_exists( 'LibWp' ) ) {
 		       'comments'
 	       ] )
 	       ->setArgument( 'show_ui', true )
+	       ->setArgument( 'show_in_rest', true )
 	       ->register();
 
 	LibWp()->taxonomy()
