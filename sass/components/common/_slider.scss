@@ -14,6 +14,10 @@
   padding: 0 15px;
   transition: 0.2s ease-in-out;
 
+  @media #{$mobile} {
+    padding: 0 8px;
+  }
+
   &:hover, &:focus-within {
 
     .c-slider__image {

@@ -67,8 +67,12 @@
 
 .c-post__header__date {
   font-size: 0.75rem;
-  line-height: 1.25em;
+  line-height: 1.5em;
   color: $wp-manifest__body-secondary-color;
+
+  @media #{$mobile} {
+    margin-top: 8px;
+  }
 }
 
 .c-post--single {
@@ -76,6 +80,11 @@
 
   @media #{$mobile} {
     margin-bottom: 56px !important;
+  }
 
+  &.portfolio {
+    @media #{$mobile} {
+      padding-top: 32px;
+    }
   }
 }

@@ -23,4 +23,10 @@
       color: $wp-manifest__heading-color;
     }
   }
+
+  .c-posts__title {
+    @media #{$mobile} {
+      width: 100%;
+    }
+  }
 }
