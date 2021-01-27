@@ -48,6 +48,10 @@
   @media #{$mobile} {
     margin: 16px 0 8px;
   }
+
+  &:hover {
+    color: $wp-manifest__body-secondary-color;
+  }
 }
 
 .c-blog-carousel__content__cell__excerpt {
@@ -86,5 +90,9 @@
 
   &.is-active {
     color: $wp-manifest__body-secondary-color;
+  }
+
+  &:hover {
+    color: $wp-manifest__body-color;
   }
 }

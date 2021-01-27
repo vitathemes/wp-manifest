@@ -80,6 +80,7 @@
     max-width: 100%;
     width: auto;
     color: $wp-manifest__body-color;
+    cursor: pointer;
 
     @media #{$desktop} {
       min-width: 407px;
