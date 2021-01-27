@@ -20,6 +20,7 @@
 .c-portfolio__content__title {
   color: $wp-manifest__heading-color;
   margin: 0 0 24px;
+  transition: $wp-manifest_global-transition;
 
   &::after {
     margin-top: 0.75em;
@@ -28,6 +29,10 @@
     height: 1px;
     background-color: $wp-manifest__neutral-gray-color;
     display: block;
+  }
+
+  &:hover {
+    color: $wp-manifest__body-secondary-color;
   }
 }
 
@@ -52,6 +57,10 @@
 
 .c-portfolio__content__categories__item__link {
   color: $wp-manifest__heading-color;
+
+  &:hover {
+    color: $wp-manifest__body-secondary-color;
+  }
 }
 
 .c-portfolio__image {

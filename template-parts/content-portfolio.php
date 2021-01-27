@@ -1,6 +1,8 @@
 <article class="c-portfolio">
 	<div class="c-portfolio__content">
+        <a href="<?php the_permalink(); ?>">
 		<?php the_title('<h3 class="c-portfolio__content__title">', '</h3>') ?>
+        </a>
 		<ul class="c-portfolio__content__categories">
 			<?php
 			//get all the categories the post belongs to
@@ -19,7 +21,7 @@
 			<?php echo get_the_date('Y') ?>
 		</time>
 		<div class="c-portfolio__content__read-more">
-			<a class="c-btn c-btn--primary" href="<?php the_permalink(); ?>">View More <span class="c-btn__icon dashicons dashicons-arrow-right-alt"></span></a>
+			<a class="c-btn c-btn--primary" href="<?php the_permalink(); ?>">More Details <span class="c-btn__icon dashicons dashicons-arrow-right-alt"></span></a>
 		</div>
 	</div>
 	<div class="c-portfolio__image">
