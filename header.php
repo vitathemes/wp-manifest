@@ -44,9 +44,7 @@
                             <button class="js-search-toggle c-header__search-toggle">
                                 <span class="o-search-icon"></span>
                             </button>
-                            <div class="c-header__search__form js-search-form s-header-search">
-								<?php get_search_form(); ?>
-                            </div>
+							<?php get_search_form(); ?>
                         </div>
 					<?php endif; ?>
                 </nav><!-- #site-navigation -->

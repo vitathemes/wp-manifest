@@ -37,3 +37,22 @@
   transition: all 200ms ease-in-out;
   will-change: transform, width, border;
 }
+
+.o-search-icon--large {
+  width: 28px;
+  height: 28px;
+
+  &::before {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #000;
+    border-radius: 12px;
+  }
+
+  &::after {
+    width: 14px;
+    height: 0;
+    transform: rotate(45deg) translateY(-4px);
+    border-bottom: 3px solid #000;
+  }
+}
