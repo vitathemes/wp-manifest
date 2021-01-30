@@ -65,7 +65,7 @@
 
 .c-portfolio__image {
   width: 50%;
-  margin-bottom: 120px;
+  margin-bottom: 64px;
 
   @media #{$mobile} {
     width: 100%;
@@ -103,6 +103,10 @@
 
   .c-portfolio__content {
     width: 100%;
+    max-width: 736px;
+    margin-right: auto;
+    margin-left: auto;
+    color: $wp-manifest__heading-color;
   }
 }
 
