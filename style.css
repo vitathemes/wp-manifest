@@ -3455,7 +3455,7 @@ ol.children:last-child {
 
 .c-portfolio__image {
 	width: 50%;
-	margin-bottom: 120px;
+	margin-bottom: 64px;
 }
 
 @media only screen and (max-width: 560px) {
@@ -3492,6 +3492,10 @@ ol.children:last-child {
 
 .c-portfolio--single .c-portfolio__content {
 	width: 100%;
+	max-width: 736px;
+	margin-right: auto;
+	margin-left: auto;
+	color: var(--headings-colors);
 }
 
 .c-portfolio__tagline {
@@ -3887,7 +3891,7 @@ ol.children:last-child {
 --------------------------------------------------------------*/
 .wp-block-button__link, .wp-block-file .wp-block-file__button {
 	padding: 8px 32px;
-	font-weight: bold;
+	font-weight: 400;
 	font-size: 1rem;
 	line-height: 166.3%;
 	cursor: pointer;
