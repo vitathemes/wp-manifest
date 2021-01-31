@@ -7,10 +7,12 @@ if ( get_theme_mod( 'categories_type', 'dropdown' ) == "list" ) { ?>
     </div>
 	<?php
 } elseif ( get_theme_mod( 'categories_type', 'dropdown' ) == "dropdown" ) { ?>
-    <div class="u-row">
-        <div class="c-categories c-categories--dropdown">
-            <label for="cat">Categories:</label>
-			<?php wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
+    <div class="u-row u-flex-wrap u-dir-column-m">
+        <div class="o-col o-col--1/1">
+            <div class="c-categories c-categories--dropdown">
+                <label for="cat">Categories:</label>
+		        <?php wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
+            </div>
         </div>
     </div>
     <script>

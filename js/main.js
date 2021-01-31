@@ -6,6 +6,7 @@ var slider;
     document.addEventListener('DOMContentLoaded', function () {
         if (document.querySelector('.js-slider') !== null) {
             var $slides = document.querySelectorAll('.js-slider-slide').length;
+
             var sliderOptions = {
                 prevNextButtons: false,
                 pageDots: false,
@@ -17,6 +18,20 @@ var slider;
                 pauseAutoPlayOnHover: false,
                 accessibility: true
             };
+
+            if (window.matchMedia("(max-width: 568px)").matches) {
+                var sliderOptions = {
+                    prevNextButtons: false,
+                    pageDots: false,
+                    wrapAround: false,
+                    cellAlign: 'center',
+                    initialIndex: 0,
+                    imagesLoaded: true,
+                    groupCells: 2,
+                    pauseAutoPlayOnHover: false,
+                    accessibility: true
+                };
+            }
 
             if ($slides < 4) {
                 sliderOptions.cellAlign = 'left';

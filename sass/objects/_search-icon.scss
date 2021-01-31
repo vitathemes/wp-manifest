@@ -8,22 +8,30 @@
   &::before {
     width: 16px;
     height: 16px;
-    border: 2px solid #000;
+    border: 2px solid $wp-manifest__heading-color;
     border-radius: 12px;
+    transition: $wp-manifest_global-transition;
   }
 
   &::after {
     width: 8px;
     height: 0;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid $wp-manifest__heading-color;
     transform: rotate(45deg) translateY(-2px);
     bottom: 0;
     right: 0;
+    transition: $wp-manifest_global-transition;
   }
 
   @media #{$mobile} {
     display: block;
     order: 3;
+  }
+
+  &:hover {
+    &::after, &::before {
+      border-color: $wp-manifest__body-color;
+    }
   }
 }
 
@@ -32,7 +40,7 @@
   content: "";
   position: absolute;
   transform-origin: center;
-  border-color: #000;
+  border-color: $wp-manifest__heading-color;
   display: block;
   transition: all 200ms ease-in-out;
   will-change: transform, width, border;
@@ -45,7 +53,7 @@
   &::before {
     width: 24px;
     height: 24px;
-    border: 3px solid #000;
+    border: 3px solid $wp-manifest__heading-color;
     border-radius: 12px;
   }
 
@@ -53,6 +61,6 @@
     width: 14px;
     height: 0;
     transform: rotate(45deg) translateY(-4px);
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid $wp-manifest__heading-color;
   }
 }
