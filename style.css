@@ -706,17 +706,19 @@ html {
 .o-search-icon::before {
 	width: 16px;
 	height: 16px;
-	border: 2px solid #000;
+	border: 2px solid var(--headings-colors);
 	border-radius: 12px;
+	transition: 0.25s;
 }
 
 .o-search-icon::after {
 	width: 8px;
 	height: 0;
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid var(--headings-colors);
 	transform: rotate(45deg) translateY(-2px);
 	bottom: 0;
 	right: 0;
+	transition: 0.25s;
 }
 
 @media only screen and (max-width: 560px) {
@@ -726,12 +728,16 @@ html {
 	}
 }
 
+.o-search-icon:hover::after, .o-search-icon:hover::before {
+	border-color: var(--base-font-color);
+}
+
 .o-search-icon::after,
 .o-search-icon::before {
 	content: "";
 	position: absolute;
 	transform-origin: center;
-	border-color: #000;
+	border-color: var(--headings-colors);
 	display: block;
 	transition: all 200ms ease-in-out;
 	will-change: transform, width, border;
@@ -745,7 +751,7 @@ html {
 .o-search-icon--large::before {
 	width: 24px;
 	height: 24px;
-	border: 3px solid #000;
+	border: 3px solid var(--headings-colors);
 	border-radius: 12px;
 }
 
@@ -753,7 +759,7 @@ html {
 	width: 14px;
 	height: 0;
 	transform: rotate(45deg) translateY(-4px);
-	border-bottom: 3px solid #000;
+	border-bottom: 3px solid var(--headings-colors);
 }
 
 .o-popup {
@@ -3276,6 +3282,15 @@ ol.children:last-child {
 	max-width: 574px;
 }
 
+@media only screen and (max-width: 560px) {
+	.c-slider__slide {
+		width: 90%;
+	}
+	.c-slider__slide .c-slider__slide-link {
+		width: 100%;
+	}
+}
+
 .c-slider__slide-main {
 	padding: 0 15px;
 	transition: 0.2s ease-in-out;
@@ -3300,8 +3315,8 @@ ol.children:last-child {
 
 @media only screen and (max-width: 560px) {
 	.c-slider__image {
-		max-height: 285px;
-		max-width: 285px;
+		max-height: 100%;
+		max-width: 100%;
 	}
 }
 
