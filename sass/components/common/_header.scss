@@ -114,10 +114,14 @@
   text-transform: uppercase;
   font-family: var(--heading-typography-font-family);
   font-size: var(--text-typography-font-size);
-  color: $wp-manifest__body-color;
+  color: $wp-manifest__heading-color;
 
-  &:visited {
-    color: $wp-manifest__body-color;
+  &:visited , a:visited {
+    color: $wp-manifest__heading-color;
+  }
+
+  &:hover {
+    $wp-manifest__body-color
   }
 }
 

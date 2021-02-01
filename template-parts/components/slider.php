@@ -20,7 +20,7 @@ if ( $posts_category != 0 ) {
 
 $portfolios = new WP_Query($portfolios_params);
 
-if ( $portfolios->have_posts() ) :
+if ( $portfolios->have_posts() && post_type_exists('portfolio') ) :
 	?>
     <section class="c-slider">
         <div class="c-slider__main js-slider">
