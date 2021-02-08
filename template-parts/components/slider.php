@@ -22,7 +22,7 @@ $portfolios = new WP_Query($portfolios_params);
 
 if ( $portfolios->have_posts() && post_type_exists('portfolio') ) :
 	?>
-    <section class="c-slider">
+    <section class="c-slider s-slider">
         <div class="c-slider__main js-slider">
 			<?php
 			while ( $portfolios->have_posts() ): $portfolios->the_post();
