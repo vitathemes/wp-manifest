@@ -71,3 +71,14 @@ Kirki WordPress Customizer Framework
 License: MIT License
 Source: https://opensource.org/licenses/MIT
 
+Lato Font by Łukasz Dziedzic
+License: Open Font License, https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/Lato?query=Lato&preview.text_type=custom#about
+
+Red Hat Display Font by MCKL
+License: Open Font License, https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/Red+Hat+Display?query=red+hat&preview.text_type=custom#about
+
+TGMPA by Thomas Griffin, Gary Jones, Juliette
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: http://tgmpluginactivation.com/
