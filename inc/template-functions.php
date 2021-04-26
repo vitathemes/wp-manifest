@@ -267,13 +267,13 @@ if ( ! function_exists( 'wp_manifest_header_branding' ) ) {
 			if ( is_front_page() && is_home() ) {
 				?>
                 <h1 class="c-header__site-title">
-                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h1>
 				<?php
 			} else {
 				?>
                 <h2 class="c-header__site-title">
-                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h2>
 				<?php
 			}

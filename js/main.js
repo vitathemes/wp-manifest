@@ -201,3 +201,8 @@ wp_manifest_searchSubmitEl.addEventListener('blur', function (e) {
     }
 });
 
+wp_manifest_menuToggle.addEventListener('blur', function (e) {
+    if (wp_manifest_isBackward) {
+        wp_manifest_menuLinks[wp_manifest_lastIndex].focus();
+    }
+});

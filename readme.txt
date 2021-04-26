@@ -28,14 +28,18 @@ WP Manifest includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.1.0 =
+* Fixed bugs
+* Added new features to customizer
+
+= 1.0.0 =
 * Initial release
 
-== Credits ==
+== Installation ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-
+1. Simply install as a normal WordPress theme and activate.
+2. In your admin panel, navigate to `Appearance > Customize`.
+3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
 
 == Screenshots ==
 

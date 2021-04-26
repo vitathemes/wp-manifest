@@ -224,6 +224,7 @@ add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
  * Register Post-type and Taxonomy
  */
 if ( function_exists( 'LibWp' ) ) {
+
 	LibWp()->postType()
 	       ->setName( 'portfolio' )
 	       ->setLabels( [
@@ -235,6 +236,7 @@ if ( function_exists( 'LibWp' ) ) {
 		       'view_item'     => __( 'View Portfolio', 'wp-manifest' ),
 		       'all_items'     => __( 'All Portfolio', 'wp-manifest' ),
 	       ] )
+	       ->setArgument( 'taxonomies', array( 'tags', 'category', 'types' ) )
 	       ->setFeatures( [
 		       'title',
 		       'editor',
@@ -244,12 +246,12 @@ if ( function_exists( 'LibWp' ) ) {
 		       'comments'
 	       ] )
 	       ->setArgument( 'show_ui', true )
-	       ->setArgument( 'show_in_rest', true )
+	       //->setArgument( 'show_in_rest', true )
 	       ->register();
 
 	LibWp()->taxonomy()
 	       ->setName( 'types' )
-	       ->setPostTypes( 'portfolio' )
+	       ->setPostTypes( array('portfolio') )
 	       ->setLabels( [
 		       'name'          => _x( 'Category', 'taxonomy general name', 'wp-manifest' ),
 		       'singular_name' => _x( 'Category', 'taxonomy singular name', 'wp-manifest' ),
