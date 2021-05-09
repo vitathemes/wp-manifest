@@ -55,15 +55,15 @@ add_action( 'wp_head', 'wp_manifest_pingback_header' );
 // Menu Generator
 if ( ! function_exists( 'wp_manifest_show_menu' ) ) {
 	function wp_manifest_show_menu() {
+		$wp_manifest_menu_args = array(
+			'theme_location' => 'primary-menu',
+			'menu_class'     => 's-header-menu c-header__menu-items',
+			'menu_id'        => 'primary-menu',
+			'container'      => '',
+			'depth'          => 3,
+			'walker'         => new Wp_manifest_walker_nav()
+		);
 		if ( has_nav_menu( 'primary-menu' ) ) {
-			$wp_manifest_menu_args = array(
-				'theme_location' => 'primary-menu',
-				'menu_class'     => 's-header-menu c-header__menu-items',
-				'menu_id'        => 'primary-menu',
-				'container'      => '',
-				'depth'          => 3,
-				'walker'         => new Wp_manifest_walker_nav()
-			);
 			wp_nav_menu( $wp_manifest_menu_args );
 		}
 	}

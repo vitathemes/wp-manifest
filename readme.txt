@@ -1,30 +1,18 @@
 === WP Manifest ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-Requires at least: 4.5
-Tested up to: 5.5.1
+Requires at least: 5.0
+Tested up to: 5.7.1
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A Minimal theme called WP Manifest.
+WP Manifest is one of the best-looking, clean, and optimized themes from the VeronaLabs family. This elegant, minimal, and fast theme is lightweight and perfectly suited to bloggers. Working with WP Manifest is easy and you can use it for free.
 
 == Description ==
 
 WP Manifest is a newborn theme. Clean, simple and fast.
-
-== Installation ==
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-WP Manifest includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
@@ -61,7 +49,24 @@ GNU General Public License for more details.
 
 WP-Manifest is distributed under the terms of the GNU GPL version 2.0
 
+
 WP-Manifest bundles the following third-party resources:
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/678391
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/849017
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/398
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/1281852
 
 Flickity by desandro
 License: GNU GPLv3
