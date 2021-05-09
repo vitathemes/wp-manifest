@@ -275,7 +275,7 @@ if ( function_exists( 'Kirki' ) ) {
 
 // -- Typography Fields --
 // <editor-fold desc="Typography">
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -286,7 +286,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h1',
-				'label'           => esc_html__( 'H1', 'holo' ),
+				'label'           => esc_html__( 'H1', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',
@@ -325,7 +325,7 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 			] );
 
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -336,7 +336,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h2',
-				'label'           => esc_html__( 'H2', 'holo' ),
+				'label'           => esc_html__( 'H2', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',
@@ -375,7 +375,7 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 			] );
 
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -386,7 +386,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h3',
-				'label'           => esc_html__( 'H3', 'holo' ),
+				'label'           => esc_html__( 'H3', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',
@@ -425,7 +425,7 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 			] );
 
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -436,7 +436,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h4',
-				'label'           => esc_html__( 'H4', 'holo' ),
+				'label'           => esc_html__( 'H4', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',
@@ -475,7 +475,7 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 			] );
 
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -486,7 +486,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h5',
-				'label'           => esc_html__( 'H5', 'holo' ),
+				'label'           => esc_html__( 'H5', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',
@@ -525,7 +525,7 @@ if ( function_exists( 'Kirki' ) ) {
 				),
 			] );
 
-		Kirki::add_field( 'holo',
+		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
 					[
@@ -536,7 +536,7 @@ if ( function_exists( 'Kirki' ) ) {
 				],
 				'type'            => 'typography',
 				'settings'        => 'typography_h6',
-				'label'           => esc_html__( 'H6', 'holo' ),
+				'label'           => esc_html__( 'H6', 'wp-manifest' ),
 				'section'         => 'typography',
 				'default'         => [
 					'font-family'    => 'Red Hat Display',

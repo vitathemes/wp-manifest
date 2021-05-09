@@ -232,19 +232,19 @@ if ( function_exists( 'LibWp' ) ) {
 		$postTypeName = 'portfolio';
 		return $postTypeName;
 	}
-	add_filter('libwp_post_type_1_name', 'manifest_modify_libwp_post_type');
+	add_filter('libwp_post_type_1_name', 'wp-manifest_modify_libwp_post_type');
 	/**
 	 * Modify LibWP post type arguments (If libwp plugin exist)
 	 */
 	function manifest_modify_libwp_post_type_argument($postTypeArguments){
 		$postTypeArguments['labels'] = [
-			'name'          => _x('Portfolio', 'Post type general name', 'manifest'),
-			'singular_name' => _x('Portfolio', 'Post type singular name', 'manifest'),
-			'menu_name'     => _x('Portfolio', 'Admin Menu text', 'manifest'),
-			'add_new'       => __('Add New', 'manifest'),
-			'edit_item'     => __('Edit Portfolio', 'manifest'),
-			'view_item'     => __('View Portfolio', 'manifest'),
-			'all_items'     => __('All Portfolio', 'manifest'),
+			'name'          => _x('Portfolio', 'Post type general name', 'wp-manifest'),
+			'singular_name' => _x('Portfolio', 'Post type singular name', 'wp-manifest'),
+			'menu_name'     => _x('Portfolio', 'Admin Menu text', 'wp-manifest'),
+			'add_new'       => __('Add New', 'wp-manifest'),
+			'edit_item'     => __('Edit Portfolio', 'wp-manifest'),
+			'view_item'     => __('View Portfolio', 'wp-manifest'),
+			'all_items'     => __('All Portfolio', 'wp-manifest'),
 		];
 		$postTypeArguments['rewrite']['slug'] = 'portfolio';
 		$postTypeArguments['public'] = true;
@@ -262,7 +262,7 @@ if ( function_exists( 'LibWp' ) ) {
 		$postTypeArguments['supports'] = array('title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields');
 		return $postTypeArguments;
 	}
-	add_filter('libwp_post_type_1_arguments', 'manifest_modify_libwp_post_type_argument');
+	add_filter('libwp_post_type_1_arguments', 'wp-manifest_modify_libwp_post_type_argument');
 	/**
 	 * Modify LibWP taxonomy name (If libwp plugin exist)
 	 */
@@ -270,7 +270,7 @@ if ( function_exists( 'LibWp' ) ) {
 		$taxonomyName = 'portfolio_category';
 		return $taxonomyName;
 	}
-	add_filter('libwp_taxonomy_1_name', 'manifest_modify_libwp_taxonomy_name');
+	add_filter('libwp_taxonomy_1_name', 'wp-manifest_modify_libwp_taxonomy_name');
 	/**
 	 * Modify LibWP taxonomy post type name (If libwp plugin exist)
 	 */
@@ -278,25 +278,25 @@ if ( function_exists( 'LibWp' ) ) {
 		$taxonomyPostTypeName = 'portfolio';
 		return $taxonomyPostTypeName;
 	}
-	add_filter('libwp_taxonomy_1_post_type', 'manifest_modify_libwp_taxonomy_post_type_name');
+	add_filter('libwp_taxonomy_1_post_type', 'wp-manifest_modify_libwp_taxonomy_post_type_name');
 	/**
 	 * Modify LibWP taxonomy name (If libwp plugin exist)
 	 */
 	function manifest_modify_libwp_taxonomy_argument($taxonomyArguments){
 		$taxonomyArguments['labels'] = [
-			'name'          => _x('Portfolio Categories', 'taxonomy general name', 'manifest'),
-			'singular_name' => _x('Portfolio Category', 'taxonomy singular name', 'manifest'),
-			'search_items'  => __('Search Portfolio Categories', 'manifest'),
-			'all_items'     => __('All Portfolio Categories', 'manifest'),
-			'edit_item'     => __('Edit Portfolio Category', 'manifest'),
-			'add_new_item'  => __('Add New Portfolio Category', 'manifest'),
-			'new_item_name' => __('New Portfolio Category Name', 'manifest'),
-			'menu_name'     => __('Portfolio Categories', 'manifest'),
+			'name'          => _x('Portfolio Categories', 'taxonomy general name', 'wp-manifest'),
+			'singular_name' => _x('Portfolio Category', 'taxonomy singular name', 'wp-manifest'),
+			'search_items'  => __('Search Portfolio Categories', 'wp-manifest'),
+			'all_items'     => __('All Portfolio Categories', 'wp-manifest'),
+			'edit_item'     => __('Edit Portfolio Category', 'wp-manifest'),
+			'add_new_item'  => __('Add New Portfolio Category', 'wp-manifest'),
+			'new_item_name' => __('New Portfolio Category Name', 'wp-manifest'),
+			'menu_name'     => __('Portfolio Categories', 'wp-manifest'),
 		];
 		$taxonomyArguments['rewrite']['slug'] = 'portfolio_category';
 		$taxonomyArguments['show_in_rest'] = true;
 		return $taxonomyArguments;
 	}
-	add_filter('libwp_taxonomy_1_arguments', 'manifest_modify_libwp_taxonomy_argument');
+	add_filter('libwp_taxonomy_1_arguments', 'wp-manifest_modify_libwp_taxonomy_argument');
 
 }

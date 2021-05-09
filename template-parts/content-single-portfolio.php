@@ -5,8 +5,8 @@
 		$wp_manifest_categories = wp_get_post_terms( get_the_ID(), 'portfolio_category' );
 		//loop through them
 		if ( $wp_manifest_categories ) {
-			foreach ( $wp_manifest_categories as $cat ) {
-				$wp_manifest_cat = get_category( $cat );
+			foreach ( $wp_manifest_categories as $c ) {
+				$wp_manifest_cat = get_category( $c );
 				//get the name of the category
 				$wp_manifest_cat_id = $wp_manifest_cat->term_id;
 				//make a list item containing a link to the category
