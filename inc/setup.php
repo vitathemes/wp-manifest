@@ -224,41 +224,79 @@ add_image_size( 'wp_manifest_large_thumbnail', 540, 250, true );
  * Register Post-type and Taxonomy
  */
 if ( function_exists( 'LibWp' ) ) {
-	LibWp()->postType()
-	       ->setName( 'portfolio' )
-	       ->setLabels( [
-		       'name'          => _x( 'Portfolio', 'Post type general name', 'wp-manifest' ),
-		       'singular_name' => _x( 'Portfolio', 'Post type singular name', 'wp-manifest' ),
-		       'menu_name'     => _x( 'Portfolio', 'Admin Menu text', 'wp-manifest' ),
-		       'add_new'       => __( 'Add New', 'wp-manifest' ),
-		       'edit_item'     => __( 'Edit Portfolio', 'wp-manifest' ),
-		       'view_item'     => __( 'View Portfolio', 'wp-manifest' ),
-		       'all_items'     => __( 'All Portfolio', 'wp-manifest' ),
-	       ] )
-	       ->setFeatures( [
-		       'title',
-		       'editor',
-		       'author',
-		       'thumbnail',
-		       'excerpt',
-		       'comments'
-	       ] )
-	       ->setArgument( 'show_ui', true )
-	       ->setArgument( 'show_in_rest', true )
-	       ->register();
 
-	LibWp()->taxonomy()
-	       ->setName( 'types' )
-	       ->setPostTypes( 'portfolio' )
-	       ->setLabels( [
-		       'name'          => _x( 'Category', 'taxonomy general name', 'wp-manifest' ),
-		       'singular_name' => _x( 'Category', 'taxonomy singular name', 'wp-manifest' ),
-		       'search_items'  => __( 'Search Categories', 'wp-manifest' ),
-		       'all_items'     => __( 'All Categories', 'wp-manifest' ),
-		       'edit_item'     => __( 'Edit Type', 'wp-manifest' ),
-		       'add_new_item'  => __( 'Add New Category', 'wp-manifest' ),
-		       'new_item_name' => __( 'New Category Name', 'wp-manifest' ),
-		       'menu_name'     => __( 'Categories', 'wp-manifest' ),
-	       ] )
-	       ->register();
+	/**
+	 * Modify LibWP post type name (If libwp plugin exist)
+	 */
+	function wp_manifest_modify_libwp_post_type($postTypeName){
+		$postTypeName = 'portfolio';
+		return $postTypeName;
+	}
+	add_filter('libwp_post_type_1_name', 'wp_manifest_modify_libwp_post_type');
+	/**
+	 * Modify LibWP post type arguments (If libwp plugin exist)
+	 */
+	function wp_manifest_modify_libwp_post_type_argument($postTypeArguments){
+		$postTypeArguments['labels'] = [
+			'name'          => _x('Portfolio', 'Post type general name', 'wp-manifest'),
+			'singular_name' => _x('Portfolio', 'Post type singular name', 'wp-manifest'),
+			'menu_name'     => _x('Portfolio', 'Admin Menu text', 'wp-manifest'),
+			'add_new'       => __('Add New', 'wp-manifest'),
+			'edit_item'     => __('Edit Portfolio', 'wp-manifest'),
+			'view_item'     => __('View Portfolio', 'wp-manifest'),
+			'all_items'     => __('All Portfolio', 'wp-manifest'),
+		];
+		$postTypeArguments['rewrite']['slug'] = 'portfolio';
+		$postTypeArguments['public'] = true;
+		$postTypeArguments['show_ui'] = true;
+		$postTypeArguments['menu_position'] = 5;
+		$postTypeArguments['show_in_nav_menus'] = true;
+		$postTypeArguments['show_in_admin_bar'] = true;
+		$postTypeArguments['hierarchical'] = true;
+		$postTypeArguments['can_export'] = true;
+		$postTypeArguments['has_archive'] = true;
+		$postTypeArguments['exclude_from_search'] = false;
+		$postTypeArguments['publicly_queryable'] = true;
+		$postTypeArguments['capability_type'] = 'post';
+		$postTypeArguments['show_in_rest'] = true;
+		$postTypeArguments['supports'] = array('title', 'editor' , 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields');
+		return $postTypeArguments;
+	}
+	add_filter('libwp_post_type_1_arguments', 'wp_manifest_modify_libwp_post_type_argument');
+	/**
+	 * Modify LibWP taxonomy name (If libwp plugin exist)
+	 */
+	function wp_manifest_modify_libwp_taxonomy_name($taxonomyName){
+		$taxonomyName = 'portfolio_category';
+		return $taxonomyName;
+	}
+	add_filter('libwp_taxonomy_1_name', 'wp_manifest_modify_libwp_taxonomy_name');
+	/**
+	 * Modify LibWP taxonomy post type name (If libwp plugin exist)
+	 */
+	function wp_manifest_modify_libwp_taxonomy_post_type_name($taxonomyPostTypeName){
+		$taxonomyPostTypeName = 'portfolio';
+		return $taxonomyPostTypeName;
+	}
+	add_filter('libwp_taxonomy_1_post_type', 'wp_manifest_modify_libwp_taxonomy_post_type_name');
+	/**
+	 * Modify LibWP taxonomy name (If libwp plugin exist)
+	 */
+	function wp_manifest_modify_libwp_taxonomy_argument($taxonomyArguments){
+		$taxonomyArguments['labels'] = [
+			'name'          => _x('Portfolio Categories', 'taxonomy general name', 'wp-manifest'),
+			'singular_name' => _x('Portfolio Category', 'taxonomy singular name', 'wp-manifest'),
+			'search_items'  => __('Search Portfolio Categories', 'wp-manifest'),
+			'all_items'     => __('All Portfolio Categories', 'wp-manifest'),
+			'edit_item'     => __('Edit Portfolio Category', 'wp-manifest'),
+			'add_new_item'  => __('Add New Portfolio Category', 'wp-manifest'),
+			'new_item_name' => __('New Portfolio Category Name', 'wp-manifest'),
+			'menu_name'     => __('Portfolio Categories', 'wp-manifest'),
+		];
+		$taxonomyArguments['rewrite']['slug'] = 'portfolio_category';
+		$taxonomyArguments['show_in_rest'] = true;
+		return $taxonomyArguments;
+	}
+	add_filter('libwp_taxonomy_1_arguments', 'wp_manifest_modify_libwp_taxonomy_argument');
+
 }

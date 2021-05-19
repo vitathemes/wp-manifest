@@ -55,15 +55,15 @@ add_action( 'wp_head', 'wp_manifest_pingback_header' );
 // Menu Generator
 if ( ! function_exists( 'wp_manifest_show_menu' ) ) {
 	function wp_manifest_show_menu() {
+		$wp_manifest_menu_args = array(
+			'theme_location' => 'primary-menu',
+			'menu_class'     => 's-header-menu c-header__menu-items',
+			'menu_id'        => 'primary-menu',
+			'container'      => '',
+			'depth'          => 3,
+			'walker'         => new Wp_manifest_walker_nav()
+		);
 		if ( has_nav_menu( 'primary-menu' ) ) {
-			$wp_manifest_menu_args = array(
-				'theme_location' => 'primary-menu',
-				'menu_class'     => 's-header-menu c-header__menu-items',
-				'menu_id'        => 'primary-menu',
-				'container'      => '',
-				'depth'          => 3,
-				'walker'         => new Wp_manifest_walker_nav()
-			);
 			wp_nav_menu( $wp_manifest_menu_args );
 		}
 	}
@@ -87,10 +87,10 @@ if ( ! function_exists( 'wp_manifest_theme_settings' ) ) {
 	add_action( 'admin_head', 'wp_manifest_theme_settings' );
 	add_action( 'wp_head', 'wp_manifest_theme_settings' );
 	function wp_manifest_theme_settings() {
-		$wp_indigo_theme_typography = wp_manifest_typography();
+		$wp_manifest_theme_typography = wp_manifest_typography();
 		?>
         <style>
-            <?php echo esc_html($wp_indigo_theme_typography); ?>
+            <?php echo esc_html($wp_manifest_theme_typography); ?>
         </style>
 		<?php
 	}
@@ -267,13 +267,13 @@ if ( ! function_exists( 'wp_manifest_header_branding' ) ) {
 			if ( is_front_page() && is_home() ) {
 				?>
                 <h1 class="c-header__site-title">
-                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h1>
 				<?php
 			} else {
 				?>
                 <h2 class="c-header__site-title">
-                    <a tabindex="1" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 </h2>
 				<?php
 			}

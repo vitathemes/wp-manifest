@@ -275,83 +275,305 @@ if ( function_exists( 'Kirki' ) ) {
 
 // -- Typography Fields --
 // <editor-fold desc="Typography">
-		Kirki::add_field( 'wp-manifest', [
-			'type'      => 'typography',
-			'settings'  => 'headings_typography',
-			'label'     => esc_html__( 'Headlines', 'wp-manifest' ),
-			'section'   => 'typography',
-			'default'   => [
-				'font-family'    => 'Red Hat Display',
-				'font-size'      => '48px',
-				'variant'        => '400',
-				'line-height'    => '1.5',
-				'letter-spacing' => '0.1em'
-			],
-			'transport' => 'auto',
-			'priority'  => 10,
-			'output'    => array(
-				array(
-					'element' => 'h1',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h1',
+				'label'           => esc_html__( 'H1', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '48px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h1', '.h1' ),
+					),
 				),
-				array(
-					'element' => '.h1',
-				),
-				array(
-					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
-					'property'      => 'font-weight',
-					'value_pattern' => '$',
-					'choice'        => 'font-weight',
-				),
-				array(
-					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
-					'property'      => 'letter-spacing',
-					'value_pattern' => '$',
-					'choice'        => 'letter-spacing',
-				),
-				array(
-					'element'       => array( 'h2', '.h2', 'h3', '.h3', 'h4', '.h4', 'h5', '.h5', 'h6', '.h6' ),
-					'property'      => 'line-height',
-					'value_pattern' => '$',
-					'choice'        => 'line-height',
-				),
+			] );
 
-				array(
-					'element'       => array( 'h2', '.h2' ),
-					'property'      => 'font-size',
-					'value_pattern' => 'calc($ - ‭0.9375‬‬rem)',
-					'choice'        => 'font-size',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h2',
+				'label'           => esc_html__( 'H2', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '33px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h2', '.h2' ),
+					),
 				),
+			] );
 
-				array(
-					'element'       => array( 'h3', '.h3' ),
-					'property'      => 'font-size',
-					'value_pattern' => 'calc(48px - 0.3125rem‬‬)',
-					'choice'        => 'font-size',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h3',
+				'label'           => esc_html__( 'H3', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '23px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h3', '.h3' ),
+					),
 				),
+			] );
 
-				array(
-					'element'       => array( 'h4', '.h4' ),
-					'property'      => 'font-size',
-					'value_pattern' => 'calc($ - ‭1.8125‬‬rem)',
-					'choice'        => 'font-size',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h4',
+				'label'           => esc_html__( 'H4', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '19px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h4', '.h4' ),
+					),
 				),
+			] );
 
-				array(
-					'element'       => array( 'h5', '.h5' ),
-					'property'      => 'font-size',
-					'value_pattern' => 'calc($ - 2rem)',
-					'choice'        => 'font-size',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h5',
+				'label'           => esc_html__( 'H5', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '16px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h5', '.h5' ),
+					),
 				),
+			] );
 
-				array(
-					'element'       => array( 'h6', '.h6' ),
-					'property'      => 'font-size',
-					'value_pattern' => 'calc($ - 2.25rem)',
-					'choice'        => 'font-size',
+		Kirki::add_field( 'wp-manifest',
+			[
+				'active_callback' => [
+					[
+						'setting'  => 'use_google_fonts',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'type'            => 'typography',
+				'settings'        => 'typography_h6',
+				'label'           => esc_html__( 'H6', 'wp-manifest' ),
+				'section'         => 'typography',
+				'default'         => [
+					'font-family'    => 'Red Hat Display',
+					'font-size'      => '14px',
+					'font-weight'    => '400',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
+				],
+				'choices'         => [
+					'fonts' => [
+						'standard' => [
+							'Arial',
+							'sans-serif',
+							'sans',
+							'Helvetica',
+							'Verdana',
+							'Trebuchet',
+							'Georgia',
+							'Times New Roman',
+							'Palatino',
+							'Myriad Pro',
+							'Lucida',
+							'Gill Sans',
+							'Impact',
+							'monospace',
+							'Tahoma',
+						],
+					],
+				],
+				'transport'       => 'auto',
+				'priority'        => 10,
+				'output'          => array(
+					array(
+						'element' => array( 'h6', '.h6' ),
+					),
 				),
-
-			),
-		] );
+			] );
 
 		Kirki::add_field( 'wp-manifest', [
 			'type'      => 'typography',

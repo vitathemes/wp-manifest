@@ -75,3 +75,47 @@
   max-height: 544px;
   max-width: 544px;
 }
+
+
+.s-slider {
+
+  .flickity-button {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+    width: 72px;
+    height: 72px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+
+      .flickity-button-icon {
+        fill: $wp-manifest__body-color;
+      }
+    }
+
+    .flickity-button-icon {
+      width: 50%;
+      height: 50%;
+      fill: $wp-manifest__body-secondary-color;
+    }
+
+    &.previous {
+      .flickity-button-icon {
+        top: 25%;
+        left: 35%;
+      }
+    }
+
+    &.next {
+      .flickity-button-icon {
+        top: 25%;
+        right: 35%;
+        left: unset;
+      }
+    }
+  }
+}

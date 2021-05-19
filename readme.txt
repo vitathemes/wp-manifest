@@ -1,41 +1,33 @@
 === WP Manifest ===
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-Requires at least: 4.5
-Tested up to: 5.5.1
+Requires at least: 5.0
+Tested up to: 5.7.1
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A Minimal theme called WP Manifest.
+WP Manifest is one of the best-looking, clean, and optimized themes from the VeronaLabs family. This elegant, minimal, and fast theme is lightweight and perfectly suited to bloggers. Working with WP Manifest is easy and you can use it for free.
 
 == Description ==
 
 WP Manifest is a newborn theme. Clean, simple and fast.
 
-== Installation ==
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-WP Manifest includes support for WooCommerce and for Infinite Scroll in Jetpack.
-
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.1.0 =
+* Fixed bugs
+* Added new features to customizer
+
+= 1.0.0 =
 * Initial release
 
-== Credits ==
+== Installation ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-
+1. Simply install as a normal WordPress theme and activate.
+2. In your admin panel, navigate to `Appearance > Customize`.
+3. Put the finishing touches on your website by adding a logo, typography settings, custom colors and etc.
 
 == Screenshots ==
 
@@ -57,7 +49,24 @@ GNU General Public License for more details.
 
 WP-Manifest is distributed under the terms of the GNU GPL version 2.0
 
+
 WP-Manifest bundles the following third-party resources:
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/678391
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/849017
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/398
+
+Image for theme screenshot, Copyright PxHere
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/1281852
 
 Flickity by desandro
 License: GNU GPLv3
@@ -71,3 +80,14 @@ Kirki WordPress Customizer Framework
 License: MIT License
 Source: https://opensource.org/licenses/MIT
 
+Lato Font by Łukasz Dziedzic
+License: Open Font License, https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/Lato?query=Lato&preview.text_type=custom#about
+
+Red Hat Display Font by MCKL
+License: Open Font License, https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Source: https://fonts.google.com/specimen/Red+Hat+Display?query=red+hat&preview.text_type=custom#about
+
+TGMPA by Thomas Griffin, Gary Jones, Juliette
+License: GNU GPLv2, https://opensource.org/licenses/GPL-2.0
+Source: http://tgmpluginactivation.com/

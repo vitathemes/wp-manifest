@@ -3,9 +3,9 @@ Theme Name: WP Manifest
 Theme URI: https://vitathemes.com/theme/wp-manifest/
 Author: VitaThemes
 Author URI: https://vitathemes.com
-Description: Just another minimal WordPress theme
-Version: 1.1.0
-Tested up to: 5.6
+Description: WP Manifest is one of the best-looking, clean, and optimized themes from the VeronaLabs family. This elegant, minimal, and fast theme is lightweight and perfectly suited to bloggers. Working with WP Manifest is easy and you can use it for free.
+Version: 1.1.1
+Tested up to: 5.7.2
 Requires PHP: 5.6
 License: GPL-2.0-or-later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2664,10 +2664,14 @@ ol.children:last-child {
 	text-transform: uppercase;
 	font-family: var(--heading-typography-font-family);
 	font-size: var(--text-typography-font-size);
-	color: var(--base-font-color);
+	color: var(--headings-colors);
 }
 
-.c-header__site-title:visited {
+.c-header__site-title:visited, .c-header__site-title a:visited {
+	color: var(--headings-colors);
+}
+
+.c-header__site-title:hover {
 	color: var(--base-font-color);
 }
 
@@ -3347,6 +3351,42 @@ ol.children:last-child {
 	overflow: hidden;
 	max-height: 544px;
 	max-width: 544px;
+}
+
+.s-slider .flickity-button {
+	background: rgba(255, 255, 255, 0.35);
+	border-radius: 0;
+	width: 72px;
+	height: 72px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.s-slider .flickity-button:hover {
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.s-slider .flickity-button:hover .flickity-button-icon {
+	fill: var(--base-font-color);
+}
+
+.s-slider .flickity-button .flickity-button-icon {
+	width: 50%;
+	height: 50%;
+	fill: var(--base-font-color-secondary);
+}
+
+.s-slider .flickity-button.previous .flickity-button-icon {
+	top: 25%;
+	left: 35%;
+}
+
+.s-slider .flickity-button.next .flickity-button-icon {
+	top: 25%;
+	right: 35%;
+	left: unset;
 }
 
 /* Slider
