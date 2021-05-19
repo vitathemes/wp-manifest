@@ -87,10 +87,10 @@ if ( ! function_exists( 'wp_manifest_theme_settings' ) ) {
 	add_action( 'admin_head', 'wp_manifest_theme_settings' );
 	add_action( 'wp_head', 'wp_manifest_theme_settings' );
 	function wp_manifest_theme_settings() {
-		$wp_indigo_theme_typography = wp_manifest_typography();
+		$wp_manifest_theme_typography = wp_manifest_typography();
 		?>
         <style>
-            <?php echo esc_html($wp_indigo_theme_typography); ?>
+            <?php echo esc_html($wp_manifest_theme_typography); ?>
         </style>
 		<?php
 	}
