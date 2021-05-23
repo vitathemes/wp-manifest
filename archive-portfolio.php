@@ -12,7 +12,7 @@ get_header(); ?>
         <div class="u-row u-flex-nowrap-m u-flex-wrap">
             <div class="o-col--1/2">
 				<?php
-				printf( '<h1 class="c-archive__title">%s</h1>', 'Works' );
+				printf( '<h1 class="c-archive__title">%s</h1>', esc_html__('Works', 'wp-manifest') );
 				?>
             </div>
             <div class="o-col--1/2">

@@ -9,22 +9,12 @@ if ( get_theme_mod( 'categories_type', 'dropdown' ) == "list" ) { ?>
 } elseif ( get_theme_mod( 'categories_type', 'dropdown' ) == "dropdown" ) { ?>
     <div class="u-row u-flex-wrap u-dir-column-m">
         <div class="o-col o-col--1/1">
-            <div class="c-categories c-categories--dropdown">
+            <div class="c-categories c-categories--dropdown s-categories--dropdown">
                 <label for="cat">Categories:</label>
-		        <?php wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
+		        <?php //wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
+		        <?php the_widget('WP_Widget_Categories', array('title' => ' ', 'dropdown' => true) ); ?>
             </div>
         </div>
     </div>
-    <script>
-        ( function() {
-            var dropdown = document.getElementById( 'cat' );
-            function onCatChange() {
-                if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-                    location.href = "<?php echo esc_url( home_url( '/' ) ); ?>?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
-                }
-            }
-            dropdown.onchange = onCatChange;
-        })();
-    </script>
 	<?php
 }

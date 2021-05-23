@@ -21,7 +21,7 @@
 			<?php echo get_the_date('Y') ?>
 		</time>
 		<div class="c-portfolio__content__read-more">
-			<a class="c-btn c-btn--primary" href="<?php the_permalink(); ?>">More Details <span class="c-btn__icon dashicons dashicons-arrow-right-alt"></span></a>
+			<a class="c-btn c-btn--primary" href="<?php the_permalink(); ?>"><?php esc_html_e('More Details', 'wp-manifest'); ?> <span class="c-btn__icon dashicons dashicons-arrow-right-alt"></span></a>
 		</div>
 	</div>
 	<div class="c-portfolio__image">
