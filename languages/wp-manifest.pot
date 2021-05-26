@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-26 11:20+0430\n"
+"POT-Creation-Date: 2021-05-26 12:20+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,7 +254,7 @@ msgstr ""
 msgid "(239) 555-0108"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:642 inc/template-functions.php:178
 msgid "Email"
 msgstr ""
 
@@ -375,6 +375,10 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: inc/template-functions.php:175
+msgid "Name"
+msgstr ""
+
 #: inc/template-functions.php:176
 msgid "Enter Your Name"
 msgstr ""
@@ -383,8 +387,17 @@ msgstr ""
 msgid "Enter Your Email"
 msgstr ""
 
+#: inc/template-functions.php:181
+msgid "Website"
+msgstr ""
+
 #: inc/template-functions.php:182
 msgid "Enter Your Website"
+msgstr ""
+
+#: inc/template-functions.php:183
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
 msgstr ""
 
 #: inc/template-functions.php:193
@@ -1312,8 +1325,12 @@ msgstr ""
 msgid "Tags:"
 msgstr ""
 
-#: template-parts/content.php:11
+#: template-parts/content.php:11 template-parts/components/info.php:9
 msgid "Read More"
+msgstr ""
+
+#: template-parts/components/categories-list.php:13
+msgid "Categories:"
 msgstr ""
 
 #: template-parts/components/latest-posts.php:13

@@ -10,8 +10,7 @@ if ( get_theme_mod( 'categories_type', 'dropdown' ) == "list" ) { ?>
     <div class="u-row u-flex-wrap u-dir-column-m">
         <div class="o-col o-col--1/1">
             <div class="c-categories c-categories--dropdown s-categories--dropdown">
-                <label for="cat">Categories:</label>
-		        <?php //wp_dropdown_categories( array( 'show_option_all' => 'All', 'depth' => 1 ) ); ?>
+                <label for="cat"><?php echo esc_html__('Categories:', 'wp-manifest') ?></label>
 		        <?php the_widget('WP_Widget_Categories', array('title' => ' ', 'dropdown' => true) ); ?>
             </div>
         </div>
