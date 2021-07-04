@@ -105,6 +105,13 @@
 .c-header__logo {
   min-width: 20%;
   margin-right: 32px;
+
+  .custom-logo {
+    max-width: 225px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+  }
 }
 
 .c-header__site-title {
@@ -395,12 +402,20 @@
   }
 }
 
-
 // 404
-
 .c-header__404 {
 
   .c-header__main {
     justify-content: center;
+  }
+}
+
+// Dark Mode
+.is-dark-mode {
+  .sub-menu {
+
+    li a {
+      color: #000;
+    }
   }
 }

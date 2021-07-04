@@ -4,7 +4,7 @@ Theme URI: https://vitathemes.com/theme/wp-manifest/
 Author: VitaThemes
 Author URI: https://vitathemes.com
 Description: Just another minimal WordPress theme
-Version: 1.1.3
+Version: 1.1.4
 Tested up to: 5.7
 Requires PHP: 5.6
 License: GPL-2.0-or-later
@@ -1047,7 +1047,7 @@ a:hover {
 }
 
 a:hover .dashicons {
-	color: #000000;
+	color: inherit;
 }
 
 a:active, a:focus {
@@ -2471,7 +2471,7 @@ ol.children:last-child {
 }
 
 .c-btn--primary .dashicons {
-	color: #FFFFFF;
+	color: inherit;
 }
 
 .c-btn--primary:hover {
@@ -2484,7 +2484,7 @@ ol.children:last-child {
 }
 
 .c-btn--primary:hover .dashicons {
-	color: #FFFFFF;
+	color: inherit;
 }
 
 .c-btn__icon {
@@ -2529,7 +2529,7 @@ ol.children:last-child {
 }
 
 .is-dark-mode .c-btn--primary:hover .dashicons {
-	color: #FFFFFF;
+	color: inherit;
 }
 
 /* Component Base
@@ -2742,6 +2742,13 @@ ol.children:last-child {
 .c-header__logo {
 	min-width: 20%;
 	margin-right: 32px;
+}
+
+.c-header__logo .custom-logo {
+	max-width: 225px;
+	max-height: 50px;
+	width: auto;
+	height: auto;
 }
 
 .c-header__site-title {
@@ -3029,6 +3036,10 @@ ol.children:last-child {
 
 .c-header__404 .c-header__main {
 	justify-content: center;
+}
+
+.is-dark-mode .sub-menu li a {
+	color: #000;
 }
 
 /* Info
@@ -3422,7 +3433,7 @@ ol.children:last-child {
 }
 
 .c-slider__slide-main:hover .c-slider__image, .c-slider__slide-main:focus-within .c-slider__image {
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 .c-slider__image {

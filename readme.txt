@@ -16,6 +16,10 @@ WP Manifest is a newborn theme. Clean, simple and fast.
 
 == Changelog ==
 
+= 1.1.4 =
+* Fixed dark mode bugs
+* Limited the logo size
+
 = 1.1.3 =
 * Fixed bugs
 

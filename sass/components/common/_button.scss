@@ -18,7 +18,7 @@
   }
 
   .dashicons {
-    color: $wp-manifest__neutral-white;
+    color: inherit;
   }
 
   &:hover {
@@ -30,7 +30,7 @@
     }
 
     .dashicons {
-      color: $wp-manifest__neutral-white;
+      color: inherit;
     }
   }
 }
@@ -82,7 +82,7 @@
       background-color: $wp-manifest__neutral-dark-gray-color;
 
       .dashicons {
-        color: $wp-manifest__neutral-white;
+        color: inherit;
       }
     }
   }
