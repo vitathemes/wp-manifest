@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 15:35+0330\n"
+"POT-Creation-Date: 2021-05-26 12:20+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: 404.php:27
+#: 404.php:33
 msgid "404"
 msgstr ""
 
-#: 404.php:28
+#: 404.php:34
 msgid ""
 "Oops! we are sorry, but the page you requested was not found. You can search "
 "or return to home."
 msgstr ""
 
-#: 404.php:29
+#: 404.php:35
 msgid "Go Home"
 msgstr ""
 
-#: archive-portfolio.php:44 archive.php:36 comments.php:71 index.php:107
+#: archive-portfolio.php:15
+msgid "Works"
+msgstr ""
+
+#: archive-portfolio.php:44 archive.php:36 comments.php:71 index.php:106
 #: search.php:43 taxonomy.php:33
 msgid "Previous"
 msgstr ""
 
-#: archive-portfolio.php:45 archive.php:37 comments.php:72 index.php:108
-#: search.php:44 taxonomy.php:34 inc/merlin-config.php:46
+#: archive-portfolio.php:45 archive.php:37 comments.php:72 index.php:107
+#: search.php:44 taxonomy.php:34
 msgid "Next"
 msgstr ""
 
@@ -60,6 +64,10 @@ msgstr ""
 
 #: header.php:25
 msgid "Skip to content"
+msgstr ""
+
+#: index.php:22 inc/customizer.php:39
+msgid "Blog"
 msgstr ""
 
 #: search.php:16
@@ -89,10 +97,6 @@ msgstr ""
 
 #: inc/customizer.php:32
 msgid "Homepage"
-msgstr ""
-
-#: inc/customizer.php:39
-msgid "Blog"
 msgstr ""
 
 #: inc/customizer.php:46
@@ -206,336 +210,173 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: inc/customizer.php:281
-msgid "Headlines"
+#: inc/customizer.php:289
+msgid "H1"
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:339
+msgid "H2"
+msgstr ""
+
+#: inc/customizer.php:389
+msgid "H3"
+msgstr ""
+
+#: inc/customizer.php:439
+msgid "H4"
+msgstr ""
+
+#: inc/customizer.php:489
+msgid "H5"
+msgstr ""
+
+#: inc/customizer.php:539
+msgid "H6"
+msgstr ""
+
+#: inc/customizer.php:581
 msgid "Texts"
 msgstr ""
 
-#: inc/customizer.php:400
+#: inc/customizer.php:622
 msgid "Footer Title"
 msgstr ""
 
-#: inc/customizer.php:402
+#: inc/customizer.php:624
 msgid "Need a project?"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:632
 msgid "Phone"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:634
 msgid "(239) 555-0108"
 msgstr ""
 
-#: inc/customizer.php:420
+#: inc/customizer.php:642 inc/template-functions.php:178
 msgid "Email"
 msgstr ""
 
-#: inc/customizer.php:422
+#: inc/customizer.php:644
 msgid "tanya.hill@example.com"
 msgstr ""
 
-#: inc/customizer.php:429
+#: inc/customizer.php:651
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:431
+#: inc/customizer.php:653
 msgid "© Copyright Manifest Theme. Allrights reserved"
 msgstr ""
 
-#: inc/customizer.php:440 inc/customizer.php:477
+#: inc/customizer.php:662 inc/customizer.php:699
 msgid "Show thumbnail"
 msgstr ""
 
-#: inc/customizer.php:449 inc/customizer.php:486
+#: inc/customizer.php:671 inc/customizer.php:708
 msgid "Show categories"
 msgstr ""
 
-#: inc/customizer.php:458 inc/customizer.php:495
+#: inc/customizer.php:680 inc/customizer.php:717
 msgid "Show published date"
 msgstr ""
 
-#: inc/customizer.php:467
+#: inc/customizer.php:689
 msgid "Show excerpt"
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:726
 msgid "Show author"
 msgstr ""
 
-#: inc/customizer.php:513
+#: inc/customizer.php:735
 msgid "Show comments"
 msgstr ""
 
-#: inc/customizer.php:522
+#: inc/customizer.php:744
 msgid "Show share icons"
 msgstr ""
 
-#: inc/customizer.php:531
+#: inc/customizer.php:753
 msgid "Show tags"
-msgstr ""
-
-#: inc/merlin-config.php:38
-msgid "Theme Setup"
-msgstr ""
-
-#: inc/merlin-config.php:41
-#, php-format
-msgid "%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s"
-msgstr ""
-
-#: inc/merlin-config.php:42
-msgid "Return to the dashboard"
-msgstr ""
-
-#: inc/merlin-config.php:43
-msgid "Disable this wizard"
-msgstr ""
-
-#: inc/merlin-config.php:45
-msgid "Skip"
-msgstr ""
-
-#: inc/merlin-config.php:47
-msgid "Start"
-msgstr ""
-
-#: inc/merlin-config.php:48
-msgid "Cancel"
-msgstr ""
-
-#: inc/merlin-config.php:49 inc/merlin-config.php:50 inc/merlin-config.php:51
-#: inc/tgmpa/class-tgm-plugin-activation.php:2717
-msgid "Install"
-msgstr ""
-
-#: inc/merlin-config.php:52
-msgid "Import"
-msgstr ""
-
-#: inc/merlin-config.php:53 inc/tgmpa/class-tgm-plugin-activation.php:2726
-msgid "Activate"
-msgstr ""
-
-#: inc/merlin-config.php:54
-msgid "Later"
-msgstr ""
-
-#: inc/merlin-config.php:57
-#, php-format
-msgid "Activate %s"
-msgstr ""
-
-#: inc/merlin-config.php:59
-#, php-format
-msgid "%s is Activated"
-msgstr ""
-
-#: inc/merlin-config.php:61
-msgid "Enter your license key to enable remote updates and theme support."
-msgstr ""
-
-#: inc/merlin-config.php:62
-msgid "License key"
-msgstr ""
-
-#: inc/merlin-config.php:63
-msgid "The theme is already registered, so you can go to the next step!"
-msgstr ""
-
-#: inc/merlin-config.php:64
-msgid "Your theme is activated! Remote updates and theme support are enabled."
-msgstr ""
-
-#: inc/merlin-config.php:65
-msgid "Need help?"
-msgstr ""
-
-#: inc/merlin-config.php:68
-#, php-format
-msgid "Welcome to %s"
-msgstr ""
-
-#: inc/merlin-config.php:69
-msgid "Hi. Welcome back"
-msgstr ""
-
-#: inc/merlin-config.php:70
-msgid ""
-"This wizard will set up your theme, install plugins, and import content. It "
-"is optional & should take only a few minutes."
-msgstr ""
-
-#: inc/merlin-config.php:71
-msgid ""
-"You may have already run this theme setup wizard. If you would like to "
-"proceed anyway, click on the \"Start\" button below."
-msgstr ""
-
-#: inc/merlin-config.php:73
-msgid "Install Child Theme"
-msgstr ""
-
-#: inc/merlin-config.php:74
-msgid "You're good to go!"
-msgstr ""
-
-#: inc/merlin-config.php:75
-msgid ""
-"Let's build & activate a child theme so you may easily make theme changes."
-msgstr ""
-
-#: inc/merlin-config.php:76
-msgid ""
-"Your child theme has already been installed and is now activated, if it "
-"wasn't already."
-msgstr ""
-
-#: inc/merlin-config.php:77
-msgid "Learn about child themes"
-msgstr ""
-
-#: inc/merlin-config.php:78
-msgid ""
-"Awesome. Your child theme has already been installed and is now activated."
-msgstr ""
-
-#: inc/merlin-config.php:79
-msgid "Awesome. Your child theme has been created and is now activated."
-msgstr ""
-
-#: inc/merlin-config.php:81 inc/tgmpa/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
-msgstr ""
-
-#: inc/merlin-config.php:82
-msgid "You're up to speed!"
-msgstr ""
-
-#: inc/merlin-config.php:83
-msgid ""
-"Let's install some essential WordPress plugins to get your site up to speed."
-msgstr ""
-
-#: inc/merlin-config.php:84
-msgid ""
-"The required WordPress plugins are all installed and up to date. Press \"Next"
-"\" to continue the setup wizard."
-msgstr ""
-
-#: inc/merlin-config.php:85 inc/merlin-config.php:89
-msgid "Advanced"
-msgstr ""
-
-#: inc/merlin-config.php:87
-msgid "Import Content"
-msgstr ""
-
-#: inc/merlin-config.php:88
-msgid ""
-"Let's import content to your website, to help you get familiar with the "
-"theme."
-msgstr ""
-
-#: inc/merlin-config.php:91
-msgid "All done. Have fun!"
-msgstr ""
-
-#: inc/merlin-config.php:94
-#, php-format
-msgid "Your theme has been all set up. Enjoy your new theme by %s."
-msgstr ""
-
-#: inc/merlin-config.php:95
-msgid "Extras"
-msgstr ""
-
-#: inc/merlin-config.php:96
-msgid "View your website"
-msgstr ""
-
-#: inc/merlin-config.php:97
-msgid "Visit VitaThemes"
-msgstr ""
-
-#: inc/merlin-config.php:98
-msgid "Start Customizing"
 msgstr ""
 
 #: inc/setup.php:32
 msgid "Primary"
 msgstr ""
 
-#: inc/setup.php:230
+#: inc/setup.php:241
 msgctxt "Post type general name"
 msgid "Portfolio"
 msgstr ""
 
-#: inc/setup.php:231
+#: inc/setup.php:242
 msgctxt "Post type singular name"
 msgid "Portfolio"
 msgstr ""
 
-#: inc/setup.php:232
+#: inc/setup.php:243
 msgctxt "Admin Menu text"
 msgid "Portfolio"
 msgstr ""
 
-#: inc/setup.php:233
+#: inc/setup.php:244
 msgid "Add New"
 msgstr ""
 
-#: inc/setup.php:234
+#: inc/setup.php:245
 msgid "Edit Portfolio"
 msgstr ""
 
-#: inc/setup.php:235
+#: inc/setup.php:246
 msgid "View Portfolio"
 msgstr ""
 
-#: inc/setup.php:236
+#: inc/setup.php:247
 msgid "All Portfolio"
 msgstr ""
 
-#: inc/setup.php:254
+#: inc/setup.php:287
 msgctxt "taxonomy general name"
-msgid "Category"
+msgid "Portfolio Categories"
 msgstr ""
 
-#: inc/setup.php:255
+#: inc/setup.php:288
 msgctxt "taxonomy singular name"
-msgid "Category"
+msgid "Portfolio Category"
 msgstr ""
 
-#: inc/setup.php:256
-msgid "Search Categories"
+#: inc/setup.php:289
+msgid "Search Portfolio Categories"
 msgstr ""
 
-#: inc/setup.php:257
-msgid "All Categories"
+#: inc/setup.php:290
+msgid "All Portfolio Categories"
 msgstr ""
 
-#: inc/setup.php:258
-msgid "Edit Type"
+#: inc/setup.php:291
+msgid "Edit Portfolio Category"
 msgstr ""
 
-#: inc/setup.php:259
-msgid "Add New Category"
+#: inc/setup.php:292
+msgid "Add New Portfolio Category"
 msgstr ""
 
-#: inc/setup.php:260
-msgid "New Category Name"
+#: inc/setup.php:293
+msgid "New Portfolio Category Name"
 msgstr ""
 
-#: inc/setup.php:261
-msgid "Categories"
+#: inc/setup.php:294
+msgid "Portfolio Categories"
 msgstr ""
 
 #: inc/template-functions.php:11
 msgid "Primary Menu"
+msgstr ""
+
+#: inc/template-functions.php:175
+msgid "Name"
 msgstr ""
 
 #: inc/template-functions.php:176
@@ -546,8 +387,21 @@ msgstr ""
 msgid "Enter Your Email"
 msgstr ""
 
+#: inc/template-functions.php:181
+msgid "Website"
+msgstr ""
+
 #: inc/template-functions.php:182
 msgid "Enter Your Website"
+msgstr ""
+
+#: inc/template-functions.php:183
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: inc/template-functions.php:193
+msgid "Comment"
 msgstr ""
 
 #: inc/template-tags.php:30
@@ -591,6 +445,14 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
+#: inc/tgmpa-config.php:43
+msgid "Kirki Customizer Framework"
+msgstr ""
+
+#: inc/tgmpa-config.php:48
+msgid "LibWp"
+msgstr ""
+
 #: inc/classes/class_wp_manifest_walker_comment.php:55
 msgid "Your comment is awaiting moderation."
 msgstr ""
@@ -599,622 +461,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/merlin/class-merlin.php:453
-msgid "Something went wrong. Please refresh the page and try again!"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:599
-msgid "Please define default parameters in the form of an array."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:604
-msgid "Please define an SVG icon filename."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:713
-msgid "Welcome"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:720
-msgid "Child"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:726
-msgid "License"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:734
-msgid "Plugins"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:742 inc/merlin/class-merlin.php:1982
-msgid "Content"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:748
-msgid "Ready"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:853
-msgid "The welcome step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:947
-msgid "The license activation step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1017
-msgid "The child theme installation step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1104
-#: inc/tgmpa/class-tgm-plugin-activation.php:2273
-msgid "Required"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1105
-msgid "req"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1145
-msgid "The plugin installation step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1191
-msgid "Select Demo"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1229
-msgid "The content import step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1309
-msgid "The final step has been displayed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1386
-msgid "The existing child theme was activated"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1403
-msgid "The newly generated child theme was activated"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1424
-msgid ""
-"Yikes! The theme activation failed. Please try again or contact support."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1433
-msgid "Please add your license key before attempting to activate one."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1446
-msgid "The license activation was performed with the following results"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1492 inc/merlin/class-merlin.php:1533
-msgid "An error occurred, please try again."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1505
-#, php-format
-msgid "Your license key expired on %s."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1511
-msgid "Your license key has been disabled."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1515
-msgid ""
-"This appears to be an invalid license key. Please try again or contact "
-"support."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1520
-msgid "Your license is not active for this URL."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1525
-#, php-format
-msgid "This appears to be an invalid license key for %s."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1529
-msgid "Your license key has reached its activation limit."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1623
-msgid "The child theme functions.php content was generated"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1654
-msgid "The child theme style.css content was generated"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1688
-msgid ""
-"The child theme screenshot was copied to the child theme, with the following "
-"result"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1690
-msgid "The child theme screenshot was not generated, because of these results"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1719
-msgid "Activating"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1735
-msgid "Updating"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1751 inc/merlin/class-merlin.php:1767
-#: inc/merlin/class-merlin.php:1985 inc/merlin/class-merlin.php:1998
-#: inc/merlin/class-merlin.php:2011 inc/merlin/class-merlin.php:2024
-#: inc/merlin/class-merlin.php:2037 inc/merlin/class-merlin.php:2050
-#: inc/merlin/class-merlin.php:2093
-msgid "Installing"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1759
-msgid "A plugin with the following data will be processed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1771
-msgid "A plugin with the following data was processed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1780 inc/merlin/class-merlin.php:1986
-#: inc/merlin/class-merlin.php:1999 inc/merlin/class-merlin.php:2012
-#: inc/merlin/class-merlin.php:2025 inc/merlin/class-merlin.php:2038
-#: inc/merlin/class-merlin.php:2051
-msgid "Success"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1803
-msgid ""
-"The content importer AJAX call failed to start, because of incorrect data"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1808
-msgid "Invalid content!"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1819
-msgid "The content import AJAX call will be executed with this import data"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1861
-msgid "The content import AJAX call failed with this passed data"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1872
-msgid "Error"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1886
-msgid ""
-"The content importer AJAX call for retrieving total content import items "
-"failed to start, because of incorrect data."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1891
-msgid "Invalid data!"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1983
-msgid "Demo content data."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1984 inc/merlin/class-merlin.php:1997
-#: inc/merlin/class-merlin.php:2010 inc/merlin/class-merlin.php:2023
-#: inc/merlin/class-merlin.php:2036 inc/merlin/class-merlin.php:2049
-msgid "Pending"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1995
-msgid "Widgets"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:1996
-msgid "Sample widgets data."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2008
-msgid "Revolution Slider"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2009
-msgid "Sample Revolution sliders data."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2021
-msgid "Options"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2022
-msgid "Sample theme options data."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2034
-msgid "Redux Options"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2035
-msgid "Redux framework options."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2047
-msgid "After import setup"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2048
-msgid "After import setup."
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2077
-msgid "The revolution slider import was executed"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2114
-msgid "The home page was set"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2124
-msgid "The blog page was set"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2139
-msgid "The Hello world post status was set to draft"
-msgstr ""
-
-#: inc/merlin/class-merlin.php:2163
-msgid ""
-"This predefined demo import does not have the name parameter: "
-"import_file_name"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-customizer-importer.php:30
-msgid "The customizer import has finished successfully"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-customizer-importer.php:57
-#, php-format
-msgid "Error: The customizer import file is missing! File path: %s"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-customizer-importer.php:71
-msgid ""
-"Error: The customizer import file does not have any content in it. Please "
-"make sure to use the correct customizer import file."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-customizer-importer.php:81
-msgid ""
-"Error: The customizer import file is not in a correct format. Please make "
-"sure to use the correct customizer import file."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-customizer-importer.php:87
-msgid ""
-"Error: The customizer import file is not suitable for current theme. You can "
-"only import customizer settings for the same theme or a child theme."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-downloader.php:50
-msgid "The file was not able to save to disk, while trying to download it"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-downloader.php:67
-msgid "Missing URL for downloading a file!"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-downloader.php:85
-#, php-format
-msgid ""
-"An error occurred while fetching file from: %1$s%2$s%3$s!%4$sReason: %5$s - "
-"%6$s."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-redux-importer.php:33
-msgid "The Redux Framework data was imported"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:72
-msgid "Error: Widget import file could not be found."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:84
-msgid "Error: Widget import file does not have any content in it."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:106
-msgid ""
-"Error: Widget import data could not be read. Please try a different file."
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:145
-msgid "Sidebar does not exist in theme (moving widget to Inactive)"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:166
-msgid "Site does not support widget"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:199
-msgid "Widget already exists"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:257
-msgid "Imported"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:261
-msgid "Imported to Inactive"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:267
-msgid "No Title"
-msgstr ""
-
-#: inc/merlin/includes/class-merlin-widget-importer.php:329
-msgid "No results for widget import!"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:50
-msgid ""
-"The XMLReader class is missing! Please install the XMLReader PHP extension "
-"on your server"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:63
-msgid "Could not open the XML file for parsing!"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:243
-msgid "Content import start error: "
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:275
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:173
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:291
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:364
-#, php-format
-msgid ""
-"This WXR file (version %s) is newer than the importer (version %s) and may "
-"not be supported. Please consider updating."
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/Importer.php:499
-msgid "New AJAX call!"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:135
-msgid "Could not open the file for parsing"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:514
-msgid "The file does not exist, please try again."
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:577
-msgid "Invalid author mapping"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:678
-msgid "Cannot import auto-draft posts"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:770
-#, php-format
-msgid "Failed to import \"%s\": Invalid post type %s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:780
-#, php-format
-msgid "%s \"%s\" already exists."
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:858
-#, php-format
-msgid "Skipping attachment \"%s\", fetching attachments disabled"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:872
-#, php-format
-msgid "Failed to import \"%s\" (%s)"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:904
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1822
-#, php-format
-msgid "Imported \"%s\" (%s)"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:909
-#, php-format
-msgid "Post %d remapped to %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:949
-#, php-format
-msgid "Failed to import term: %s - %s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1094
-msgid "Invalid file type"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1593
-#, php-format
-msgid "Failed to import user \"%s\""
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1614
-#, php-format
-msgid "Imported user \"%s\""
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1618
-#, php-format
-msgid "User %d remapped to %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1783
-#, php-format
-msgid "Failed to import %s %s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1827
-#, php-format
-msgid "Term %d remapped to %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1886
-#, php-format
-msgid "Failed to add metakey: %s, metavalue: %s to term_id: %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1895
-#, php-format
-msgid "Meta for term_id %d : %s => %s ; successfully added!"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1947
-#, php-format
-msgid "Remote server returned %1$d %2$s for %3$s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1969
-msgid "Zero size file downloaded"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:1975
-#, php-format
-msgid "Remote file is too large, limit is %s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2000
-#, php-format
-msgid "Running post-processing for post %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2013
-#, php-format
-msgid "Could not find the post parent for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2018
-#, php-format
-msgid "Post %d was imported with parent %d, but could not be found"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2032
-#, php-format
-msgid "Could not find the author for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2037
-#, php-format
-msgid "Post %d was imported with author \"%s\", but could not be found"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2063
-#, php-format
-msgid "Post %d was marked for post-processing, but none was required."
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2074
-#, php-format
-msgid "Could not update \"%s\" (post #%d) with mapped data"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2119
-#, php-format
-msgid "Could not find the menu object for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2124
-#, php-format
-msgid ""
-"Post %d was imported with object \"%d\" of type \"%s\", but could not be "
-"found"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2146
-#, php-format
-msgid "Could not find the comment parent for comment #%d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2150
-#, php-format
-msgid "Comment %d was imported with parent %d, but could not be found"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2164
-#, php-format
-msgid "Could not find the author for comment #%d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2168
-#, php-format
-msgid "Comment %d was imported with author %d, but could not be found"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2185
-#, php-format
-msgid "Could not update comment #%d with mapped data"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2216
-#, php-format
-msgid "Faulty term_id provided in terms-to-be-remapped array %s"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2226
-#, php-format
-msgid "No taxonomy provided in terms-to-be-remapped array for term #%d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2236
-#, php-format
-msgid "No parent_slug identified in remapping-array for term: %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2244
-#, php-format
-msgid "The term(%d)\"s parent_slug (%s) is not found in the remapping-array."
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2258
-#, php-format
-msgid "No data returned by get_term_by for term_id #%d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2277
-#, php-format
-msgid "Could not update \"%s\" (term #%d) with mapped data"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2287
-#, php-format
-msgid "Term %d was successfully updated with parent %d"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2322
-msgid "Starting remapping of featured images"
-msgstr ""
-
-#: inc/merlin/vendor/proteusthemes/wp-content-importer-v2/src/WXRImporter.php:2331
-#, php-format
-msgid "Remapping featured image ID %d to new ID %d for post ID %d"
-msgstr ""
-
 #: inc/tgmpa/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:330
@@ -1387,6 +639,10 @@ msgstr ""
 msgid "TGMPA v%s"
 msgstr ""
 
+#: inc/tgmpa/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
 #: inc/tgmpa/class-tgm-plugin-activation.php:2276
 msgid "Recommended"
 msgstr ""
@@ -1522,8 +778,16 @@ msgstr ""
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
+#: inc/tgmpa/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
 #: inc/tgmpa/class-tgm-plugin-activation.php:2723
 msgid "Update"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2726
+msgid "Activate"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:2757
@@ -2025,6 +1289,10 @@ msgid ""
 "searching can help."
 msgstr ""
 
+#: template-parts/content-portfolio.php:24
+msgid "More Details"
+msgstr ""
+
 #: template-parts/content-single.php:34
 msgid "comments"
 msgstr ""
@@ -2055,6 +1323,14 @@ msgstr ""
 
 #: template-parts/content-single.php:96
 msgid "Tags:"
+msgstr ""
+
+#: template-parts/content.php:11 template-parts/components/info.php:9
+msgid "Read More"
+msgstr ""
+
+#: template-parts/components/categories-list.php:13
+msgid "Categories:"
 msgstr ""
 
 #: template-parts/components/latest-posts.php:13

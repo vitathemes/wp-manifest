@@ -2,7 +2,7 @@
 Contributors: vitathemes, kashani, mrmolaei, mostafas1990
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 5.7
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
@@ -15,6 +15,19 @@ WP Manifest is one of the best-looking, clean, and optimized themes from the Ver
 WP Manifest is a newborn theme. Clean, simple and fast.
 
 == Changelog ==
+
+= 1.1.4 =
+* Fixed dark mode bugs
+* Limited the logo size
+
+= 1.1.3 =
+* Fixed bugs
+
+= 1.1.2 =
+* Fixed bugs
+
+= 1.1.1 =
+* Fixed bugs
 
 = 1.1.0 =
 * Fixed bugs

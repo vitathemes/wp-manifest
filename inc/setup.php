@@ -42,11 +42,19 @@ function wp_manifest_setup() {
 		'gallery',
 		'caption',
 	) );
+
 	// Set up the WordPress core custom background feature.
-//	add_theme_support( 'custom-background', apply_filters( 'custom_background_args', array(
-//		'default-color' => 'ffffff',
-//		'default-image' => '',
-//	) ) );
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'knowledge_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	/**
@@ -77,9 +85,9 @@ if ( ! function_exists( 'wp_manifest_scripts' ) ) {
 	function wp_manifest_scripts() {
 		wp_enqueue_style( 'wp-manifest-style', get_stylesheet_uri() );
 		wp_style_add_data( 'wp-manifest-style', 'rtl', 'replace' );
-		wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
-		wp_enqueue_script( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array(), false, true );
-		wp_enqueue_script( 'flickity-hash', 'https://unpkg.com/flickity-hash@1/hash.js', array(), false, true );
+		wp_enqueue_style( 'flickity', get_template_directory_uri() . '/assets/flickity.css' );
+		wp_enqueue_script( 'flickity', get_template_directory_uri() . '/js/flickity.js', array(), false, true );
+		wp_enqueue_script( 'flickity-hash', get_template_directory_uri() . '/js/flickity-hash.js', array(), false, true );
 		wp_enqueue_script( 'wp-manifest-script', get_template_directory_uri() . '/js/main.js', array(
 			'flickity',
 			'flickity-hash'

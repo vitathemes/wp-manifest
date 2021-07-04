@@ -55,15 +55,15 @@ add_action( 'wp_head', 'wp_manifest_pingback_header' );
 // Menu Generator
 if ( ! function_exists( 'wp_manifest_show_menu' ) ) {
 	function wp_manifest_show_menu() {
-		$wp_manifest_menu_args = array(
-			'theme_location' => 'primary-menu',
-			'menu_class'     => 's-header-menu c-header__menu-items',
-			'menu_id'        => 'primary-menu',
-			'container'      => '',
-			'depth'          => 3,
-			'walker'         => new Wp_manifest_walker_nav()
-		);
 		if ( has_nav_menu( 'primary-menu' ) ) {
+			$wp_manifest_menu_args = array(
+				'theme_location' => 'primary-menu',
+				'menu_class'     => 's-header-menu c-header__menu-items',
+				'menu_id'        => 'primary-menu',
+				'container'      => '',
+				'depth'          => 3,
+				'walker'         => new Wp_manifest_walker_nav()
+			);
 			wp_nav_menu( $wp_manifest_menu_args );
 		}
 	}
@@ -172,15 +172,15 @@ if ( ! function_exists( 'wp_manifest_comment_form' ) ) {
 		$wp_manifest_commenter = wp_get_current_commenter();
 		$wp_manifest_fields    = array(
 			'author'  =>
-				'<p class="comment-field comment-form-author"><label>Name *</label>' .
+				'<p class="comment-field comment-form-author"><label>'. __('Name', 'wp-manifest') . ' *</label>' .
 				'<input required="required" placeholder="' . esc_attr__( 'Enter Your Name', 'wp-manifest' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author'] ) . '" id="author" name="author" type="text" size="30" /></p>',
 			'email'   =>
-				'<p class="comment-field comment-form-email"><label>Email *</label>' .
+				'<p class="comment-field comment-form-email"><label>'. __('Email', 'wp-manifest') . ' *</label>' .
 				'<input required="required" placeholder="' . esc_attr__( 'Enter Your Email', 'wp-manifest' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author_email'] ) . '" id="email" name="email" type="email" value="" size="30" /></p>',
 			'url'     =>
-				'<p class="comment-field comment-form-email"><label>Website</label>' .
+				'<p class="comment-field comment-form-email"><label>'. __('Website', 'wp-manifest') . '</label>' .
 				'<input placeholder="' . esc_attr__( 'Enter Your Website', 'wp-manifest' ) . '" value="' . esc_attr( $wp_manifest_commenter['comment_author_url'] ) . '"  id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>',
-			'cookies' => '<p class="comment-form-cookies-consent comment-form-cookies"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label class="cookie-label" for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>'
+			'cookies' => '<p class="comment-form-cookies-consent comment-form-cookies"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label class="cookie-label" for="wp-comment-cookies-consent">'. __('Save my name, email, and website in this browser for the next time I comment.', 'wp-manifest') . '</label></p>'
 		);
 
 		comment_form(
@@ -190,7 +190,7 @@ if ( ! function_exists( 'wp_manifest_comment_form' ) ) {
 				'comment_notes_before' => false,
 				'label_submit'         => 'Submit',
 				'fields'               => $wp_manifest_fields,
-				'comment_field'        => '<p class="comment-form-comment"><label>Comment *</label><textarea required="required" placeholder="' . esc_html( 'Write Your Comment', 'wp-manifest' ) . '" id="comment" name="comment" cols="45" rows="1" aria-required="true"></textarea></p>'
+				'comment_field'        => '<p class="comment-form-comment"><label>'. esc_attr__('Comment', 'wp-manifest') .' *</label><textarea required="required" placeholder="' . esc_html( 'Write Your Comment', 'wp-manifest' ) . '" id="comment" name="comment" cols="45" rows="1" aria-required="true"></textarea></p>'
 			)
 		);
 	}

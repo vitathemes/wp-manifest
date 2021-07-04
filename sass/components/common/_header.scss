@@ -105,6 +105,13 @@
 .c-header__logo {
   min-width: 20%;
   margin-right: 32px;
+
+  .custom-logo {
+    max-width: 225px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+  }
 }
 
 .c-header__site-title {
@@ -116,7 +123,7 @@
   font-size: var(--text-typography-font-size);
   color: $wp-manifest__heading-color;
 
-  &:visited , a:visited {
+  &:visited, a:visited {
     color: $wp-manifest__heading-color;
   }
 
@@ -147,9 +154,21 @@
     margin-right: 53px;
     margin-bottom: 0;
     padding: 10px 0;
+    width: 100%;
+    text-align: center;
+
+    @include mq(desktop) {
+      width: auto;
+    }
 
     &:last-child {
       margin-right: 0;
+    }
+
+    ul li {
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
     }
 
     &::after {
@@ -163,11 +182,15 @@
       transition: 0.3s;
     }
 
-    &:hover {
+    &:hover, &:focus {
 
       & > .sub-menu {
-        left: auto;
         transition-delay: 0s;
+        left: 5%;
+
+        @include mq(desktop) {
+          left: auto;
+        }
       }
     }
   }
@@ -197,9 +220,14 @@
   .sub-menu {
     flex-direction: column;
     margin-top: 0;
-    top: 100%;
-    transition-delay: 2.5s;
+    top: calc(100% + 5px);
+    //transition-delay: 2.5s;
     background-color: $wp-manifest__neutral-white;
+    width: 90%;
+
+    @include mq(desktop) {
+      width: auto;
+    }
 
     li {
       padding: 10px 20px;
@@ -374,12 +402,20 @@
   }
 }
 
-
 // 404
-
 .c-header__404 {
 
   .c-header__main {
     justify-content: center;
+  }
+}
+
+// Dark Mode
+.is-dark-mode {
+  .sub-menu {
+
+    li a {
+      color: #000;
+    }
   }
 }

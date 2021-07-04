@@ -20,13 +20,6 @@ if ( function_exists( 'Kirki' ) ) {
 
 // Add sections \\
 // <editor-fold desc="Sections">
-// Branding
-		Kirki::add_section( 'colors', array(
-			'title'    => esc_html__( 'Colors', 'wp-manifest' ),
-			'panel'    => '',
-			'priority' => 3,
-		) );
-
 // Home Page
 		Kirki::add_section( 'homepage', array(
 			'title'    => esc_html__( 'Homepage', 'wp-manifest' ),
@@ -93,7 +86,6 @@ if ( function_exists( 'Kirki' ) ) {
 				'font-size'      => '13px',
 				'line-height'    => '1.25',
 				'letter-spacing' => '0.3em'
-				//'color'       => '#000',
 			],
 			'transport' => 'auto',
 			'priority'  => 10,
@@ -275,6 +267,43 @@ if ( function_exists( 'Kirki' ) ) {
 
 // -- Typography Fields --
 // <editor-fold desc="Typography">
+		Kirki::add_field( 'wp-manifest', [
+			'type'      => 'typography',
+			'settings'  => 'text_typography',
+			'label'     => esc_html__( 'Texts', 'wp-manifest' ),
+			'section'   => 'typography',
+			'default'   => [
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '16px',
+				'line-height'    => '1.5',
+				'letter-spacing' => '0.1em'
+				//'color'       => '#000',
+			],
+			'transport' => 'auto',
+			'priority'  => 10,
+			'output'    => array(
+				array(
+					'element' => 'body'
+				),
+				array(
+					'element' => '.body-font'
+				),
+				array(
+					'element'       => 'h2 .h2',
+					'property'      => 'font-family',
+					'value_pattern' => '$',
+					'choice'        => 'font-family',
+				),
+				array(
+					'element'       => 'h3 .h3',
+					'property'      => 'font-family',
+					'value_pattern' => '$',
+					'choice'        => 'font-family',
+				),
+			),
+		] );
+
 		Kirki::add_field( 'wp-manifest',
 			[
 				'active_callback' => [
@@ -574,44 +603,6 @@ if ( function_exists( 'Kirki' ) ) {
 					),
 				),
 			] );
-
-		Kirki::add_field( 'wp-manifest', [
-			'type'      => 'typography',
-			'settings'  => 'text_typography',
-			'label'     => esc_html__( 'Texts', 'wp-manifest' ),
-			'section'   => 'typography',
-			'default'   => [
-				'font-family'    => 'Lato',
-				'variant'        => '400',
-				'font-size'      => '16px',
-				'line-height'    => '1.5',
-				'letter-spacing' => '0.1em'
-				//'color'       => '#000',
-			],
-			'transport' => 'auto',
-			'priority'  => 10,
-			'output'    => array(
-				array(
-					'element' => 'body'
-				),
-				array(
-					'element' => '.body-font'
-				),
-				array(
-					'element'       => 'h2 .h2',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-				array(
-					'element'       => 'h3 .h3',
-					'property'      => 'font-family',
-					'value_pattern' => '$',
-					'choice'        => 'font-family',
-				),
-			),
-		] );
-
 // </editor-fold>
 
 		// -- Footer Fields --

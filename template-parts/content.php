@@ -8,7 +8,7 @@
 			<?php the_excerpt(); ?>
         </div>
         <div class="c-article__readmore">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link">Read More</a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" aria-label="<?php the_title(); ?>" class="c-article__readmore-link"><?php echo esc_html__('Read More', 'wp-manifest') ?></a>
         </div>
     </main>
 </article>

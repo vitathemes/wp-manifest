@@ -9,12 +9,41 @@
     padding-left: 0;
 
     ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      border: 1px solid $wp-manifest__neutral-dark-gray-color;
       float: left;
       position: absolute;
-      top: 100%;
+      top: calc(100% + 20px);
       left: -999em;
       z-index: 99999;
+      padding: 15px 0;
+
+      @include mq(desktop) {
+        padding: 8px 0;
+      }
+
+      &::before {
+        width: 14px;
+        height: 14px;
+        content: '';
+        border-top: 1px solid $wp-manifest__neutral-dark-gray-color;
+        border-right: 1px solid $wp-manifest__neutral-dark-gray-color;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: -7.5px;
+        left: auto;
+        background-color: #fff;
+
+        @include mq(desktop) {
+          left: 15px;
+        }
+      }
+
+      ul::before {
+        left: auto;
+        @include mq(desktop) {
+          left: 40%;
+        }
+      }
 
       ul {
         left: -999em;
@@ -24,28 +53,31 @@
       li {
 
         &:hover > ul,
+        &:focus > ul,
         &.focus > ul {
           display: block;
-          left: auto;
+          left: 5%;
+
+          @include mq(desktop) {
+            left: auto;
+          }
         }
       }
 
       a {
-        width: 200px;
-      }
-
-      :hover > a,
-      .focus > a {
-      }
-
-      a:hover,
-      a.focus {
+        min-width: 200px;
+        display: block;
       }
     }
 
     li:hover > ul,
+    li:focus > ul,
     li.focus > ul {
-      left: auto;
+      left: 5%;
+
+      @include mq(desktop) {
+        left: auto;
+      }
     }
   }
 
@@ -106,6 +138,10 @@
 
     li {
       margin: 0 0 32px;
+
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 
@@ -157,5 +193,18 @@
   .nav-next {
     text-align: end;
     flex: 1 0 50%;
+  }
+}
+
+li.menu-item-has-children {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    top: 100%;
+    content: '';
   }
 }
