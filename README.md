@@ -36,3 +36,8 @@ Edit `functions.php` to enable or disable theme features, setup navigation menus
 
 * Run `npm install` from the theme directory to install dependencies
 * Run `npm run watch` from the root of theme directory and it's starting to watch any changes in scss files from the `sass` folder
+
+## ❤️ Sponsors
+<a href="" target="_blank"><img width="200" src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png"/></a>
+
+Want to become a sponsor? you can sponsor & support VitaThemes by providing our team your service for free!
